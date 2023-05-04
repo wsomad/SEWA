@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="p2p_register.css">
+    <link rel="icon" type="images/png" href="/source/images/sewa-icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <title>SEWA | Car Rental Malaysia</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <img src="/source/images/header-alt.png" href="admin-front.html" class="nav_logo" alt="">
+            <button class="button" id="form-open">Cancel</button>
+        </nav>
+    </header>
+    <div class="form_container">
+        <div class="form_title">
+            <p>Peer-to-Peer Registration</p>
+        </div>
+        <form action="">
+            <div class="form_row">
+                <div class="form_box">
+                    <span class="form_indicator"><h4>Brand <span class="form_mark">*</span></h4></span>
+                    <div class="input_form">
+                        <input type="text" placeholder="Brand" required>
+                    </div>
+                </div>
+                <div class="form_box">
+                    <span class="form_indicator"><h4>Model <span class="form_mark">*</span></h4></span>
+                    <div class="input_form">
+                        <input type="text" placeholder="Model" required>
+                    </div>
+                </div>
+                <div class="form_box">
+                    <span class="form_indicator"><h4>Type <span class="form_mark">*</span></h4></span>
+                    <div class="input_form">
+                        <input type="text" placeholder="Type" required>
+                    </div>
+                </div>
+            </div>
+            <div class="form_row">
+                <div class="form_box">
+                    <span class="form_indicator"><h4>Year Manufactured  <span class="form_mark">*</span></h4></span>
+                    <div class="input_form">
+                        <input type="text" placeholder="Year Manufactured" required>
+                    </div>
+                </div>
+                <div class="form_box">
+                    <span class="form_indicator"><h4>Registration Number <span class="form_mark">*</span></h4></span>
+                    <div class="input_form">
+                        <input type="text" placeholder="Registration Number" required>
+                    </div>
+                </div>
+                <div class="form_box">
+                    <span class="form_indicator"><h4>Roadtax Expiry Date <span class="form_mark">*</span></h4></span>
+                    <div class="input_form">
+                        <input type="text" placeholder="Roadtax Expiry Date" required>
+                    </div>
+                </div>
+            </div>
+            <div class="form_row">
+                <div class="form_box">
+                    <span class="form_indicator"><h4>Insurance Type<span class="form_mark">*</span></h4></span>
+                    <div class="input_form">
+                        <select name="insurance_type" id="insurance_type" required>
+                            <option value="none" selected disabled hidden>Insurance Type</option>
+                            <option value="1">1st Party</option>
+                            <option value="2">3rd Party</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form_box">
+                    <span class="form_indicator"><h4>Insurance Name <span class="form_mark">*</span></h4></span>
+                    <div class="input_form">
+                        <input type="text" placeholder="Insurance Name" required>
+                    </div>
+                </div>
+                <div class="form_box">
+                    <span class="form_indicator"><h4>Insurance Expiry Date <span class="form_mark">*</span></h4></span>
+                    <div class="input_form">
+                        <input type="text" placeholder="Insurance Expiry Date" required>
+                    </div>
+                </div>
+            </div>
+            <span class="form_indicator"><h4>Choose Location <span class="form_mark">*</span></h4></span>
+            <div class="input_form">
+                <select name="location" id="location" required>
+                    <option value="none" selected disabled hidden>Location</option>
+                    <option value="1">Johor</option>
+                    <option value="2">Kedah</option>
+                    <option value="3">Kelantan</option>
+                    <option value="4">Melaka</option>
+                    <option value="5">Negeri Sembilan</option>
+                    <option value="6">Pahang</option>
+                    <option value="7">Perak</option>
+                    <option value="8">Perlis</option>
+                    <option value="9">Pulau Pinang</option>
+                    <option value="10">Sabah</option>
+                    <option value="11">Sarawak</option>
+                    <option value="12">Selangor</option>
+                    <option value="13">Terengganu</option>
+                    <option value="14">WP Kuala Lumpur</option>
+                    <option value="15">WP Labuan</option>
+                    <option value="16">WP Putrajaya</option>
+                </select>
+            </div>
+            <div class="form_row">
+                <div class="form_box">
+                    <span class="form_indicator"><h4>Set Rental Charge <span class="form_mark">*</span></h4></span>
+                    <div class="input_form">
+                        <input type="text" placeholder="Set Rental Charge RM/hour" required>
+                    </div>
+                </div>
+                <div class="form_box">
+                    <span class="form_indicator"><h4>Upload Vehicle Image <span class="form_mark">*</span></h4></span>
+                    <div class="input_form">
+                        <input type="text" placeholder="Ni nanti ubah" required>
+                    </div>
+                </div>
+            </div>
+            <div class="p2p_button">
+                <button class="submit_button">Register</button>
+            </div>
+        </form>
+    </div>
+    <footer class="footer">
+        <div class="foot_container">
+            <div class="top">
+                <div class="logo_details">
+                    <img src="/source/images/footer-alt.png" alt="">
+                </div>
+                <div class="company_register">
+                    <p>Owned by SEWA MALAYSIA SDN. BHD. (Registration No. 2023XXXXXX)</p>
+                </div>
+                <div class="media_details">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

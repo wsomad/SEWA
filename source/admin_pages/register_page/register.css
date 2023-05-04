@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #F9F9F8;
+}
+
+header {
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    z-index: 100;
+    padding: 0 20px;
+}
+
+footer {
+    display: inline-block;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 0 20px;
+}
+
+.nav {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.nav, 
+.nav_item {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav_item {
+    column-gap: 25px;
+}
+
+.nav_logo {
+    width: 50px;
+}
+
+.nav_link {
+    text-decoration: none;
+}
+
+.nav_logo, .nav_link, .button {
+    color: white;
+}
+
+.nav_link:hover {
+    color: white;
+}
+
+.button {
+    padding: 8px 24px;
+    border: 2px solid;
+    background: #f86a1d;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+
+.form_container {
+    border: 0.3mm solid #252525;
+    border-radius: 6px;
+    max-width: 1100px;
+    width: 100%;
+    height: 540px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-right: 150px;
+    box-shadow: rgba(0, 0, 0, 10);
+    margin-top: -15px;
+}
+
+.form_container .form_title {
+    padding: 20px 20px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #252525;
+}
+
+.form_row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.input_form {
+    position: relative;
+    width: 100%;
+    height: 45px;
+    color: lightgray;
+    margin: 20px 20px;
+    padding-right: 20px;
+}
+
+.form_indicator {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    padding-left: 20px;
+    margin-bottom: -10px;
+    margin-right: 60px;
+}
+
+.form_indicator .input_form {
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+    margin-top: 0;
+}
+
+.form_mark {
+    color: red;
+}
+
+.input_form input,
+.input_form select {
+    font-size: 14.5px;
+    height: 100%;
+    width: 300px;
+    border: 1px solid;
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.2s ease;
+    padding: 0 10px;
+}
+
+.submit_button {
+    height: 45px;
+    width: 200px;
+    border-radius: 6px;
+    border: none;
+    background: #f86a1d;
+    color: white;
+    font-size: 16px;
+}
+
+.submit_button:active {
+    transform: scale(0.98);
+}
+
+.register_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+    margin-top: 15px;
+}
+
+footer .foot_container {
+    padding: 30px 50px;
+    margin: auto;
+}
+
+.foot_container .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top .logo_details img {
+    width: 25px;
+}
+
+.top .company_register {
+    color: #f86a1d;
+    font-size: 12px;
+    padding-left: 160px;
+}
+
+.top .developer_contact {
+    color: #f86a1d;
+    font-size: 14px;
+}
+
+.top .developer_contact i {
+    margin-right: 7px;
+}
