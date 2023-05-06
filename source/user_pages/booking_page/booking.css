@@ -1,78 +1,304 @@
-/*.car-detail-parentBox{
-    width:calc(100vw - 40px);
-    height:800px;
-    border:3px solid black;
-    margin:20px auto;
-    padding:1% 5% 1% 5%;
-    position:relative;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.inner-parent{
-    width : 100%;
-    height: 100%;
-    border:3px solid red;
-    display:inline-block;
-    position: relative;
-    padding:1% 5% 1% 5%;
+body {
+    background-color: #f86a1d;
 }
 
-.car-detail-child1{
+header {
+    position: fixed;
+    height: 80px;
     width: 100%;
-    height: 100%;
-    border: 3px solid blue;
+    z-index: 100;
+    padding: 0 20px;
 }
 
-.car-model-pic{
-    width: 10%;
-    height: 10%;
-    border: 3px solid green;
-    display: inline-block;
-}
-.car-desc{
-    width: 10%;
-    height: 10%;
-    border: 3px solid red;
-    display: inline-block;
-}*/
-
-.car-detail-parentBox {
-    width: calc(100vw - 40px);
-    height: 500px;
-    border: 3px solid black;
-    margin: 20px auto;
-    padding: 1% 5% 1% 5%;
-    position: relative;
-}
-
-.inner-parent {
-    width: 800px;
-    height: 450px;
-    border: 3px solid rgb(255, 230, 0);
-    display: inline-block;
-    position: relative;
-    padding: 1% 5% 1% 5%;
-}
-
-.car-detail-child1 {
+.nav {
+    max-width: 1100px;
     width: 100%;
+    margin: 0 auto;
+}
+
+.nav, 
+.nav_item {
+    display: flex;
     height: 100%;
-    border: 3px solid blue;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav_item {
+    column-gap: 25px;
+}
+
+.nav_logo {
+    width: 50px;
+}
+
+.nav_link {
+    text-decoration: none;
+}
+
+.nav_logo, .nav_link, .button {
+    color: white;
+}
+
+.nav_link:hover {
+    color: white;
+}
+
+.button {
+    padding: 8px 24px;
+    border: 2px solid;
+    background: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+
+.test1, .test2 {
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.test1 {
     display: flex;
 }
 
-.car-model-pic {
-    width: 10%;
-    height: 100%;
-    border: 3px solid green;
-    display: inline-block;
+.booking_details {
+    max-width: 1100px;
+    width: 100%;
+    height: 550px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.car-desc {
-    width: 90%;
-    height: 100%;
-    border: 3px solid red;
-    display: inline-block;
-    padding-left: 10px;
+.car_name {
+    width: 500px;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin-bottom: 40px;
+    color: #f9f9f8;
+    margin-top: 10px;
+    text-transform: uppercase;
 }
 
-  
+.booking_title h1 {
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #f9f9f8;
+}
+
+.car_details {
+    display: flex;
+    top: 0;
+}
+
+.car_image img {
+    width: 500px;
+}
+
+.car_info {
+    background-color: #2B2E4A;
+    padding: 20px 20px;
+    border: 3px solid #2B2E4A;
+    border-radius: 6px;
+    width: 550px;
+    margin-left: 30px;
+}
+
+.car_info p {
+    color: #f9f9f8;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.car_info h3 {
+    padding-top: 20px;
+    color: #f9f9f8;
+    font-size: 18px;
+}
+
+.car_info h4 {
+    padding-top: 30px;
+    color: #f86a1d;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.car_info a {
+    margin-right: 15px;
+    color: #f9f9f8;
+}
+
+.car_spec {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    margin-top: 30px;
+    font-weight: bold;
+    color: #f9f9f8;
+}
+
+.book_details {
+    display: flex;
+}
+
+.personal_details {
+    margin-top: 40px;
+    background-color: #2B2E4A;
+    border-radius: 6px;
+    width: 700px;
+    height: 560px;
+}
+
+.personal_details p {
+    padding: 20px 20px;
+    color: #f9f9f8;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.payment_details {
+    padding: 10px 10px;
+    margin-top: 40px;
+    background-color: #2B2E4A;
+    border-radius: 6px;
+    width: 300px;
+    height: 220px;
+}
+
+hr {
+    margin-top: 40px;
+    color: #2B2E4A;
+}
+
+.form_row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.input_form {
+    position: relative;
+    width: 100%;
+    height: 45px;
+    color: gray;
+    margin: 20px 20px;
+    padding-right: 20px;
+}
+
+.form_indicator {
+    color: #f9f9f8;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    padding-left: 20px;
+    margin-bottom: -10px;
+    margin-right: 60px;
+}
+
+.form_indicator .input_form {
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+    margin-top: 0;
+}
+
+.form_mark {
+    color: red;
+}
+
+.input_form input,
+.input_form select {
+    font-size: 14.5px;
+    height: 100%;
+    width: 300px;
+    border: 1px solid;
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.2s ease;
+    padding: 0 10px;
+}
+
+.input_form textarea {
+    font-size: 14.5px;
+    padding: 5px 10px;
+    transition: all 0.2s ease;
+}
+
+.form_tnc {
+    margin-top: 75px;
+    margin-left: 20px;
+}
+
+.form_tnc label {
+    color: #f9f9f8;
+    font-size: 14px;
+    padding-left: 5px;
+}
+
+.special_request {
+    height: 120px;
+    width: 300px;
+    border-radius: 6px;
+    outline: none;
+}
+
+.payment_details {
+    margin-left: 80px;
+}
+
+.payment_details p {
+    margin-left: 10px;
+    color: #f9f9f8;
+    font-size: 22px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+.payment_option {
+    padding-top: 10px;
+}
+
+.payment_option input {
+    margin: 10px 10px;
+    font-size: 20px;
+}
+
+.payment_option label {
+    padding-right: 10px;
+    color: #f9f9f8;
+}
+
+.payment_details .book_button {
+    margin-top: 10px;
+    margin-left: 40px;
+}
+
+.submit_button {
+    height: 35px;
+    width: 200px;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    font-size: 14px;
+}
+
+.submit_button:active {
+    transform: scale(0.98);
+}

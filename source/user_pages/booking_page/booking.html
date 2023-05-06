@@ -4,177 +4,124 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet"> 
-
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-
-    <!-- Customized Bootstrap Stylesheet 
-    <link href="css/bootstrap.min.css" rel="stylesheet">-->
-
-    <!-- Template Stylesheet -->
-    <link href="booking.css" rel="stylesheet">
+    <link rel="stylesheet" href="booking.css">
+    <link rel="icon" type="images/png" href="/source/images/sewa-icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <title>SEWA | Car Rental Malaysia</title>
 </head>
 <body>
-    <div class="car-detail-parentBox"> <!---->
-        <div class="inner-parent"> <!---->
-            <h1 class="display-4 text-uppercase mb-5">Mercedes Benz R3</h1>
-            <div class="car-detail-child1"> <!--Model Pic and Desc-->
-                <div class="car-model-pic"> <!--Model Pic-->
-                    <img class="img-fluid" src="img/bg-banner.jpg" alt="">
+    <header class="header">
+        <nav class="nav">
+            <img src="/source/images/header.png" href="admin-front.html" class="nav_logo" alt="">
+            <button class="button" id="form-open">Back</button>
+        </nav>
+    </header>
+    <section class="test1">
+        <div class="booking_details">
+            <div class="car_name">
+                <h1>Bezza Advance 2022</h1>
+            </div>
+            <div class="car_details">
+                <div class="car_image">
+                    <img src="/source/images/bezza2023.png" alt="">
                 </div>
-                <div class="car-desc"> <!--Desc-->
-                    <h4 class="mb-2">$99.00/Day</h4>
-                    <div class="rating">
-                        <h6 class="mr-2">Rating:</h6>
-                        <div class="d-flex align-items-center justify-content-center mb-1">
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star text-primary mr-1"></small>
-                            <small class="fa fa-star-half-alt text-primary mr-1"></small>
-                            <small>(250)</small>
+                <div class="car_info">
+                    <p>RM 12.00/hour</p>
+                    <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe earum fugit enim odio blanditiis atque nam voluptates, maxime a consequatur voluptatibus, aspernatur ipsum suscipit porro modi iste. Velit, provident quisquam.</h3>
+                    <h4>Share on:</h4>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="car_spec">
+                <p>Brand |<span> Perodua</span></p>
+                <p>Model |<span> 2022</span></p>
+                <p>Type  |<span> Sedan</span></p>
+            </div>
+            <hr>
+            <div class="book_details">
+                <div class="personal_details">
+                    <p>Booking Details</p>
+                    <div class="form_row">
+                        <div class="form_box">
+                            <span class="form_indicator"><h4>Pickup Location <span class="form_mark">*</span></h4></span>
+                            <div class="input_form">
+                                <input type="text" placeholder="Pickup Location" required>
+                            </div>
+                        </div>
+                        <div class="form_box">
+                            <span class="form_indicator"><h4>Drop Location <span class="form_mark">*</span></h4></span>
+                            <div class="input_form">
+                                <input type="text" placeholder="Drop Location" required>
+                            </div>
                         </div>
                     </div>
-                    <p>Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata consetetur invidunt</p>
-                    <div class="social media">
-                        <h6>Share on:</h6>
-                        <div class="d-inline-flex">
-                            <a class="px-2" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="px-2" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="px-2" href=""><i class="fab fa-linkedin-in"></i></a>
-                            <a class="px-2" href=""><i class="fab fa-pinterest"></i></a>
+                    <div class="form_row">
+                        <div class="form_box">
+                            <span class="form_indicator"><h4>Pickup Date <span class="form_mark">*</span></h4></span>
+                            <div class="input_form">
+                                <input type="text" placeholder="Pickup Date" required>
+                            </div>
                         </div>
+                        <div class="form_box">
+                            <span class="form_indicator"><h4>Drop Date <span class="form_mark">*</span></h4></span>
+                            <div class="input_form">
+                                <input type="text" placeholder="Drop Date" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_row">
+                        <div class="form_box">
+                            <span class="form_indicator"><h4>Number of Passenger <span class="form_mark">*</span></h4></span>
+                            <div class="input_form">
+                                <input type="text" placeholder="No. of Passenger" required>
+                            </div>
+                        </div>
+                        <div class="form_box">
+                            <span class="form_indicator"><h4>Rental Charge </h4></span>
+                            <div class="input_form">
+                                <input type="text" placeholder="RM 12.00" required disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_row">
+                        <div class="form_box">
+                            <span class="form_indicator"><h4>Special Request</h4></span>
+                            <div class="input_form">
+                                <textarea class="special_request" name="special_request" placeholder="Special Request">
+                                </textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_row">
+                        <div class="form_tnc">
+                            <input type="radio" id="tnc" name="term_condition" value="tnc">
+                            <label for="debit">Agree to our terms and conditions</label><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="payment_details">
+                    <p class="payment">Payment</p>
+                    <div class="payment_option">
+                        <input type="radio" id="debit" name="payment_option" value="debit">
+                        <label for="debit">Debit/Credit Card</label><br>
+                        <input type="radio" id="online" name="payment_option" value="online">
+                        <label for="online">Online Payment</label><br>
+                        <input type="radio" id="cash" name="payment_option" value="cash">
+                        <label for="cash">Cash</label>
+                    </div>
+                    <div class="book_button">
+                        <button class="submit_button">Book Now</button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Detail End -->
-
-
-    
-    <!--CLASS UTK DIV BELUM TUKAR-->
-
-    <!-- Car Booking Start -->
-    <div class="container-fluid pb-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <h2 class="mb-4">Personal Detail</h2>
-                    <div class="mb-5">
-                        <div class="row">
-                            <div class="col-6 form-group">
-                                <input type="text" class="form-control p-4" placeholder="First Name" required="required">
-                            </div>
-                            <div class="col-6 form-group">
-                                <input type="text" class="form-control p-4" placeholder="Last Name" required="required">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6 form-group">
-                                <input type="email" class="form-control p-4" placeholder="Your Email" required="required">
-                            </div>
-                            <div class="col-6 form-group">
-                                <input type="text" class="form-control p-4" placeholder="Mobile Number" required="required">
-                            </div>
-                        </div>
-                    </div>
-                    <h2 class="mb-4">Booking Detail</h2>
-                    <div class="mb-5">
-                        <div class="row">
-                            <div class="col-6 form-group">
-                                <select class="custom-select px-4" style="height: 50px;">
-                                    <option selected>Pickup Location</option>
-                                    <option value="1">Location 1</option>
-                                    <option value="2">Location 2</option>
-                                    <option value="3">Location 3</option>
-                                </select>
-                            </div>
-                            <div class="col-6 form-group">
-                                <select class="custom-select px-4" style="height: 50px;">
-                                    <option selected>Drop Location</option>
-                                    <option value="1">Location 1</option>
-                                    <option value="2">Location 2</option>
-                                    <option value="3">Location 3</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6 form-group">
-                                <div class="date" id="date2" data-target-input="nearest">
-                                    <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Pickup Date"
-                                        data-target="#date2" data-toggle="datetimepicker" />
-                                </div>
-                            </div>
-                            <div class="col-6 form-group">
-                                <div class="time" id="time2" data-target-input="nearest">
-                                    <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Pickup Time"
-                                        data-target="#time2" data-toggle="datetimepicker" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6 form-group">
-                                <select class="custom-select px-4" style="height: 50px;">
-                                    <option selected>Select Adult</option>
-                                    <option value="1">Adult 1</option>
-                                    <option value="2">Adult 2</option>
-                                    <option value="3">Adult 3</option>
-                                </select>
-                            </div>
-                            <div class="col-6 form-group">
-                                <select class="custom-select px-4" style="height: 50px;">
-                                    <option selected>Select Child</option>
-                                    <option value="1">Child 1</option>
-                                    <option value="2">Child 2</option>
-                                    <option value="3">Child 3</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control py-3 px-4" rows="3" placeholder="Special Request" required="required"></textarea>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="bg-secondary p-5 mb-5">
-                        <h2 class="text-primary mb-4">Payment</h2>
-                        <div class="form-group">
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" name="payment" id="paypal">
-                                <label class="custom-control-label" for="paypal">Paypal</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" name="payment" id="directcheck">
-                                <label class="custom-control-label" for="directcheck">Direct Check</label>
-                            </div>
-                        </div>
-                        <div class="form-group mb-4">
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" name="payment" id="banktransfer">
-                                <label class="custom-control-label" for="banktransfer">Bank Transfer</label>
-                            </div>
-                        </div>
-                        <button class="btn btn-block btn-primary py-3">Reserve Now</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Car Booking End -->
+    </section>
+    <section class="test2">
+    </section>
 </body>
 </html>
