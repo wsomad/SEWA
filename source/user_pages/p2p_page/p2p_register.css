@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #F9F9F8;
+    background-color: #f86a1d;
 }
 
 header {
@@ -73,7 +73,7 @@ footer {
 }
 
 .form_container {
-    border: 0.3mm solid #252525;
+    background: #F9F9F8;
     border-radius: 6px;
     max-width: 1100px;
     width: 100%;
@@ -94,6 +94,13 @@ footer {
     color: #252525;
 }
 
+.form_container2 {
+    border-radius: 6px;
+    max-width: 1100px;
+    width: 1100PX;
+    padding-right: 20px;
+}
+
 .form_row {
     display: flex;
     align-items: flex-start;
@@ -109,6 +116,7 @@ footer {
 }
 
 .form_indicator {
+    color: #252525;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
