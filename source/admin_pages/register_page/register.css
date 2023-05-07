@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #F9F9F8;
+    background-color: #f86a1d;
 }
 
 header {
@@ -73,6 +73,7 @@ footer {
 }
 
 .form_container {
+    background: #2B2E4A;
     border: 0.3mm solid #252525;
     border-radius: 6px;
     max-width: 1100px;
@@ -91,7 +92,7 @@ footer {
     padding: 20px 20px;
     font-size: 1.6rem;
     font-weight: bold;
-    color: #252525;
+    color: #f9f9f8;
 }
 
 .form_row {
@@ -109,6 +110,7 @@ footer {
 }
 
 .form_indicator {
+    color: #f9f9f8;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
@@ -146,7 +148,8 @@ footer {
     width: 200px;
     border-radius: 6px;
     border: none;
-    background: #f86a1d;
+    background: transparent;
+    border: 2px solid white;
     color: white;
     font-size: 16px;
 }
@@ -179,13 +182,13 @@ footer .foot_container {
 }
 
 .top .company_register {
-    color: #f86a1d;
+    color: #f9f9f8;
     font-size: 12px;
     padding-left: 160px;
 }
 
 .top .developer_contact {
-    color: #f86a1d;
+    color: #f9f9f8;
     font-size: 14px;
 }
 
