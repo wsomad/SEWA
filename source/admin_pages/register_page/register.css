@@ -84,7 +84,7 @@ footer {
     transform: translate(-50%, -50%);
     padding-right: 150px;
     box-shadow: rgba(0, 0, 0, 10);
-    margin-top: -15px;
+    margin-top: 10px;
 }
 
 .form_container .form_title {
