@@ -1,10 +1,6 @@
-const body  = document.querySelector("body"),
-        sidebar=body.querySelector(".sidebar"),
-        toggle=body.querySelector(".toggle"),
-        searchBtn=body.querySelector(".search-box"),
-        modeSwitch=body.querySelector(".toggle-switch"),
-        modeText=body.querySelector(".toggle-text");
+const formOpenButton = document.querySelector("#form-open"),
+home = document.querySelector(".home2"),
+formCloseButton = document.querySelector(".form_close");
 
-        modeSwitch.addEventListener("click", () =>{
-            body.classList.toggle("dark");
-        })
+formOpenButton.addEventListener("click", () => home.classList.add("show"))
+formCloseButton.addEventListener("click", () => home.classList.remove("show"))
