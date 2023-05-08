@@ -145,10 +145,10 @@ footer {
 }
 
 .card {
-    background: linear-gradient(to right, #F9F9F8 0%, #ECECEB 100%);
+    background: #252525;
     width: 330px;
     height: 180px;
-    border-radius: 8px;
+    border-radius: 6px;
     margin: 10px;
 }
 
@@ -166,10 +166,11 @@ footer {
 
 .card_title h2 {
     font-size: 16px;
-    color: #888;
+    color: #f9f9f8;
 }
 
 .card_title p {
+    color: #f9f9f8;
     font-size: 15px;
     margin: 12px 8px;
 }
@@ -180,7 +181,8 @@ footer {
     bottom: 0;
     left: 0;
     text-decoration: none;
-    color: navy;
+    color: #f9f9f8;
+    font-weight: bold;
 }
 
 .card_title i.arrow {
