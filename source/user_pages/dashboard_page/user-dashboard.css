@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap');
 body{
-    background: #b8b5b5;
+    background: #f86a1d;
     padding: 0;
     margin: 0;
     overflow-x: hidden;
@@ -10,7 +10,7 @@ li, a, button{
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 16px;
-    color: #edf0f1;
+    color: #1e1e1e;
     text-decoration: none;
 }
 
@@ -53,9 +53,55 @@ header ul #logout a:hover{
 header li img{
     width: 50px;
     float: left;
-    margin-top: -20px;
+    margin-top: -15px;
+}
 
+.wallet-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+.button i{
+    padding: 5px;
 }
 /* .active{ */
     /* color: red; */
 /* } */
+
+.form_container2 {
+    padding: 10px 50px;
+    max-width: 400px;
+    border-radius: 30px;
+    background: #bab5b5;;
+    justify-content: space-between;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+}
+.header-form {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+  }
+.header-form .title{
+font-size: 1.25rem;
+  font-weight: bold;
+}
+.header-form .close-form{
+    cursor: pointer;
+    border: 20px;
+    outline: black;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
