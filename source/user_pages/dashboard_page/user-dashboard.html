@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="user-dashboard.css">
     <!-- boxicons css -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- js -->
+    <script defer src="user-dashboard.js"></script>
 
     <title>User-dashboard</title>
 </head>
@@ -19,8 +21,8 @@
             <i class='bx bx-car icon' ></i>
                 Rent your car</a></li>
         <li><a href="#">
-            <i class='bx bx-wallet-alt icon' ></i>
-            user wallet
+            <button class="wallet-btn"><i class='bx bx-wallet-alt icon' ></i>
+                user wallet</button>
         </a></li>
         <li id="logout"><a href="#">
             <i class='bx bx-log-out icon' ></i>
@@ -33,19 +35,14 @@
             <i class="fa fa-times form_close"></i>
             <div class="signup_form">
                 <form action="#">
-                    <h2>Sign up as Admin</h2>
+                    <h2>Top up Wallet</h2>
                     <div class="input1_form">
-                        <input type="email" placeholder="Email" required>
-                        <i class="fa fa-envelope email"></i>
+                        <input type="wallet" placeholder="TopUp Ammount" required>
+                        <button class="button">
+                            <i class='bx bx-plus-circle' ></i>
+                        </button>
                     </div>
-                    <div class="input1_form">
-                        <input type="tel" placeholder="Phone number" required>
-                        <i class="fa fa-phone phone"></i>
-                    </div>
-                    <div class="input1_form">
-                        <input type="text" placeholder="Create username" required>
-                        <i class="fa fa-user username"></i>
-                    </div>
+                    
                 </form>
 </body>
 </html>
