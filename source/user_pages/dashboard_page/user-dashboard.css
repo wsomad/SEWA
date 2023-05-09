@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap');
 body{
-    background: white;
+    background: #f86a1d;
     padding: 0;
     margin: 0;
     overflow-x: hidden;
@@ -60,7 +60,7 @@ header ul #logout a:hover{
 header li img{
     width: 40px;
     float: left;
-    margin-top: -20px;
+    margin-top: -10px;
 }
 
 .form_container {
@@ -71,7 +71,7 @@ header li img{
     left: 50%;
     transform: translate(-50%, -50%) scale(1.2);
     z-index: 101;
-    background: green;
+    background: #252525;
     border-radius: 6px;
     box-shadow: rgba(0, 0, 0, 0.1);
     opacity: 0;
@@ -126,10 +126,11 @@ header li img{
     font-size: 22px;
     opacity: 0.7;
     cursor: pointer;
+    color: white;
 }
 
 i.wallet_show {
-    font-size: 20px;
+    font-size: 28px;
 }
 
 .signup_form {
@@ -152,9 +153,9 @@ i.wallet_show {
 }
 
 .amount {
-    background: #252525;
-    color: #edf0f1;
-    border-radius: 6px;
+    background: white;
+    color: #252525;
+    border-radius: 10px;
     margin-right: 10px;
     padding-left: 10px;
     padding-right: 10px;
