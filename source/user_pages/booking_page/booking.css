@@ -301,3 +301,10 @@ hr {
 .submit_button:active {
     transform: scale(0.98);
 }
+
+.recommend {
+    background: pink;
+    width: 100px;
+    height: 100px;
+    margin-top: 400px;
+}
