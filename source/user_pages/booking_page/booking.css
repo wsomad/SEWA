@@ -153,6 +153,7 @@ header {
 
 .book_details {
     display: flex;
+    justify-content: center;
 }
 
 .personal_details {
@@ -160,7 +161,7 @@ header {
     background-color: #252525;
     border-radius: 6px;
     width: 700px;
-    height: 560px;
+    height: 590px;
 }
 
 .personal_details p {
@@ -256,55 +257,35 @@ hr {
     outline: none;
 }
 
-.payment_details {
-    margin-left: 80px;
-}
-
-.payment_details p {
-    margin-left: 10px;
-    color: #f9f9f8;
-    font-size: 22px;
-    font-weight: bold;
-    padding-top: 10px;
-}
-
-.payment_option {
-    padding-top: 10px;
-}
-
-.payment_option input {
-    margin: 10px 10px;
-    font-size: 20px;
-}
-
-.payment_option label {
-    padding-right: 10px;
-    color: #f9f9f8;
-}
-
-.payment_details .book_button {
+.proceed {
+    display: flex;
+    justify-content: end;
     margin-top: 10px;
-    margin-left: 40px;
+    padding-right: 20px;
 }
 
-.submit_button {
-    height: 35px;
-    width: 200px;
-    border-radius: 6px;
-    border: none;
-    background: transparent;
-    border: 2px solid #f9f9f8;
-    color: white;
-    font-size: 14px;
+.proceed a {
+    text-decoration: none;
+    color: #f9f9f8;
 }
 
-.submit_button:active {
-    transform: scale(0.98);
+.proceed i {
+    color: #f9f9f8;
+    padding-left: 10px;
 }
 
 .recommend {
-    background: pink;
-    width: 100px;
-    height: 100px;
+    background: #252525;
+    border-radius: 6px;
+    width: 330px;
+    height: 180px;
     margin-top: 400px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recommend h3 {
+    color: #f9f9f8;
 }
