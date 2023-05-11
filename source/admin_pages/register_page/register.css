@@ -61,7 +61,7 @@ footer {
 .button {
     padding: 8px 24px;
     border: 2px solid;
-    background: #f86a1d;
+    background: transparent;
     border-radius: 6px;
     cursor: pointer;
 }
@@ -70,19 +70,27 @@ footer {
     transform: scale(0.98);
 }
 
+.register_form {
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .form_container {
     background: #252525;
     border-radius: 6px;
-    max-width: 1100px;
+    max-width: 800px;
     width: 100%;
-    height: 540px;
+    height: 900px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding-right: 150px;
     box-shadow: rgba(0, 0, 0, 10);
-    margin-top: 10px;
+    margin-top: 160px;
+    padding: 10px 10px;
 }
 
 .form_container .form_title {
@@ -104,6 +112,7 @@ footer {
     color: lightgray;
     margin: 20px 20px;
     padding-right: 20px;
+    margin-right: 40px;
 }
 
 .form_indicator {
@@ -115,6 +124,7 @@ footer {
     padding-left: 20px;
     margin-bottom: -10px;
     margin-right: 60px;
+    margin-top: 10px;
 }
 
 .form_indicator .input_form {
