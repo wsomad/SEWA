@@ -18,7 +18,7 @@
             <img src="\src\main\webapp\source\images\header.png" class="nav_logo">
             <ul>
                 <div>
-                    <li><a href="#"><i class='bx bx-wallet' ></i></a></li>
+                    <li><a href="#"><i class='bx bx-wallet-alt wallet_show' onclick="toggleWallet()"></i></a></li>
                     <li> <i class='bx bx-user-circle profile-icon' onclick="toggleMenu()"></i></li>
                 </div>
             </ul>
@@ -50,7 +50,7 @@
     </header>
 
     <section class="home">
-        <div class="form_container">
+        <div class="form_container" id="walletMenu">
             <i class="fa fa-times form_close"></i>
             <div class="topup">
                 <div class="wallet_title">
