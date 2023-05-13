@@ -16,6 +16,12 @@ public class DatabaseConnectionTest {
          // Check if the connection is successful
          if (con != null) {
              System.out.println("Connected to the database!");
+             PreparedStatement pst = con.prepareStatement("select username from users where userid=1;");
+             ResultSet rs = pst.executeQuery();
+             while(rs.next()) {
+            	 String name = rs.getString("username");
+             	System.out.print(name);
+             }
          } else {
              System.out.println("Failed to connect to the database!");
          }
