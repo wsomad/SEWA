@@ -13,18 +13,40 @@
     <title>User-dashboard</title>
 </head>
 <body>
-    <header>
-    <ul>
-        <li class="nav-links"><img src="/source/images/header.png" alt="logo"></li>
-        <li class="nav-links"><a href="#">
-            <i class='bx bx-car icon' ></i>
-                Rent your car</a></li>
-        <li><a href="#">
-            <i class='bx bx-wallet-alt wallet_show'></i>
-        </a></li>
-        <li id="logout"><a href="#">
-            <i class='bx bx-log-out icon' ></i>
-    </ul>
+    <header class="header">
+        <nav class="nav">
+            <img src="\src\main\webapp\source\images\header.png" class="nav_logo">
+            <ul>
+                <div>
+                    <li><a href="#"><i class='bx bx-wallet' ></i></a></li>
+                    <li> <i class='bx bx-user-circle profile-icon' onclick="toggleMenu()"></i></li>
+                </div>
+            </ul>
+
+            <!-- sub menu -->
+            <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <div class="user-info">
+                         <h2>Hello user</h2>
+                    </div>
+                    <a href="a" class="sub-menu-link">
+                        <i class='bx bxs-edit'></i>
+                            <p>Edit profile</p>
+                            <span>></span>
+                    </a>
+                    <a href="a" class="sub-menu-link">
+                        <i class='bx bx-cog'></i>
+                            <p>Setting</p>
+                            <span>></span>
+                    </a>
+                    <a href="a" class="sub-menu-link">
+                        <i class='bx bx-log-out' ></i>
+                            <p>Log out</p>
+                            <span>></span>
+                    </a>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <section class="home">
