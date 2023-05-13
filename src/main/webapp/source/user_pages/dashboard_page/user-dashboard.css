@@ -51,9 +51,7 @@ nav ul li a{
 nav ul li a:hover{
     color: #787675;
 }
-nav ul li a i{
-    font-size: 26px;
-}
+
 .profile-icon{
     font-size: 26px;
 }
@@ -181,9 +179,9 @@ nav ul li a i{
     opacity: 0.7;
     cursor: pointer;
 }
-
+/* wallet icon toggle */
 i.wallet_show {
-    font-size: 20px;
+    font-size: 26px;
 }
 
 .signup_form {
@@ -218,4 +216,7 @@ i.wallet_show {
     align-items: center;
     display: flex;
     font-family: 'Montserrat', sans-serif;
+}
+.form_container .openWallet{
+    max-height: 0px;
 }
