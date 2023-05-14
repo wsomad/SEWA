@@ -70,15 +70,9 @@ footer {
     transform: scale(0.98);
 }
 
-.register_form {
-    height: 100vh; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
+.register_form,
 .nothing {
-    height: 400px; 
+    height: 100vh; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -89,21 +83,21 @@ footer {
     border-radius: 6px;
     max-width: 800px;
     width: 100%;
-    height: 800px;
+    height: auto;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding-right: 150px;
     box-shadow: rgba(0, 0, 0, 10);
-    margin-top: 160px;
+    margin-top: 270px;
     padding: 10px 20px;
     padding-bottom: -100px;
 }
 
 .form_container .form_title {
     padding: 20px 20px;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: bold;
     color: #f9f9f8;
 }
@@ -158,26 +152,53 @@ footer {
     padding: 0 10px;
 }
 
-.submit_button {
-    height: 45px;
-    width: 200px;
+.input_form .file_upload {
+    border: none;
+    color: #f9f9f8;
+    height: 20px;
+    width: 100px;
+    position: absolute;
+    left: 5px;
+    opacity: 0;
+}
+
+.register_button {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.submit_button, 
+.cancel_button,
+.upload_button {
+    height: 40px;
+    width: 130px;
     border-radius: 6px;
     border: none;
     background: transparent;
     border: 2px solid white;
     color: white;
-    font-size: 16px;
+    font-size: 15px;
+    margin-right: 20px;
 }
 
-.submit_button:active {
+.submit_button:active,
+.cancel_button:active,
+.upload_button:active {
     transform: scale(0.98);
 }
 
-.register_button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+.upload_button {
+    position: relative;
+    margin-left: 10px;
+    height: 40px;
+    width: 120px;
+}
+
+.upload_button i {
+    padding-right: 10px;
 }
 
 footer .foot_container {

@@ -14,8 +14,8 @@
 <body>
     <header class="header">
         <nav class="nav">
-            <img src="/source/images/header.png" href="admin-front.html" class="nav_logo" alt="">
-            <button class="button" id="form-open">Cancel</button>
+            <img src="\src\main\webapp\source\images\header.png" href="admin-front.html" class="nav_logo" alt="">
+            <button class="button" id="form-open">Back</button>
         </nav>
     </header>
     <section class="register_form">
@@ -102,8 +102,45 @@
                         </div>
                     </div>
                 </div>
+                <div class="form_row">
+                    <div class="form_box">
+                        <span class="form_indicator"><h4>Choose Location <span class="form_mark">*</span></h4></span>
+                        <div class="input_form">
+                            <select name="location" id="location" required>
+                                <option value="none" selected disabled hidden>Location</option>
+                                <option value="1">Johor</option>
+                                <option value="2">Klang Valley</option>
+                                <option value="3">Melaka</option>
+                                <option value="4">Perak</option>
+                                <option value="5">Pulau Pinang</option>
+                                <option value="6">Terengganu</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form_row">
+                    <div class="form_box">
+                        <span class="form_indicator"><h4>Set Rental Charge <span class="form_mark">*</span></h4></span>
+                        <div class="input_form">
+                            <input type="text" placeholder="Set Rental Charge RM/hour" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form_row">
+                    <div class="form_box">
+                        <span class="form_indicator"><h4>Upload Vehicle Image <span class="form_mark">*</span></h4></span>
+                        <div class="input_form">
+                            <input type="text" placeholder="Image Name" required>
+                            <button class="upload_button" type="button">
+                                <i class="fa fa-arrow-up"></i>Upload
+                                <input class="file_upload" type="file" id="file" accept="image/*" required>
+                            </button>
+                        </div>
+                    </div>
+                </div>
                 <div class="register_button">
                     <button class="submit_button">Register</button>
+                    <button class="cancel_button">Cancel</button>
                 </div>
             </form>
         </div>
