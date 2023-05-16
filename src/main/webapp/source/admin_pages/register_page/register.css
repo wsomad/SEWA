@@ -90,9 +90,8 @@ footer {
     transform: translate(-50%, -50%);
     padding-right: 150px;
     box-shadow: rgba(0, 0, 0, 10);
-    margin-top: 220px;
+    margin-top: 270px;
     padding: 10px 20px;
-    padding-bottom: -100px;
 }
 
 .form_container .form_title {
@@ -181,8 +180,8 @@ footer {
     display: flex;
     justify-content: end;
     align-items: center;
-    margin-top: 20px;
-    margin-bottom: -10px;
+    margin-top: 100px;
+    margin-bottom: 10px;
 }
 
 .submit_button, 

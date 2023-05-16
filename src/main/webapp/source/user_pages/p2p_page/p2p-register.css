@@ -19,7 +19,7 @@ header {
 
 footer {
     display: inline-block;
-    position: fixed;
+    position: absolute;
     width: 100%;
     bottom: 0;
     left: 0;
@@ -72,58 +72,54 @@ footer {
     transform: scale(0.98);
 }
 
+.register_form,
+.nothing {
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .form_container {
     background: #252525;
     border-radius: 6px;
-    max-width: 1100px;
+    max-width: 800px;
     width: 100%;
-    height: 520px;
+    height: auto;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding-right: 150px;
-    margin-top: 5px;
     box-shadow: rgba(0, 0, 0, 10);
+    margin-top: 270px;
+    padding: 10px 20px;
 }
 
 .form_container .form_title {
-    padding: 15px 20px;
-    font-size: 1.6rem;
+    padding: 20px 20px;
+    font-size: 1.8rem;
     font-weight: bold;
-    color: #F9F9F8;
-}
-
-.form_container hr {
-    background: #f86a1d;
-    height: 2px;
-    width: 330px;
-}
-
-.form_container2 {
-    border-radius: 6px;
-    max-width: 1100px;
-    width: 1100PX;
-    padding-right: 20px;
+    color: #f9f9f8;
 }
 
 .form_row {
     display: flex;
     align-items: flex-start;
-    margin-top: -10px;
 }
 
 .input_form {
     position: relative;
     width: 100%;
     height: 45px;
-    color: gray;
+    color: lightgray;
     margin: 20px 20px;
     padding-right: 20px;
+    margin-right: 40px;
 }
 
 .form_indicator {
-    color: #F9F9F8;
+    color: #f9f9f8;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
@@ -131,10 +127,11 @@ footer {
     padding-left: 20px;
     margin-bottom: -10px;
     margin-right: 60px;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
-.form_indicator .input_form {
+.form_indicator .input_form,
+.form_indicator .upload_container {
     display: flex;
     flex-direction: column;
     padding-right: 20px;
@@ -157,27 +154,54 @@ footer {
     padding: 0 10px;
 }
 
-.submit_button {
+.upload_container {
+    margin: 20px 20px;
+    padding-right: 20px;
+    margin-right: 40px;
+}
+
+.file_upload {
+    width: 300px;
+    position: absolute;
+    font-size: 15px;
+    background: #f9f9f8;
+    outline: none;
+    border-radius: 6px;
+    border: 2px solid #f9f9f8;
+}
+
+::-webkit-file-upload-button {
+    color: #f9f9f8;
+    background: #252525;
+    height: 35px;
+    border-radius: 2px;
+    border: none;
+}
+
+.register_button {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 10px;
+}
+
+.submit_button, 
+.cancel_button {
     height: 40px;
-    width: 220px;
+    width: 130px;
     border-radius: 6px;
     border: none;
     background: transparent;
     border: 2px solid white;
     color: white;
-    font-size: 16px;
+    font-size: 15px;
+    margin-right: 20px;
 }
 
-.submit_button:active {
+.submit_button:active,
+.cancel_button:active {
     transform: scale(0.98);
-}
-
-.p2p_button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 100px;
-    padding-bottom: 10px;
 }
 
 footer .foot_container {

@@ -284,8 +284,51 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.5s ease-out;
+    overflow: visible;
+    position: relative;
+}
+
+.recommend-details {
+    color: black;
+    height: 100%;
+    gap: .5em;
+    display: grid;
+    place-content: center;
 }
 
 .recommend h3 {
     color: #f9f9f8;
+    color: rgb(134, 134, 134);
+}
+
+.recommend-button {
+    transform: translate(-50%, 125%);
+    width: 60%;
+    border-radius: 1rem;
+    border: none;
+    background-color: #f86a1d;
+    border: 2px solid #f9f9f8;
+    color: #fff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.3s ease-out;
+}
+      
+.recommend:hover {
+    border-color: #008bf8;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+   
+.recommend:hover .recommend-button {
+    transform: translate(-50%, 50%);
+    opacity: 1;
+}
+
+.recommend-button:hover {
+    transform: scale(0.98);
 }
