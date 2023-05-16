@@ -98,7 +98,7 @@ header {
     text-transform: uppercase;
     font-size: 3rem;
     font-weight: 700;
-    color: #f9f9f8;
+    color: #868686;
 }
 
 .car_details {
@@ -119,7 +119,7 @@ header {
 }
 
 .car_info p {
-    color: #f9f9f8;
+    color: #868686;
     font-weight: bold;
     font-size: 24px;
 }
@@ -132,7 +132,7 @@ header {
 
 .car_info h4 {
     padding-top: 30px;
-    color: #f86a1d;
+    color: #868686;
     margin-bottom: 10px;
     font-weight: bold;
 }
@@ -166,7 +166,7 @@ header {
 
 .personal_details p {
     padding: 20px 20px;
-    color: #f9f9f8;
+    color: #868686;
     font-size: 26px;
     font-weight: bold;
 }
@@ -299,7 +299,7 @@ hr {
 
 .recommend h3 {
     color: #f9f9f8;
-    color: rgb(134, 134, 134);
+    color: #868686;
 }
 
 .recommend-button {
