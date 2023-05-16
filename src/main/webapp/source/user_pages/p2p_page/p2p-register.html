@@ -18,108 +18,110 @@
             <button class="button" id="form-open">Cancel</button>
         </nav>
     </header>
-    <div class="form_container">
-        <div class="form_title">
-            <p>Rent as Peer Registration</p>
+    <section class="register_form">
+        <div class="form_container">
+            <div class="form_title">
+                <p>Rent as Peer Registration</p>
+            </div>
+            <form action="">
+                <div class="form_row">
+                    <div class="form_box">
+                        <span class="form_indicator"><h4>Brand <span class="form_mark">*</span></h4></span>
+                        <div class="input_form">
+                            <input type="text" placeholder="Brand" required>
+                        </div>
+                    </div>
+                    <div class="form_box">
+                        <span class="form_indicator"><h4>Model <span class="form_mark">*</span></h4></span>
+                        <div class="input_form">
+                            <input type="text" placeholder="Model" required>
+                        </div>
+                    </div>
+                    <div class="form_box">
+                        <span class="form_indicator"><h4>Type <span class="form_mark">*</span></h4></span>
+                        <div class="input_form">
+                            <input type="text" placeholder="Type" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form_row">
+                    <div class="form_box">
+                        <span class="form_indicator"><h4>Year Manufactured  <span class="form_mark">*</span></h4></span>
+                        <div class="input_form">
+                            <input type="text" placeholder="Year Manufactured" required>
+                        </div>
+                    </div>
+                    <div class="form_box">
+                        <span class="form_indicator"><h4>Registration Number <span class="form_mark">*</span></h4></span>
+                        <div class="input_form">
+                            <input type="text" placeholder="Registration Number" required>
+                        </div>
+                    </div>
+                    <div class="form_box">
+                        <span class="form_indicator"><h4>Roadtax Expiry Date <span class="form_mark">*</span></h4></span>
+                        <div class="input_form">
+                            <input type="text" placeholder="Roadtax Expiry Date" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form_row">
+                    <div class="form_box">
+                        <span class="form_indicator"><h4>Insurance Type<span class="form_mark">*</span></h4></span>
+                        <div class="input_form">
+                            <select name="insurance_type" id="insurance_type" required>
+                                <option value="none" selected disabled hidden>Insurance Type</option>
+                                <option value="1">1st Party</option>
+                                <option value="2">3rd Party</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form_box">
+                        <span class="form_indicator"><h4>Insurance Name <span class="form_mark">*</span></h4></span>
+                        <div class="input_form">
+                            <input type="text" placeholder="Insurance Name" required>
+                        </div>
+                    </div>
+                    <div class="form_box">
+                        <span class="form_indicator"><h4>Insurance Expiry Date <span class="form_mark">*</span></h4></span>
+                        <div class="input_form">
+                            <input type="text" placeholder="Insurance Expiry Date" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form_row">
+                    <div class="form_box">
+                        <span class="form_indicator"><h4>Choose Location <span class="form_mark">*</span></h4></span>
+                        <div class="input_form">
+                            <select name="location" id="location" required>
+                                <option value="none" selected disabled hidden>Location</option>
+                                <option value="1">Johor</option>
+                                <option value="2">Klang Valley</option>
+                                <option value="3">Melaka</option>
+                                <option value="4">Perak</option>
+                                <option value="5">Pulau Pinang</option>
+                                <option value="6">Terengganu</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form_box">
+                        <span class="form_indicator"><h4>Set Rental Charge <span class="form_mark">*</span></h4></span>
+                        <div class="input_form">
+                            <input type="text" placeholder="Set Rental Charge RM/hour" required>
+                        </div>
+                    </div>
+                    <div class="form_box">
+                        <span class="form_indicator"><h4>Upload Vehicle Image <span class="form_mark">*</span></h4></span>
+                        <div class="input_form">
+                            <input type="text" placeholder="Ni nanti ubah" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="p2p_button">
+                    <button class="submit_button">Register</button>
+                </div>
+            </form>
         </div>
-        <form action="">
-            <div class="form_row">
-                <div class="form_box">
-                    <span class="form_indicator"><h4>Brand <span class="form_mark">*</span></h4></span>
-                    <div class="input_form">
-                        <input type="text" placeholder="Brand" required>
-                    </div>
-                </div>
-                <div class="form_box">
-                    <span class="form_indicator"><h4>Model <span class="form_mark">*</span></h4></span>
-                    <div class="input_form">
-                        <input type="text" placeholder="Model" required>
-                    </div>
-                </div>
-                <div class="form_box">
-                    <span class="form_indicator"><h4>Type <span class="form_mark">*</span></h4></span>
-                    <div class="input_form">
-                        <input type="text" placeholder="Type" required>
-                    </div>
-                </div>
-            </div>
-            <div class="form_row">
-                <div class="form_box">
-                    <span class="form_indicator"><h4>Year Manufactured  <span class="form_mark">*</span></h4></span>
-                    <div class="input_form">
-                        <input type="text" placeholder="Year Manufactured" required>
-                    </div>
-                </div>
-                <div class="form_box">
-                    <span class="form_indicator"><h4>Registration Number <span class="form_mark">*</span></h4></span>
-                    <div class="input_form">
-                        <input type="text" placeholder="Registration Number" required>
-                    </div>
-                </div>
-                <div class="form_box">
-                    <span class="form_indicator"><h4>Roadtax Expiry Date <span class="form_mark">*</span></h4></span>
-                    <div class="input_form">
-                        <input type="text" placeholder="Roadtax Expiry Date" required>
-                    </div>
-                </div>
-            </div>
-            <div class="form_row">
-                <div class="form_box">
-                    <span class="form_indicator"><h4>Insurance Type<span class="form_mark">*</span></h4></span>
-                    <div class="input_form">
-                        <select name="insurance_type" id="insurance_type" required>
-                            <option value="none" selected disabled hidden>Insurance Type</option>
-                            <option value="1">1st Party</option>
-                            <option value="2">3rd Party</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form_box">
-                    <span class="form_indicator"><h4>Insurance Name <span class="form_mark">*</span></h4></span>
-                    <div class="input_form">
-                        <input type="text" placeholder="Insurance Name" required>
-                    </div>
-                </div>
-                <div class="form_box">
-                    <span class="form_indicator"><h4>Insurance Expiry Date <span class="form_mark">*</span></h4></span>
-                    <div class="input_form">
-                        <input type="text" placeholder="Insurance Expiry Date" required>
-                    </div>
-                </div>
-            </div>
-            <div class="form_row">
-                <div class="form_box">
-                    <span class="form_indicator"><h4>Choose Location <span class="form_mark">*</span></h4></span>
-                    <div class="input_form">
-                        <select name="location" id="location" required>
-                            <option value="none" selected disabled hidden>Location</option>
-                            <option value="1">Johor</option>
-                            <option value="2">Klang Valley</option>
-                            <option value="3">Melaka</option>
-                            <option value="4">Perak</option>
-                            <option value="5">Pulau Pinang</option>
-                            <option value="6">Terengganu</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form_box">
-                    <span class="form_indicator"><h4>Set Rental Charge <span class="form_mark">*</span></h4></span>
-                    <div class="input_form">
-                        <input type="text" placeholder="Set Rental Charge RM/hour" required>
-                    </div>
-                </div>
-                <div class="form_box">
-                    <span class="form_indicator"><h4>Upload Vehicle Image <span class="form_mark">*</span></h4></span>
-                    <div class="input_form">
-                        <input type="text" placeholder="Ni nanti ubah" required>
-                    </div>
-                </div>
-            </div>
-            <div class="p2p_button">
-                <button class="submit_button">Register</button>
-            </div>
-        </form>
-    </div>
+    </section>
     <footer class="footer">
         <div class="foot_container">
             <div class="top">
