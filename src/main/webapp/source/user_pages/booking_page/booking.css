@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #f86a1d;
+    background-color: #F86A1D;
 }
 
 header {
@@ -89,7 +89,7 @@ header {
     font-size: 1.5rem;
     font-weight: bolder;
     margin-bottom: 40px;
-    color: #f9f9f8;
+    color: #F9F9F8;
     margin-top: 10px;
     text-transform: uppercase;
 }
@@ -98,7 +98,7 @@ header {
     text-transform: uppercase;
     font-size: 3rem;
     font-weight: 700;
-    color: #868686;
+    color: #F9F9F8;
 }
 
 .car_details {
@@ -148,7 +148,7 @@ header {
     width: 500px;
     margin-top: 30px;
     font-weight: bold;
-    color: #f9f9f8;
+    color: #F9F9F8;
 }
 
 .book_details {

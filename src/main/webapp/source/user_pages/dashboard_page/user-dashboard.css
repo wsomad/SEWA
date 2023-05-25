@@ -6,11 +6,11 @@
 }
 
 body {
-    background-color: #787675;
+    background-color: #F9F9F8;
 }
-/* header */
+
 header {
-    background-color: #f86a1d;
+    background-color: transparent;
     position: fixed;
     height: 80px;
     width: 100%;
@@ -35,26 +35,31 @@ footer {
     justify-content: space-between;
     position: relative;
 }
+
 nav ul{
     width: 100%;
     text-align: right;
 }
+
 nav ul li{
     display: inline-block;
     list-style: none;
     margin: 10px 20px;
-    color: #edf0f1;
+    color: #F86A1D;
 }
+
 nav ul li a{
-    color: #edf0f1;
+    color: #F86A1D;
 }
+
 nav ul li a:hover{
     color: #787675;
 }
 
 .profile-icon{
-    font-size: 26px;
+    font-size: 28px;
 }
+
 .nav_logo {
     width: 50px;
 }
@@ -70,40 +75,57 @@ nav ul li a:hover{
     position: absolute;
     top: 100%;
     right: 5px;
-    width: 320px;
     max-height: 0px;
+    width: 320px;
     overflow: hidden;
     transition: max-height 0.5s;
+    background: #F86A1D;
+    border-radius: 6px;
 }
+
 .sub-menu-wrap.open-menu{
     max-height: 400px;
+    height: 300px;
 }
+
 .sub-menu{
-    background: #fcfcfc;
     padding: 20px;
     margin: 10px;
 }
+
 .user-info{
     display: flex;
     align-items: center;
+    
 }
+
+.user-info h2{
+    color: #252525;
+}
+
 .sub-menu-link{
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: #1b1b1c;
-    margin: 12px 0;
+    color: #252525;
+    margin: 12px 0px;
+    margin-top: 28px;
 }
+
 .sub-menu-link p{
     width: 100%;
+    color: #F9F9F8;
+    font-size: 17px;
 }
+
 .sub-menu-link i{
     width: 40px;
-    background: rgb(216, 214, 210);
     border-radius: 50%;
-    padding: 9px;
     margin-right: 15px;
+    padding-left: 5px;
+    font-size: 24px;
 }
+
 .sub-menu-link span{
     font-size: 25px;
     transition: transform 0.5s;
