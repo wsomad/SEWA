@@ -78,7 +78,7 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 100;
-    background-color: #252525;
+    background-color: #F9F9F8;
     padding: 25px;
     border-radius: 12px;
     box-shadow: rgba(0, 0, 0, 0.1);
@@ -166,6 +166,7 @@ footer {
     outline: none;
     padding: 0 30px;
     font-size: 15px;
+    background-color: #F9F9F8;
 }
 
 .input_form input:focus {
@@ -191,7 +192,7 @@ footer {
 .input_form i.phone,
 .input_form i.username {
     left: 0;
-    color: #888;
+    color: #868686;
     padding: 8px;
 }
 
