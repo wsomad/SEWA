@@ -1,142 +1,419 @@
-*{
-    box-sizing: border-box;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
-
+:root{
+    --orange: #F86A1D;
+    --white: #fff;
+    --grey: #f5f5f5;
+    --black1: #252525;
+    --black2: #999;
+}
 body {
-    background-color: white;
+    background-color:var(--orange);
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-.topbar {
-    display: flex;
-    background: transparent;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding: 40px 40px;
-    color: beige;
-    border: 0;
+.sidebar{
+    width: 100%;
     position: fixed;
-    max-width: 100%;
+}
+
+.nav{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background-color: var(--orange);
+    border-left: 15px solid var(--orange);
+    transition: 0.5s;
+    overflow: hidden;
+}
+.nav.active{
+    width: calc(80px);
+}
+
+.nav_logo {
+    width: 50px;
+    padding: 10px 5px
+}
+
+.nav ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.nav ul li{
+    position: relative;
+    width: 90%;
+    list-style: none;
+    /* border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px; */
+    border-radius: 50px;
+
+}
+
+.nav ul li:hover{
+    background: var(--white);
+}
+
+.nav ul li:nth-child(1){
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+
+.nav ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.nav ul li:hover a{
+    color: var(--orange);
+}
+
+.nav ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.nav ul li a .icon i{
+    padding-top: 0.6em;
+    font-size: 1.75em;
+}
+
+.nav ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+.main-div{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--black2);
+    transition: 0.5s;
+}
+.main-div.active{
+    width: calc(100% - 90px);
+    left: 90px;
+}
+
+.topbar{
+    background-color: var(--black1);
     width: 100%;
     height: 60px;
-    font-size: 22px;
-    border-bottom-right-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
 }
 
-.topbar h2 {
-    color: transparent;
-}
-
-.menu-box {
-    display: block;
-    position: fixed;
+.toggle{
+    position: relative;
     top: 0;
-    width: 200px;
-    height: 100%;
-    margin: 0;
-    padding: 150px 0;
-    list-style: none;
-    background-color: #f86a1d;
-    transition-duration: .25s;
-}
-
-
-
-.menu-box img {
-    background-color: #252525;
-    padding: 10px;
-    border-radius: 50%;
-    display: block;
-    align-self: center;
-    height: 65px;
-    width: 65px;
-    left: 20px;
-    margin-left: 40px;
-    position: absolute;
-    top: 55px;
-}
-
-.item {
-    display: block;
-    background-color: #252525;
-    padding: 12px 4px;
-    color: white;
-    font-size: 15px;
-    border-radius: 6px;
-    text-decoration: none;
-    margin-top: 15px;
-    margin-left: 10px;
-    margin-right: 10px;
-    transition-duration: .25s;
-    padding-left: 20px;
-}
-
-.item:hover {
-    background-color: #252525;
-    column-gap: 10px;
-    padding-left: 40px;
-}
-
-
-
-.logout {
-    display: block;
-    background-color: #252525;
-    border-radius: 6px;
-    text-align: center;
+    width: 60px;
+    height: 60px;
+    /* background: #f5f5f5; */
+    display: flex;
     justify-content: center;
-    color: white;
-    padding: 12px 4px;
-    width: 150px;
-    transition: 0.3s;
+    align-items: center;
+    font-size: 2.5em;
+    cursor: pointer;;
+    color: var(--white);
+}
+
+.search{
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+.search label{
+    position: relative;
+    width: 100%;
+}
+
+.search label input{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 30px;
+    font-size: 15px;
+    outline: none;
+    border: 1px #999;
+}
+
+.search label i{
     position: absolute;
-    bottom:55px;
-    margin-top: 15px;
-    margin-left: 20px;
-    margin-right: 30px;
+    top:0;
+    left: 10px;
+    font-size: 1.2em;
+}
+
+.user{
+    font-size: 28px;
+    color: var(--white);
+    cursor: pointer;
+}
+
+/* submenu */
+.sub-menu-wrap{
+    position: absolute;
+    right: 5px;
+    max-height: 0px;
+    width: 320px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+    background: #F86A1D;
+    border-radius: 6px;
+}
+.sub-menu-wrap.open-menu{
+    max-height: 400px;
+    height: 250px;
+}
+
+.sub-menu{
+    padding: 20px;
+    margin: 10px;
+}
+.user-info{
+    display: flex;
+    align-items: center;
+}
+.user-info h2{
+    color: #252525;
+}
+
+.sub-menu-link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #252525;
+    margin: 12px 0px;
+    margin-top: 28px;
+}
+
+.sub-menu-link p{
+    width: 100%;
+    color: #F9F9F8;
+    font-size: 17px;
+}
+
+.sub-menu-link i{
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+    padding-left: 5px;
+    font-size: 24px;
+    color: var(--grey);
+}
+.sub-menu-link:hover i{
+    color:var(--black1)
+}
+.sub-menu-link:hover p{
+    font-weight: 600;
+    color: var(--black1);
+}
+
+.cardBox
+{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 30px;;
+}
+
+.cardBox .card
+{
+    position: relative;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+}
+
+.cardBox .card .numbers
+{
+    position: relative;
+    font-weight: 500;
+    font-size: 2.5em;
+    color: var(--orange);
+}
+
+.cardBox .card .cardName
+{
+    color: var(--black1);
+    font-size: 1.1em;
+    margin-top:5px;
+}
+
+.cardBox .card .iconBx
+{
+    font-size: 3.5em;
+    color: var(--black1);
+}
+
+.cardBox .card:hover
+{
+    background: var(--orange);
+}
+
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .iconBx
+{
+    color: var(--white);
+}
+
+.details
+{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
     
 }
 
-a {
-    color: white;
-    text-decoration: none;
+.details .recentOrders
+{
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    background: var(--white);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    border-radius: 20px;
 }
 
-.logout:hover {
-    transform: scale(1.06);
-}
-
-section {
+.cardHeader
+{
     display: flex;
-    flex-direction: column;
-    padding-top: 70px;
-    margin-left: 250px;
-}
-
-.table {
-    display: flex;
-    align-items:end;
-    height: 500px;
-    width: 800px;
-    border: 2px solid;
-    background-color: wheat;
-    border-radius: 10px;
-    border-color: black;
-}
-
-.adj_button {
-    display: flex;
-    flex-direction: row-reverse;
-    margin-right: 130px;
-}
-
-.adj_button button{
-    color: white;
-    background-color: #f86a1d;
-    size: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
 
 }
+.cardHeader h2
+{
+    font-weight: 600;
+    color: var(--orange);
+}
 
+.details .table
+{
+    width: 100%;
+    border-collapse:collapse;
+    margin-top: 10px;
+}
 
+.details table thead td
+{
+    font-weight: 600;
+}
+
+.details .recentOrders table tr
+{
+    color: var(--black1);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.details .recentOrders table tr:last-child
+{
+    border-bottom: none;
+}
+
+.details .recentOrders table tbody tr:hover
+{
+    background: var(--orange);
+    color: var(--white);
+}
+
+.details .recentOrders table tr td
+{
+    padding: 10px;
+    
+}
+
+.details .recentOrders table tr td:last-child
+{
+    text-align:end;
+}
+
+.details .recentOrders table tr td:nth-child(2)
+{
+    text-align: center;
+}
+
+.details .recentOrders table tr td:nth-child(3)
+{
+    text-align: center;
+}
+
+.details .recentOrders table tr td:nth-child(4)
+{
+    text-align: end;
+}
+
+.details .recentOrders table tr td:nth-child(5)
+{
+    text-align: center;
+}
+
+.details .recentOrders table tr td:nth-child(2)
+{
+    text-align: end;
+}
+
+.renting
+{
+    padding: 2px 4px;
+    background: #8de02c;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.booking
+{
+    padding: 2px 4px;
+    background: #f00;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.exceed
+{
+    padding: 2px 4px;
+    background: blue;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+}

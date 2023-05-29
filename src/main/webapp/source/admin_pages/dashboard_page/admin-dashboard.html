@@ -1,47 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Boxicons CSS -->
     <link rel="stylesheet" href="admin-dashboard.css">
+    <link rel="icon" type="images/png" href="https://drive.google.com/uc?export=view&id=1WnCOPug2C25vqv-_nxG6QvVp2VSMVnp1">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <title>Admin Dashboard</title>
+    <title>User-dashboard</title>
+    <title>sidebar</title>
 </head>
-
 <body>
-    <nav class="topbar">
-        <h2>6</h2>
-        <a class="topnav" href="55"><i class="fa fa-user" style="color: #252525;"></i></a>
-
-    </nav>
-
-    <div class="sidenav">
-        <ul class="menu-box">
-            <div class="navimg"><img src="/source/images/footer.png"></div>
-            <li><a class="item" href="https://www.youtube.com/watch?v=p1GmFCGuVjw"><span>Dashboard</span></a></li>
-            <li><a class="item" href="ffff"><span>Register</span></a></li>
-            <li><a class="item" href="ffff"><span>Record</span></a></li>
-            <li><a class="item" href="ffff"><span>Settings</span></a></li>
-            <li><a class="logout" href="ffff">Logout</a></li>
-        </ul>
-    </div>
-
-    <section>
-        <div class="table">
+    <div class="sidebar">
+        <div class="nav">
+            <ul>
+                <li>
+                    <a href="a">
+                        <span class="icon"><img src="\src\main\webapp\source\images\footer.png" class="nav_logo"></span>
+                        <span class="title">SEWA</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="a">
+                        <span class="icon"><i class='bx bx-user'></i></span>
+                        <span class="title">Admin dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="a">
+                        <span class="icon"><i class='bx bxs-car'></i></span>
+                        <span class="title">Car Inventory</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="a">
+                        <span class="icon"><i class='bx bx-line-chart'></i></span>
+                        <span class="title">Profit Insight</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="a">
+                        <span class="icon"><i class='bx bxs-bar-chart-alt-2' ></i></span>
+                        <span class="title">Car Insight</span>
+                    </a>
+                </li>
+            </ul>
         </div>
-        <div class="adj_button">
-            <button >Edit</button>
-            <button >Delete</button>
-        </div>  
-    </section>
-
-    <div>
-        <button class="adj_button">Edit</button>
-        <button class="adj_button">Delete</button>
     </div>
-</body>
 
+
+    <!-- main -->
+    <div class="main-div">
+        <div class="topbar">
+            <div class="toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+             <!-- search -->
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <i class='bx bx-search-alt-2'></i>
+                    </label>
+                </div>
+             <!-- user img -->
+                <div class="user">
+                    <i class='bx bx-user-circle profile-icon' onclick="toggleMenu()"></i>
+                </div>
+        </div>
+        <!-- submenu -->
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <div class="user-info">
+                     <h2>Hello user</h2>
+                </div>
+                <a href="a" class="sub-menu-link">
+                    <i class='bx bxs-edit'></i>
+                        <p>Edit profile</p>
+                </a>
+                <a href="a" class="sub-menu-link">
+                    <i class='bx bx-cog'></i>
+                        <p>Setting</p>
+                </a>
+                <a href="a" class="sub-menu-link">
+                    <i class='bx bx-log-out' ></i>
+                        <p>Log out</p>
+                </a>
+            </div>
+        </div>
+        <!-- start code here -->
+        <!-- card box-->
+        <div class="cardBox">
+            <div class="card">
+                <div>
+                    <div class="numbers">200</div>
+                    <div class="cardName">Total users</div>
+                </div>
+                <div class="iconBx"><ion-icon name="people"></ion-icon></div>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="numbers">200</div>
+                    <div class="cardName">Total Cars</div>
+                </div>
+                <div class="iconBx"><ion-icon name="car"></ion-icon></div>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="numbers">200</div>
+                    <div class="cardName">Total Reservation</div>
+                </div>
+                <div class="iconBx"><ion-icon name="cart"></ion-icon></div>
+            </div>
+            <div class="card">
+                <div>
+                    <div class="numbers">200</div>
+                    <div class="cardName">Profit</div>
+                </div>
+                <div class="iconBx"><ion-icon name="trending-up"></ion-icon></div>
+            </div>
+
+            <!-- table -->
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Order History</h2>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Name</td>
+                                <td>Vehicle ID</td>
+                                <td>Pickup Date</td>
+                                <td>Drop Date</td>
+                                <td>Rent to Pay</td>
+                                <td>Status</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ali</td>
+                                <td>2021</td>
+                                <td>3/4/2022</td>
+                                <td>5/5/2023</td>
+                                <td>30</td>
+                                <td><span class="renting">Renting</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="exceed">Exceed</span></td></tr>
+                            <tr>
+                                <td><span class="booking">Booking</span></td></tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                            <tr></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    
+        <script src="admin-dashboard.js"></script>
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+</body>
 </html>
