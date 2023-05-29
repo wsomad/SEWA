@@ -25,6 +25,10 @@ footer {
     left: 0;
 }
 
+.home2 {
+    height: 900px;
+}
+
 .nav{
     max-width: 1100px;
     width: 100%;
@@ -75,7 +79,7 @@ nav ul li a:hover{
     padding-left: 30px;
     font-size: 15px;
     outline: none;
-    border: 1px #999;
+    border: 1px solid #252525;
 }
 
 .search label i{
@@ -372,3 +376,90 @@ i.wallet_show {
     max-height: 0px;
 }
 
+.booking_car {
+    max-width: 1100px;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 50px;
+}
+
+.booking_word {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.booking_row {
+    display: flex;
+}
+
+.booking_container {
+    width: 450px;
+    height: 250px;
+    background-color: #252525;
+    margin-top: 20px;
+    margin-right: 40px;
+    position: relative;
+    padding: 1.8rem;
+    border-radius: 10px;
+    transition: 0.5s ease-out;
+    overflow: visible;
+}
+   
+.booking_details {
+    color: black;
+    height: 100%;
+    gap: .5em;
+    display: grid;
+    place-content: center;
+}
+   
+.booking_button {
+    transform: translate(-50%, 125%);
+    width: 60%;
+    border-radius: 10px;
+    border: none;
+    background-color: #F86A1D;
+    color: #fff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.3s ease-out;
+}
+   
+.book_body {
+    color: rgb(134, 134, 134);
+}
+
+.book_title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.booking_container:hover {
+    border-color: #008bf8;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+   
+.booking_container:hover .booking_button {
+    transform: translate(-50%, 50%);
+    opacity: 1;
+}
+
+.wallet_balance {
+    max-width: 1100px;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 400px;
+}
+
+.balance_word {
+    font-size: 2rem;
+    font-weight: bold;
+}
