@@ -291,11 +291,9 @@ body {
 .details
 {
     position: relative;
-    width: 100%;
+    width: 100px;
     padding: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 30px;
+    display: flex;
     
 }
 
@@ -303,9 +301,9 @@ body {
 {
     position: relative;
     display: grid;
-    min-height: 500px;
+    min-height: 100px;
     background: var(--white);
-    padding: 20px;
+    padding: 50px;
     box-shadow: 0 7px 25px rgba(0,0,0,0.08);
     border-radius: 20px;
 }
@@ -314,7 +312,7 @@ body {
 {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: flex-end;
 
 }
 .cardHeader h2
@@ -323,10 +321,10 @@ body {
     color: var(--orange);
 }
 
-.details .table
+.details table
 {
-    width: 100%;
-    border-collapse:collapse;
+    width: 100vh;
+    border-collapse: collapse;
     margin-top: 10px;
 }
 
@@ -338,7 +336,7 @@ body {
 .details .recentOrders table tr
 {
     color: var(--black1);
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    
 }
 
 .details .recentOrders table tr:last-child
@@ -370,7 +368,7 @@ body {
 
 .details .recentOrders table tr td:nth-child(3)
 {
-    text-align: center;
+    text-align: end;
 }
 
 .details .recentOrders table tr td:nth-child(4)
@@ -379,11 +377,6 @@ body {
 }
 
 .details .recentOrders table tr td:nth-child(5)
-{
-    text-align: center;
-}
-
-.details .recentOrders table tr td:nth-child(2)
 {
     text-align: end;
 }
