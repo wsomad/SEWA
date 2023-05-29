@@ -408,7 +408,7 @@ i.wallet_show {
     background-color: #252525;
     display: flex;
     width: 450px;
-    height: 50px;
+    height: 60px;
     border-radius: 10px;
     margin-top: 15px;
     margin-right: 40px;
@@ -423,7 +423,7 @@ i.wallet_show {
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    margin-top: 230px;
+    margin-top: 240px;
 }
 
 .booking_word p {
@@ -526,7 +526,7 @@ i.wallet_show {
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    margin-top: 620px;
+    margin-top: 630px;
 }
 
 .balance_word {
@@ -534,7 +534,8 @@ i.wallet_show {
     font-weight: bold;
 }
 
-.balance_container {
+.balance_container, 
+.wallet_word {
     background-color: #252525;
     display: flex;
     width: 450px;
