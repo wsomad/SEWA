@@ -10,16 +10,22 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <title>User-dashboard</title>
+    <title>SEWA | Car Rental Malaysia</title>
 </head>
 <body>
     <header class="header">
         <nav class="nav">
-            <img src="source/images/header.png" class="nav_logo">
+            <img src="https://drive.google.com/uc?export=view&id=1hnKz5R1P7uMvl4c2qAnSFUHrdH4Sy41B" class="nav_logo">
+            <div class="search">
+                <label>
+                    <input type="text" placeholder="Search here">
+                    <i class='bx bx-search-alt-2'></i>
+                </label>
+            </div>
             <ul>
-                <div>
+                <div class="wallet_profile">
                     <li><a href="#"><i class='bx bx-wallet-alt wallet_show' onclick="toggleWallet()"></i></a></li>
-                    <li> <i class='bx bx-user-circle profile-icon' onclick="toggleMenu()"></i></li>
+                    <li><a href="#"><i class='bx bx-user-circle profile-icon' onclick="toggleMenu()"></i></a></li>
                 </div>
             </ul>
 
@@ -30,8 +36,8 @@
                          <h2>Hello user</h2>
                     </div>
                     <a href="a" class="sub-menu-link">
-                        <i class='bx bxs-edit'></i>
-                            <p>Edit profile</p>
+                        <i class='bx bx-user-circle'></i>
+                            <p>Profile</p>
                     </a>
                     <a href="a" class="sub-menu-link">
                         <i class='bx bx-cog'></i>
@@ -41,13 +47,17 @@
                         <i class='bx bx-log-out' ></i>
                             <p>Log out</p>
                     </a>
+                    <div class="owner_name">
+                        <p class="owner">Owned by SEWA Malaysian SDN. BHD.</p>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
 
     <section class="home">
-        <div class="form_container" id="walletMenu">
+
+        <div class="wallet_container" id="walletMenu">
             <i class="fa fa-times form_close"></i>
             <div class="topup">
                 <div class="wallet_title">
@@ -55,31 +65,51 @@
                 </div>
                 <div class="input_form">
                     <input type="email" placeholder="Enter Amount" required>
+                    <i class="fa fa-plus topup_wallet"></i>
                 </div>
-                <div class="select_amount">
-                    <div class="amount">
-                        <h3>RM 10</h3>
+                <div class="amount_container">
+                    <div class="select_amount">
+                        <div class="amount">
+                            <h3>RM 10</h3>
+                        </div>
+                        <div class="amount">
+                            <h3>RM 20</h3>
+                        </div>
+                        <div class="amount">
+                            <h3>RM 50</h3>
+                        </div>
                     </div>
-                    <div class="amount">
-                        <h3>RM 20</h3>
-                    </div>
-                    <div class="amount">
-                        <h3>RM 50</h3>
-                    </div>
-                </div>
-                <div class="select_amount">
-                    <div class="amount">
-                        <h3>RM 100</h3>
-                    </div>
-                    <div class="amount">
-                        <h3>RM 200</h3>
-                    </div>
-                    <div class="amount">
-                        <h3>RM 500</h3>
+                    <div class="select_amount">
+                        <div class="amount">
+                            <h3>RM 100</h3>
+                        </div>
+                        <div class="amount">
+                            <h3>RM 200</h3>
+                        </div>
+                        <div class="amount">
+                            <h3>RM 500</h3>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="image_slider">
+            <div class="slider">
+                <img src="https://drive.google.com/uc?export=view&id=1p00hNDcSmAxpvb9WSWhVg3o9wed7ItGh" alt="" id="image-2">
+                <img src="https://drive.google.com/uc?export=view&id=1waQNxZ3hg0sNowuQk8p7roXW48mMo3K3" alt="" id="image-3">
+                <img src="https://drive.google.com/uc?export=view&id=1nnPd7snm-L6PnA42OAX7b0Uvl_tO9G67" alt="" id="image-1">
+            </div>
+            <div class="slider_nav">
+                <a href="#image-1"></a>
+                <a href="#image-2"></a>
+                <a href="#image-3"></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="book_details">
+        
     </section>
 
     <script src="user-dashboard.js"></script>
