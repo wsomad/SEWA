@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #f86a1d;
+    background-color: #F9F9F8;
 }
 
 header {
@@ -75,9 +75,28 @@ footer {
 .register_form,
 .nothing {
     height: 100vh; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex
+}
+
+.peer_title {
+    max-width: 1100px;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 100px;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.peer_word {
+    max-width: 1100px;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 150px;
+    font-weight: bold;
 }
 
 .form_container {
@@ -87,12 +106,10 @@ footer {
     width: 100%;
     height: auto;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     padding-right: 150px;
     box-shadow: rgba(0, 0, 0, 10);
-    margin-top: 270px;
+    margin-top: 200px;
+    margin-left: 210px;
     padding: 10px 20px;
 }
 
