@@ -81,7 +81,7 @@ header {
 }
 
 .test1, .test2 {
-    height: 100vh; 
+    height: 900px; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -209,9 +209,8 @@ header {
 }
 
 hr {
-    border: 1px solid black;
+    border: 1px solid #868686;
     margin-top: 40px;
-    color: #2B2E4A;
 }
 
 .form_row {
@@ -303,12 +302,30 @@ hr {
     padding-left: 10px;
 }
 
+.recommend_word {
+    max-width: 1100px;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: -50px;
+}
+
+.recommend_word p {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.recommend_word h4 {
+    padding-top: 10px;
+}
+
 .recommend {
-    background: #252525;
+    background: transparent;
     border-radius: 6px;
     width: 330px;
     height: 180px;
-    margin-top: 400px;
+    margin-top: 260px;
     margin-right: 20px;
     display: flex;
     justify-content: center;
@@ -336,7 +353,7 @@ hr {
     width: 60%;
     border-radius: 1rem;
     border: none;
-    background-color: #f86a1d;
+    background-color: #252525;
     border: 2px solid #f9f9f8;
     color: #fff;
     font-size: 1rem;

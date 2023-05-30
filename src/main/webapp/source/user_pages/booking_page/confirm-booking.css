@@ -125,9 +125,10 @@ header {
     font-size: 1.8em;
 }
 
-.confirmation_form, .second {
+.confirmation_form,
+.second {
     height: 100vh; 
-}
+} 
 
 .input_row {
     display: flex;
