@@ -46,6 +46,7 @@ footer {
 
 .nav_logo {
     width: 50px;
+    cursor: pointer;
 }
 
 .nav_link {
@@ -102,7 +103,7 @@ footer {
 .form_container {
     background: #252525;
     border-radius: 6px;
-    max-width: 800px;
+    max-width: 770px;
     width: 100%;
     height: auto;
     position: absolute;
@@ -214,11 +215,33 @@ footer {
     color: white;
     font-size: 15px;
     margin-right: 20px;
+    cursor: pointer;
 }
 
 .submit_button:active,
 .cancel_button:active {
     transform: scale(0.98);
+}
+
+.information_message {
+    background-color: transparent;
+    border: 3px solid #f86a1d;
+    margin-left: 1020px;
+    height: 150px;
+    width: 290px;
+    margin-top: 500px;
+    border-radius: 6px;
+    padding: 20px;
+}
+
+.reminder_word {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #252525;
+}
+
+.reminder_sentence {
+    padding-top: 20px;
 }
 
 footer .foot_container {
