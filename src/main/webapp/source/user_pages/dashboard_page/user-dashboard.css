@@ -16,6 +16,7 @@ header {
     width: 100%;
     z-index: 100;
     padding: 0 20px;
+    box-shadow: 0 0 5px 0 #252525;  
 }
 
 footer {
@@ -437,11 +438,12 @@ i.wallet_show {
 .started_container a {
     text-decoration: none;
     color: #F9F9F8;
+    font-weight: bold;
 }
 
 .customer_container, 
 .owner_container {
-    background-color: #252525;
+    background-color: #F86A1D;
     display: flex;
     width: 450px;
     height: 60px;
@@ -478,7 +480,7 @@ i.wallet_show {
 .booking_container {
     width: 450px;
     height: 250px;
-    background-color: #252525;
+    background-color: #F86A1D;
     margin-top: 20px;
     margin-right: 40px;
     position: relative;
@@ -507,7 +509,7 @@ i.wallet_show {
 }
 
 .booking_more h4 {
-    color: #F86A1D;
+    color: #252525;
     font-size: 13px;
 }
    
@@ -524,7 +526,7 @@ i.wallet_show {
     width: 60%;
     border-radius: 10px;
     border: none;
-    background-color: #F86A1D;
+    background-color: #252525;
     color: #fff;
     font-size: 1rem;
     padding: .5rem 1rem;
@@ -548,7 +550,7 @@ i.wallet_show {
 .book_title {
     font-size: 1.5em;
     font-weight: bold;
-    color: #F86A1D;
+    color: #F9F9F8;
 }
 
 .booking_container:hover {
@@ -580,7 +582,7 @@ i.wallet_show {
 
 .balance_container, 
 .wallet_word {
-    background-color: #252525;
+    background-color: #F86A1D;
     display: flex;
     width: 450px;
     height: 50px;
@@ -597,7 +599,7 @@ i.wallet_show {
     border-radius: 6px;
     border: none;
     font-size: 14px;
-    background: #F86A1D;
+    background: #252525;
     color: #F9F9F8;
     cursor: pointer;
 }
@@ -610,6 +612,7 @@ i.wallet_show {
     font-size: 16px;
     color: #F9F9F8;
     padding-left: 20px;
+    font-weight: bold;
 }
 
 .review {
