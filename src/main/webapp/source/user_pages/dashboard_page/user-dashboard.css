@@ -282,6 +282,7 @@ nav ul li a:hover{
     opacity: 1;
     pointer-events: auto;
     transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
 }
 
 .home::before {
@@ -453,6 +454,12 @@ i.wallet_show {
     align-items: center;
     color: #F9F9F8;
     justify-content: center;
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.customer_container:hover, 
+.owner_container:hover {
+    transform: scale(0.99);
 }
 
 .booking_car {
@@ -461,7 +468,7 @@ i.wallet_show {
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    margin-top: 240px;
+    margin-top: 230px;
 }
 
 .booking_word p {
@@ -480,7 +487,6 @@ i.wallet_show {
 .booking_container {
     width: 450px;
     height: 250px;
-    background-color: #F86A1D;
     margin-top: 20px;
     margin-right: 40px;
     position: relative;
@@ -517,10 +523,23 @@ i.wallet_show {
     color: black;
     height: 100%;
     gap: .5em;
-    display: grid;
-    place-content: center;
+    display: flex;
+    justify-content: center;
 }
-   
+
+.car_image img {
+    width: 280px;
+}
+
+.car_name {
+    align-self: flex-end;
+}
+
+.car_name p {
+    color: #252525;
+    font-size: 20px;
+}
+
 .booking_button {
     transform: translate(-50%, 125%);
     width: 60%;
@@ -568,7 +587,7 @@ i.wallet_show {
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    margin-top: 630px;
+    margin-top: 620px;
 }
 
 .balance_word p {
@@ -621,7 +640,6 @@ i.wallet_show {
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    margin-top: 20px;
 }
 
 .review_word p {
