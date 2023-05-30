@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #F86A1D;
+    background-color: #F9F9F8;
 }
 
 header {
@@ -55,7 +55,7 @@ header {
 .button {
     padding: 8px 24px;
     border: 2px solid;
-    background: transparent;
+    background: #f86a1d;
     border-radius: 6px;
     cursor: pointer;
 }
@@ -87,24 +87,24 @@ header {
 
 .car_name {
     width: 500px;
-    font-size: 1.5rem;
+    font-size: 1.8em;
     font-weight: bolder;
     margin-bottom: 40px;
-    color: #F9F9F8;
+    color: #252525;
     margin-top: 10px;
-    text-transform: uppercase;
 }
 
 .booking_title h1 {
     text-transform: uppercase;
     font-size: 3rem;
     font-weight: 700;
-    color: #F9F9F8;
+    color: #252525;
 }
 
 .car_details {
     display: flex;
     top: 0;
+    margin-top: 50px;
 }
 
 .car_image img {
@@ -112,15 +112,21 @@ header {
 }
 
 .car_info {
-    background-color: #252525;
+    background-color: #f86a1d;
     padding: 20px 20px;
     border-radius: 6px;
     width: 550px;
     margin-left: 30px;
 }
 
+.car_info h1 {
+    font-size: 2em;
+    color: #F9F9F8;
+    margin-bottom: 20px;
+}
+
 .car_info p {
-    color: #868686;
+    color: #f9f9f8;
     font-weight: bold;
     font-size: 24px;
 }
@@ -133,14 +139,14 @@ header {
 
 .car_info h4 {
     padding-top: 30px;
-    color: #868686;
+    color: #252525;
     margin-bottom: 10px;
     font-weight: bold;
 }
 
 .car_info a {
     margin-right: 15px;
-    color: #f9f9f8;
+    color: #252525;
 }
 
 .car_spec {
@@ -149,7 +155,7 @@ header {
     width: 500px;
     margin-top: 30px;
     font-weight: bold;
-    color: #F9F9F8;
+    color: #252525;
 }
 
 .book_details {

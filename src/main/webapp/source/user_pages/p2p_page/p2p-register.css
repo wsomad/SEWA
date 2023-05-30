@@ -241,6 +241,10 @@ footer {
     color: #252525;
 }
 
+.reminder_word i {
+    color: #f86a1d;
+}
+
 .reminder_sentence {
     padding-top: 20px;
 }
