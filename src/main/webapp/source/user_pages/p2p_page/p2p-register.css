@@ -64,7 +64,7 @@ footer {
 
 .button {
     padding: 8px 24px;
-    border: 2px solid;
+    border: none;
     background: #f86a1d;
     border-radius: 6px;
     cursor: pointer;

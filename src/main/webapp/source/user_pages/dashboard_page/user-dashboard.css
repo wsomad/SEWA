@@ -609,6 +609,7 @@ i.wallet_show {
     margin-top: 10px;
     align-items: center;
     justify-content: space-between;
+    box-shadow: 0 0 5px 0 #252525;  
 }
 
 .balance_button {
