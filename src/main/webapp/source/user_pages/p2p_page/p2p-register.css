@@ -64,7 +64,7 @@ footer {
 
 .button {
     padding: 8px 24px;
-    border: 2px solid;
+    border: none;
     background: #f86a1d;
     border-radius: 6px;
     cursor: pointer;
@@ -239,6 +239,10 @@ footer {
     font-size: 1.4em;
     font-weight: bold;
     color: #252525;
+}
+
+.reminder_word i {
+    color: #f86a1d;
 }
 
 .reminder_sentence {
