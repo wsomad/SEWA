@@ -251,7 +251,7 @@ i.wallet_show {
 .confirmation {
     background: #252525;
     border-radius: 6px;
-    max-width: 800px;
+    max-width: 750px;
     width: 100%;
     height: 840px; /* Change the height to 1000px */
     margin-top: 200px;
@@ -349,4 +349,24 @@ hr {
 
 .pay_button:active {
     transform: scale(1.02);
+}
+
+.container1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.selected_car {
+    margin-left: 990px;
+    margin-top: 400px;
+}
+
+.selected_car p {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.selected_car img {
+    width: 350px;
+    margin-top: 10px;
 }
