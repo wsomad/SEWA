@@ -4,10 +4,16 @@ home = document.querySelector(".home"),
 walletMenu = document.getElementById("walletMenu"),
 subMenu = document.getElementById("subMenu"),
 formCloseButton = document.querySelector(".form_close");
+serviceLink = document.getElementById('service-link');
+serviceDropdown = document.getElementById('service-dropdown');
 
 formOpenButton.addEventListener("click", () => home.classList.add("show"));
 formOpenButton2.addEventListener("click", () => home.classList.add("show"));
 formCloseButton.addEventListener("click", () => home.classList.remove("show"));
 
 function toggleMenu(){subMenu.classList.toggle("open-menu");}
-function toggleWallet(){subMenu.classList.toggle("open-wallet");}
+
+serviceLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    serviceDropdown.classList.toggle('active');
+});
