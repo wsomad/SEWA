@@ -15,7 +15,7 @@ header {
     width: 100%;
     z-index: 100;
     padding: 0 20px;
-    box-shadow: 0 0 5px 0 #252525; 
+    box-shadow: 0 0 5px 0 #252525;
 }
 
 .nav {
@@ -50,6 +50,11 @@ header {
 
 .nav_link:hover {
     color: white;
+}
+
+.nav button {
+    border: 2px solid #F86A1D;
+    background-color: #F86A1D;
 }
 
 .right {
@@ -267,7 +272,7 @@ i.wallet_show {
 
 .booking_confirmation p {
     margin-bottom: 30px;
-    color: #f9f9f8;
+    color: #F86A1D;
     font-weight: bold;
     font-size: 1.8em;
 }
