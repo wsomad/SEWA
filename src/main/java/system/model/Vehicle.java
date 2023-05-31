@@ -1,5 +1,9 @@
 package system.model;
 
+import java.text.DecimalFormat;
+import java.util.Date;
+import java.text.SimpleDateFormat;
+
 public class Vehicle {
 	private int vehicleid;
 	private boolean availability;
@@ -119,9 +123,15 @@ public class Vehicle {
 	public void setYr_manufacture(int yr_manufacture) {
 		this.yr_manufacture = yr_manufacture;
 	}
-
-	public String getRoadtax_exp_date() {
-		return roadtax_exp_date;
+	//---
+	public Date getRoadtax_exp_date() {
+		Date date = null;
+		try {
+			date = dateFormat.parse(roadtax_exp_date);
+		}catch(Exception e) {
+			System.out.println("Error parsing the custom date: " + e.getMessage());
+		}
+		return date;
 	}
 
 	public void setRoadtax_exp_date(String roadtax_exp_date) {
@@ -136,10 +146,16 @@ public class Vehicle {
 		this.insurance_name = insurance_name;
 	}
 
-	public String getInsurance_exp_date() {
-		return insurance_exp_date;
+	public Date getInsurance_exp_date() {
+		Date date = null;
+		try {
+			date = dateFormat.parse(insurance_exp_date);
+		}catch(Exception e) {
+			System.out.println("Error parsing the custom date: " + e.getMessage());
+		}
+		return date;
 	}
-
+	
 	public void setInsurance_exp_date(String insurance_exp_date) {
 		this.insurance_exp_date = insurance_exp_date;
 	}
@@ -176,5 +192,8 @@ public class Vehicle {
 		this.img_path = img_path;
 	}
 	
+	//Random Instantiation
+	//Date purpose
+	SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 	
 }
