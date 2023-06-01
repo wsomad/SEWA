@@ -34,14 +34,14 @@
         <div class="form_container">
             <i class="fa fa-times form_close"></i>
             <div class="login_form">
-                <form action="\..\user_pages\dashboard_page\user-dashboard.html">
+                <form method="post" action="login">
                     <h2>Sign in</h2>
                     <div class="input_form">
-                        <input type="email" placeholder="Email" required>
+                        <input type="email" name="email" placeholder="Email" required>
                         <i class="fa fa-envelope email"></i>
                     </div>
                     <div class="input_form">
-                        <input type="password" placeholder="Password" required>
+                        <input type="password" name="password" placeholder="Password" required>
                         <i class="fa fa-lock password"></i>
                         <i class="fa fa-eye-slash pw_hide"></i>
                     </div>
