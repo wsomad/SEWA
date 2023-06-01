@@ -10,30 +10,84 @@ body {
 }
 
 header {
+    background-color: #252525;
     position: fixed;
     height: 80px;
     width: 100%;
     z-index: 100;
     padding: 0 20px;
     box-shadow: 0 0 5px 0 #252525;
+    opacity: 0.85;
 }
 
-.nav {
+footer {
+    position: relative;
     max-width: 1100px;
     width: 100%;
-    margin: 0 auto;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    margin-left: 200px;
 }
 
-.nav, 
-.nav_item {
+.foot_container .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top .company_register {
+    color: #F86A1D;
+    font-size: 12px;
+    font-weight: bold;
+    padding-left: 160px;
+}
+
+.top .logo_details img {
+    width: 25px;
+}
+
+.foot_container .top .media_details {
+    display: flex;
+}
+
+.foot_container .top .media_details a {
+    height: 30px;
+    width: 30px;
+    margin: 0 8px;
+    text-align: center;
+    line-height: 30px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #F86A1D;
+    transition: all 0.4s ease;
+}
+
+.top .media_details a:hover {
+    color: white;
+
+}
+
+.nav{
+    max-width: 1100px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+}
+.nav, .nav_items {
     display: flex;
     height: 100%;
     align-items: center;
     justify-content: space-between;
 }
 
-.nav_item {
-    column-gap: 25px;
+.nav_items {
+    column-gap: 35px;
+    justify-content: space-between;
 }
 
 .nav_logo {
@@ -45,23 +99,57 @@ header {
 }
 
 .nav_logo, .nav_link, .button {
-    color: white;
+    color: #F86A1D;
 }
 
 .nav_link:hover {
     color: white;
 }
 
-.nav button {
-    border: 2px solid #F86A1D;
-    background-color: #F86A1D;
+nav ul li a:hover{
+    color: #787675;
 }
 
-.right {
+.nav, .nav_items {
     display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.wallet_show {
+.nav .nav_items li {
+    list-style: none;
+    font-size: 17px;
+}
+
+.sub_nav_link {
+    display: none;
+    position: absolute;
+    background: #252525;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    padding: 5px;
+    list-style-type: none;
+    margin-top: 28px;
+    transition: all 0.3s ease; 
+    flex-direction: column;
+}
+
+.sub_nav_link li a {
+    color: white;
+    text-decoration: none;
+}
+
+.sub_nav_link.active {
+    display: block;
+}
+
+.wallet_profile {
+    display: flex;
+    list-style: none;
+}
+
+.wallet_show, .profile-icon {
     font-size: 26px;
     padding-top: 6px;
     margin-right: 30px;
@@ -89,6 +177,101 @@ header {
     pointer-events: none;
     transition: all 0.5s ease-out;
     padding-bottom: 5px;
+}
+
+.wallet_show:active,
+.profile-icon:active {
+    transform: scale(0.98);
+}
+
+.nav_logo {
+    width: 50px;
+}
+
+.user-pic{
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+.sub-menu-wrap{
+    position: absolute;
+    top: 100%;
+    right: 5px;
+    max-height: 0px;
+    width: 280px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+    background: #252525;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.sub-menu-wrap.open-menu{
+    max-height: 400px;
+    height: 280px;
+}
+
+.sub-menu{
+    padding: 20px;
+    margin: 10px;
+}
+
+.user-info{
+    display: flex;
+    align-items: center;
+}
+
+.user-info h2{
+    color: #F86A1D;
+}
+
+.sub-menu-link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #F9F9F8;
+    margin: 12px 0px;
+    margin-top: 28px;
+}
+
+.sub-menu-link p{
+    width: 100%;
+    color: #F9F9F8;
+    font-size: 16px;
+}
+
+.sub-menu-link i{
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+    padding-left: 5px;
+    font-size: 24px;
+}
+
+.sub-menu-link span{
+    font-size: 25px;
+    transition: transform 0.5s;
+}
+
+.sub-menu-link :hover span{
+    transform: translateX(5px);
+}
+
+.sub-menu-link :hover p{
+    font-weight: 600;
+}
+
+.sub-menu .owner{
+    width: 100%;
+    color: #F9F9F8;
+    font-size: 10px;
+    text-align: center;
+}
+
+.sub-menu .owner_name{
+    margin-top: 25px;
 }
 
 .confirmation_form.show .wallet_container {
@@ -277,10 +460,13 @@ i.wallet_show {
     font-size: 1.8em;
 }
 
-.confirmation_form,
-.second {
+.confirmation_form, .second {
     height: 100vh; 
 } 
+
+.second {
+    height: 300px;
+}
 
 .input_row {
     display: flex;

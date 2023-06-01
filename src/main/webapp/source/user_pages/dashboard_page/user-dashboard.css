@@ -17,6 +17,7 @@ header {
     z-index: 100;
     padding: 0 20px;
     box-shadow: 0 0 5px 0 #252525; 
+    opacity: 0.85;
 }
 
 footer {
@@ -108,6 +109,7 @@ footer {
     list-style-type: none;
     margin-top: 28px;
     transition: all 0.3s ease; 
+    flex-direction: column;
 }
 
 .sub_nav_link li a {
@@ -120,7 +122,7 @@ footer {
 }
 
 .nav_items {
-    column-gap: 25px;
+    column-gap: 10px;
 }
 
 .nav_logo {
@@ -161,6 +163,10 @@ nav ul li a:hover{
 .wallet_show:active,
 .profile-icon:active {
     transform: scale(0.98);
+}
+
+i.wallet_show {
+    font-size: 26px;
 }
 
 .nav_logo {
