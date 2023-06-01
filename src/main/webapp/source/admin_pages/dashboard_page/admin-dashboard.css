@@ -108,7 +108,7 @@ body {
     width: calc(100% - 300px);
     left: 300px;
     min-height: 100vh;
-    background: var(--black2);
+    background: var(--white);
     transition: 0.5s;
 }
 .main-div.active{
@@ -253,7 +253,7 @@ body {
     display: flex;
     justify-content: space-between;
     cursor: pointer;
-    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 7px 25px rgba(0,0,0,0.35);
     z-index: 1;
 }
 
@@ -307,7 +307,7 @@ body {
     min-height: 100px;
     background: var(--white);
     padding: 50px;
-    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 7px 25px rgba(0,0,0,0.35);
     border-radius: 20px;
 }
 
