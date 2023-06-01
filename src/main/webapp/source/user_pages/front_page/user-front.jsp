@@ -121,7 +121,7 @@
         <div class="foot_container">
             <div class="top">
                 <div class="logo_details">
-                    <img src="/source/images/footer.png" alt="">
+                    <img src="https://drive.google.com/uc?export=view&id=1rWwPwfCQUj6RBPxEIzCbLcgGwGl0xU59" alt="">
                 </div>
                 <div class="company_register">
                     <p>Owned by SEWA MALAYSIA SDN. BHD.</p>
