@@ -17,7 +17,6 @@ header {
     z-index: 100;
     padding: 0 20px;
     box-shadow: 0 0 5px 0 #252525; 
-    opacity: 0.85; 
 }
 
 footer {
@@ -102,12 +101,12 @@ footer {
 .sub_nav_link {
     display: none;
     position: absolute;
-    background: transparent;
-    border: 2px solid white;
-    border-radius: 6px;
-    padding: 10px;
+    background: #252525;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    padding: 5px;
     list-style-type: none;
-    margin-top: 5px;
+    margin-top: 28px;
     transition: all 0.3s ease; 
 }
 
@@ -184,7 +183,8 @@ nav ul li a:hover{
     overflow: hidden;
     transition: max-height 0.5s;
     background: #252525;
-    border-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
 }
 
 .sub-menu-wrap.open-menu{
