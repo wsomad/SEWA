@@ -97,6 +97,15 @@ public class User {
 	}
 	
 	public String toString() {
-		return "toString";
+		return 
+				"\nuser id : "+ userid +
+				"\nuser first name : " + user_first_name +
+				"\nuser last name : " + user_last_name +
+				"\nuser username : " + user_uname +
+				"\nuser phonenum : " + user_phone +
+				"\nuser email : " + user_email +
+				"\nuser password : " + user_pass +
+				"\nuser wallet : " + user_wallet
+				;
 	}
 }
