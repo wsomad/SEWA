@@ -23,6 +23,7 @@ public class LoginController extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		User user = new User();
+		RequestDispatcher dispatcher = null;
 		
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
@@ -38,16 +39,21 @@ public class LoginController extends HttpServlet {
 			if(user.getUser_email().equals(email) && user.getUser_pass().equals(password)) {
 				HttpSession session = request.getSession();
 				session.setAttribute("userobj", user);
-				response.sendRedirect("/PROJECT/src/main/webapp/source/user_pages/dashboard_page/user-dashboard.jsp");
-				//RequestDispatcher dispatcher = request.getRequestDispatcher("user-dashboard.jsp");
+				//response.sendRedirect("/PROJECT/src/main/webapp/test.jsp");
+				//response.sendRedirect("/PROJECT/src/main/webapp/source/user_pages/dashboard_page/user-dashboard.jsp");
+				dispatcher = request.getRequestDispatcher("/source/user_pages/dashboard_page/user-dashboard.jsp");
 				//Test
 				System.out.println("Second Validation Succesful!");
 			}else {
 				request.setAttribute("status", "failed");
-				RequestDispatcher dispatcher = request.getRequestDispatcher("/PROJECT/src/main/webapp/source/user_pages/front_page/user-front.jsp");
+				dispatcher = request.getRequestDispatcher("/source/user_pages/front_page/user-front.jsp");
 				//Test
 				System.out.println("Second Validation UnSuccesful!");
 			}
+			dispatcher.forward(request, response);
+			//Test
+			System.out.println("forwarded");
+			
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
