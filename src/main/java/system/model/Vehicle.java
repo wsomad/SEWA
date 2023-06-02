@@ -23,6 +23,26 @@ public class Vehicle {
 	private double rental_pr_hr;
 	private String img_path;
 	
+	public Vehicle() {
+		vehicleid = 0;
+		availability = false;
+		registration_num = "default";
+		chasis_num = "default";
+		engine_num = "default";
+		v_brand = "default";
+		v_model = "default";
+		v_type = "default";
+		v_color = "default";
+		yr_manufacture = 0;
+		roadtax_exp_date = "dd/MM/yyyy";
+		insurance_name = "default";
+		insurance_exp_date = "dd/MM/yyyy";
+		insurance_type = "default";
+		description = "default";
+		rental_pr_hr = 0.0;
+		img_path = "default";
+	}
+	
 	public Vehicle(int id, boolean avail, String reg_num, String chas_num, String eng_num, String brand, String model, String type, String color, int yr_manu,
 			String roadtax_exp_date, String insur_name, String insurance_exp_date, String insur_type, String desc, double rental_pr_hr, String img_path) {
 		setVehicleid(id);
@@ -190,6 +210,28 @@ public class Vehicle {
 
 	public void setImg_path(String img_path) {
 		this.img_path = img_path;
+	}
+	
+	public String toString() {
+	    return "Vehicle{" +
+	            "vehicleid=" + vehicleid +
+	            ", availability=" + availability +
+	            ", registration_num='" + registration_num + '\'' +
+	            ", chasis_num='" + chasis_num + '\'' +
+	            ", engine_num='" + engine_num + '\'' +
+	            ", v_brand='" + v_brand + '\'' +
+	            ", v_model='" + v_model + '\'' +
+	            ", v_type='" + v_type + '\'' +
+	            ", v_color='" + v_color + '\'' +
+	            ", yr_manufacture=" + yr_manufacture +
+	            ", roadtax_exp_date='" + roadtax_exp_date + '\'' +
+	            ", insurance_name='" + insurance_name + '\'' +
+	            ", insurance_exp_date='" + insurance_exp_date + '\'' +
+	            ", insurance_type='" + insurance_type + '\'' +
+	            ", description='" + description + '\'' +
+	            ", rental_pr_hr=" + rental_pr_hr +
+	            ", img_path='" + img_path + '\'' +
+	            '}';
 	}
 	
 	//Random Instantiation
