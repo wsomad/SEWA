@@ -18,6 +18,7 @@ public class UserDAO {
 		Connection con = null;
 		
 		try {
+			System.out.println(user.toString());
 			con = DriverManager.getConnection("jdbc:mysql://bxx0oim5clt3tz9xxlzj-mysql.services.clever-cloud.com:3306/bxx0oim5clt3tz9xxlzj?serverTimezone=Asia/Kuala_Lumpur", "uwaq62nkjirwnjub", "mRrDGZdA1u7UPAXYI5Rm");
 			PreparedStatement pst = con.prepareStatement(insert_sql);
 			pst.setString(1, user.getUser_first_name());
@@ -31,13 +32,13 @@ public class UserDAO {
 			rowCount = pst.executeUpdate();
 		}catch (SQLException e) {
 			e.printStackTrace();
-		}finally {
+		}/*finally {
 			try {
 				con.close();
 			}catch(SQLException e) {
 				e.printStackTrace();
 			}
-		}
+		}*/
 		return rowCount;
 	}
 	

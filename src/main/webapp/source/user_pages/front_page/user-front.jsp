@@ -71,7 +71,7 @@
                         <i class="fa fa-user email"></i>
                     </div>
                     <div class="input_form">
-                        <input type="email" namme="email" placeholder="Email" required>
+                        <input type="email" name="email" placeholder="Email" required>
                         <i class="fa fa-envelope email"></i>
                     </div>
                     <div class="input_form">

@@ -36,9 +36,7 @@ public class RegistrationController extends HttpServlet {
 		System.out.println(user.toString());
 		
 		try {
-			System.out.println("\ntest-1");
 			int rowCount = userdao.registerUser(user);
-			System.out.println("\ntest-2");
 			dispatcher = request.getRequestDispatcher("user-front.jsp");
 			if(rowCount > 0) {
 				request.setAttribute("status", "success");
