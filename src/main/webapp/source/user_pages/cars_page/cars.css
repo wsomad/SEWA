@@ -223,3 +223,14 @@ i.wallet_show {
 .sub-menu .owner_name{
     margin-top: 25px;
 }
+
+.List {
+	margin-top: 200px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+.panel {
+	margin-top: 200px;
+}
