@@ -10,20 +10,62 @@ body {
 }
 
 header {
-    background-color: transparent;
+    background-color: #252525;
     position: fixed;
     height: 80px;
     width: 100%;
     z-index: 100;
     padding: 0 20px;
-    box-shadow: 0 0 5px 0 #252525;  
+    box-shadow: 0 0 5px 0 #252525; 
+    opacity: 0.85;
 }
 
 footer {
-    position: fixed;
+    position: relative;
+    max-width: 1100px;
     width: 100%;
     bottom: 0;
     left: 0;
+    padding: 20px;
+    margin-left: 200px;
+}
+
+.foot_container .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top .company_register {
+    color: #F86A1D;
+    font-size: 12px;
+    font-weight: bold;
+    padding-left: 160px;
+}
+
+.top .logo_details img {
+    width: 25px;
+}
+
+.foot_container .top .media_details {
+    display: flex;
+}
+
+.foot_container .top .media_details a {
+    height: 30px;
+    width: 30px;
+    margin: 0 8px;
+    text-align: center;
+    line-height: 30px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #F86A1D;
+    transition: all 0.4s ease;
+}
+
+.top .media_details a:hover {
+    color: white;
+
 }
 
 .home2 {
@@ -45,6 +87,52 @@ footer {
     position: relative;
 }
 
+.nav, .nav_items {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav .nav_items li {
+    list-style: none;
+    font-size: 17px;
+}
+
+.sub_nav_link {
+    display: none;
+    position: absolute;
+    background: #252525;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    padding: 5px;
+    list-style-type: none;
+    margin-top: 28px;
+    transition: all 0.3s ease; 
+    flex-direction: column;
+}
+
+.sub_nav_link li a {
+    color: white;
+    text-decoration: none;
+}
+
+.sub_nav_link.active {
+    display: block;
+}
+
+.nav_items {
+    column-gap: 10px;
+}
+
+.nav_logo {
+    width: 50px;
+}
+
+.nav_link {
+    text-decoration: none;
+}
+
 nav ul{
     text-align: right;
 }
@@ -64,36 +152,6 @@ nav ul li a:hover{
     color: #787675;
 }
 
-.search{
-    position: relative;
-    width: 1000px;
-    margin: 0 10px;
-    padding-left: 10px;
-}
-
-.search label{
-    position: relative;
-    width: 100%;
-}
-
-.search label input{
-    width: 100%;
-    height: 40px;
-    border-radius: 10px;
-    padding: 5px 20px;
-    padding-left: 30px;
-    font-size: 15px;
-    outline: none;
-    border: 1px solid #252525;
-}
-
-.search label i{
-    position: absolute;
-    top:0;
-    left: 10px;
-    font-size: 1.2em;
-}
-
 .wallet_profile {
     display: flex;
 }
@@ -105,6 +163,10 @@ nav ul li a:hover{
 .wallet_show:active,
 .profile-icon:active {
     transform: scale(0.98);
+}
+
+i.wallet_show {
+    font-size: 26px;
 }
 
 .nav_logo {
@@ -127,7 +189,8 @@ nav ul li a:hover{
     overflow: hidden;
     transition: max-height 0.5s;
     background: #252525;
-    border-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
 }
 
 .sub-menu-wrap.open-menu{
@@ -208,56 +271,12 @@ nav ul li a:hover{
     aspect-ratio: 16/9;
     overflow-x: auto;
     scroll-behavior: smooth;
-    box-shadow: inset 0 0 70px 50px black;
-    animation-name: animate;
-    animation-direction: alternate-reverse;
-    animation-play-state: running;
-    animation-timing-function: ease-in-out;
-    animation-duration: 5s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
 }
-
-@keyframes animate {
-    0% {
-        background-image: url("https://drive.google.com/uc?export=view&id=1waQNxZ3hg0sNowuQk8p7roXW48mMo3K3");
-    }
-    33% {
-        background-image: url("https://drive.google.com/uc?export=view&id=1nnPd7snm-L6PnA42OAX7b0Uvl_tO9G67");
-    }
-}
-
-.slider::-webkit-scrollbar {
-    display: none;
-}  
 
 .slider img {
     flex: 1 0 100%;
     scroll-snap-align: start;
     object-fit: cover;
-}
-
-.slider_nav {
-    display: flex;
-    column-gap: 1rem;
-    position: absolute;
-    bottom: 1.25rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-}
-
-.slider_nav a {
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 50%;
-    background-color: #F9F9F8;
-    opacity: 0.75;
-    transition: opacity ease 250ms;
-}
-
-.slider_nav a:hover {
-    opacity: 1;
 }
 
 .wallet_container {

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="user-dashboard.css">
+    <link rel="stylesheet" type="text/css" href="/PROJECT/source/user_pages/dashboard_page/user-dashboard.css">
     <link rel="icon" type="images/png" href="https://drive.google.com/uc?export=view&id=1WnCOPug2C25vqv-_nxG6QvVp2VSMVnp1">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -25,7 +25,7 @@
                         <li><a href="../p2p_page/p2p-register.html">Rent as Peer</a></li>
                     </ul>
                 </li>
-                <li><a href="car.html" class="nav_link">Our Cars</a></li>
+                <li><a href="CarPageController" class="nav_link">Our Cars</a></li>
             </ul>
             <ul>
                 <div class="wallet_profile">
@@ -153,8 +153,8 @@
                         <button class="booking_button">Book Now</button>
                     </div>
                     <div class="booking_more">
-                        <a href=""><i class='bx bx-dots-horizontal-rounded dots_more'></i></a>
-                        <a href=""><h4>More Cars</h4></a>
+                        <a href="CarPageController"><i class='bx bx-dots-horizontal-rounded dots_more'></i></a>
+                        <a href="CarPageController"><h4>More Cars</h4></a>
                     </div>
                 </div>
             </div>

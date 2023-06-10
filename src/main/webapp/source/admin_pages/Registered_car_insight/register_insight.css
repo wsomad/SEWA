@@ -108,7 +108,7 @@ body {
     width: calc(100% - 300px);
     left: 300px;
     min-height: 100vh;
-    background: var(--white);
+    background: var(--black2);
     transition: 0.5s;
 }
 .main-div.active{
@@ -184,7 +184,6 @@ body {
     transition: max-height 0.5s;
     background: #F86A1D;
     border-radius: 6px;
-    z-index: 1000;
 }
 .sub-menu-wrap.open-menu{
     max-height: 400px;
@@ -234,236 +233,31 @@ body {
     color: var(--black1);
 }
 
-.cardBox
+.graphBox
 {
     position: relative;
     width: 100%;
     padding: 20px;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-gap: 30px;;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 30px;
+    min-height: 200px;
 }
-
-.cardBox .card
+.graphBox .box
 {
     position: relative;
-    background: var(--white);
-    padding: 30px;
-    border-radius: 20px;
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-    box-shadow: 0 7px 25px rgba(0,0,0,0.35);
-    z-index: 1;
-}
-
-.cardBox .card .numbers
-{
-    position: relative;
-    font-weight: 500;
-    font-size: 2.5em;
-    color: var(--orange);
-}
-
-.cardBox .card .cardName
-{
-    color: var(--black1);
-    font-size: 1.1em;
-    margin-top:5px;
-}
-
-.cardBox .card .iconBx
-{
-    font-size: 3.5em;
-    color: var(--black1);
-}
-
-.cardBox .card:hover
-{
-    background: var(--orange);
-    transition: 0.3s;
-}
-
-.cardBox .card:hover .numbers,
-.cardBox .card:hover .cardName,
-.cardBox .card:hover .iconBx
-{
-    color: var(--white);
-}
-
-.details
-{
-    position: relative;
-    width: 100px;
+    background: #fff;
     padding: 20px;
-    display: flex;
-    
-}
-
-.details .recentOrders
-{
-    position: relative;
-    display: grid;
-    min-height: 100px;
-    background: var(--white);
-    padding: 50px;
-    box-shadow: 0 7px 25px rgba(0,0,0,0.35);
+    width: 1000px;
+    box-shadow: 0 7px 25px rgb(0,0,0,0.08);
     border-radius: 20px;
 }
 
-.cardHeader
+.graphBox .chart-title
 {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-
-}
-.cardHeader h2
-{
-    font-weight: 600;
-    color: var(--orange);
-}
-
-.details table
-{
-    width: 1200px;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
-
-.details table thead td
-{
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
     font-weight: 600;
 }
-
-.details .recentOrders table tr
-{
-    color: var(--black1);
-    
-}
-
-.details .recentOrders table tr:last-child
-{
-    border-bottom: none;
-}
-
-.details .recentOrders table tbody tr:hover
-{
-    background: var(--orange);
-    color: var(--white);
-}
-
-.details .recentOrders table tr td
-{
-    padding: 10px;
-    
-}
-
-.details .recentOrders table tr td:last-child
-{
-    text-align:end;
-}
-
-.details .recentOrders table tr td:nth-child(2)
-{
-    text-align: center;
-}
-
-.details .recentOrders table tr td:nth-child(3)
-{
-    text-align: end;
-}
-
-.details .recentOrders table tr td:nth-child(4)
-{
-    text-align: end;
-}
-
-.details .recentOrders table tr td:nth-child(5)
-{
-    text-align: end;
-}
-
-.renting
-{
-    padding: 2px 4px;
-    background: rgb(0, 243, 158);
-    color: var(--white);
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.booking
-{
-    padding: 2px 4px;
-    background: #f00;
-    color: var(--white);
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.exceed
-{
-    padding: 2px 4px;
-    background: blue;
-    color: var(--white);
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.header{
-    width: 90%;
-    height: 100px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.items-controller{
-    flex-shrink: 0;
-    display: flex;
-    align-content: center;
-    align-items: center;
-    
-}
-
-.bottom-field{
-    width: 100%;
-    padding: 20px;
-    margin-top: 20px;
-}
-.pagination{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.pagination li{
-  list-style: none;
-  padding: 2px;
-  margin: 10px;
-  flex-shrink: 0;
-  text-align: center;
-  border-radius: 5px;
-  border: 1px solid var(--orange);
-  color: var(--orange);
-  transition: 0.3s;
-}
-.pagination li.active{
-  background: var(--orange);
-  color: white;
-  border-color: var(--orange);
-
-}
-.pagination li a{
-  text-decoration: none;
-  padding: 3px 8px;
-  color: inherit;
-  display: block;
-  font-family: sans-serif;
-  font-size: 13px;
-}
-
-
