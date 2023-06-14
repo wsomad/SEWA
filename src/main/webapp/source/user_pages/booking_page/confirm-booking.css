@@ -10,14 +10,12 @@ body {
 }
 
 header {
-    background-color: #252525;
+    background-color: transparent;
     position: fixed;
     height: 80px;
     width: 100%;
     z-index: 100;
     padding: 0 20px;
-    box-shadow: 0 0 5px 0 #252525;
-    opacity: 0.85;
 }
 
 footer {
@@ -65,7 +63,6 @@ footer {
 
 .top .media_details a:hover {
     color: white;
-
 }
 
 .nav{
@@ -75,9 +72,10 @@ footer {
     display: flex;
     height: 100%;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     position: relative;
 }
+
 .nav, .nav_items {
     display: flex;
     height: 100%;
@@ -103,7 +101,12 @@ footer {
 }
 
 .nav_link:hover {
-    color: white;
+    color: #787675;
+}
+
+nav ul li a{
+    color: #252525;
+    font-weight: bold;
 }
 
 nav ul li a:hover{
@@ -147,6 +150,10 @@ nav ul li a:hover{
 .wallet_profile {
     display: flex;
     list-style: none;
+}
+
+.wallet_profile li a {
+    color: #F86A1D;
 }
 
 .wallet_show, .profile-icon {

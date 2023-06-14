@@ -16,7 +16,6 @@ header {
     width: 100%;
     z-index: 100;
     padding: 0 20px;
-    box-shadow: 0 0 5px 0 #252525; 
 }
 
 .nav{
@@ -80,53 +79,183 @@ nav ul li{
 }
 
 nav ul li a{
-    color: #F86A1D;
-}
-
-nav ul li a:hover{
-    color: #787675;
-}
-
-.search{
-    position: relative;
-    width: 1000px;
-    margin: 0 30px;
-    padding-left: 10px;
-}
-
-.search label{
-    position: relative;
-    width: 100%;
-}
-
-.search label input{
-    width: 100%;
-    height: 40px;
-    border-radius: 10px;
-    padding: 5px 20px;
-    padding-left: 30px;
-    font-size: 15px;
-    outline: none;
-    border: 1px solid #252525;
-}
-
-.search label i{
-    position: absolute;
-    top:0;
-    left: 10px;
-    font-size: 1.2em;
+    color: #252525;
+    font-weight: bold;
 }
 
 .wallet_profile {
     display: flex;
 }
 
+.wallet_profile li a {
+    color: #F86A1D;
+}
+
 .profile-icon{
     font-size: 28px;
 }
 
+.wallet_container {
+    position: fixed;
+    max-width: 350px;
+    width: 100%;
+    height: 250px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 101;
+    background: #252525;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease-out;
+    padding-bottom: 5px;
+}
+
 .wallet_show:active,
 .profile-icon:active {
+    transform: scale(0.98);
+}
+
+.home.show .wallet_container {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.home::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease-out;
+}
+
+.form_close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #F9F9F8;
+    font-size: 22px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+i.wallet_show {
+    font-size: 26px;
+}
+
+.wallet_title {
+    color: #F86A1D;
+    font-size: 16px;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.wallet_title span {
+    font-size: 14px;
+}
+
+.topup .input_form {
+    display: flex;
+    position: relative;
+    max-width: 270px;
+    width: 100%;
+    height: 40px;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.topup .input_form input {
+    height: 100%;
+    width: 100%;;
+    border: 1px solid;
+    border-radius: 6px;
+    outline: none;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+.topup_wallet {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: #F86A1D;
+    font-size: 30px;
+    opacity: 0.7;
+    cursor: pointer;
+    padding-right: 3px;
+}
+
+.current_balance p {
+    padding-left: 20px;
+    margin-top: 5px;
+    font-size: 13px;
+    color: #F9F9F8;
+}
+
+.amount_container {
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.select_amount {
+    display: flex;
+    height: 30px;
+    margin-top: 5px;
+}
+
+.amount {
+    background: #F86A1D;
+    color: #edf0f1;
+    border-radius: 4px;
+    margin-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    font-size: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.amount button {
+    width: 60px;
+    background-color: transparent;
+    border: none;
+    color: #edf0f1;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.amount button:hover {
+    transform: scale(0.95);
+}
+
+.topup .owner {
+    width: 100%;
+    color: #F9F9F8;
+    font-size: 10px;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.button {
+    padding: 8px 24px;
+    border: 2px solid white;
+    background: #F86A1D;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.button:active {
     transform: scale(0.98);
 }
 
@@ -224,13 +353,163 @@ i.wallet_show {
     margin-top: 25px;
 }
 
-.List {
-	margin-top: 200px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
+.search{
+    position: relative;
+    width: 1000px;
+    margin: 0 30px;
+    padding-left: 10px;
 }
 
-.panel {
-	margin-top: 200px;
+.search label{
+    position: relative;
+    width: 100%;
+}
+
+.search label input{
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    padding: 5px 20px;
+    padding-left: 30px;
+    font-size: 15px;
+    outline: none;
+    border: 1px solid #252525;
+}
+
+.search label i{
+    position: absolute;
+    top:0;
+    left: 10px;
+    font-size: 1.2em;
+}
+
+.booking_car {
+    max-width: 1100px;
+    width: 100%;
+    position: absolute;
+    margin-top: 100px;
+    padding-left: 220px;
+    padding-right: 220px;
+}
+
+.booking_word p {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.booking_word h4 {
+    padding-top: 10px;
+}
+
+.booking_row {
+    display: flex;
+}
+
+.booking_container {
+    width: 330px;
+    height: 360px;
+    margin-top: 20px;
+    margin-right: 40px;
+    position: relative;
+    padding: 1.8rem;
+    border-radius: 10px;
+    transition: 0.5s ease-out;
+    overflow: visible;
+}
+
+.booking_more {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.booking_more i.dots_more {
+    color: #252525;
+    font-size: 2rem;
+}
+
+.booking_more a {
+    text-decoration: none;
+}
+
+.booking_more h4 {
+    color: #252525;
+    font-size: 13px;
+}
+   
+.booking_details {
+    color: black;
+    gap: .5em;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.car_image {
+    height: 180px;
+}
+
+.car_image img {
+    width: 280px;
+}
+
+.car_name,
+.car_rate  {
+    padding-top: 15px;
+}
+
+.car_rate {
+    float: right;
+}
+
+.car_name p,
+.car_rate p {
+    color: #252525;
+    font-weight: bold;
+}
+
+.book_title {
+    font-size: 22px;
+}
+
+.book_rate {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.rate_details {
+    color: #888;
+}
+
+.booking_button {
+    transform: translate(-50%, 125%);
+    width: 60%;
+    border-radius: 10px;
+    border: none;
+    background-color: #252525;
+    color: #fff;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+}
+
+.booking_button:active {
+    transform: scale(0.98);
+}
+
+.booking_container:hover {
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+   
+.booking_container:hover .booking_button {
+    transform: translate(-50%, 50%);
+    opacity: 1;
 }
