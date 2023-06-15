@@ -18,6 +18,10 @@ header {
     padding: 0 20px;
 }
 
+.home2 {
+    height: 3000px;
+}
+
 .nav{
     max-width: 1100px;
     width: 100%;
@@ -388,8 +392,8 @@ i.wallet_show {
     width: 100%;
     position: absolute;
     margin-top: 100px;
-    padding-left: 220px;
-    padding-right: 220px;
+    padding-left: 210px;
+    padding-right: 210px;
 }
 
 .booking_word p {
@@ -406,12 +410,12 @@ i.wallet_show {
 }
 
 .booking_container {
-    width: 330px;
-    height: 360px;
+    width: 350px;
+    height: 450px;
     margin-top: 20px;
-    margin-right: 40px;
+    margin-right: 20px;
     position: relative;
-    padding: 1.8rem;
+    padding: 1.2rem;
     border-radius: 10px;
     transition: 0.5s ease-out;
     overflow: visible;
@@ -471,6 +475,45 @@ i.wallet_show {
     font-weight: bold;
 }
 
+.features_container {
+    margin-top: 15px;
+}
+
+.features_container p {
+    font-weight: bold;
+}
+
+.features {
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.features_box {
+
+}
+
+.features_info {
+    width: 70px;
+    height: 60px;
+    margin-right: 10px;
+    justify-content: space-between;
+    border-radius: 6px;
+    border: 2px solid #888;
+    box-shadow: rgba(0, 0, 0, 0.1);
+}
+
+.features_type {
+    font-size: 12px;
+}
+
+.features_info i {
+    font-size: 25px;
+    color: #F86A1D;
+}
+
 .book_title {
     font-size: 22px;
 }
@@ -478,6 +521,10 @@ i.wallet_show {
 .book_rate {
     font-size: 17px;
     font-weight: bold;
+}
+
+.book_rate span {
+    font-size: 12px;
 }
 
 .rate_details {
