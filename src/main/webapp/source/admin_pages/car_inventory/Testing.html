@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Boxicons CSS -->
+    <link rel="stylesheet" href="Testing.css">
+    <link rel="icon" type="images/png" href="https://drive.google.com/uc?export=view&id=1WnCOPug2C25vqv-_nxG6QvVp2VSMVnp1">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+
+    <title>Testing</title>
+    <title>sidebar</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="nav">
+            <ul>
+                <li>
+                    <a href="a">
+                        <span class="icon"><img src="\src\main\webapp\source\images\footer.png" class="nav_logo"></span>
+                        <span class="title">SEWA</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="a">
+                        <span class="icon"><i class='bx bx-user'></i></span>
+                        <span class="title">Admin dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="a">
+                        <span class="icon"><i class='bx bxs-car'></i></span>
+                        <span class="title">Car Inventory</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="a">
+                        <span class="icon"><i class='bx bx-line-chart'></i></span>
+                        <span class="title">Profit Insight</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="a">
+                        <span class="icon"><i class='bx bxs-bar-chart-alt-2' ></i></span>
+                        <span class="title">Car Insight</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- main -->
+    <div class="main-div">
+        <div class="topbar">
+            <div class="toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+             <!-- search -->
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <i class='bx bx-search-alt-2'></i>
+                    </label>
+                </div>
+             <!-- user img -->
+                <div class="user">
+                    <i class='bx bx-user-circle profile-icon' onclick="toggleMenu()"></i>
+                </div>
+        </div>
+        <!-- submenu -->
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <div class="user-info">
+                     <h2>Hello user</h2>
+                </div>
+                <a href="a" class="sub-menu-link">
+                    <i class='bx bxs-edit'></i>
+                        <p>Edit profile</p>
+                </a>
+                <a href="a" class="sub-menu-link">
+                    <i class='bx bx-cog'></i>
+                        <p>Setting</p>
+                </a>
+                <a href="a" class="sub-menu-link">
+                    <i class='bx bx-log-out' ></i>
+                        <p>Log out</p>
+                </a>
+            </div>
+        </div>
+        <!-- start code here -->
+<!-- table -->        
+<div class="details">
+    <div class="inventory">
+        <div class="cardHeader" class="items-controller"  id="itemperpage" value="15">
+            <h2>Inventory</h2>
+        </div>
+        <section id="field">
+        <table id="orders">
+            <thead>
+                <tr>
+                    <td>Vehicle ID</td>
+                    <td>Registration Number</td>
+                    <td>Brand</td>
+                    <td>Model</td>
+                    <td>Type</td>
+                    <td>Colour</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ali</td>
+                    <td>2021</td>
+                    <td>3/4/2022</td>
+                    <td>5/5/2023</td>
+                    <td>30</td>
+                    <td>30</td>
+                    <td><button><i class="fa fa-eye"></i></button>
+                        <button><i class="fa fa-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ali</td>
+                    <td>2021</td>
+                    <td>3/4/2022</td>
+                    <td>5/5/2023</td>
+                    <td>30</td>
+                    <td>30</td>
+                    <td><button><i class="fa fa-eye"></i></button>
+                        <button><i class="fa fa-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ali</td>
+                    <td>2021</td>
+                    <td>3/4/2022</td>
+                    <td>5/5/2023</td>
+                    <td>30</td>
+                    <td>30</td>
+                    <td><button><i class="fa fa-eye"></i></button>
+                        <button><i class="fa fa-trash"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ali</td>
+                    <td>2021</td>
+                    <td>3/4/2022</td>
+                    <td>5/5/2023</td>
+                    <td>30</td>
+                    <td>30</td>
+                    <td><button><i class="fa fa-eye"></i></button>
+                        <button><i class="fa fa-trash"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </section>
+        <div class="bottom-field">
+            <ul class="pagination">
+                <li class="prev"><a href="#" id="prev">&#139;</a></li>
+                
+                <li class="next"><a href="#" id="next">&#155;</a></li>
+            </ul>
+<!----Button--->
+                
+                    <a href="#" class="button" id="button">ADD</a>
+              
+             <div class="popup">
+                <div class="popup-content">
+                <img src="close.png" alt="close" class="close">
+                    <input type="text" placeholder="Vechile Id">
+                    <input type="text" placeholder="Registration Number">
+                    <input type="text" placeholder="Brand">
+                    <input type="text" placeholder="Model">
+                    <input type="text" placeholder="Type">
+                    <input type="text" placeholder="Colour">
+        
+                <a href="#" class="button" id="button">submit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <!---
+        <div class="details">
+            <div class="table-box">
+
+                    <div class="cardHeader">
+                        <h2>Inventory</h2>
+                    </div>
+                    <section>
+                    <table>
+                        <section class="header">
+                        <tr>
+                            <th>No.</th>
+                            <th>Vechile Id</th>
+                            <th>Regulation Number</th>
+                            <th>Brand</th>
+                            <th>Model</th>
+                            <th>Type</th>
+                            <th>Colour</th>
+                            <th>Action</th>
+                        </tr>
+                        </section>
+                        <tr>
+                            <td>Hello world</td>
+                            <td>Hello world</td>
+                            <td>Hello world</td>
+                            <td>Hello world</td>
+                            <td>Hello world</td>
+                            <td>Hello world</td>
+                            <td>Hello world</td>
+                            <td>
+                                <button><i class="fa fa-eye"></i></button>
+                                <button><i class="fa fa-trash"></i></button>
+                            </td>                          
+                        </tr>
+                    </table>
+                </section>
+            </div>
+        </div>       
+           
+            <section class="upper-btn-box">
+                <div class="left-box">
+                    <button><i class="fa fa-plus">Add</i></button>
+                </div>
+             </section>
+        -->
+        <!------Footer-->
+    <section class="footer">
+    <h4 class="footer">About Us</h4>
+        <p>What you wear is how you present yourself to the world, especially today, when human contacts are so quick. Fashion is instant language." <br>"Fashion should be a form of escapism, and not a form of imprisonment." "Fashion is like eating; 
+            You shouldn't stick to the same menu."</p>
+            <div class="icons">
+                    <i class="fa fa-facebook"></i>
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-linkedin"></i>
+            </div>
+    </section>
+    </div>
+
+        <script src="car-inv.js"></script>
+</body>
+</html>
