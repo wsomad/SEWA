@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #f86a1d;
+    background-color: #f9f9f8;
 }
 
 header {
@@ -15,6 +15,7 @@ header {
     width: 100%;
     z-index: 100;
     padding: 0 20px;
+    box-shadow: 0 0 5px 0 #252525; 
 }
 
 footer {
@@ -61,7 +62,7 @@ footer {
 .button {
     padding: 8px 24px;
     border: 2px solid;
-    background: transparent;
+    background: #F86A1D;
     border-radius: 6px;
     cursor: pointer;
 }
@@ -74,23 +75,19 @@ footer {
 .nothing {
     height: 100vh; 
     display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .form_container {
     background: #252525;
     border-radius: 6px;
-    max-width: 800px;
+    max-width: 770px;
     width: 100%;
     height: auto;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     padding-right: 150px;
     box-shadow: rgba(0, 0, 0, 10);
-    margin-top: 270px;
+    margin-top: 130px;
+    margin-left: 210px;
     padding: 10px 20px;
 }
 
