@@ -5,46 +5,44 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     background-color: #F9F9F8;
 }
 
-.header {
+header {
+    background-color: transparent;
     position: fixed;
-    top: 0;
-    left: 0;
     height: 80px;
     width: 100%;
     z-index: 100;
     padding: 0 20px;
 }
 
-.nav {
-    max-width: 1100px;
-    width: 100%;
-    margin: 0 auto;
+.home2 {
+    height: 3000px;
 }
 
-.nav, .nav_items {
+.nav{
+    max-width: 1100px;
+    width: 100%;
+    margin: auto;
     display: flex;
     height: 100%;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 .nav .nav_items li {
     list-style: none;
+    font-size: 17px;
 }
 
 .sub_nav_link {
     display: none;
     position: absolute;
     background: transparent;
-    border: 2px solid #f86a1d;
+    border: 2px solid white;
     border-radius: 6px;
     padding: 10px;
     list-style-type: none;
@@ -53,7 +51,7 @@ body {
 }
 
 .sub_nav_link li a {
-    color: #f86a1d;
+    color: white;
     text-decoration: none;
 }
 
@@ -73,11 +71,190 @@ body {
     text-decoration: none;
 }
 
-.button {
+nav ul{
+    text-align: right;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+    color: #F86A1D;
+}
+
+nav ul li a{
+    color: #252525;
+    font-weight: bold;
+}
+
+.wallet_profile {
+    display: flex;
+}
+
+.wallet_profile li a {
+    color: #F86A1D;
+}
+
+.profile-icon{
+    font-size: 28px;
+}
+
+.wallet_container {
+    position: fixed;
+    max-width: 350px;
+    width: 100%;
+    height: 250px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 101;
+    background: #252525;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease-out;
+    padding-bottom: 5px;
+}
+
+.wallet_show:active,
+.profile-icon:active {
+    transform: scale(0.98);
+}
+
+.home.show .wallet_container {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.home::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease-out;
+}
+
+.form_close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
     color: #F9F9F8;
-    background: #f86a1d;
+    font-size: 22px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+i.wallet_show {
+    font-size: 26px;
+}
+
+.wallet_title {
+    color: #F86A1D;
+    font-size: 16px;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.wallet_title span {
+    font-size: 14px;
+}
+
+.topup .input_form {
+    display: flex;
+    position: relative;
+    max-width: 270px;
+    width: 100%;
+    height: 40px;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.topup .input_form input {
+    height: 100%;
+    width: 100%;;
+    border: 1px solid;
+    border-radius: 6px;
+    outline: none;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+.topup_wallet {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: #F86A1D;
+    font-size: 30px;
+    opacity: 0.7;
+    cursor: pointer;
+    padding-right: 3px;
+}
+
+.current_balance p {
+    padding-left: 20px;
+    margin-top: 5px;
+    font-size: 13px;
+    color: #F9F9F8;
+}
+
+.amount_container {
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.select_amount {
+    display: flex;
+    height: 30px;
+    margin-top: 5px;
+}
+
+.amount {
+    background: #F86A1D;
+    color: #edf0f1;
+    border-radius: 4px;
+    margin-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    font-size: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.amount button {
+    width: 60px;
+    background-color: transparent;
+    border: none;
+    color: #edf0f1;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.amount button:hover {
+    transform: scale(0.95);
+}
+
+.topup .owner {
+    width: 100%;
+    color: #F9F9F8;
+    font-size: 10px;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.button {
     padding: 8px 24px;
-    border: 2px solid;
+    border: 2px solid white;
+    background: #F86A1D;
     border-radius: 6px;
     cursor: pointer;
 }
@@ -86,15 +263,101 @@ body {
     transform: scale(0.98);
 }
 
-.nav_logo, .nav_link {
-    color: #f86a1d;
+i.wallet_show {
+    font-size: 26px;
 }
 
-.nav_link:hover {
-    color: #f86a1d;
+.nav_logo {
+    width: 50px;
 }
 
-.record_container1 {
+.user-pic{
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+.sub-menu-wrap{
+    position: absolute;
+    top: 100%;
+    right: 5px;
+    max-height: 0px;
+    width: 280px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+    background: #252525;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.sub-menu-wrap.open-menu{
+    max-height: 400px;
+    height: 280px;
+}
+
+.sub-menu{
+    padding: 20px;
+    margin: 10px;
+}
+
+.user-info{
+    display: flex;
+    align-items: center;
+}
+
+.user-info h2{
+    color: #F86A1D;
+}
+
+.sub-menu-link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #F9F9F8;
+    margin: 12px 0px;
+    margin-top: 28px;
+}
+
+.sub-menu-link p{
+    width: 100%;
+    color: #F9F9F8;
+    font-size: 16px;
+}
+
+.sub-menu-link i{
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+    padding-left: 5px;
+    font-size: 24px;
+}
+
+.sub-menu-link span{
+    font-size: 25px;
+    transition: transform 0.5s;
+}
+
+.sub-menu-link :hover span{
+    transform: translateX(5px);
+}
+
+.sub-menu-link :hover p{
+    font-weight: 600;
+}
+
+.sub-menu .owner{
+    width: 100%;
+    color: #F9F9F8;
+    font-size: 10px;
+    text-align: center;
+}
+
+.sub-menu .owner_name{
+    margin-top: 25px;
+}
+
+.home2 {
     min-height: calc(900px - 80px);
     height: 100vh;
     display: flex;
@@ -102,27 +365,103 @@ body {
     align-items: center;
 }
 
-.main_div {
+.activity {
     max-width: 1100px;
     width: 100%;
     height: 600px;
 }
 
-.second_div {
-    background: black;
-    max-width: 1100px;
-    width: 100%;
-    height: 600px;
-}
-
-.third_div {
-    background: green;
-    max-width: 1100px;
-    width: 100%;
-    height: 600px;
-}
-
-.main_div p {
+.activity p {
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+.activity_container {
+}
+
+.date_bar {
+    display: flex;
+    margin-top: 20px;
+    padding-left: -10px;
+}
+
+.date_bar p {
+    font-size: 15px;
+    color: #888;
+    width: 100px;
+}
+
+.horizontal_line {
+    height: 0.5px;
+    width: 1100px;
+    background-color: #888;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.booking_container {
+    display: flex;
+    background-color: #DDDDDD;
+    padding-left: 80px;
+    margin-top: 20px;
+    border-radius: 6px;
+    height: 250px;
+    box-shadow: 0 5 5px 0 #252525; 
+}
+
+.car_image {
+    display: flex;
+    align-items: center;
+}
+
+.car_image img {
+    width: 300px;
+}
+
+.car_info {
+    display: flex;
+}
+
+.booked_car {
+    margin-left: 50px;
+}
+
+.info_details {
+    width: 200px;
+}
+
+.details {
+    width: 180px;
+    margin-right: 50px;
+    margin-top: 35px;
+}
+
+.details h4 {
+    color: #212121;
+}
+
+.details p {
+    font-size: 20px;
+}
+
+.activity_button {
+    float: right;
+    margin-top: 30px;
+}
+
+.activity_button button {
+    width: 100px;
+    height: 35px;
+    border-radius: 6px;
+    border: 1px solid #F86A1D;
+    background-color: #F86A1D;
+    color: #F9F9F8;
+    font-weight: 500;
+    font-size: 13px;
+    margin-right: 10px;
+}
+
+button:hover {
+    transform: scale(1.02);
+    cursor: pointer;
 }
