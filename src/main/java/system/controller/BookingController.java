@@ -12,7 +12,10 @@ import system.model.Vehicle;
 /**
  * Servlet implementation class BookingController
  */
-@WebServlet("/source/user_pages/cars_page/BookingController")
+//run from dashboard
+@WebServlet("/source/user_pages/dashboard_page/BookingController")
+//run from login
+//@WebServlet("/source/user_pages/front_page/BookingController")
 public class BookingController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     

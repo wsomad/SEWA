@@ -1,16 +1,22 @@
+<%@page import = "java.util.List, system.model.*" %>
 <!DOCTYPE html>
 <html lang="en">
+<style>
+	<%@include file="cars.css"%>
+</style>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/PROJECT/source/user_pages/dashboard_page/user-dashboard.css">
+    <link rel="stylesheet" href="cars.css">
     <link rel="icon" type="images/png" href="https://drive.google.com/uc?export=view&id=1WnCOPug2C25vqv-_nxG6QvVp2VSMVnp1">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <title>SEWA | Car Rental Malaysia</title>
+    
+    
 </head>
 <body>
     <header class="header">
@@ -25,8 +31,8 @@
                         <li><a href="../p2p_page/p2p-register.html">Rent as Peer</a></li>
                     </ul>
                 </li>
-                <li><a href="CarPageController" class="nav_link">Our Cars</a></li>
-            </ul>
+                <li><a href="car.html" class="nav_link">Our Cars</a></li>
+            </ul>         
             <ul>
                 <div class="wallet_profile">
                     <li><a href="#"><i class='bx bx-wallet-alt wallet_show'></i></a></li>
@@ -38,19 +44,19 @@
             <div class="sub-menu-wrap" id="subMenu">
                 <div class="sub-menu">
                     <div class="user-info">
-                        <h2>Hello user</h2>
+                         <h2>Hello user</h2>
                     </div>
                     <a href="a" class="sub-menu-link">
                         <i class='bx bx-user-circle'></i>
-                        <p>Profile</p>
+                            <p>Profile</p>
                     </a>
                     <a href="a" class="sub-menu-link">
                         <i class='bx bx-cog'></i>
-                        <p>Setting</p>
+                            <p>Setting</p>
                     </a>
                     <a href="a" class="sub-menu-link">
                         <i class='bx bx-log-out' ></i>
-                        <p>Sign out</p>
+                            <p>Sign out</p>
                     </a>
                     <div class="owner_name">
                         <p class="owner">Owned by SEWA Malaysia SDN. BHD.</p>
@@ -101,105 +107,80 @@
                 <p class="owner">Owned by SEWA Malaysia SDN. BHD.</p>
             </div>
         </div>
-        <div class="image_slider">
-            <div class="slider">
-                <img src="https://drive.google.com/uc?export=view&id=12qMhDp7wx8pHIneLPLnLySxIEdqlvv3F" alt="" id="image-1">
-            </div>
-        </div>
     </section>
 
     <section class="home2">
-        <div class="home2_container">
-            <div class="get_started">
-                <div class="book_car">
-                    <p>Find your perfect car!</p>
-                    <button>Find & Book Your Car</button>
-                </div>
-                <div class="rent_car">
-                    <p>Be one of our peer now!</p>
-                    <button>Rent Out Your Car</button>
-                </div>
-                <div class="record_activity">
-                    <p>Track your activity here!</p>
-                    <button>Record & Activity</button>
-                </div>
+        <div class="booking_car">
+            <div class="booking_word">
+                <p>From Over 50 Cars, Choose Yours!</p>
+                <h4>Find your perfect car here. </h4>
             </div>
-            <div class="booking_car">
-                <div class="booking_word">
-                    <p>Recommend For You</p>
-                    <h4>You might interested in these cars! </h4>
-                </div>
-                <div class="booking_row">
-                    <div class="booking_container">
-                        <div class="booking_details">
-                            <div class="car_image">
-                                <img src="https://drive.google.com/uc?export=view&id=13RyWd-Ddv-JafxBqmeBXoSbuek2rYeeK" alt="">
-                            </div>
-                            <div class="car_name">
-                                <p class="book_title">Bezza</p>
-                            </div>
+            <div class="booking_row">
+            
+            <%
+	            List<Vehicle> vehicleList = (List<Vehicle>) session.getAttribute("dashboardContent");
+				
+				// Display each recommendation as a clickable panel
+				for (Vehicle vehicle : vehicleList) { System.out.println("row");
+            %>
+                <div class="booking_container">
+                    <div class="booking_details">
+                        <div class="car_image">
+                            <img src="https://drive.google.com/uc?export=view&id=1cs19Dr4j-sI_380xEyuakdWcKdUj5cY8" alt="">
                         </div>
-                        <button class="booking_button">Book Now</button>
                     </div>
-                    <div class="booking_container">
-                        <div class="booking_details">
-                            <div class="car_image">
-                                <img src="https://drive.google.com/uc?export=view&id=1FmbDvKac6wSp9B3J7KokQu6xD3eWvN0e" alt="">
+                    <div class="car_name">
+                        <p class="book_title">Volkswagen Arteon</p>
+                    </div>
+                    <div class="features_container">
+                        <p>Features</p>
+                        <div class="features">
+                            <div class="features_box">
+                                <div class="features_info">
+                                    <i class="fa fa-car"></i>
+                                </div>
+                                <div class="features_type">
+                                    <p>Sedan</p>
+                                </div>
                             </div>
-                            <div class="car_name">
-                                <p class="book_title">Axia</p>
+                            <div class="features_box">
+                                <div class="features_info">
+                                    <i class="fa fa-solid fa-gas-pump"></i>
+                                </div>
+                                <div class="features_type">
+                                    <p>Petrol</p>
+                                </div>
                             </div>
+                            <div class="features_box">
+                                <div class="features_info">
+                                    <i class="fa fa-users"></i>
+                                </div>
+                                <div class="features_type">
+                                    <p>5 Seaters</p>
+                                </div>
+                            </div>
+                            <div class="features_box">
+                                <div class="features_info">
+                                    <i class="fa fa-gears"></i>
+                                </div>
+                                <div class="features_type">
+                                    <p>Automatic</p>
+                                </div>
+                            </div>                    
                         </div>
-                        <button class="booking_button">Book Now</button>
                     </div>
-                    <div class="booking_more">
-                        <a href="CarPageController"><i class='bx bx-dots-horizontal-rounded dots_more'></i></a>
-                        <a href="CarPageController"><h4>More Cars</h4></a>
+                    <div class="car_rate">
+                        <p class="book_rate">RM 112.00 <span>per day</span> </p>
                     </div>
+                    <button class="booking_button">Book Now</button>
                 </div>
+            <%
+				}
+            %>
+              
             </div>
-            <div class="wallet_balance">
-                <div class="balance_word">
-                    <p>Wallet</p>
-                    <h4>You might not allowed to book any car if you have an insufficient balance.</h4>
-                </div>
-                <div class="balance_container">
-                    <div class="balance_details">
-                        <p class="balance_title">Current Balance | RM50.00</p>
-                    </div>
-                    <button class="balance_button" id="open_topup">Top Up</button>
-                </div>
-            </div> 
         </div>
     </section>
-
-    <section class="home3">
-        <div class="review">
-            <div class="review_word">
-                <p>Review From Community</p>
-                <h4>Let's see what others think about us.</h4>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="foot_container">
-            <div class="top">
-                <div class="logo_details">
-                    <img src="https://drive.google.com/uc?export=view&id=18npiizAlNUhQntPiwwuecc2WhbGA3JTv" alt="">
-                </div>
-                <div class="company_register">
-                    <p>Owned by SEWA MALAYSIA SDN. BHD.</p>
-                </div>
-                <div class="media_details">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-telegram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <script src="user-dashboard.js"></script>
+    <script src="cars.js"></script>
 </body>
 </html>
