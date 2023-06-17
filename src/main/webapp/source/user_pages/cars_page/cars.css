@@ -22,7 +22,9 @@ header {
 
 .home2 {
     height: 3000px;
-    margin: auto;
+    min-height: calc(900px - 80px);
+    display: flex;
+    justify-content: center;
 }
 
 .nav{
@@ -393,10 +395,8 @@ i.wallet_show {
 .booking_car {
     background-color: #F9F9F8;
     max-width: 1100px;
+    height: 2000px;
     width: 100%;
-    position: absolute;
-    padding-left: 210px;
-    padding-right: 210px;
     margin-top: 100px;
 }
 
@@ -411,8 +411,7 @@ i.wallet_show {
 
 .booking_row {
     display: flex;
-    max-width: 1100px;
-    width: 100%;
+    position: absolute;
 }
 
 .booking_container {
