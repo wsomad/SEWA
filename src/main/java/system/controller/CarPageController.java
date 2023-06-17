@@ -17,7 +17,9 @@ import system.dao.*;
 /**
  * Servlet implementation class CarPageController
  */
+//Run from dashboard
 @WebServlet("/source/user_pages/dashboard_page/CarPageController")
+//Run from login
 //@WebServlet("/source/user_pages/front_page/CarPageController")
 public class CarPageController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -30,7 +32,7 @@ public class CarPageController extends HttpServlet {
 			List<Vehicle> vehicleList = dashboardDAO.getDashboardContent(user);
 			HttpSession session = request.getSession();
 			session.setAttribute("dashboardContent", vehicleList);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/source/user_pages/cars_page/test.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/source/user_pages/cars_page/cars.jsp");
 			
 			//test
 			for (Vehicle keretaPakMat : vehicleList) {
