@@ -457,6 +457,10 @@ i.wallet_show {
     padding-top: 10px;
 }
 
+.booking_space {
+	margin-top: 500px;
+}
+
 .car_image {
     height: 180px;
 }

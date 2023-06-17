@@ -115,14 +115,20 @@
                 <p>From Over 50 Cars, Choose Yours!</p>
                 <h4>Find your perfect car here. </h4>
             </div>
-            <div class="booking_row">
             
             <%
-	            List<Vehicle> vehicleList = (List<Vehicle>) session.getAttribute("dashboardContent");
-				
-				// Display each recommendation as a clickable panel
-				for (Vehicle vehicle : vehicleList) { System.out.println("row");
-            %>
+			    List<Vehicle> vehicleList = (List<Vehicle>) session.getAttribute("dashboardContent");
+			    int counter = 0; // Initialize the counter variable
+			
+			    // Display each recommendation as a clickable panel
+			    for (Vehicle vehicle : vehicleList) {
+			        if (counter % 3 == 0) { System.out.println("row open");
+			            // Create a new booking_row after every third iteration
+			%>
+            
+            <div class="booking_row">
+            		<% } %>
+            
                 <div class="booking_container">
                     <div class="booking_details">
                         <div class="car_image">
@@ -174,11 +180,23 @@
                     </div>
                     <button class="booking_button">Book Now</button>
                 </div>
-            <%
-				}
-            %>
+                
+                <% 
+		        if ((counter + 1) % 3 == 0 || counter == vehicleList.size() - 1) {System.out.println("row close");
+		            // Close the booking_row after every third iteration or at the end of the loop
+		        %>
               
             </div>
+            <div class="booking_space">
+            	
+            </div>
+            
+            <%
+			        }
+			        counter++;
+			    }
+			%>
+            
         </div>
     </section>
     <script src="cars.js"></script>
