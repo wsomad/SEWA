@@ -75,7 +75,8 @@
 					<img src="<%= vehicle.getImg_path() %>">
 					<p><%= vehicle.getV_model() %></p>
 					<form method="POST" action="BookingController">
-						<input type="hidden" name="vehicleId" value="<%= vehicle.getVehicleid() %>">
+						<!--<input type="hidden" name="vehicleId" value="<%= //vehicle.getVehicleid() %>">-->
+						<input type="hidden" name="vehicleObj" value="<%=vehicle%>">
 						<button type="submit">Book Now</button>
 					</form>
 				</div>

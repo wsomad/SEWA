@@ -134,7 +134,7 @@
                         </div>
                     </div>
                     <div class="car_name">
-                        <p class="book_title">Volkswagen Arteon</p>
+                        <p class="book_title"><%=vehicle.getV_brand()%> <%=vehicle.getV_model()%></p>
                     </div>
                     <div class="features_container">
                         <p>Features</p>
@@ -176,7 +176,10 @@
                     <div class="car_rate">
                         <p class="book_rate">RM 112.00 <span>per day</span> </p>
                     </div>
-                    <button class="booking_button">Book Now</button>
+                    <form method="post" action="BookingController">
+                    	<input type="hidden" name="vehicleId" value="<%=vehicle.getVehicleid()%>">
+                    	<button class="booking_button">Book Now</button>
+                   	</form>
                 </div>
                 
                 <% 
