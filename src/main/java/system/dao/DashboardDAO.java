@@ -11,6 +11,7 @@ import system.model.*;
 public class DashboardDAO {
 	public List<Vehicle> getDashboardContent (User user){
 		List<Vehicle> vehicleList = new ArrayList<>();
+		//include 'where availability=1'
 		String userBasedQuery = ""; 
 		String staticBasedQuery = 
 				"select *\r\n"
