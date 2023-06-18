@@ -36,5 +36,4 @@ public class BookingController extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-
 }

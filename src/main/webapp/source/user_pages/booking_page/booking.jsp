@@ -95,66 +95,70 @@ System.out.println("booking-jsp : " + vehicle.getV_brand());
             <div class="book_details">
                 <div class="personal_details">
                     <p>Booking Details</p>
-                    <div class="form_row">
-                        <div class="form_box">
-                            <span class="form_indicator"><h4>Pickup Location <span class="form_mark">*</span></h4></span>
-                            <div class="input_form">
-                                <input type="text" placeholder="Pickup Location" required>
-                            </div>
-                        </div>
-                        <div class="form_box">
-                            <span class="form_indicator"><h4>Drop Location <span class="form_mark">*</span></h4></span>
-                            <div class="input_form">
-                                <input type="text" placeholder="Drop Location" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form_row">
-                        <div class="form_box">
-                            <span class="form_indicator"><h4>Pickup Date <span class="form_mark">*</span></h4></span>
-                            <div class="input_form">
-                                <input type="date"  placeholder="Pickup Date" required>
-                            </div>
-                        </div>
-                        <div class="form_box">
-                            <span class="form_indicator"><h4>Drop Date <span class="form_mark">*</span></h4></span>
-                            <div class="input_form">
-                                <input type="date" placeholder="Drop Date" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form_row">
-                        <div class="form_box">
-                            <span class="form_indicator"><h4>Number of Passenger <span class="form_mark">*</span></h4></span>
-                            <div class="input_form">
-                                <input type="text" placeholder="No. of Passenger" required>
-                            </div>
-                        </div>
-                        <div class="form_box">
-                            <span class="form_indicator"><h4>Rental Charge </h4></span>
-                            <div class="input_form">
-                                <input type="text" placeholder="RM 12.00" required disabled>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form_row">
-                        <div class="form_box">
-                            <span class="form_indicator"><h4>Special Request</h4></span>
-                            <div class="input_form">
-                                <textarea class="special_request" name="special_request" placeholder="Special Request">
-                                </textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form_row">
-                        <div class="form_tnc">
-                            <input type="radio" id="tnc" name="term_condition" value="tnc">
-                            <label for="debit">Agree to our terms and conditions</label><br>
-                        </div>
-                    </div>
-                    <div class="proceed">
-                        <a href="confirm-booking.html">Proceed<i class="fa fa-chevron-right"></i></a>
-                    </div>
+                    <!--  -->
+                    <form method="get" action="ConfirmBookingController">
+	                    <div class="form_row">
+	                        <div class="form_box">
+	                            <span class="form_indicator"><h4>Pickup Location <span class="form_mark">*</span></h4></span>
+	                            <div class="input_form">
+	                                <input type="text" placeholder="Pickup Location" name="pickup_location" required>
+	                            </div>
+	                        </div>
+	                        <div class="form_box">
+	                            <span class="form_indicator"><h4>Drop Location <span class="form_mark">*</span></h4></span>
+	                            <div class="input_form">
+	                                <input type="text" placeholder="Drop Location" required>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="form_row">
+	                        <div class="form_box">
+	                            <span class="form_indicator"><h4>Pickup Date <span class="form_mark">*</span></h4></span>
+	                            <div class="input_form">
+	                                <input type="date"  placeholder="Pickup Date" required>
+	                            </div>
+	                        </div>
+	                        <div class="form_box">
+	                            <span class="form_indicator"><h4>Drop Date <span class="form_mark">*</span></h4></span>
+	                            <div class="input_form">
+	                                <input type="date" placeholder="Drop Date" required>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="form_row">
+	                        <div class="form_box">
+	                            <span class="form_indicator"><h4>Number of Passenger <span class="form_mark">*</span></h4></span>
+	                            <div class="input_form">
+	                                <input type="text" placeholder="No. of Passenger" required>
+	                            </div>
+	                        </div>
+	                        <div class="form_box">
+	                            <span class="form_indicator"><h4>Rental Charge </h4></span>
+	                            <div class="input_form">
+	                                <input type="text" placeholder="RM 12.00" required disabled>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="form_row">
+	                        <div class="form_box">
+	                            <span class="form_indicator"><h4>Special Request</h4></span>
+	                            <div class="input_form">
+	                                <textarea class="special_request" name="special_request" placeholder="Special Request">
+	                                </textarea>
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="form_row">
+	                        <div class="form_tnc">
+	                            <input type="radio" id="tnc" name="term_condition" value="tnc">
+	                            <label for="debit">Agree to our terms and conditions</label><br>
+	                        </div>
+	                    </div>
+	                    <div class="proceed">
+	                        <button type="submit">Proceed<i class="fa fa-chevron-right"></i></button>
+	                    </div>
+	                </form>
+                    <!--  -->
                 </div>
             </div>
         </div>
