@@ -6,18 +6,17 @@
 }
 
 body {
-    background-color: #E6E6E6;
+    background-color: #F9F9F8;
 }
 
 header {
-    background-color: transparent;
+    background-color: #F9F9F8;
     position: fixed;
     height: 80px;
     width: 100%;
     z-index: 100;
     padding: 0 20px;
     box-shadow: 0 0 5px 0 #252525; 
-    opacity: 0.85;
 }
 
 .home2 {
@@ -426,6 +425,7 @@ i.wallet_show {
     border-radius: 10px;
     transition: 0.5s ease-out;
     overflow: visible;
+    border: 0.5px solid #E6E6E7;
 }
 
 .booking_more {
@@ -511,7 +511,7 @@ i.wallet_show {
     height: 60px;
     margin-right: 10px;
     justify-content: space-between;
-    border: 2px solid #888;
+    border: 2px solid #F86A1D;
     box-shadow: rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
@@ -524,7 +524,7 @@ i.wallet_show {
 
 .features_info i {
     font-size: 25px;
-    color: #888;
+    color: #F86A1D;
 }
 
 .book_title {
@@ -532,7 +532,7 @@ i.wallet_show {
 }
 
 .book_rate {
-    font-size: 17px;
+    font-size: 20px;
     font-weight: bold;
 }
 

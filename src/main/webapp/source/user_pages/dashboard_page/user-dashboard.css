@@ -6,18 +6,17 @@
 }
 /**/
 body {
-    background-color: #E6E6E6;
+    background-color: #F9F9F8;
 }
 
 header {
-    background-color: #252525;
+    background-color: #F9F9F8;
     position: fixed;
     height: 80px;
     width: 100%;
     z-index: 100;
     padding: 0 20px;
     box-shadow: 0 0 5px 0 #252525; 
-    opacity: 0.85;
 }
 
 footer {
@@ -70,14 +69,11 @@ footer {
 
 .home2 {
     height: 800px;
-    background-color: #E6E6E6;
     margin: auto;
 }
 
 .home3 {
     height: 500px;
-    background-color: #E6E6E6;
-
 }
 
 .nav{
@@ -87,15 +83,8 @@ footer {
     display: flex;
     height: 100%;
     align-items: center;
-    justify-content: space-evenly;
-    position: relative;
-}
-
-.nav, .nav_items {
-    display: flex;
-    height: 100%;
-    align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 .nav .nav_items li {
@@ -149,7 +138,8 @@ nav ul li{
 }
 
 nav ul li a{
-    color: #F86A1D;
+    color: #252525;
+    font-weight: bold;
 }
 
 nav ul li a:hover{
@@ -159,6 +149,11 @@ nav ul li a:hover{
 .wallet_profile {
     display: flex;
 }
+
+.wallet_profile li a {
+    color: #F86A1D;
+}
+
 
 .profile-icon{
     font-size: 28px;
@@ -464,6 +459,7 @@ i.wallet_show {
     margin-right: 10px;
     padding-left: -5px;
     border-radius: 6px;
+    border: 1px solid #E6E6E7;
 }
 
 .rent_car {
@@ -475,6 +471,7 @@ i.wallet_show {
     justify-content: center;
     align-items: center;
     border-radius: 6px;
+    border: 0.5px solid #E6E6E7;
 }
 
 .record_activity {
@@ -487,6 +484,7 @@ i.wallet_show {
     align-items: center;
     margin-left: 10px;
     border-radius: 6px;
+    border: 0.5px solid #E6E6E7;
 }
 
 .book_car p, 
@@ -516,7 +514,6 @@ i.wallet_show {
 }
 
 .booking_car {
-    background-color: #F9F9F8;
     max-width: 1100px;
     height: 410px;
     width: 100%;
@@ -525,7 +522,10 @@ i.wallet_show {
     transform: translate(-50%);
     margin-top: 245px;
     border-radius: 6px;
-    padding: 25px 30px;
+}
+
+.booking_word {
+	margin-top: 10px;
 }
 
 .booking_word p {
@@ -539,6 +539,10 @@ i.wallet_show {
 
 .booking_row {
     display: flex;
+    max-width: 1100px;
+    height: 350px;
+    width: 100%;
+    padding: 10px 30px;
 }
 
 .booking_container {
@@ -551,6 +555,7 @@ i.wallet_show {
     border-radius: 10px;
     transition: 0.5s ease-out;
     overflow: visible;
+   	border: 1px solid #E6E6E7;
 }
 
 .booking_more {
@@ -647,7 +652,6 @@ i.wallet_show {
     transform: translate(-50%);
     margin-top: 680px;
     border-radius: 6px;
-    padding: 25px 30px;
 }
 
 .balance_word p {
@@ -661,7 +665,7 @@ i.wallet_show {
 
 .balance_container, 
 .wallet_word {
-    background-color: #F86A1D;
+    background-color: #F9F9F8;
     display: flex;
     width: 450px;
     height: 50px;
@@ -669,16 +673,17 @@ i.wallet_show {
     margin-top: 20px;
     align-items: center;
     justify-content: space-between;
+    border: 1px solid #E6E6E7;
 }
 
 .balance_button {
     width: 80px;
     height: 30px;
-    margin-right: 20px;
+    margin-right: 10px;
     border-radius: 6px;
     border: none;
     font-size: 14px;
-    background: #252525;
+    background: #F86A1D;
     color: #F9F9F8;
     cursor: pointer;
 }
@@ -689,8 +694,9 @@ i.wallet_show {
 
 .balance_title {
     font-size: 16px;
-    color: #F9F9F8;
+    color: #252525;
     padding-left: 20px;
+    font-weight: bold;
 }
 
 .review {
