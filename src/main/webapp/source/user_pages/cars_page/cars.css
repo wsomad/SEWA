@@ -6,11 +6,11 @@
 }
 
 body {
-    background-color: #F9F9F8;
+    background-color: #E6E6E6;
 }
 
 header {
-    background-color: #252525;
+    background-color: transparent;
     position: fixed;
     height: 80px;
     width: 100%;
@@ -393,7 +393,6 @@ i.wallet_show {
 }
 
 .booking_car {
-    background-color: #F9F9F8;
     max-width: 1100px;
     height: 2000px;
     width: 100%;
@@ -417,6 +416,7 @@ i.wallet_show {
 }
 
 .booking_container {
+	background-color: #F9F9F8;
     width: 350px;
     height: 450px;
     margin-top: 20px;
@@ -511,9 +511,11 @@ i.wallet_show {
     height: 60px;
     margin-right: 10px;
     justify-content: space-between;
-    border-radius: 6px;
     border: 2px solid #888;
     box-shadow: rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .features_type {
@@ -522,7 +524,7 @@ i.wallet_show {
 
 .features_info i {
     font-size: 25px;
-    color: #F86A1D;
+    color: #888;
 }
 
 .book_title {
@@ -564,6 +566,7 @@ i.wallet_show {
 }
 
 .booking_container:hover {
+	background-color: #F9F9F8;
     box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
 }
    
