@@ -320,20 +320,22 @@ body {
 }
 .cardHeader h2
 {
+    font-size: 50px;
     font-weight: 600;
     color: var(--orange);
 }
 
 .details table
 {
-    width: 1200px;
+    width: 1000px;
     border-collapse: collapse;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 
 .details table thead td
 {
     font-weight: 600;
+    
 }
 
 .details .recentOrders table tr
@@ -361,7 +363,7 @@ body {
 
 .details .recentOrders table tr td:last-child
 {
-    text-align:end;
+    text-align:center;
 }
 
 .details .recentOrders table tr td:nth-child(2)
@@ -371,22 +373,22 @@ body {
 
 .details .recentOrders table tr td:nth-child(3)
 {
-    text-align: end;
+    text-align: center;
 }
 
 .details .recentOrders table tr td:nth-child(4)
 {
-    text-align: end;
+    text-align: center;
 }
 
 .details .recentOrders table tr td:nth-child(5)
 {
-    text-align: end;
+    text-align: center;
 }
 
 .renting
 {
-    padding: 2px 4px;
+    padding: 2px 10px;
     background: rgb(0, 243, 158);
     color: var(--white);
     border-radius: 4px;
@@ -396,7 +398,7 @@ body {
 
 .booking
 {
-    padding: 2px 4px;
+    padding: 2px 8px;
     background: #f00;
     color: var(--white);
     border-radius: 4px;
@@ -406,7 +408,7 @@ body {
 
 .exceed
 {
-    padding: 2px 4px;
+    padding: 2px 14px;
     background: blue;
     color: var(--white);
     border-radius: 4px;
@@ -416,11 +418,14 @@ body {
 
 .header{
     width: 90%;
-    height: 100px;
+    padding: 30px;
+    height: 20px;
     margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-left: 800px;
+    
 }
 .items-controller{
     flex-shrink: 0;
@@ -432,8 +437,9 @@ body {
 
 .bottom-field{
     width: 100%;
-    padding: 20px;
-    margin-top: 20px;
+    padding: 0px;
+    margin-top: 10px;
+    margin-bottom: -10px;
 }
 .pagination{
   display: flex;
