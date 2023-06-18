@@ -25,7 +25,6 @@ public class BookingController extends HttpServlet {
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int vehicleid = Integer.parseInt(request.getParameter("vehicleId"));
-		System.out.println("Booking Controller : "+vehicleid);
 		BookingDAO bookingdao = new BookingDAO();
 		
 		try {

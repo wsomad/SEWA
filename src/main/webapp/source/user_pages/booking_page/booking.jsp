@@ -1,3 +1,8 @@
+<%@page import = "system.model.*" %>
+<%
+Vehicle vehicle = (Vehicle) request.getAttribute("vehicleInForm");
+System.out.println("booking-jsp : " + vehicle.getV_brand());
+%>
 <!DOCTYPE html>
 <html lang="en">
 <style>
@@ -76,15 +81,15 @@
                     <img src="https://drive.google.com/uc?export=view&id=13RyWd-Ddv-JafxBqmeBXoSbuek2rYeeK" alt="">
                 </div>
                 <div class="car_info">
-                    <h1>Perodua Bezza</h1>
-                    <p>RM 12.00/hour</p>
-                    <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe earum fugit enim odio blanditiis atque nam voluptates, maxime a consequatur voluptatibus, aspernatur ipsum suscipit porro modi iste. Velit, provident quisquam.</h3>
+                    <h1><%=vehicle.getV_brand()%> <%=vehicle.getV_model()%></h1>
+                    <p>RM <%=vehicle.getRental_pr_hr() %>/hour</p>
+                    <h3><%=vehicle.getDescription() %></h3>
                 </div>
             </div>
             <div class="car_spec">
-                <p>Brand |<span> Perodua</span></p>
-                <p>Model |<span> 2022</span></p>
-                <p>Type  |<span> Sedan</span></p>
+                <p>Brand |<span> <%=vehicle.getV_brand() %></span></p>
+                <p>Model |<span> <%=vehicle.getV_model() %></span></p>
+                <p>Type  |<span> <%=vehicle.getV_type() %></span></p>
             </div>
             <hr>
             <div class="book_details">
