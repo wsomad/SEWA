@@ -511,7 +511,6 @@ i.wallet_show {
     height: 60px;
     margin-right: 10px;
     justify-content: space-between;
-    border-radius: 6px;
     border: 2px solid #888;
     box-shadow: rgba(0, 0, 0, 0.1);
     display: flex;
