@@ -351,11 +351,11 @@ i.wallet_show {
 .spec_1, 
 .spec_2 {
     display: flex;
-    width: 200px;
+    width: 300px;
 }
 
 .spec_2 {
-    margin-left: 100px;
+    margin-left: 40px;
 }
 
 .spec_1_0 p,
@@ -366,7 +366,8 @@ i.wallet_show {
 
 .spec_1_1,
 .spec_2_1 {
-    margin-left: 40px;
+    margin-left: 20px;
+    width: 200px;
 }
 
 .book_details {
