@@ -10,7 +10,7 @@ body {
 }
 
 header {
-	background-color: #F9F9F8;
+    background-color: #F9F9F8;
     position: fixed;
     height: 80px;
     width: 100%;
@@ -19,21 +19,44 @@ header {
     box-shadow: 0 0 5px 0 #252525; 
 }
 
-.nav {
+.nav{
     max-width: 1100px;
     width: 100%;
-    margin: 0 auto;
-}
-
-.nav, 
-.nav_item {
+    margin: auto;
     display: flex;
     height: 100%;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
-.nav_item {
+.nav .nav_items li {
+    list-style: none;
+    font-size: 17px;
+}
+
+.sub_nav_link {
+    display: none;
+    position: absolute;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 6px;
+    padding: 10px;
+    list-style-type: none;
+    margin-top: 5px;
+    transition: all 0.3s ease; 
+}
+
+.sub_nav_link li a {
+    color: white;
+    text-decoration: none;
+}
+
+.sub_nav_link.active {
+    display: block;
+}
+
+.nav_items {
     column-gap: 25px;
 }
 
@@ -45,28 +68,32 @@ header {
     text-decoration: none;
 }
 
-.nav_logo, .nav_link, .button {
-    color: white;
+nav ul{
+    text-align: right;
 }
 
-.nav_link:hover {
-    color: white;
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+    color: #F86A1D;
 }
 
-.right {
+nav ul li a{
+    color: #252525;
+    font-weight: bold;
+}
+
+.wallet_profile {
     display: flex;
 }
 
-.wallet_show {
-    font-size: 26px;
-    padding-top: 6px;
-    margin-right: 30px;
-    color: #f86a1d;
-    cursor: pointer;
+.wallet_profile li a {
+    color: #F86A1D;
 }
 
-.wallet_show:hover {
-    transform: scale(0.98);
+.profile-icon{
+    font-size: 28px;
 }
 
 .wallet_container {
@@ -78,13 +105,18 @@ header {
     left: 50%;
     transform: translate(-50%, -50%) scale(1.2);
     z-index: 101;
-    background: #252525;
+    background: #F9F9F8;
     border-radius: 6px;
     box-shadow: rgba(0, 0, 0, 0.1);
     opacity: 0;
     pointer-events: none;
     transition: all 0.5s ease-out;
     padding-bottom: 5px;
+}
+
+.wallet_show:active,
+.profile-icon:active {
+    transform: scale(0.98);
 }
 
 .test1.show .wallet_container {
@@ -110,7 +142,7 @@ header {
     position: absolute;
     top: 10px;
     right: 20px;
-    color: #F9F9F8;
+    color: #252525;
     font-size: 22px;
     opacity: 0.7;
     cursor: pointer;
@@ -151,6 +183,10 @@ i.wallet_show {
     padding-left: 10px;
 }
 
+.topup .input_form i {
+    padding-right: 20px;
+}
+
 .topup_wallet {
     position: absolute;
     top: 12px;
@@ -159,14 +195,15 @@ i.wallet_show {
     font-size: 30px;
     opacity: 0.7;
     cursor: pointer;
-    padding-right: 20px;
+    padding-right: 3px;
 }
 
 .current_balance p {
     padding-left: 20px;
     margin-top: -15px;
     font-size: 13px;
-    color: #F9F9F8;
+    color: #252525;
+    font-weight: bold;
 }
 
 .amount_container {
@@ -219,13 +256,107 @@ i.wallet_show {
 .button {
     padding: 8px 24px;
     border: 2px solid white;
-    background: #f86a1d;
+    background: #F86A1D;
     border-radius: 6px;
     cursor: pointer;
 }
 
 .button:active {
     transform: scale(0.98);
+}
+
+i.wallet_show {
+    font-size: 26px;
+}
+
+.nav_logo {
+    width: 50px;
+}
+
+.user-pic{
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+.sub-menu-wrap{
+    position: absolute;
+    top: 100%;
+    right: 5px;
+    max-height: 0px;
+    width: 280px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+    background: #252525;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.sub-menu-wrap.open-menu{
+    max-height: 400px;
+    height: 280px;
+}
+
+.sub-menu{
+    padding: 20px;
+    margin: 10px;
+}
+
+.user-info{
+    display: flex;
+    align-items: center;
+}
+
+.user-info h2{
+    color: #F86A1D;
+}
+
+.sub-menu-link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #F9F9F8;
+    margin: 12px 0px;
+    margin-top: 28px;
+}
+
+.sub-menu-link p{
+    width: 100%;
+    color: #F9F9F8;
+    font-size: 16px;
+}
+
+.sub-menu-link i{
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+    padding-left: 5px;
+    font-size: 24px;
+}
+
+.sub-menu-link span{
+    font-size: 25px;
+    transition: transform 0.5s;
+}
+
+.sub-menu-link :hover span{
+    transform: translateX(5px);
+}
+
+.sub-menu-link :hover p{
+    font-weight: 600;
+}
+
+.sub-menu .owner{
+    width: 100%;
+    color: #F9F9F8;
+    font-size: 10px;
+    text-align: center;
+}
+
+.sub-menu .owner_name{
+    margin-top: 25px;
 }
 
 .test1, .test2 {
@@ -555,12 +686,15 @@ hr {
 
 .recommend-button {
     transform: translate(-50%, 125%);
+    height: 30px;
     width: 60%;
     border-radius: 1rem;
-    border: none;
     background-color: #F86A1D;
-    border: 2px solid #f9f9f8;
+    border: 2px solid #F86A1D;
     color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1rem;
     padding: .5rem 1rem;
     position: absolute;
