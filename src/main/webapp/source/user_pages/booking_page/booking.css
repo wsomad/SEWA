@@ -270,46 +270,48 @@ i.wallet_show {
 .car_details {
     display: flex;
     top: 0;
-    margin-top: 50px;
+    margin-top: 30px;
+}
+
+.car_image {
+    border: 1px solid #E6E6E7;
+    height: 400px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .car_image img {
-    width: 500px;
+    width: 400px;
     margin-right: 30px;
 }
 
 .car_info {
-    background-color: #f86a1d;
-    padding: 20px 20px;
+    padding: 0 20px;
     border-radius: 6px;
     width: 550px;
     margin-left: 30px;
-    box-shadow: 0 0 5px 0 #252525;  
 }
 
 .car_info h1 {
-    font-size: 2em;
-    color: #F9F9F8;
-    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #F86A1D;
+    font-weight: bolder;
 }
 
 .car_info p {
-    color: #f9f9f8;
+    color: #F86A1D;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 30px;
+    margin-top: 20px;
 }
 
 .car_info h3 {
     padding-top: 20px;
-    color: #f9f9f8;
-    font-size: 18px;
-}
-
-.car_info h4 {
-    padding-top: 30px;
     color: #252525;
-    margin-bottom: 10px;
-    font-weight: bold;
+    font-size: 18px;
+    height: 70px;
 }
 
 .car_info a {
@@ -317,13 +319,54 @@ i.wallet_show {
     color: #252525;
 }
 
+.price_guarantee {
+    width: 200px;
+}
+
+.price_guarantee i {
+    font-size: 18px;
+}
+
+.price_guarantee p {
+    font-size: 18px;
+    border: 1px solid #E6E6E7;
+    padding: 4px;
+    background-color: #E6E6E7;
+}
+
 .car_spec {
-    display: flex;
-    justify-content: space-between;
     width: 500px;
-    margin-top: 30px;
+    margin-top: 10px;
+    display: flex;
+}
+
+.car_spec p {
+    color: #252525;
+    font-size: 18px;
     font-weight: bold;
     color: #252525;
+    margin-top: 20px;
+}
+
+.spec_1, 
+.spec_2 {
+    display: flex;
+    width: 150px;
+}
+
+.spec_2 {
+    margin-left: 100px;
+}
+
+.spec_1_0 p,
+.spec_2_0 p {
+    color: #868686;
+    font-size: 16px;
+}
+
+.spec_1_1,
+.spec_2_1 {
+    margin-left: 40px;
 }
 
 .book_details {
@@ -357,7 +400,7 @@ i.wallet_show {
 }
 
 hr {
-    border: 1px solid #868686;
+    border: 1px solid #E6E6E7;
     margin-top: 40px;
 }
 
