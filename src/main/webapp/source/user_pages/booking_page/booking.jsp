@@ -23,13 +23,51 @@ System.out.println("booking-jsp : " + vehicle.getV_brand());
 <body>
     <header class="header">
         <nav class="nav">
-            <img src="https://drive.google.com/uc?export=view&id=1hnKz5R1P7uMvl4c2qAnSFUHrdH4Sy41B" href="admin-front.html" class="nav_logo" alt="">
-            <div class="right">
-                <i class='bx bx-wallet-alt wallet_show'></i>
-                <button class="button" id="form-open">Back</button>
+            <a href="../dashboard_page/user-dashboard.html" ><img src="https://drive.google.com/uc?export=view&id=1hnKz5R1P7uMvl4c2qAnSFUHrdH4Sy41B" class="nav_logo"></a>
+            <ul class="nav_items">
+                <li><a href="../dashboard_page/user-dashboard.html" class="nav_link">Home</a></li>
+                <li>
+                    <a href="" class="nav_link" id="service-link">Service</a>
+                    <ul class="sub_nav_link" id="service-dropdown"> 
+                        <li><a href="">Car Rental</a></li>
+                        <li><a href="../p2p_page/p2p-register.html">Rent as Peer</a></li>
+                    </ul>
+                </li>
+                <li><a href="car.html" class="nav_link">Our Cars</a></li>
+            </ul>         
+            <ul>
+                <div class="wallet_profile">
+                    <li><a href="#"><i class='bx bx-wallet-alt wallet_show'></i></a></li>
+                    <li><a href="#"><i class='bx bx-user-circle profile-icon' onclick="toggleMenu()"></i></a></li>
+                </div>
+            </ul>
+
+            <!-- sub menu -->
+            <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <div class="user-info">
+                         <h2>Hello user</h2>
+                    </div>
+                    <a href="a" class="sub-menu-link">
+                        <i class='bx bx-user-circle'></i>
+                            <p>Profile</p>
+                    </a>
+                    <a href="a" class="sub-menu-link">
+                        <i class='bx bx-cog'></i>
+                            <p>Setting</p>
+                    </a>
+                    <a href="a" class="sub-menu-link">
+                        <i class='bx bx-log-out' ></i>
+                            <p>Sign out</p>
+                    </a>
+                    <div class="owner_name">
+                        <p class="owner">Owned by SEWA Malaysia SDN. BHD.</p>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
+
     <section class="test1">
         <div class="wallet_container" id="walletMenu">
             <i class="fa fa-times form_close"></i>
@@ -117,98 +155,98 @@ System.out.println("booking-jsp : " + vehicle.getV_brand());
             </div>
             <hr>
             <div class="book_details">
+                <p>Start Booking</p>
                 <div class="personal_details">
-                    <p>Booking Details</p>
-                    <!--  -->
-                    <form method="get" action="ConfirmBookingController">
-	                    <div class="form_row">
-	                        <div class="form_box">
-	                            <span class="form_indicator"><h4>Pickup Location <span class="form_mark">*</span></h4></span>
-	                            <div class="input_form">
-	                                <input type="text" placeholder="Pickup Location" name="pickup_location" required>
-	                            </div>
-	                        </div>
-	                        <div class="form_box">
-	                            <span class="form_indicator"><h4>Drop Location <span class="form_mark">*</span></h4></span>
-	                            <div class="input_form">
-	                                <input type="text" placeholder="Drop Location" required>
-	                            </div>
-	                        </div>
-	                    </div>
-	                    <div class="form_row">
-	                        <div class="form_box">
-	                            <span class="form_indicator"><h4>Pickup Date <span class="form_mark">*</span></h4></span>
-	                            <div class="input_form">
-	                                <input type="date"  placeholder="Pickup Date" required>
-	                            </div>
-	                        </div>
-	                        <div class="form_box">
-	                            <span class="form_indicator"><h4>Drop Date <span class="form_mark">*</span></h4></span>
-	                            <div class="input_form">
-	                                <input type="date" placeholder="Drop Date" required>
-	                            </div>
-	                        </div>
-	                    </div>
-	                    <div class="form_row">
-	                        <div class="form_box">
-	                            <span class="form_indicator"><h4>Number of Passenger <span class="form_mark">*</span></h4></span>
-	                            <div class="input_form">
-	                                <input type="text" placeholder="No. of Passenger" required>
-	                            </div>
-	                        </div>
-	                        <div class="form_box">
-	                            <span class="form_indicator"><h4>Rental Charge </h4></span>
-	                            <div class="input_form">
-	                                <input type="text" placeholder="RM 12.00" required disabled>
-	                            </div>
-	                        </div>
-	                    </div>
-	                    <div class="form_row">
-	                        <div class="form_box">
-	                            <span class="form_indicator"><h4>Special Request</h4></span>
-	                            <div class="input_form">
-	                                <textarea class="special_request" name="special_request" placeholder="Special Request">
-	                                </textarea>
-	                            </div>
-	                        </div>
-	                    </div>
-	                    <div class="form_row">
-	                        <div class="form_tnc">
-	                            <input type="radio" id="tnc" name="term_condition" value="tnc">
-	                            <label for="debit">Agree to our terms and conditions</label><br>
-	                        </div>
-	                    </div>
-	                    <div class="proceed">
-	                        <button type="submit">Proceed<i class="fa fa-chevron-right"></i></button>
-	                    </div>
-	                </form>
-                    <!--  -->
+                    <div class="form_row">
+                        <div class="form_box">
+                            <span class="form_indicator"><h4>Pickup Location <span class="form_mark">*</span></h4></span>
+                            <div class="input_form">
+                                <input type="text" placeholder="Pickup Location" required>
+                            </div>
+                        </div>
+                        <div class="form_box">
+                            <span class="form_indicator"><h4>Drop Location <span class="form_mark">*</span></h4></span>
+                            <div class="input_form">
+                                <input type="text" placeholder="Drop Location" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_row">
+                        <div class="form_box">
+                            <span class="form_indicator"><h4>Pickup Date <span class="form_mark">*</span></h4></span>
+                            <div class="input_form">
+                                <input type="date"  placeholder="Pickup Date" required>
+                            </div>
+                        </div>
+                        <div class="form_box">
+                            <span class="form_indicator"><h4>Drop Date <span class="form_mark">*</span></h4></span>
+                            <div class="input_form">
+                                <input type="date" placeholder="Drop Date" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_row">
+                        <div class="form_box">
+                            <span class="form_indicator"><h4>Number of Passenger <span class="form_mark">*</span></h4></span>
+                            <div class="input_form">
+                                <input type="text" placeholder="No. of Passenger" required>
+                            </div>
+                        </div>
+                        <div class="form_box">
+                            <span class="form_indicator"><h4>Rental Charge </h4></span>
+                            <div class="input_form">
+                                <input type="text" placeholder="RM 12.00" required disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_row">
+                        <div class="form_box">
+                            <span class="form_indicator"><h4>Special Request</h4></span>
+                            <div class="input_form">
+                                <textarea class="special_request" name="special_request" placeholder="Special Request">
+                                </textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_row">
+                        <div class="form_tnc">
+                            <input type="radio" id="tnc" name="term_condition" value="tnc">
+                            <label for="debit">Agree to our terms and conditions</label><br>
+                        </div>
+                    </div>
+                    <div class="proceed">
+                        <button>Proceed<i class="fa fa-chevron-right"></i></button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     <section class="test2">
-        <div class="recommend_word">
-            <p>More For You</p>
-            <h4>Feel free to view another car until you find the perfect one!</h4>
-        </div>
-        <div class="recommend">
-            <div class="recommend-details">
-                <h3>Vehicle 1</h3>
+        <div class="recommend_container">
+            <div class="recommend_word">
+                <p>More For You</p>
+                <h4>Feel free to view another car until you find the perfect one!</h4>
             </div>
-            <button class="recommend-button">More info</button>
-        </div>
-        <div class="recommend">
-            <div class="recommend-details">
-                <h3>Vehicle 1</h3>
+            <div class="recommend_row">
+                <div class="recommend">
+                    <div class="recommend-details">
+                        <h3>Vehicle 1</h3>
+                    </div>
+                    <button class="recommend-button">More info</button>
+                </div>
+                <div class="recommend">
+                    <div class="recommend-details">
+                        <h3>Vehicle 1</h3>
+                    </div>
+                    <button class="recommend-button">More info</button>
+                </div>
+                <div class="recommend">
+                    <div class="recommend-details">
+                        <h3>Vehicle 1</h3>
+                    </div>
+                    <button class="recommend-button">More info</button>
+                </div>
             </div>
-            <button class="recommend-button">More info</button>
-        </div>
-        <div class="recommend">
-            <div class="recommend-details">
-                <h3>Vehicle 1</h3>
-            </div>
-            <button class="recommend-button">More info</button>
         </div>
     </section>
 
