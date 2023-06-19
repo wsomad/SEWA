@@ -84,12 +84,36 @@ System.out.println("booking-jsp : " + vehicle.getV_brand());
                     <h1><%=vehicle.getV_brand()%> <%=vehicle.getV_model()%></h1>
                     <p>RM <%=vehicle.getRental_pr_hr() %>/hour</p>
                     <h3><%=vehicle.getDescription() %></h3>
+                    <div class="price_guarantee">
+                        <p>Best Price Guarantee</p>
+                    </div>
+                    <div class="car_spec">
+                        <div class="spec_1">
+                            <div class="spec_1_0">
+                                <p>Brand</p>
+                                <p>Model</p>
+                                <p>Type</p>
+                            </div>
+                            <div class="spec_1_1">
+                                <p><%=vehicle.getV_brand() %></p>
+				                <p><%=vehicle.getV_model() %></p>
+				                <p><%=vehicle.getV_type() %></p>
+                            </div>
+                        </div>
+                        <div class="spec_2">
+                            <div class="spec_2_0">
+                                <p>Fuel Type</p>
+                                <p>Capacity</p>
+                                <p>Transmission</p>
+                            </div>
+                            <div class="spec_2_1">
+                                <p>Diesel</p>
+                                <p>5 Seaters</p>
+                                <p>Automatic</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="car_spec">
-                <p>Brand |<span> <%=vehicle.getV_brand() %></span></p>
-                <p>Model |<span> <%=vehicle.getV_model() %></span></p>
-                <p>Type  |<span> <%=vehicle.getV_type() %></span></p>
             </div>
             <hr>
             <div class="book_details">
