@@ -1,4 +1,5 @@
 <%@page import = "system.model.*" %>
+<%@ page import="java.text.SimpleDateFormat, java.util.Date, java.util.concurrent.TimeUnit" %>
 <%
 Vehicle vehicle = (Vehicle) request.getAttribute("vehicleInForm");
 System.out.println("booking-jsp : " + vehicle.getV_brand());
@@ -131,7 +132,7 @@ System.out.println("booking-jsp : " + vehicle.getV_brand());
 	                        <div class="form_box">
 	                            <span class="form_indicator"><h4>Drop Location <span class="form_mark">*</span></h4></span>
 	                            <div class="input_form">
-	                                <input type="text" placeholder="Drop Location" required>
+	                                <input type="text" placeholder="Drop Location" name="drop_location" required>
 	                            </div>
 	                        </div>
 	                    </div>
@@ -139,13 +140,13 @@ System.out.println("booking-jsp : " + vehicle.getV_brand());
 	                        <div class="form_box">
 	                            <span class="form_indicator"><h4>Pickup Date <span class="form_mark">*</span></h4></span>
 	                            <div class="input_form">
-	                                <input type="date"  placeholder="Pickup Date" required>
+	                                <input type="date"  placeholder="Pickup Date" name="pickup_date" id="pickup_date" required>
 	                            </div>
 	                        </div>
 	                        <div class="form_box">
 	                            <span class="form_indicator"><h4>Drop Date <span class="form_mark">*</span></h4></span>
 	                            <div class="input_form">
-	                                <input type="date" placeholder="Drop Date" required>
+	                                <input type="date" placeholder="Drop Date" name="drop_date" id="drop_date" required>
 	                            </div>
 	                        </div>
 	                    </div>
@@ -153,13 +154,13 @@ System.out.println("booking-jsp : " + vehicle.getV_brand());
 	                        <div class="form_box">
 	                            <span class="form_indicator"><h4>Number of Passenger <span class="form_mark">*</span></h4></span>
 	                            <div class="input_form">
-	                                <input type="text" placeholder="No. of Passenger" required>
+	                                <input type="text" placeholder="No. of Passenger" name="passengers_num" required>
 	                            </div>
 	                        </div>
 	                        <div class="form_box">
 	                            <span class="form_indicator"><h4>Rental Charge </h4></span>
 	                            <div class="input_form">
-	                                <input type="text" placeholder="RM 12.00" required disabled>
+	                                <input type="text" value="RM 0.00" placeholder="RM 0.00" name="rental_charge" id="rental_charge" required readonly>
 	                            </div>
 	                        </div>
 	                    </div>
@@ -213,5 +214,27 @@ System.out.println("booking-jsp : " + vehicle.getV_brand());
     </section>
 
     <script src="booking.js"></script>
+    <script>
+    	var pickupDate = document.getElementById("pickup_date");
+    	var dropDate = document.getElementById("drop_date");
+    	var rentalChrg = document.getElementById("rental_charge");
+    	
+    	function calculateRentalCharge(){
+    		var pickup = new Date(pickupDate.value);
+    		var drop = new Date (dropDate.value);
+    		
+    		//Rental charge calculation
+    		var numDays = drop.getTime() - pickup.getTime();
+    		numDays = Math.ceil(numDays/(1000*60*60*24));
+    		var rentalChg = numDays * 24 * <%=vehicle.getRental_pr_hr()%>;
+    		
+    		//Set the rentalCharge on txtBox
+    		rentalChrg.value = isNaN(rentalChg) ? "":"RM "+rentalChg;
+    	}
+    	
+    	//Event listeners to calculate the rental charge whenever the input change
+    	pickupDate.addEventListener("input", calculateRentalCharge);
+    	dropDate.addEventListener("input", calculateRentalCharge);
+    </script>
 </body>
 </html>
