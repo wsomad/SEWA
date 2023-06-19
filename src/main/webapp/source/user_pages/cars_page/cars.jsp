@@ -113,6 +113,12 @@
                 <p>From Over 50 Cars, Choose Yours!</p>
                 <h4>Find your perfect car here. </h4>
             </div>
+            <div class="search">
+                <label>
+                    <input type="text" placeholder="Search here">
+                    <i class='bx bx-search-alt-2'></i>
+                </label>
+            </div>
             
             <%
 			    List<Vehicle> vehicleList = (List<Vehicle>) session.getAttribute("dashboardContent");
