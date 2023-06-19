@@ -26,4 +26,3 @@ public class ConfirmBookingController extends HttpServlet {
 		System.out.println(pickupLoc + "\n" + dropLoc + "\n" + pickupDate + "\n" + dropDate + "\n" + passengers + "\n" + rentalChrge + "\n" + specialReq);
 	}
 }
-1
