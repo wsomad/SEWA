@@ -4,14 +4,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 import java.util.ArrayList;
 import system.model.*;
 
 public class DashboardDAO {
 	public List<Vehicle> getDashboardContent (User user){
-		Connection con = null;
 		List<Vehicle> vehicleList = new ArrayList<>();
 		//include 'where availability=1'
 		String userBasedQuery = ""; 
@@ -23,7 +21,7 @@ public class DashboardDAO {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://bxx0oim5clt3tz9xxlzj-mysql.services.clever-cloud.com:3306/bxx0oim5clt3tz9xxlzj?serverTimezone=Asia/Kuala_Lumpur", "uwaq62nkjirwnjub", "mRrDGZdA1u7UPAXYI5Rm");
+			Connection con = DriverManager.getConnection("jdbc:mysql://bxx0oim5clt3tz9xxlzj-mysql.services.clever-cloud.com:3306/bxx0oim5clt3tz9xxlzj?serverTimezone=Asia/Kuala_Lumpur", "uwaq62nkjirwnjub", "mRrDGZdA1u7UPAXYI5Rm");
 			PreparedStatement pst = con.prepareStatement(staticBasedQuery);
 			//DevNote : bkk comment klau nk guna userBasedQuery :)
 			//pst.setString(1, Integer.toString(user.getUserid()));
@@ -58,12 +56,6 @@ public class DashboardDAO {
 			
 		}catch(Exception e) {
 			e.printStackTrace();
-		}finally {
-			try {
-				con.close();
-			}catch(SQLException e) {
-				e.printStackTrace();
-			}
 		}
 		
 		return vehicleList;

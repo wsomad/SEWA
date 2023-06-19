@@ -1,5 +1,4 @@
 <%@page import = "system.model.*" %>
-<%@ page import="java.text.SimpleDateFormat, java.util.Date, java.util.concurrent.TimeUnit" %>
 <%
 Vehicle vehicle = (Vehicle) request.getAttribute("vehicleInForm");
 System.out.println("booking-jsp : " + vehicle.getV_brand());
