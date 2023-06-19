@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import com.mysql.cj.jdbc.Driver;
 
@@ -11,12 +12,13 @@ import system.model.Vehicle;
 
 public class BookingDAO {
 	public Vehicle getRegistrationForm(int id) {
+		Connection con = null;
 		Vehicle vehicle = new Vehicle();
 		String vehicleInfoQuery = "select * from Vehicle where vehicleid="+id;
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://bxx0oim5clt3tz9xxlzj-mysql.services.clever-cloud.com:3306/bxx0oim5clt3tz9xxlzj?serverTimezone=Asia/Kuala_Lumpur", "uwaq62nkjirwnjub", "mRrDGZdA1u7UPAXYI5Rm");
+			con = DriverManager.getConnection("jdbc:mysql://bxx0oim5clt3tz9xxlzj-mysql.services.clever-cloud.com:3306/bxx0oim5clt3tz9xxlzj?serverTimezone=Asia/Kuala_Lumpur", "uwaq62nkjirwnjub", "mRrDGZdA1u7UPAXYI5Rm");
 			PreparedStatement pst = con.prepareStatement(vehicleInfoQuery);
 			
 			ResultSet rs = pst.executeQuery();
@@ -42,6 +44,12 @@ public class BookingDAO {
 			
 		}catch(Exception e) {
 			e.printStackTrace();
+		}finally {
+			try {
+				con.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		return vehicle;
 	}
