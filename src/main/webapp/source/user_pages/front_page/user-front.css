@@ -97,7 +97,24 @@ footer {
 
 .form_container {
     position: absolute;
-    max-width: 400px;
+    max-width: 350px;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.0);
+    z-index: 101;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease-out;
+}
+
+.form_container .signup_form {
+    position: absolute;
+    max-width: 450px;
     width: 100%;
     top: 50%;
     left: 50%;
@@ -137,6 +154,10 @@ footer {
 
 .signup_form {
     display: none;
+}
+
+.name_container {
+	display: flex;
 }
 
 .form_container.active .signup_form {
@@ -228,7 +249,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: end;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .form_container button {
