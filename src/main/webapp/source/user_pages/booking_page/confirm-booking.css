@@ -16,6 +16,7 @@ header {
     width: 100%;
     z-index: 100;
     padding: 0 20px;
+    box-shadow: 0 0 5px 0 #252525; 
 }
 
 footer {
@@ -76,50 +77,6 @@ footer {
     position: relative;
 }
 
-.nav, .nav_items {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.nav_items {
-    column-gap: 35px;
-    justify-content: space-between;
-}
-
-.nav_logo {
-    width: 50px;
-}
-
-.nav_link {
-    text-decoration: none;
-}
-
-.nav_logo, .nav_link, .button {
-    color: #F86A1D;
-}
-
-.nav_link:hover {
-    color: #787675;
-}
-
-nav ul li a{
-    color: #252525;
-    font-weight: bold;
-}
-
-nav ul li a:hover{
-    color: #787675;
-}
-
-.nav, .nav_items {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: space-between;
-}
-
 .nav .nav_items li {
     list-style: none;
     font-size: 17px;
@@ -128,14 +85,13 @@ nav ul li a:hover{
 .sub_nav_link {
     display: none;
     position: absolute;
-    background: #252525;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
-    padding: 5px;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 6px;
+    padding: 10px;
     list-style-type: none;
-    margin-top: 28px;
+    margin-top: 5px;
     transition: all 0.3s ease; 
-    flex-direction: column;
 }
 
 .sub_nav_link li a {
@@ -147,25 +103,44 @@ nav ul li a:hover{
     display: block;
 }
 
+.nav_items {
+    column-gap: 25px;
+}
+
+.nav_logo {
+    width: 50px;
+}
+
+.nav_link {
+    text-decoration: none;
+}
+
+nav ul{
+    text-align: right;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+    color: #F86A1D;
+}
+
+nav ul li a{
+    color: #252525;
+    font-weight: bold;
+}
+
 .wallet_profile {
     display: flex;
-    list-style: none;
 }
 
 .wallet_profile li a {
     color: #F86A1D;
 }
 
-.wallet_show, .profile-icon {
-    font-size: 26px;
-    padding-top: 6px;
-    margin-right: 30px;
-    color: #f86a1d;
-    cursor: pointer;
-}
-
-.wallet_show:hover {
-    transform: scale(0.98);
+.profile-icon{
+    font-size: 28px;
 }
 
 .wallet_container {
@@ -177,7 +152,7 @@ nav ul li a:hover{
     left: 50%;
     transform: translate(-50%, -50%) scale(1.2);
     z-index: 101;
-    background: #252525;
+    background: #F9F9F8;
     border-radius: 6px;
     box-shadow: rgba(0, 0, 0, 0.1);
     opacity: 0;
@@ -189,6 +164,156 @@ nav ul li a:hover{
 .wallet_show:active,
 .profile-icon:active {
     transform: scale(0.98);
+}
+
+.confirmation_form.show .wallet_container {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+}
+
+.confirmation_form::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease-out;
+}
+
+.form_close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #252525;
+    font-size: 22px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+i.wallet_show {
+    font-size: 26px;
+}
+
+.wallet_title {
+    color: #F86A1D;
+    font-size: 16px;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.wallet_title span {
+    font-size: 14px;
+}
+
+.topup .input_form {
+    display: flex;
+    position: relative;
+    max-width: 350px;
+    width: 100%;
+    height: 40px;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.topup .input_form input {
+    height: 100%;
+    width: 100%;;
+    border: 1px solid;
+    border-radius: 6px;
+    outline: none;
+    font-size: 15px;
+    padding-left: 10px;
+}
+
+.topup .input_form i {
+    padding-right: 80px;
+}
+
+.topup_wallet {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: #F86A1D;
+    font-size: 30px;
+    opacity: 0.7;
+    cursor: pointer;
+    padding-right: 3px;
+}
+
+.current_balance p {
+    padding-left: 20px;
+    margin-top: 5px;
+    font-size: 13px;
+    color: #252525;
+    font-weight: bold;
+}
+
+.amount_container {
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.select_amount {
+    display: flex;
+    height: 30px;
+    margin-top: 5px;
+}
+
+.amount {
+    background: #F86A1D;
+    color: #edf0f1;
+    border-radius: 4px;
+    margin-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    font-size: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.amount button {
+    width: 60px;
+    background-color: transparent;
+    border: none;
+    color: #edf0f1;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.amount button:hover {
+    transform: scale(0.95);
+}
+
+.topup .owner {
+    width: 100%;
+    color: #F9F9F8;
+    font-size: 10px;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.button {
+    padding: 8px 24px;
+    border: 2px solid white;
+    background: #F86A1D;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+
+i.wallet_show {
+    font-size: 26px;
 }
 
 .nav_logo {
@@ -281,147 +406,6 @@ nav ul li a:hover{
     margin-top: 25px;
 }
 
-.confirmation_form.show .wallet_container {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translate(-50%, -50%) scale(1);
-    box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
-}
-
-.confirmation_form::before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 100;
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.5s ease-out;
-}
-
-.form_close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    color: #F9F9F8;
-    font-size: 22px;
-    opacity: 0.7;
-    cursor: pointer;
-}
-
-i.wallet_show {
-    font-size: 26px;
-}
-
-.wallet_title {
-    color: #F86A1D;
-    font-size: 16px;
-    margin-top: 30px;
-    margin-left: 20px;
-}
-
-.wallet_title span {
-    font-size: 14px;
-}
-
-.topup .input_form {
-    display: flex;
-    position: relative;
-    max-width: 480px;
-    width: 100%;
-    height: 40px;
-    margin-left: 20px;
-    margin-top: 15px;
-}
-
-.topup .input_form input {
-    height: 100%;
-    width: 100%;;
-    border: 1px solid;
-    border-radius: 6px;
-    outline: none;
-    font-size: 15px;
-    padding-left: 10px;
-}
-
-.topup_wallet {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    color: #F86A1D;
-    font-size: 30px;
-    opacity: 0.7;
-    cursor: pointer;
-    padding-right: 80px;
-}
-
-.current_balance p {
-    padding-left: 20px;
-    margin-top: 5px;
-    font-size: 13px;
-    color: #F9F9F8;
-}
-
-.amount_container {
-    margin-left: 20px;
-    margin-top: 15px;
-}
-
-.select_amount {
-    display: flex;
-    height: 30px;
-    margin-top: 5px;
-}
-
-.amount {
-    background: #F86A1D;
-    color: #edf0f1;
-    border-radius: 4px;
-    margin-right: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 10px;
-    font-size: 10px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.amount button {
-    width: 60px;
-    background-color: transparent;
-    border: none;
-    color: #edf0f1;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.amount button:hover {
-    transform: scale(0.95);
-}
-
-.topup .owner {
-    width: 100%;
-    color: #F9F9F8;
-    font-size: 10px;
-    text-align: center;
-    margin-top: 8px;
-}
-
-.button {
-    padding: 8px 24px;
-    border: 2px solid white;
-    background: #F86A1D;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.button:active {
-    transform: scale(0.98);
-}
-
 .confirm_title {
     max-width: 1100px;
     width: 100%;
@@ -444,11 +428,11 @@ i.wallet_show {
 }
 
 .confirmation {
-    background: #252525;
+    border: 1px solid #E6E6E6;
     border-radius: 6px;
     max-width: 750px;
     width: 100%;
-    height: 840px; /* Change the height to 1000px */
+    height: 770px; /* Change the height to 1000px */
     margin-top: 200px;
     margin-left: 210px;
     position: absolute;
@@ -486,26 +470,27 @@ i.wallet_show {
 }
 
 .form_indicator h4 {
-    color: #f9f9f8;
+    color: #252525;
     margin-bottom: 10px;
     font-size: 17px;
 }
 
 .input_form input {
+    border: 1px solid #252525;
     height: 40px;
     width: 280px;
+    outline: none;
     border-radius: 6px;
-    border: none;
     margin-right: 80px;
     padding-left: 10px;
     font-size: 15px;
 }
 
 .input_form textarea {
+    border: 1px solid #252525;
     height: 100px;
     width: 250px;
     border-radius: 6px;
-    border: none;
     margin-right: 130px;
     padding-left: 10px;
     font-size: 15px;
@@ -513,11 +498,12 @@ i.wallet_show {
 }
 
 hr {
+    border: 1px solid #E6E6E7;
     margin-bottom: 20px;
 }
 
 .total_indicator h4 {
-    color: #f9f9f8;
+    color: #252525;
     margin-bottom: 10px;
     font-size: 20px;
 }
@@ -525,7 +511,7 @@ hr {
 .input_total .total_charge {
     display: flex;
     justify-content: end;
-    color: #f9f9f8;
+    color: #252525;
 }
 
 .confirm_button {
@@ -535,7 +521,7 @@ hr {
 }
 
 .pay_button {
-    background: transparent;
+    background: #F86A1D;
     border: 2px solid white;
     border-radius: 6px;
     height: 40px;
@@ -552,19 +538,4 @@ hr {
 .container1 {
     display: flex;
     flex-direction: row;
-}
-
-.selected_car {
-    margin-left: 990px;
-    margin-top: 400px;
-}
-
-.selected_car p {
-    font-size: 2em;
-    font-weight: bold;
-}
-
-.selected_car img {
-    width: 350px;
-    margin-top: 10px;
 }
