@@ -1,7 +1,9 @@
 <%@page import = "system.model.*" %>
 <%
+User user = (User) request.getSession().getAttribute("userobj");
 Reservation reservation = (Reservation) request.getAttribute("reservation");
 System.out.println(reservation.toString());
+System.out.println(user.toString());
 %>
 <!DOCTYPE html>
 <html lang="en">

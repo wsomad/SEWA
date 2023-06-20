@@ -48,8 +48,6 @@ public class ConfirmBookingController extends HttpServlet {
 		session.setAttribute("reservationobj", reservation);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/source/user_pages/booking_page/confirm-booking.jsp");
 		dispatcher.forward(request, response);*/
-		
-		System.out.println(pickupLoc + "\n" + dropLoc + "\n" + pickupDate + "\n" + dropDate + "\n" + passengers + "\n" + rentalChrge + "\n" + specialReq);
 	}
 	
 	private String dateFormatting(String date){
