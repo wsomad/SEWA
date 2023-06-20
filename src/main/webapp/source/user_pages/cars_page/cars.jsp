@@ -150,7 +150,7 @@
                                     <i class="fa fa-car"></i>
                                 </div>
                                 <div class="features_type">
-                                    <p>Sedan</p>
+                                    <p><%=vehicle.getV_type()%></p>
                                 </div>
                             </div>
                             <div class="features_box">
@@ -180,7 +180,7 @@
                         </div>
                     </div>
                     <div class="car_rate">
-                        <p class="book_rate">RM 112.00 <span>per day</span> </p>
+                        <p class="book_rate">RM <%=vehicle.getRental_pr_hr()%><span>per hour</span> </p>
                     </div>
                     <form method="post" action="BookingController">
                     	<input type="hidden" name="vehicleId" value="<%=vehicle.getVehicleid()%>">
