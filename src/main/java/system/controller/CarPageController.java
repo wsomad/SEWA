@@ -18,9 +18,9 @@ import system.dao.*;
  * Servlet implementation class CarPageController
  */
 //Run from dashboard
-@WebServlet("/source/user_pages/dashboard_page/CarPageController")
+//@WebServlet("/source/user_pages/dashboard_page/CarPageController")
 //Run from login
-//@WebServlet("/source/user_pages/front_page/CarPageController")
+@WebServlet("/source/user_pages/front_page/CarPageController")
 public class CarPageController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	

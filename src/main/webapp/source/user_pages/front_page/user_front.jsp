@@ -38,11 +38,11 @@
                 	<form method="post" action="login">
                         <h2>Sign in</h2>
                         <div class="input_form">
-                            <input type="email" placeholder="Enter your email" required>
+                            <input name="email" type="email" placeholder="Enter your email" required>
                             <i class="fa fa-envelope email"></i>
                         </div>
                         <div class="input_form">
-                            <input type="password" placeholder="Enter your password" required>
+                            <input name="password" type="password" placeholder="Enter your password" required>
                             <i class="fa fa-lock password"></i>
                             <i class="fa fa-eye-slash pw_hide"></i>
                         </div>

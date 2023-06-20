@@ -28,7 +28,7 @@ public class LoginController extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		//Test
-		System.out.println("Data Passed");
+		System.out.println("email : " + email + "\npass : " + password );
 		
 		try {
 			//First Validation
@@ -46,7 +46,7 @@ public class LoginController extends HttpServlet {
 				System.out.println("Second Validation Succesful!");
 			}else {
 				request.setAttribute("status", "failed");
-				dispatcher = request.getRequestDispatcher("/source/user_pages/front_page/user-front.jsp");
+				dispatcher = request.getRequestDispatcher("/source/user_pages/front_page/user_front.jsp");
 				//Test
 				System.out.println("Second Validation UnSuccesful!");
 			}

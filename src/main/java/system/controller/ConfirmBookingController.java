@@ -19,7 +19,10 @@ import system.model.Reservation;
 /**
  * Servlet implementation class ConfirmBookingController
  */
-@WebServlet("/source/user_pages/dashboard_page/ConfirmBookingController")
+//Run from dashboard
+//@WebServlet("/source/user_pages/dashboard_page/ConfirmBookingController")
+//Run from login
+@WebServlet("/source/user_pages/front_page/ConfirmBookingController")
 public class ConfirmBookingController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
