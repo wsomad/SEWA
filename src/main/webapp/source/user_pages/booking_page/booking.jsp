@@ -204,8 +204,7 @@ System.out.println("booking-jsp : " + vehicle.getV_brand());
 	                        <div class="form_box">
 	                            <span class="form_indicator"><h4>Special Request</h4></span>
 	                            <div class="input_form">
-	                                <textarea class="special_request" name="special_request" placeholder="Special Request">
-	                                </textarea>
+	                                <textarea class="special_request" name="special_request" placeholder="Special Request"></textarea>
 	                            </div>
 	                        </div>
 	                    </div>
