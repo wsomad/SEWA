@@ -1,9 +1,13 @@
 <%@page import = "system.model.*" %>
 <%
-
+Reservation reservation = (Reservation) request.getAttribute("reservation");
+System.out.println(reservation.toString());
 %>
 <!DOCTYPE html>
 <html lang="en">
+<style>
+	<%@include file="confirm-booking.css"%>
+</style>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
