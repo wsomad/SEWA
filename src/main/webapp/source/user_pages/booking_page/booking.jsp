@@ -1,6 +1,6 @@
 <%@page import = "system.model.*" %>
 <%
-Vehicle vehicle = (Vehicle) request.getAttribute("vehicleInForm");
+Vehicle vehicle = (Vehicle) request.getSession().getAttribute("vehicleInForm");
 System.out.println("booking-jsp : " + vehicle.getV_brand());
 %>
 <!DOCTYPE html>

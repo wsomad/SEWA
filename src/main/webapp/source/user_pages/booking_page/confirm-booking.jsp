@@ -1,6 +1,7 @@
 <%@page import = "system.model.*" %>
 <%
 User user = (User) request.getSession().getAttribute("userobj");
+Vehicle vehicle = (Vehicle) request.getSession().getAttribute("vehicleInForm");
 Reservation reservation = (Reservation) request.getAttribute("reservation");
 System.out.println(reservation.toString());
 System.out.println(user.toString());

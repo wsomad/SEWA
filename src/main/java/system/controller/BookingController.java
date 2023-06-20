@@ -29,7 +29,13 @@ public class BookingController extends HttpServlet {
 		
 		try {
 			Vehicle vehicle = bookingdao.getRegistrationForm(vehicleid);
-			request.setAttribute("vehicleInForm", vehicle);
+			
+			/*request.setAttribute("vehicleInForm", vehicle);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/source/user_pages/booking_page/booking.jsp");
+			dispatcher.forward(request, response);*/
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("vehicleInForm", vehicle);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/source/user_pages/booking_page/booking.jsp");
 			dispatcher.forward(request, response);
 		}catch(Exception e) {
