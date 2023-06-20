@@ -122,13 +122,13 @@ System.out.println(user.toString());
                     <div class="input_form">
                         <span class="form_indicator"><h4>Renter Name</h4></span>
                         <div class="input_form">
-                            <input type="text" placeholder="Renter Name">
+                            <input type="text" placeholder="<%=user.getUser_first_name()%> <%=user.getUser_last_name()%>" readonly>
                         </div>
                     </div>
                     <div class="input_form">
                         <span class="form_indicator"><h4>Renter Email</h4></span>
                         <div class="input_form">
-                            <input type="text" placeholder="Renter Email">
+                            <input type="text" placeholder="<%=user.getUser_email()%>" readonly>
                         </div>
                     </div>
                 </div>
@@ -136,13 +136,13 @@ System.out.println(user.toString());
                     <div class="input_form">
                         <span class="form_indicator"><h4>Vehicle Brand</h4></span>
                         <div class="input_form">
-                            <input type="text" placeholder="Vehicle Brand">
+                            <input type="text" placeholder="Vehicle Brand" readonly>
                         </div>
                     </div>
                     <div class="input_form">
                         <span class="form_indicator"><h4>Vehicle Model</h4></span>
                         <div class="input_form">
-                            <input type="text" placeholder="Vehicle Model">
+                            <input type="text" placeholder="Vehicle Model" readonly>
                         </div>
                     </div>
                 </div>
@@ -150,13 +150,13 @@ System.out.println(user.toString());
                     <div class="input_form">
                         <span class="form_indicator"><h4>Pickup Location</h4></span>
                         <div class="input_form">
-                            <input type="text" placeholder="Pickup Location">
+                            <input type="text" placeholder="Pickup Location" readonly>
                         </div>
                     </div>
                     <div class="input_form">
                         <span class="form_indicator"><h4>Pickup Date</h4></span>
                         <div class="input_form">
-                            <input type="text" placeholder="Pickup Date">
+                            <input type="text" placeholder="Pickup Date" readonly>
                         </div>
                     </div>
                 </div>
@@ -164,13 +164,13 @@ System.out.println(user.toString());
                     <div class="input_form">
                         <span class="form_indicator"><h4>Drop Location</h4></span>
                         <div class="input_form">
-                            <input type="text" placeholder="Drop Location">
+                            <input type="text" placeholder="Drop Location" readonly>
                         </div>
                     </div>
                     <div class="input_form">
                         <span class="form_indicator"><h4>Drop Date</h4></span>
                         <div class="input_form">
-                            <input type="text" placeholder="Drop Date">
+                            <input type="text" placeholder="Drop Date" readonly>
                         </div>
                     </div>
                 </div>
@@ -178,13 +178,13 @@ System.out.println(user.toString());
                     <div class="input_form">
                         <span class="form_indicator"><h4>Period of Rent (Days)</h4></span>
                         <div class="input_form">
-                            <input type="text" placeholder="Period of Rent">
+                            <input type="text" placeholder="Period of Rent" readonly>
                         </div>
                     </div>
                     <div class="input_form">
                         <span class="form_indicator"><h4>Number of Passenger</h4></span>
                         <div class="input_form">
-                            <input type="text" placeholder="No. of Passenger">
+                            <input type="text" placeholder="No. of Passenger" readonly>
                         </div>
                     </div>
                 </div>
@@ -192,7 +192,7 @@ System.out.println(user.toString());
                     <div class="form_box">
                         <span class="form_indicator"><h4>Special Request</h4></span>
                         <div class="input_form">
-                            <textarea class="special_request" name="special_request" placeholder="Special Request">
+                            <textarea class="special_request" name="special_request" placeholder="Special Request" readonly>
                             </textarea>
                         </div>
                     </div>
