@@ -110,14 +110,14 @@ System.out.println(user.toString());
             </div>
         </div>
         <div class="confirm_title">
-            <p>Confirm Your Booking!</p>
+            <p>Booking Confirmation</p>
         </div>
         <div class="confirm_word">
             <h4>You are nearly there! Please confirm your booking to proceed.</h4>
         </div>
         <div class="confirmation">
             <div class="booking_confirmation">
-                <p>Booking Confirmation</p>
+                
                 <div class="input_row">
                     <div class="input_form">
                         <span class="form_indicator"><h4>Renter Name</h4></span>
