@@ -61,7 +61,7 @@
 
             <div class="signup_form">
                 <form method="post" action="registration">
-                    <h2>Sign up</h2>
+                    <h2>Sign dsfsf</h2>
                     <div class="name_container">
 	                    <div class="input_form">
 	                        <input type="text" name="firstname" placeholder="First Name" required>
