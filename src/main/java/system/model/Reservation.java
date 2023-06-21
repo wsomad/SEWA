@@ -1,19 +1,23 @@
 package system.model;
 
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 import java.text.SimpleDateFormat;
 
 public class Reservation {
 	private int reservation_userid;
 	private int reservation_vehicleid;
+	private String pickup_location;
+	private String drop_location;
 	private String pickup_date;
 	private String drop_date;
 	private int passengers_num;
 	private String special_req;
 	private double rent_to_pay;
+	private int day_count;
 	
 	//Normal Constructor
-	public Reservation(int userId, int vehicleId, String pickupDate, String dropDate, int passengersNum, String specialReq, double rentToPay) {
+	public Reservation(int userId, int vehicleId,String pickupLoc, String dropLoc, String pickupDate, String dropDate, int passengersNum, String specialReq, double rentToPay) {
         this.reservation_userid = userId;
         this.reservation_vehicleid = vehicleId;
         this.pickup_date = pickupDate;
@@ -21,7 +25,15 @@ public class Reservation {
         this.passengers_num = passengersNum;
         this.special_req = specialReq;
         this.rent_to_pay = rentToPay;
+        countDays();
     }
+	
+	//Days Counter
+	private void countDays() {
+		long timeDifference = getDrop_date().getTime() - getPickup_date().getTime();
+		day_count =  (int) TimeUnit.MILLISECONDS.toDays(timeDifference);
+
+	}
 	
 	//Default Constructor
 	public  Reservation() {
@@ -46,6 +58,22 @@ public class Reservation {
 	public void setReservation_vehcileid(int reservation_vehcileid) {
 		this.reservation_vehicleid = reservation_vehcileid;
 	}
+	public String getPickup_location() {
+		return pickup_location;
+	}
+
+	public void setPickup_location(String pickup_location) {
+		this.pickup_location = pickup_location;
+	}
+
+	public String getDrop_location() {
+		return drop_location;
+	}
+
+	public void setDrop_location(String drop_location) {
+		this.drop_location = drop_location;
+	}
+
 	public Date getPickup_date() {
 		Date date = null;
 		try {
@@ -89,6 +117,14 @@ public class Reservation {
 		this.rent_to_pay = rent_to_pay;
 	}
 	
+	public int getDay_count() {
+		return day_count;
+	}
+
+	public void setDay_count(int day_count) {
+		this.day_count = day_count;
+	}
+
 	public String toString() {
         return "Reservation{" +
                 "\nreservation_userid=" + reservation_userid +
@@ -98,6 +134,7 @@ public class Reservation {
                 ", \npassengers_num=" + passengers_num +
                 ", \nspecial_req='" + special_req + '\'' +
                 ", \nrent_to_pay=" + rent_to_pay +
+                ", \ndays count=" + day_count +
                 '}';
     }
 	

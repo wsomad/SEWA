@@ -5,6 +5,7 @@ Vehicle vehicle = (Vehicle) request.getSession().getAttribute("vehicleInForm");
 Reservation reservation = (Reservation) request.getAttribute("reservation");
 System.out.println(reservation.toString());
 System.out.println(user.toString());
+System.out.println(vehicle.toString());
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -137,13 +138,13 @@ System.out.println(user.toString());
                     <div class="input_form">
                         <span class="form_indicator"><h4>Vehicle Brand</h4></span>
                         <div class="input_form">
-                            <input type="text" placeholder="Vehicle Brand" readonly>
+                            <input type="text" placeholder="<%=vehicle.getV_brand()%>" readonly>
                         </div>
                     </div>
                     <div class="input_form">
                         <span class="form_indicator"><h4>Vehicle Model</h4></span>
                         <div class="input_form">
-                            <input type="text" placeholder="Vehicle Model" readonly>
+                            <input type="text" placeholder="<%=vehicle.getV_model()%>" readonly>
                         </div>
                     </div>
                 </div>
@@ -151,13 +152,13 @@ System.out.println(user.toString());
                     <div class="input_form">
                         <span class="form_indicator"><h4>Pickup Location</h4></span>
                         <div class="input_form">
-                            <input type="text" placeholder="Pickup Location" readonly>
+                            <input type="text" placeholder="<%=reservation.getPickup_location()%>" readonly>
                         </div>
                     </div>
                     <div class="input_form">
                         <span class="form_indicator"><h4>Pickup Date</h4></span>
                         <div class="input_form">
-                            <input type="text" placeholder="Pickup Date" readonly>
+                            <input type="text" placeholder="<%=()reservation.getPickup_DateString()%>" readonly>
                         </div>
                     </div>
                 </div>
@@ -165,13 +166,13 @@ System.out.println(user.toString());
                     <div class="input_form">
                         <span class="form_indicator"><h4>Drop Location</h4></span>
                         <div class="input_form">
-                            <input type="text" placeholder="Drop Location" readonly>
+                            <input type="text" placeholder="<%=reservation.getDrop_location()%>" readonly>
                         </div>
                     </div>
                     <div class="input_form">
                         <span class="form_indicator"><h4>Drop Date</h4></span>
                         <div class="input_form">
-                            <input type="text" placeholder="Drop Date" readonly>
+                            <input type="text" placeholder="<%=reservation.getDrop_DateString()%>" readonly>
                         </div>
                     </div>
                 </div>
@@ -179,13 +180,13 @@ System.out.println(user.toString());
                     <div class="input_form">
                         <span class="form_indicator"><h4>Period of Rent (Days)</h4></span>
                         <div class="input_form">
-                            <input type="text" placeholder="Period of Rent" readonly>
+                            <input type="text" placeholder="<%=reservation.getDay_count()%>" readonly>
                         </div>
                     </div>
                     <div class="input_form">
                         <span class="form_indicator"><h4>Number of Passenger</h4></span>
                         <div class="input_form">
-                            <input type="text" placeholder="No. of Passenger" readonly>
+                            <input type="text" placeholder="<%=reservation.getPassengers_num()%>" readonly>
                         </div>
                     </div>
                 </div>
@@ -193,7 +194,7 @@ System.out.println(user.toString());
                     <div class="form_box">
                         <span class="form_indicator"><h4>Special Request</h4></span>
                         <div class="input_form">
-                            <textarea class="special_request" name="special_request" placeholder="Special Request" readonly>
+                            <textarea class="special_request" name="special_request" placeholder="<%=reservation.getSpecial_req()%>" readonly>
                             </textarea>
                         </div>
                     </div>
@@ -201,7 +202,7 @@ System.out.println(user.toString());
                 <hr>
                 <div class="input_price">
                     <div class="input_total">
-                        <span class="total_indicator"><h4>Total Charge (RM)</h4></span>
+                        <span class="total_indicator"><h4>Total Charge (RM <%=reservation.getRent_to_pay() %>)</h4></span>
                         <h4 class="total_charge">RM 12.00 (incl. tax)</h4>
                     </div>
                     <div class="confirm_button">
