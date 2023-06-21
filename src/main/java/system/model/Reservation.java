@@ -20,6 +20,8 @@ public class Reservation {
 	public Reservation(int userId, int vehicleId,String pickupLoc, String dropLoc, String pickupDate, String dropDate, int passengersNum, String specialReq, double rentToPay) {
         this.reservation_userid = userId;
         this.reservation_vehicleid = vehicleId;
+        pickup_location = pickupLoc;
+        drop_location = dropLoc;
         this.pickup_date = pickupDate;
         this.drop_date = dropDate;
         this.passengers_num = passengersNum;
@@ -73,7 +75,11 @@ public class Reservation {
 	public void setDrop_location(String drop_location) {
 		this.drop_location = drop_location;
 	}
-
+	
+	public String getPickup_DateString() {
+		return pickup_date;
+	}
+	
 	public Date getPickup_date() {
 		Date date = null;
 		try {
@@ -86,6 +92,11 @@ public class Reservation {
 	public void setPickup_date(String pickup_date) {
 		this.pickup_date = pickup_date;
 	}
+	
+	public String getDrop_DateString() {
+		return drop_date;
+	}
+	
 	public Date getDrop_date() {
 		Date date = null;
 		try {
@@ -129,6 +140,8 @@ public class Reservation {
         return "Reservation{" +
                 "\nreservation_userid=" + reservation_userid +
                 ", \nreservation_vehicleid=" + reservation_vehicleid +
+                ", \npickup_location='" + pickup_location + '\'' +
+                ", \ndrop_location='" + drop_location + '\'' +
                 ", \npickup_date='" + pickup_date + '\'' +
                 ", \ndrop_date='" + drop_date + '\'' +
                 ", \npassengers_num=" + passengers_num +
@@ -137,6 +150,5 @@ public class Reservation {
                 ", \ndays count=" + day_count +
                 '}';
     }
-	
 	SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 }

@@ -158,7 +158,7 @@ System.out.println(vehicle.toString());
                     <div class="input_form">
                         <span class="form_indicator"><h4>Pickup Date</h4></span>
                         <div class="input_form">
-                            <input type="text" placeholder="<%=()reservation.getPickup_DateString()%>" readonly>
+                            <input type="text" placeholder="<%=reservation.getPickup_DateString()%>" readonly>
                         </div>
                     </div>
                 </div>
