@@ -14,7 +14,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import system.model.Reservation;
+import system.model.*;
 
 /**
  * Servlet implementation class ConfirmBookingController
@@ -43,14 +43,14 @@ public class ConfirmBookingController extends HttpServlet {
 		Reservation reservation = new Reservation();
 		reservation = new Reservation(0,0,pickupLoc,dropLoc,pickupDate,dropDate,passengers,specialReq,rentalChrge);
 		
-		request.setAttribute("reservation", reservation);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/source/user_pages/booking_page/confirm-booking.jsp");
-		dispatcher.forward(request, response);
-		
-		/*HttpSession session = request.getSession();
-		session.setAttribute("reservationobj", reservation);
+		/*request.setAttribute("reservation", reservation);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/source/user_pages/booking_page/confirm-booking.jsp");
 		dispatcher.forward(request, response);*/
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("reservation", reservation);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/source/user_pages/booking_page/confirm-booking.jsp");
+		dispatcher.forward(request, response);
 	}
 	
 	private String dateFormatting(String date){
@@ -67,5 +67,14 @@ public class ConfirmBookingController extends HttpServlet {
 			System.out.println("Error parsing the custom date: " + e.getMessage());
 		}
 		return date;
+	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		User user = (User) request.getSession().getAttribute("userobj");
+		Vehicle vehicle = (Vehicle) request.getSession().getAttribute("vehicleInForm");
+		Reservation reservation = (Reservation) request.getSession().getAttribute("reservation");
+		
+		System.out.println("from servlet--------------\n" + reservation.toString());
+		
 	}
 }
