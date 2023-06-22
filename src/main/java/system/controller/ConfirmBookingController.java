@@ -15,6 +15,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import system.model.*;
+import system.dao.ReservationDAO;
 
 /**
  * Servlet implementation class ConfirmBookingController
@@ -73,8 +74,35 @@ public class ConfirmBookingController extends HttpServlet {
 		User user = (User) request.getSession().getAttribute("userobj");
 		Vehicle vehicle = (Vehicle) request.getSession().getAttribute("vehicleInForm");
 		Reservation reservation = (Reservation) request.getSession().getAttribute("reservation");
+		RequestDispatcher dispatcher = null;
 		
+		reservation.setReservation_userid(user.getUserid());
+		reservation.setReservation_vehcileid(vehicle.getVehicleid());
 		System.out.println("from servlet--------------\n" + reservation.toString());
 		
+		try {
+			//Booking Confirmed
+			ReservationDAO reservationdao = new ReservationDAO();
+			int rowCount_booking = reservationdao.makeReservation(reservation);
+			
+			//Make Payment
+			user.setUser_wallet(user.getUser_wallet()-reservation.getRent_to_pay());
+			int rowCount_payment = reservationdao.makeReservationPayment(user);
+			
+			//Off Vehicle's Availability
+			int rowCount_vehicle = reservationdao
+			
+			dispatcher = request.getRequestDispatcher("/source/user_pages/dashboard_page/user-dashboard.jsp");
+			if(rowCount_booking > 0 && rowCount_payment > 0) {
+				request.setAttribute("status", "success");
+				HttpSession session = request.getSession();
+				session.setAttribute("userobj", user);
+			}else {
+				request.setAttribute("status", "failed");
+			}
+			dispatcher.forward(request, response);
+		}catch(ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 }
