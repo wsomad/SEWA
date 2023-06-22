@@ -2,7 +2,7 @@
 <%
 User user = (User) request.getSession().getAttribute("userobj");
 Vehicle vehicle = (Vehicle) request.getSession().getAttribute("vehicleInForm");
-Reservation reservation = (Reservation) request.getAttribute("reservation");
+Reservation reservation = (Reservation) request.getSession().getAttribute("reservation");
 System.out.println(reservation.toString());
 System.out.println(user.toString());
 System.out.println(vehicle.toString());
@@ -205,7 +205,9 @@ System.out.println(vehicle.toString());
                         <h4 class="total_charge">RM 12.00 (incl. tax)</h4>
                     </div>
                     <div class="confirm_button">
-                        <button class="pay_button">Pay With Wallet</button>
+                    	<form method="post" action="ConfirmBookingController">
+                        	<button class="pay_button">Pay With Wallet</button>
+                        </form>
                     </div>
                 </div>
             </div>
