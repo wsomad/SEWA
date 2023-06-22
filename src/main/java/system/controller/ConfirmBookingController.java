@@ -90,13 +90,15 @@ public class ConfirmBookingController extends HttpServlet {
 			int rowCount_payment = reservationdao.makeReservationPayment(user);
 			
 			//Off Vehicle's Availability
-			int rowCount_vehicle = reservationdao
+			vehicle.setAvailability(false);
+			int rowCount_vehicle = reservationdao.makeVehicleUnavailable(vehicle);
 			
 			dispatcher = request.getRequestDispatcher("/source/user_pages/dashboard_page/user-dashboard.jsp");
-			if(rowCount_booking > 0 && rowCount_payment > 0) {
+			if(rowCount_booking > 0 && rowCount_payment > 0 && rowCount_vehicle > 0) {
 				request.setAttribute("status", "success");
 				HttpSession session = request.getSession();
 				session.setAttribute("userobj", user);
+				session.setAttribute("vehicleobj", vehicle);
 			}else {
 				request.setAttribute("status", "failed");
 			}

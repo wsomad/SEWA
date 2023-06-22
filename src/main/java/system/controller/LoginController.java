@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import system.model.User;
+import system.model.*;
 import system.dao.*;
 
 /**
@@ -23,6 +23,8 @@ public class LoginController extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		User user = new User();
+		Vehicle vehicle = new Vehicle();
+		Reservation reservation = new Reservation();
 		RequestDispatcher dispatcher = null;
 		
 		String email = request.getParameter("email");
