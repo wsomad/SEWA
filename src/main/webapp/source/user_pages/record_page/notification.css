@@ -92,6 +92,10 @@ nav ul li a{
     display: flex;
 }
 
+.wallet_profile li {
+    height: 30px;
+}
+
 .wallet_profile li a {
     color: #F86A1D;
 }
@@ -159,6 +163,19 @@ i.notification_bell {
 
 i.profile_icon {
     font-size: 27px;
+}
+
+.notification_number {
+    background-color: #F86A1D;
+    color: #F9F9F8;
+    border-radius: 80%;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    top: 15px;
+    font-size: 12px;
 }
 
 .wallet_title {
@@ -293,17 +310,21 @@ i.wallet_show {
     transition-property: 63px;
     top: 80px;
     right: 35px;
-    overflow-y: scroll;
+    border: 1px solid #E6E6E6;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    box-shadow: 0px 0px 1px 0px #252525;
 }
 
 .notification_menu h2 {
-    font-size: 20px;
+    font-size: 22px;
     padding: 15px;
-    color: #F9F9F8;
+    color: #F86A1D;
 }
 
 .notification_word {
-    background-color: #F86A1D;
+    background-color: #F9F9F8;
+    border-bottom: 1px solid #E6E6E6;
 }
 
 .notification_item {
@@ -319,8 +340,9 @@ i.wallet_show {
 }
 
 .notification_row h4 {
-    font-size: 18px;
+    font-size: 16px;
     color: #252525;
+    margin-bottom: 2px ;
 }
 
 .notification_row p {
@@ -364,6 +386,7 @@ i.wallet_show {
 
 .user-info h2{
     color: #F86A1D;
+    font-size: 20px;
 }
 
 .sub-menu-link{

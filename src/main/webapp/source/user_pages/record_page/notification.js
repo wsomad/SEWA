@@ -3,6 +3,7 @@ subMenu = document.getElementById("subMenu"),
 home = document.querySelector(".home"),
 formCloseButton = document.querySelector(".form_close");
 notiMenu = document.getElementById("notificationMenu");
+notiItem = document.querySelector(".notification_item");
 down = false;
 
 formOpenButton.addEventListener("click", () => home.classList.add("show"));
@@ -19,7 +20,7 @@ function toggleNotification() {
         down = false;
     }
     else {
-        notiMenu.style.height = '400px';
+        notiMenu.style.height = 'auto';
         notiMenu.style.opacity = 1;
         down = true;
     }
