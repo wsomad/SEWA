@@ -285,6 +285,54 @@ i.wallet_show {
     margin-left: 30px;
 }
 
+.notification_menu {
+    width: 350px;
+    height: 0px;
+    opacity: 0;
+    position: absolute;
+    transition-property: 63px;
+    top: 80px;
+    right: 35px;
+    overflow-y: scroll;
+}
+
+.notification_menu h2 {
+    font-size: 20px;
+    padding: 15px;
+    color: #F9F9F8;
+}
+
+.notification_word {
+    background-color: #F86A1D;
+}
+
+.notification_item {
+    display: flex;
+    border-bottom: 1px solid #E6E6E6;
+    padding: 15px;
+    cursor: pointer;
+    background-color: #F9F9F8;
+}
+
+.notification_item a {
+    text-decoration: none;
+}
+
+.notification_row h4 {
+    font-size: 18px;
+    color: #252525;
+}
+
+.notification_row p {
+    font-size: 14px;
+    color: #888;
+}
+
+.notification_row p span {
+    color: #252525;
+    font-weight: bold;
+}
+
 .sub-menu-wrap{
     position: absolute;
     top: 100%;
