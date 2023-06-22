@@ -194,8 +194,7 @@ System.out.println(vehicle.toString());
                     <div class="form_box">
                         <span class="form_indicator"><h4>Special Request</h4></span>
                         <div class="input_form">
-                            <textarea class="special_request" name="special_request" placeholder="<%=reservation.getSpecial_req()%>" readonly>
-                            </textarea>
+                            <textarea class="special_request" name="special_request" placeholder="<%=reservation.getSpecial_req()%>" readonly></textarea>
                         </div>
                     </div>
                 </div>
