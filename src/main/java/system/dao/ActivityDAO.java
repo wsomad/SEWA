@@ -78,14 +78,6 @@ public class ActivityDAO {
 		}catch(Exception e) {
 			System.out.println("Unsuccesful");
 			e.printStackTrace();
-		}finally {
-			try {
-				System.out.println("try");
-				con.close();
-			}catch(SQLException e) {
-				System.out.println("catch");
-				e.printStackTrace();
-			}
 		}
 		return activities;
 	}
