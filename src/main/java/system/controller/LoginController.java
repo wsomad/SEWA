@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.Stack;
 
 import system.model.*;
 import system.dao.*;
@@ -24,6 +25,7 @@ public class LoginController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		User user = new User();
 		Vehicle vehicle = new Vehicle();
+		Stack<Activity> activities = new Stack<>();
 		Reservation reservation = new Reservation();
 		RequestDispatcher dispatcher = null;
 		
@@ -41,8 +43,10 @@ public class LoginController extends HttpServlet {
 			if(user.getUser_email().equals(email) && user.getUser_pass().equals(password)) {
 				HttpSession session = request.getSession();
 				session.setAttribute("userobj", user);
-				//response.sendRedirect("/PROJECT/src/main/webapp/test.jsp");
-				//response.sendRedirect("/PROJECT/src/main/webapp/source/user_pages/dashboard_page/user-dashboard.jsp");
+				
+				//Database -> Session
+				activities = ActivityDAO.getActivities(user.getUserid());
+				
 				dispatcher = request.getRequestDispatcher("/source/user_pages/dashboard_page/user-dashboard.jsp");
 				//Test
 				System.out.println("Second Validation Succesful!");

@@ -2,6 +2,7 @@ package system.model;
 
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 
 public class Reservation {
@@ -15,9 +16,10 @@ public class Reservation {
 	private String special_req;
 	private double rent_to_pay;
 	private int day_count;
+	private Timestamp insertionTimestamp;
 	
 	//Normal Constructor
-	public Reservation(int userId, int vehicleId,String pickupLoc, String dropLoc, String pickupDate, String dropDate, int passengersNum, String specialReq, double rentToPay) {
+	public Reservation(int userId, int vehicleId,String pickupLoc, String dropLoc, String pickupDate, String dropDate, int passengersNum, String specialReq, double rentToPay, Timestamp t) {
         this.reservation_userid = userId;
         this.reservation_vehicleid = vehicleId;
         pickup_location = pickupLoc;
@@ -27,6 +29,7 @@ public class Reservation {
         this.passengers_num = passengersNum;
         this.special_req = specialReq;
         this.rent_to_pay = rentToPay;
+        insertionTimestamp = t;
         countDays();
     }
 	
@@ -134,6 +137,14 @@ public class Reservation {
 
 	public void setDay_count(int day_count) {
 		this.day_count = day_count;
+	}
+	
+	public Timestamp getInsertionTimestamp() {
+		return insertionTimestamp;
+	}
+
+	public void setInsertionTimestamp(Timestamp insertionTimestamp) {
+		this.insertionTimestamp = insertionTimestamp;
 	}
 
 	public String toString() {
