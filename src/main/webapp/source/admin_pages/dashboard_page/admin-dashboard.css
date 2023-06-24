@@ -399,7 +399,7 @@ body {
 .booking
 {
     padding: 2px 8px;
-    background: #f00;
+    background: red;
     color: var(--white);
     border-radius: 4px;
     font-size: 14px;
