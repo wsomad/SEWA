@@ -61,37 +61,43 @@
 
             <div class="signup_form">
                 <form method="post" action="registration">
-                    <h2>Sign up</h2>
-                    <div class="input_form">
-                        <input type="text" name="firstname" placeholder="First Name" required>
-                        <i class="fa fa-user email"></i>
-                    </div>
-                    <div class="input_form">
-                        <input type="text" name="lastname" placeholder="Last Name" required>
-                        <i class="fa fa-user email"></i>
-                    </div>
-                    <div class="input_form">
-                        <input type="email" name="email" placeholder="Email" required>
-                        <i class="fa fa-envelope email"></i>
-                    </div>
-                    <div class="input_form">
-                        <input type="tel" name="phonenum" placeholder="Mobile Number" required>
-                        <i class="fa fa-phone phone"></i>
-                    </div>
+                    <h2>Sign dsfsf</h2>
+                    <div class="name_container">
+	                    <div class="input_form">
+	                        <input type="text" name="firstname" placeholder="First Name" required>
+	                        <i class="fa fa-user email"></i>
+	                    </div>
+	                    <div class="input_form">
+	                        <input type="text" name="lastname" placeholder="Last Name" required>
+	                        <i class="fa fa-user email"></i>
+	                    </div>
+	                </div>
+	                <div class="email_phone">
+	                    <div class="input_form">
+	                        <input type="email" name="email" placeholder="Email" required>
+	                        <i class="fa fa-envelope email"></i>
+	                    </div>
+	                    <div class="input_form">
+	                        <input type="tel" name="phonenum" placeholder="Mobile Number" required>
+	                        <i class="fa fa-phone phone"></i>
+	                    </div>
+	                </div>
                     <div class="input_form">
                         <input type="text" name="username" placeholder="Create Username" required>
                         <i class="fa fa-user username"></i>
                     </div>
-                    <div class="input_form">
-                        <input type="password" placeholder="Create Password" required>
-                        <i class="fa fa-lock password"></i>
-                        <i class="fa fa-eye-slash pw_hide"></i>
-                    </div>
-                    <div class="input_form">
-                        <input type="password" name="password" placeholder="Confirm Password" required>
-                        <i class="fa fa-lock password"></i>
-                        <i class="fa fa-eye-slash pw_hide"></i>
-                    </div>
+                    <div class="username_password">
+	                    <div class="input_form">
+	                        <input type="password" placeholder="Create Password" required>
+	                        <i class="fa fa-lock password"></i>
+	                        <i class="fa fa-eye-slash pw_hide"></i>
+	                    </div>
+	                    <div class="input_form">
+	                        <input type="password" name="password" placeholder="Confirm Password" required>
+	                        <i class="fa fa-lock password"></i>
+	                        <i class="fa fa-eye-slash pw_hide"></i>
+	                    </div>
+	                </div>
 
                     <button class="button">Sign up</button>
 

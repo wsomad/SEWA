@@ -72,7 +72,7 @@ public class Vehicle {
 		this.vehicleid = vehicleid;
 	}
 
-	public boolean isAvailability() {
+	public boolean getAvailability() {
 		return availability;
 	}
 

@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #f9f9f8;
+    background-color: #F9F9F8;
 }
 
 header {
@@ -19,51 +19,8 @@ header {
     box-shadow: 0 0 5px 0 #252525; 
 }
 
-footer {
-    position: relative;
-    max-width: 1100px;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    padding: 20px;
-    margin-left: 200px;
-}
-
-.foot_container .top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.top .company_register {
-    color: #F86A1D;
-    font-size: 12px;
-    font-weight: bold;
-    padding-left: 160px;
-}
-
-.top .logo_details img {
-    width: 25px;
-}
-
-.foot_container .top .media_details {
-    display: flex;
-}
-
-.foot_container .top .media_details a {
-    height: 30px;
-    width: 30px;
-    margin: 0 8px;
-    text-align: center;
-    line-height: 30px;
-    text-decoration: none;
-    font-size: 18px;
-    color: #F86A1D;
-    transition: all 0.4s ease;
-}
-
-.top .media_details a:hover {
-    color: white;
+.home2 {
+    height: 3000px;
 }
 
 .nav{
@@ -135,12 +92,12 @@ nav ul li a{
     display: flex;
 }
 
-.wallet_profile li a {
-    color: #F86A1D;
+.wallet_profile li {
+    height: 30px;
 }
 
-.profile-icon{
-    font-size: 28px;
+.wallet_profile li a {
+    color: #F86A1D;
 }
 
 .wallet_container {
@@ -166,14 +123,14 @@ nav ul li a{
     transform: scale(0.98);
 }
 
-.confirmation_form.show .wallet_container {
+.home.show .wallet_container {
     opacity: 1;
     pointer-events: auto;
     transform: translate(-50%, -50%) scale(1);
     box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
 }
 
-.confirmation_form::before {
+.home::before {
     content: "";
     position: absolute;
     height: 100%;
@@ -199,6 +156,28 @@ i.wallet_show {
     font-size: 26px;
 }
 
+i.notification_bell {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+i.profile_icon {
+    font-size: 27px;
+}
+
+.notification_number {
+    background-color: #F86A1D;
+    color: #F9F9F8;
+    border-radius: 80%;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    top: 15px;
+    font-size: 12px;
+}
+
 .wallet_title {
     color: #F86A1D;
     font-size: 16px;
@@ -213,7 +192,7 @@ i.wallet_show {
 .topup .input_form {
     display: flex;
     position: relative;
-    max-width: 350px;
+    max-width: 270px;
     width: 100%;
     height: 40px;
     margin-left: 20px;
@@ -228,10 +207,6 @@ i.wallet_show {
     outline: none;
     font-size: 15px;
     padding-left: 10px;
-}
-
-.topup .input_form i {
-    padding-right: 80px;
 }
 
 .topup_wallet {
@@ -327,6 +302,59 @@ i.wallet_show {
     margin-left: 30px;
 }
 
+.notification_menu {
+    width: 350px;
+    height: 0px;
+    opacity: 0;
+    position: absolute;
+    transition-property: 63px;
+    top: 80px;
+    right: 35px;
+    border: 1px solid #E6E6E6;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    box-shadow: 0px 0px 1px 0px #252525;
+}
+
+.notification_menu h2 {
+    font-size: 22px;
+    padding: 15px;
+    color: #F86A1D;
+}
+
+.notification_word {
+    background-color: #F9F9F8;
+    border-bottom: 1px solid #E6E6E6;
+}
+
+.notification_item {
+    display: flex;
+    border-bottom: 1px solid #E6E6E6;
+    padding: 15px;
+    cursor: pointer;
+    background-color: #F9F9F8;
+}
+
+.notification_item a {
+    text-decoration: none;
+}
+
+.notification_row h4 {
+    font-size: 16px;
+    color: #252525;
+    margin-bottom: 2px ;
+}
+
+.notification_row p {
+    font-size: 14px;
+    color: #888;
+}
+
+.notification_row p span {
+    color: #252525;
+    font-weight: bold;
+}
+
 .sub-menu-wrap{
     position: absolute;
     top: 100%;
@@ -336,6 +364,7 @@ i.wallet_show {
     overflow: hidden;
     transition: max-height 0.5s;
     background: #252525;
+    opacity: 0.9;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
 }
@@ -357,6 +386,7 @@ i.wallet_show {
 
 .user-info h2{
     color: #F86A1D;
+    font-size: 20px;
 }
 
 .sub-menu-link{
@@ -406,136 +436,111 @@ i.wallet_show {
     margin-top: 25px;
 }
 
-.confirm_title {
+.home2 {
+    min-height: calc(900px - 80px);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.activity {
     max-width: 1100px;
     width: 100%;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    margin-top: 100px;
-    font-size: 2em;
+    height: 600px;
+}
+
+.activity p {
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
-.confirm_word {
-    max-width: 1100px;
-    width: 100%;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    margin-top: 150px;
-    font-weight: bold;
+.activity_container {
 }
 
-.confirmation {
-    border: 1px solid #E6E6E6;
-    border-radius: 6px;
-    max-width: 750px;
-    width: 100%;
-    height: 780px; /* Change the height to 1000px */
-    margin-top: 200px;
-    margin-left: 200px;
-    position: absolute;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.booking_confirmation {
-    margin: 30px 30px;
-}
-
-.booking_confirmation p {
-    margin-bottom: 30px;
-    color: #F86A1D;
-    font-weight: bold;
-    font-size: 1.8em;
-}
-
-.confirmation_form, .second {
-    height: 100vh; 
-} 
-
-.second {
-    height: 300px;
-}
-
-.input_row {
+.date_bar {
     display: flex;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    padding-left: -10px;
 }
 
-.input_price {
+.date_bar p {
+    font-size: 15px;
+    color: #888;
+    width: 100px;
+}
+
+.horizontal_line {
+    height: 0.5px;
+    width: 1100px;
+    background-color: #888;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.booking_container {
     display: flex;
-    justify-content: end;
-}
-
-.form_indicator h4 {
-    color: #252525;
-    margin-bottom: 10px;
-    font-size: 17px;
-}
-
-.input_form input {
-    border: 1px solid #252525;
-    height: 40px;
-    width: 280px;
-    outline: none;
+    background-color: #DDDDDD;
+    padding-left: 80px;
+    margin-top: 20px;
     border-radius: 6px;
-    margin-right: 80px;
-    padding-left: 10px;
-    font-size: 15px;
+    height: 250px;
+    box-shadow: 0 5 5px 0 #252525; 
 }
 
-.input_form textarea {
-    border: 1px solid #252525;
-    height: 100px;
-    width: 250px;
-    border-radius: 6px;
-    margin-right: 130px;
-    padding-left: 10px;
-    font-size: 15px;
-    margin-bottom: 40px;
+.car_image {
+    display: flex;
+    align-items: center;
 }
 
-hr {
-    border: 1px solid #E6E6E7;
-    margin-bottom: 20px;
+.car_image img {
+    width: 300px;
 }
 
-.total_indicator h4 {
-    color: #252525;
-    margin-bottom: 10px;
+.car_info {
+    display: flex;
+}
+
+.booked_car {
+    margin-left: 50px;
+}
+
+.info_details {
+    width: 200px;
+}
+
+.details {
+    width: 180px;
+    margin-right: 50px;
+    margin-top: 35px;
+}
+
+.details h4 {
+    color: #212121;
+}
+
+.details p {
     font-size: 20px;
 }
 
-.input_total .total_charge {
-    display: flex;
-    justify-content: end;
-    color: #252525;
+.activity_button {
+    float: right;
+    margin-top: 30px;
 }
 
-.confirm_button {
-    display: flex;
-    align-items: center;
-    margin-left: 20px;
-}
-
-.pay_button {
-    background: #F86A1D;
-    border: 2px solid white;
+.activity_button button {
+    width: 100px;
+    height: 35px;
     border-radius: 6px;
-    height: 40px;
-    width: 150px;
-    color: white;
-    font-size: 14px;
-    cursor: pointer;
+    border: 1px solid #F86A1D;
+    background-color: #F86A1D;
+    color: #F9F9F8;
+    font-weight: 500;
+    font-size: 13px;
+    margin-right: 10px;
 }
 
-.pay_button:active {
+button:hover {
     transform: scale(1.02);
-}
-
-.container1 {
-    display: flex;
-    flex-direction: row;
+    cursor: pointer;
 }

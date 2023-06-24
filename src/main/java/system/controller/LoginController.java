@@ -9,8 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.Stack;
 
-import system.model.User;
+import system.model.*;
 import system.dao.*;
 
 /**
@@ -23,12 +24,12 @@ public class LoginController extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		User user = new User();
+		Vehicle vehicle = new Vehicle();
+		Reservation reservation = new Reservation();
 		RequestDispatcher dispatcher = null;
 		
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		//Test
-		System.out.println("Data Passed");
 		
 		try {
 			//First Validation
@@ -39,20 +40,15 @@ public class LoginController extends HttpServlet {
 			if(user.getUser_email().equals(email) && user.getUser_pass().equals(password)) {
 				HttpSession session = request.getSession();
 				session.setAttribute("userobj", user);
-				//response.sendRedirect("/PROJECT/src/main/webapp/test.jsp");
-				//response.sendRedirect("/PROJECT/src/main/webapp/source/user_pages/dashboard_page/user-dashboard.jsp");
 				dispatcher = request.getRequestDispatcher("/source/user_pages/dashboard_page/user-dashboard.jsp");
-				//Test
-				System.out.println("Second Validation Succesful!");
+				
 			}else {
 				request.setAttribute("status", "failed");
-				dispatcher = request.getRequestDispatcher("/source/user_pages/front_page/user-front.jsp");
+				dispatcher = request.getRequestDispatcher("/source/user_pages/front_page/user_front.jsp");
 				//Test
-				System.out.println("Second Validation UnSuccesful!");
+				System.out.println("Validation UnSuccesful!");
 			}
 			dispatcher.forward(request, response);
-			//Test
-			System.out.println("forwarded");
 			
 		}catch (Exception e) {
 			e.printStackTrace();

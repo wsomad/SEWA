@@ -9,7 +9,7 @@ body {
     background-color: #f86a1d;
 }
 
-.header {
+header {
     position: fixed;
     height: 80px;
     width: 100%;
@@ -31,39 +31,15 @@ footer {
     margin: 0 auto;
 }
 
-.nav, .nav_items {
+.nav, 
+.nav_item {
     display: flex;
     height: 100%;
     align-items: center;
     justify-content: space-between;
 }
 
-.nav .nav_items li {
-    list-style: none;
-}
-
-.sub_nav_link {
-    display: none;
-    position: absolute;
-    background: transparent;
-    border: 2px solid white;
-    border-radius: 6px;
-    padding: 10px;
-    list-style-type: none;
-    margin-top: 5px;
-    transition: all 0.3s ease; 
-}
-
-.sub_nav_link li a {
-    color: white;
-    text-decoration: none;
-}
-
-.sub_nav_link.active {
-    display: block;
-}
-
-.nav_items {
+.nav_item {
     column-gap: 25px;
 }
 
@@ -73,6 +49,14 @@ footer {
 
 .nav_link {
     text-decoration: none;
+}
+
+.nav_logo, .nav_link, .button {
+    color: white;
+}
+
+.nav_link:hover {
+    color: white;
 }
 
 .button {
@@ -87,21 +71,23 @@ footer {
     transform: scale(0.98);
 }
 
-.nav_logo, .nav_link, .button {
-    color: white;
-}
-
-.nav_link:hover {
-    color: white;
-}
-
 .form_container {
-    position: absolute;
     max-width: 400px;
+    width: 100%;
+    z-index: 100;
+    background-color: #F9F9F8;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.1);
+}
+
+.form_container2 {
+    position: absolute;
+    max-width: 700px;
     width: 100%;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(1.0);
+    transform: translate(-50%, -50%);
     z-index: 101;
     background: white;
     padding: 25px;
@@ -109,20 +95,37 @@ footer {
     box-shadow: rgba(0, 0, 0, 0.1);
     opacity: 0;
     pointer-events: none;
-    transition: all 0.4s ease-out;
 }
 
-.login_form {
+.front_container {
+    display: flex;
     position: absolute;
-    max-width: 400px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 1100px;
     width: 100%;
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
 }
 
-.home::before {
+.front_container .front_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    font-weight: bold;
+    font-size: 3rem;
+    color: white;
+
+}
+
+.name_container,
+.email_phone,
+.username_password {
+    display: flex;
+}
+
+.home2::before {
     content: '';
     position: absolute;
     height: 100%;
@@ -134,26 +137,18 @@ footer {
     transition: all 0.5s ease-out;
 }
 
-.home.show::before {
+.home2.show::before {
     opacity: 1;
     pointer-events: auto;
 } 
 
-.home.show .form_container {
+.home2.show .form_container2 {
     opacity: 1;
     pointer-events: auto;
-    transform: translate(-50%, -50%) scale(1.2);
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
-.signup_form {
-    display: none;
-}
-
-.name_container {
-	display: flex;
-}
-
-.form_container.active .signup_form {
+.form_container2 .active .signup_form {
     display: block;
 }
 
@@ -174,12 +169,18 @@ footer {
     margin-bottom: 20px;
 }
 
+.form_container2 h2 {
+    font-size: 22px;
+    color: #888;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .input_form {
     position: relative;
     margin-top: 10px;
     width: 100%;
-    height: 45px;
-    color: lightgray;
+    height: 50px;
 }
 
 .input_form input {
@@ -188,12 +189,20 @@ footer {
     border: 1px solid;
     border-radius: 6px;
     outline: none;
-    transition: all 0.2s ease;
     padding: 0 30px;
+    font-size: 15px;
+    background-color: #F9F9F8;
 }
 
 .input_form input:focus {
     border-color: #f86a1d;
+}
+
+.input_form input:focus ~ i.email,
+.input_form input:focus ~ i.password,
+.input_form input:focus ~ i.phone,
+.input_form input:focus ~ i.username {
+    color: #f86a1d;
 }
 
 .input_form i {
@@ -208,18 +217,63 @@ footer {
 .input_form i.phone,
 .input_form i.username {
     left: 0;
+    color: #868686;
+    padding: 8px;
+}
+
+.input_form i.pw_hide {
+    right: 0;
+    color: #888;
+    font-size: 16px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.input1_form {
+    position: relative;
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+}
+
+.input1_form input {
+    height: 100%;
+    width: 100%;
+    border: 1px solid;
+    border-radius: 6px;
+    outline: none;
+    padding: 0 30px;
+    font-size: 15px;
+}
+
+.input1_form input:focus {
+    border-color: #f86a1d;
+}
+
+.input1_form input:focus ~ i.email,
+.input1_form input:focus ~ i.password,
+.input1_form input:focus ~ i.phone,
+.input1_form input:focus ~ i.username {
+    color: #f86a1d;
+}
+
+.input1_form i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+}
+
+.input1_form i.email,
+.input1_form i.password,
+.input1_form i.phone,
+.input1_form i.username {
+    left: 0;
     color: #888;
     padding: 8px;
 }
 
-.input_form input:focus ~ i.email,
-.input_form input:focus ~ i.password,
-.input_form input:focus ~ i.phone,
-.input_form input:focus ~ i.username {
-    color: #f86a1d;
-}
-
-.input_form i.pw_hide {
+.input1_form i.pw_hide {
     right: 0;
     color: #888;
     font-size: 16px;
@@ -233,55 +287,47 @@ footer {
     font-size: 14px;
 }
 
+.form_container2 a {
+    text-decoration: none;
+    color: blue;
+    font-size: 14px;
+}
+
 .option_field {
+    text-decoration: none;
     margin-top: 14px;
     display: flex;
     align-items: center;
     justify-content: end;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .form_container button {
-    background: #252525;
+    background: #f86a1d;
     margin-top: 20px;
     width: 100%;
     padding: 12px 0;
     border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    height: 45px;
 }
 
-.signup_label {
-    font-size: 12px;
-    text-align: center;
-    margin-top: 15px;
+.form_container2 button {
+    background: #f86a1d;
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px 0;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    height: 45px;
 }
 
 .signin_label {
     font-size: 12px;
     text-align: center;
     margin-top: 15px;
-}
-
-.front_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-  
-.front_text {
-    width: 500px;
-    font-weight: bold;
-    font-size: 3rem;
-    color: white;
-}
-  
-.front_image {
-    width: 600px;
-    margin-left: 30px;
 }
 
 footer .foot_container {

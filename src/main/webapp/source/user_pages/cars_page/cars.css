@@ -6,18 +6,17 @@
 }
 
 body {
-    background-color: #E6E6E6;
+    background-color: #F9F9F8;
 }
 
 header {
-    background-color: transparent;
+    background-color: #F9F9F8;
     position: fixed;
     height: 80px;
     width: 100%;
     z-index: 100;
     padding: 0 20px;
     box-shadow: 0 0 5px 0 #252525; 
-    opacity: 0.85;
 }
 
 .home2 {
@@ -365,8 +364,7 @@ i.wallet_show {
 .search{
     position: relative;
     width: 1000px;
-    margin: 0 30px;
-    padding-left: 10px;
+    margin: 20px 0;
 }
 
 .search label{
@@ -376,13 +374,13 @@ i.wallet_show {
 
 .search label input{
     width: 100%;
-    height: 40px;
-    border-radius: 10px;
+    height: 45px;
+    border-radius: 6px;
     padding: 5px 20px;
-    padding-left: 30px;
+    padding-left: 40px;
     font-size: 15px;
     outline: none;
-    border: 1px solid #252525;
+    border: 1px solid #E6E6E7;
 }
 
 .search label i{
@@ -419,13 +417,14 @@ i.wallet_show {
 	background-color: #F9F9F8;
     width: 350px;
     height: 450px;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-right: 20px;
     position: relative;
     padding: 1.2rem;
     border-radius: 10px;
     transition: 0.5s ease-out;
     overflow: visible;
+    border: 0.5px solid #E6E6E7;
 }
 
 .booking_more {
@@ -511,7 +510,7 @@ i.wallet_show {
     height: 60px;
     margin-right: 10px;
     justify-content: space-between;
-    border: 2px solid #888;
+    border: 2px solid #F86A1D;
     box-shadow: rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
@@ -524,7 +523,7 @@ i.wallet_show {
 
 .features_info i {
     font-size: 25px;
-    color: #888;
+    color: #F86A1D;
 }
 
 .book_title {
@@ -532,7 +531,7 @@ i.wallet_show {
 }
 
 .book_rate {
-    font-size: 17px;
+    font-size: 20px;
     font-weight: bold;
 }
 

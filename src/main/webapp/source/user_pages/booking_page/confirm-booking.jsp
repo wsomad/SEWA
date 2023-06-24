@@ -1,5 +1,17 @@
+<%@page import = "system.model.*" %>
+<%
+User user = (User) request.getSession().getAttribute("userobj");
+Vehicle vehicle = (Vehicle) request.getSession().getAttribute("vehicleInForm");
+Reservation reservation = (Reservation) request.getSession().getAttribute("reservation");
+System.out.println(reservation.toString());
+System.out.println(user.toString());
+System.out.println(vehicle.toString());
+%>
 <!DOCTYPE html>
 <html lang="en">
+<style>
+	<%@include file="confirm-booking.css"%>
+</style>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -99,27 +111,26 @@
                 <p class="owner">Owned by SEWA Malaysia SDN. BHD.</p>
             </div>
         </div>
-        <div class="title_container">
-            <div class="confirm_title">
-                <p>Booking Confirmation</p>
-            </div>
-            <div class="confirm_word">
-                <h4>You are nearly there! Please confirm your booking to proceed.</h4>
-            </div>
+        <div class="confirm_title">
+            <p>Booking Confirmation</p>
+        </div>
+        <div class="confirm_word">
+            <h4>You are nearly there! Please confirm your booking to proceed.</h4>
         </div>
         <div class="confirmation">
             <div class="booking_confirmation">
+                
                 <div class="input_row">
                     <div class="input_form">
                         <span class="form_indicator"><h4>Renter Name</h4></span>
                         <div class="input_form">
-                            <input type="text" placeholder="Renter Name">
+                            <input type="text" placeholder="<%=user.getUser_first_name()%> <%=user.getUser_last_name()%>" readonly>
                         </div>
                     </div>
                     <div class="input_form">
                         <span class="form_indicator"><h4>Renter Email</h4></span>
                         <div class="input_form">
-                            <input type="text" placeholder="Renter Email">
+                            <input type="text" placeholder="<%=user.getUser_email()%>" readonly>
                         </div>
                     </div>
                 </div>
@@ -127,13 +138,13 @@
                     <div class="input_form">
                         <span class="form_indicator"><h4>Vehicle Brand</h4></span>
                         <div class="input_form">
-                            <input type="text" placeholder="Vehicle Brand">
+                            <input type="text" placeholder="<%=vehicle.getV_brand()%>" readonly>
                         </div>
                     </div>
                     <div class="input_form">
                         <span class="form_indicator"><h4>Vehicle Model</h4></span>
                         <div class="input_form">
-                            <input type="text" placeholder="Vehicle Model">
+                            <input type="text" placeholder="<%=vehicle.getV_model()%>" readonly>
                         </div>
                     </div>
                 </div>
@@ -141,13 +152,13 @@
                     <div class="input_form">
                         <span class="form_indicator"><h4>Pickup Location</h4></span>
                         <div class="input_form">
-                            <input type="text" placeholder="Pickup Location">
+                            <input type="text" placeholder="<%=reservation.getPickup_location()%>" readonly>
                         </div>
                     </div>
                     <div class="input_form">
                         <span class="form_indicator"><h4>Pickup Date</h4></span>
                         <div class="input_form">
-                            <input type="text" placeholder="Pickup Date">
+                            <input type="text" placeholder="<%=reservation.getPickup_DateString()%>" readonly>
                         </div>
                     </div>
                 </div>
@@ -155,13 +166,13 @@
                     <div class="input_form">
                         <span class="form_indicator"><h4>Drop Location</h4></span>
                         <div class="input_form">
-                            <input type="text" placeholder="Drop Location">
+                            <input type="text" placeholder="<%=reservation.getDrop_location()%>" readonly>
                         </div>
                     </div>
                     <div class="input_form">
                         <span class="form_indicator"><h4>Drop Date</h4></span>
                         <div class="input_form">
-                            <input type="text" placeholder="Drop Date">
+                            <input type="text" placeholder="<%=reservation.getDrop_DateString()%>" readonly>
                         </div>
                     </div>
                 </div>
@@ -169,13 +180,13 @@
                     <div class="input_form">
                         <span class="form_indicator"><h4>Period of Rent (Days)</h4></span>
                         <div class="input_form">
-                            <input type="text" placeholder="Period of Rent">
+                            <input type="text" placeholder="<%=reservation.getDay_count()%>" readonly>
                         </div>
                     </div>
                     <div class="input_form">
                         <span class="form_indicator"><h4>Number of Passenger</h4></span>
                         <div class="input_form">
-                            <input type="text" placeholder="No. of Passenger">
+                            <input type="text" placeholder="<%=reservation.getPassengers_num()%>" readonly>
                         </div>
                     </div>
                 </div>
@@ -183,19 +194,20 @@
                     <div class="form_box">
                         <span class="form_indicator"><h4>Special Request</h4></span>
                         <div class="input_form">
-                            <textarea class="special_request" name="special_request" placeholder="Special Request">
-                            </textarea>
+                            <textarea class="special_request" name="special_request" placeholder="<%=reservation.getSpecial_req()%>" readonly></textarea>
                         </div>
                     </div>
                 </div>
                 <hr>
                 <div class="input_price">
                     <div class="input_total">
-                        <span class="total_indicator"><h4>Total Charge (RM)</h4></span>
+                        <span class="total_indicator"><h4>Total Charge (RM <%=reservation.getRent_to_pay() %>)</h4></span>
                         <h4 class="total_charge">RM 12.00 (incl. tax)</h4>
                     </div>
                     <div class="confirm_button">
-                        <button class="pay_button">Pay With Wallet</button>
+                    	<form method="post" action="ConfirmBookingController">
+                        	<button class="pay_button">Pay With Wallet</button>
+                        </form>
                     </div>
                 </div>
             </div>

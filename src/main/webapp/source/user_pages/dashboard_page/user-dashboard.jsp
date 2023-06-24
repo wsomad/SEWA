@@ -112,16 +112,18 @@
         <div class="home2_container">
             <div class="get_started">
                 <div class="book_car">
-                    <p>Find your perfect car!</p>
+                    <p>Find your perfect car</p>
                     <button>Find & Book Your Car</button>
                 </div>
                 <div class="rent_car">
-                    <p>Be one of our peer now!</p>
+                    <p>Be one of our peer</p>
                     <button>Rent Out Your Car</button>
                 </div>
                 <div class="record_activity">
-                    <p>Track your activity here!</p>
-                    <button>Record & Activity</button>
+                    <p>Track your activity</p>
+                    <form method="get" action="ActivityController">
+                    	<button>Record & Activity</button>
+                    </form>
                 </div>
             </div>
             <div class="booking_car">
