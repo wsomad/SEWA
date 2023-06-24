@@ -121,7 +121,9 @@
                 </div>
                 <div class="record_activity">
                     <p>Track your activity</p>
-                    <button>Record & Activity</button>
+                    <form method="get" action="ActivityController">
+                    	<button>Record & Activity</button>
+                    </form>
                 </div>
             </div>
             <div class="booking_car">

@@ -22,6 +22,7 @@ public class Activity {
 		setVehicle(v);
 		setReservation(r);
 		setUserStatus(status);
+		activityStatus();
 	}
 	
 	private void activityStatus() {
@@ -74,14 +75,14 @@ public class Activity {
 	
 	public String toString() {
 		return
-				"[USER]\n" + 
+				"\n[USER]\n" + 
 				user.toString() +
-				"[VEHICLE]\n" + 
+				"\n[VEHICLE]\n" + 
 				vehicle.toString()+
-				"[REGISTRATION]\n" +
+				"\n[REGISTRATION]\n" +
 				reservation.toString() +
-				"[STATUS]\n" +
-				"user status : " + userStatus +
+				"\n[STATUS]\n" +
+				"\nuser status : \n" + userStatus +
 				"actv status : " + activityStatus;
 	}
 	

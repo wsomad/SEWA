@@ -25,14 +25,11 @@ public class LoginController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		User user = new User();
 		Vehicle vehicle = new Vehicle();
-		Stack<Activity> activities = new Stack<>();
 		Reservation reservation = new Reservation();
 		RequestDispatcher dispatcher = null;
 		
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		//Test
-		System.out.println("email : " + email + "\npass : " + password );
 		
 		try {
 			//First Validation
@@ -43,22 +40,15 @@ public class LoginController extends HttpServlet {
 			if(user.getUser_email().equals(email) && user.getUser_pass().equals(password)) {
 				HttpSession session = request.getSession();
 				session.setAttribute("userobj", user);
-				
-				//Database -> Session
-				activities = ActivityDAO.getActivities(user.getUserid());
-				
 				dispatcher = request.getRequestDispatcher("/source/user_pages/dashboard_page/user-dashboard.jsp");
-				//Test
-				System.out.println("Second Validation Succesful!");
+				
 			}else {
 				request.setAttribute("status", "failed");
 				dispatcher = request.getRequestDispatcher("/source/user_pages/front_page/user_front.jsp");
 				//Test
-				System.out.println("Second Validation UnSuccesful!");
+				System.out.println("Validation UnSuccesful!");
 			}
 			dispatcher.forward(request, response);
-			//Test
-			System.out.println("forwarded");
 			
 		}catch (Exception e) {
 			e.printStackTrace();

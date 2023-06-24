@@ -42,7 +42,7 @@ public class ConfirmBookingController extends HttpServlet {
 		
 		//Encapsulating reservation data
 		Reservation reservation = new Reservation();
-		reservation = new Reservation(0,0,pickupLoc,dropLoc,pickupDate,dropDate,passengers,specialReq,rentalChrge);
+		reservation = new Reservation(0,0,pickupLoc,dropLoc,pickupDate,dropDate,passengers,specialReq,rentalChrge, null);
 		
 		/*request.setAttribute("reservation", reservation);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/source/user_pages/booking_page/confirm-booking.jsp");

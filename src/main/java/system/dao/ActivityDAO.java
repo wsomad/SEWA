@@ -10,27 +10,32 @@ import java.sql.Timestamp;
 import java.util.Stack;
 
 public class ActivityDAO {
-	public Stack<Activity> getActivities (int userid){
+	
+	public Stack<Activity> getActivities (int userid)throws ClassNotFoundException{
 		Stack <Activity> activities = new Stack <>();
 		Stack <Activity> tempStack = new Stack <>();
 		Connection con = null;
 		
 		String sql = 
-				"select R.*\r\n"
-				+ "from Tenant_Vehicle as R\r\n"
-				+ "join User as U on U.userid = R.userid\r\n"
-				+ "join Vehicle as V on V.vehicleid = R.vehicleid\r\n"
-				+ "where U.userid = ?\r\n"
-				+ "union\r\n"
-				+ "select R2.*\r\n"
-				+ "from Tenant_Vehicle as R2\r\n"
-				+ "join Vehicle as V2 on V2.vehicleid = R2.vehicleid\r\n"
-				+ "where V2.userid = ?;";
+				"SELECT R.*,U.user_first_name, U.user_last_name, U.user_uname, U.user_phone, V.availability, V.registration_num, V.v_brand, V.v_model, V.rental_pr_hr\r\n"
+				+ "FROM Tenant_Vehicle AS R\r\n"
+				+ "JOIN User AS U ON U.userid = R.userid\r\n"
+				+ "JOIN Vehicle AS V ON V.vehicleid = R.vehicleid\r\n"
+				+ "WHERE U.userid = ?\r\n"
+				+ "UNION\r\n"
+				+ "SELECT R2.*, U2.user_first_name, U2.user_last_name, U2.user_uname, U2.user_phone, V2.availability, V2.registration_num, V2.v_brand, V2.v_model, V2.rental_pr_hr\r\n"
+				+ "FROM Tenant_Vehicle AS R2\r\n"
+				+ "JOIN Vehicle AS V2 ON V2.vehicleid = R2.vehicleid\r\n"
+				+ "JOIN User AS U2 ON U2.userid = V2.userid\r\n"
+				+ "WHERE V2.userid = ?;";
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://bxx0oim5clt3tz9xxlzj-mysql.services.clever-cloud.com:3306/bxx0oim5clt3tz9xxlzj?serverTimezone=Asia/Kuala_Lumpur", "uwaq62nkjirwnjub", "mRrDGZdA1u7UPAXYI5Rm");
 			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setInt(1, userid);
+			pst.setInt(2, userid);
+			
 			Activity activity = new Activity ();
 			Reservation reservation = new Reservation();
 			User user = new User();
@@ -69,13 +74,16 @@ public class ActivityDAO {
 				
 				activities.push(activity);
 			}
-			
+			System.out.println("Succesful");
 		}catch(Exception e) {
-			
+			System.out.println("Unsuccesful");
+			e.printStackTrace();
 		}finally {
 			try {
+				System.out.println("try");
 				con.close();
 			}catch(SQLException e) {
+				System.out.println("catch");
 				e.printStackTrace();
 			}
 		}
