@@ -117,7 +117,9 @@
                 </div>
                 <div class="rent_car">
                     <p>Be one of our peer</p>
-                    <button>Rent Out Your Car</button>
+                    <form method="get" action="p2p-registerController">
+	                    <button>Rent Out Your Car</button>
+                    </form>
                 </div>
                 <div class="record_activity">
                     <p>Track your activity</p>
