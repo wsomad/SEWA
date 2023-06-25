@@ -14,7 +14,7 @@
 <body>
     <header class="header">
         <nav class="nav">
-            <img src="\src\main\webapp\source\images\header.png" href="admin-front.html" class="nav_logo" alt="">
+            <img src="https://drive.google.com/uc?export=view&id=18npiizAlNUhQntPiwwuecc2WhbGA3JTv" href="admin-front.html" class="nav_logo" alt="">
             <ul class="nav_items">
                 <li class="nav_item">
                     <a href="\source\header_pages\about_page\about-sewa.html" class="nav_link">About</a>
