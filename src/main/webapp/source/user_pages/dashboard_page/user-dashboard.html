@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="user-dashboard.css">
+    <link rel="stylesheet" type="text/css" href="../dashboard_page/user-dashboard.css">
     <link rel="icon" type="images/png" href="https://drive.google.com/uc?export=view&id=1WnCOPug2C25vqv-_nxG6QvVp2VSMVnp1">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -25,14 +25,76 @@
                         <li><a href="../p2p_page/p2p-register.html">Rent as Peer</a></li>
                     </ul>
                 </li>
-                <li><a href="car.html" class="nav_link">Our Cars</a></li>
+                <li><a href="CarPageController" class="nav_link">Our Cars</a></li>
             </ul>
             <ul>
                 <div class="wallet_profile">
                     <li><a href="#"><i class='bx bx-wallet-alt wallet_show'></i></a></li>
-                    <li><a href="#"><i class='bx bx-user-circle profile-icon' onclick="toggleMenu()"></i></a></li>
+                    <li><a href="#">
+                            <div class="notification_badge">
+                                <i class="fa fa-bell notification_bell" onclick="toggleNotification()"></i>
+                                <span class="notification_number">2</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li><a href="#"><i class='bx bx-user-circle profile_icon' onclick="toggleMenu()"></i></a></li>
                 </div>
             </ul>
+            
+            <!-- notification bell -->
+            <div class="notification_menu" id="notificationMenu">
+                <div class="notification_word">
+                    <h2>Notification</h2>
+                </div>
+                <div class="notification_item">
+                    <a href="">
+                        <div class="notification_row">
+                            <h4>Accept Vehicle</h4>
+                            <p>New Update on Booking: <span>Passat [ALK8704]</span></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="notification_item">
+                    <a href="">
+                        <div class="notification_row">
+                            <h4>Return Vehicle</h4>
+                            <p>New Update on Booking: <span>Passat [ALK8704]</span></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="notification_item">
+                    <a href="">
+                        <div class="notification_row">
+                            <h4>Refund Request</h4>
+                            <p>New Update on Booking: <span>Myvi [PKL2019]</span></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="notification_item">
+                    <a href="">
+                        <div class="notification_row">
+                            <h4>Accept Vehicle</h4>
+                            <p>New Update on Booking: <span>Passat [ALK8704]</span></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="notification_item">
+                    <a href="">
+                        <div class="notification_row">
+                            <h4>Return Vehicle</h4>
+                            <p>New Update on Booking: <span>Arteon [BGU2264]</span></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="notification_item">
+                    <a href="">
+                        <div class="notification_row">
+                            <h4>Refund Request</h4>
+                            <p>New Update on Booking: <span>Myvi [PKL2019]</span></p>
+                        </div>
+                    </a>
+                </div>
+            </div>
 
             <!-- sub menu -->
             <div class="sub-menu-wrap" id="subMenu">
@@ -112,16 +174,20 @@
         <div class="home2_container">
             <div class="get_started">
                 <div class="book_car">
-                    <p>Find your perfect car!</p>
+                    <p>Find your perfect car</p>
                     <button>Find & Book Your Car</button>
                 </div>
                 <div class="rent_car">
-                    <p>Be one of our peer now!</p>
-                    <button>Rent Out Your Car</button>
+                    <p>Be one of our peer</p>
+                    <form method="get" action="p2p-registerController">
+	                    <button>Rent Out Your Car</button>
+                    </form>
                 </div>
                 <div class="record_activity">
-                    <p>Track your activity here!</p>
-                    <button>Record & Activity</button>
+                    <p>Track your activity</p>
+                    <form method="get" action="ActivityController">
+                    	<button>Record & Activity</button>
+                    </form>
                 </div>
             </div>
             <div class="booking_car">
@@ -153,8 +219,8 @@
                         <button class="booking_button">Book Now</button>
                     </div>
                     <div class="booking_more">
-                        <a href=""><i class='bx bx-dots-horizontal-rounded dots_more'></i></a>
-                        <a href=""><h4>More Cars</h4></a>
+                        <a href="CarPageController"><i class='bx bx-dots-horizontal-rounded dots_more'></i></a>
+                        <a href="CarPageController"><h4>More Cars</h4></a>
                     </div>
                 </div>
             </div>
