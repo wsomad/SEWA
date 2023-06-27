@@ -336,5 +336,24 @@ System.out.println("booking-jsp : " + vehicle.getV_brand());
     	pickupDate.addEventListener("input", calculateRentalCharge);
     	dropDate.addEventListener("input", calculateRentalCharge);
     </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            
+            $('#drop_date').change(function() {
+                var dropDate = $(this).val();
+                
+                $.ajax({
+                    url: 'CheckDropDateServlet',
+                    type: 'POST',
+                    data: { dropDate: dropDate},
+                    success: function(response) {
+                        $('#message').text(response);
+                    }
+                });
+            });
+        });
+    </script>
+    <div id="message"></div>
 </body>
 </html>
