@@ -17,7 +17,7 @@ public class DashboardDAO {
 				"select *\r\n"
 				+ "from Vehicle\r\n"
 				+ "order by rand()\r\n"
-				+ "limit 6;";
+				+ "limit 12;";
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");

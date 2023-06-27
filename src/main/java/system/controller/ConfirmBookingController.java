@@ -54,7 +54,7 @@ public class ConfirmBookingController extends HttpServlet {
 		dispatcher.forward(request, response);
 	}
 	
-	private String dateFormatting(String date){
+	public String dateFormatting(String date){
 		//Date-format (yyyy-MM-dd") -> (dd/MM/yyyy)
 		DateFormat inputDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		DateFormat outputDateFormat = new SimpleDateFormat("dd/MM/yyyy");
