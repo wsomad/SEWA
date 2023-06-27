@@ -1,7 +1,7 @@
 <%@page import = "system.model.*" %>
 <%
 Vehicle vehicle = (Vehicle) request.getSession().getAttribute("vehicleInForm");
-System.out.println("booking-jsp : " + vehicle.getV_brand());
+User user = (User) request.getSession().getAttribute("userobj");
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -346,7 +346,7 @@ System.out.println("booking-jsp : " + vehicle.getV_brand());
                 $.ajax({
                     url: 'CheckDropDateServlet',
                     type: 'POST',
-                    data: { dropDate: dropDate},
+                    data: { dropDate: dropDate, userID: <%=user.getUserid()%>, vehicleID: <%=vehicle.getVehicleid()%>},
                     success: function(response) {
                         $('#message').text(response);
                     }
