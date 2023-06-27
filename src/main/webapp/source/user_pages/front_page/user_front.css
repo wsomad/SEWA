@@ -83,6 +83,7 @@ footer {
 
 .form_container2 {
     position: absolute;
+    height: 400px;
     max-width: 700px;
     width: 100%;
     top: 50%;
@@ -116,13 +117,17 @@ footer {
     font-weight: bold;
     font-size: 3rem;
     color: white;
-
 }
 
 .name_container,
 .email_phone,
 .username_password {
     display: flex;
+    justify-content: space-evenly;
+}
+
+.username {
+    padding-left: 16px;
 }
 
 .home2::before {
@@ -176,11 +181,20 @@ footer {
     margin-bottom: 20px;
 }
 
-.input_form {
+.login_form .input_form {
     position: relative;
     margin-top: 10px;
+    max-width: 350px;
     width: 100%;
-    height: 50px;
+    height: 45px;
+}
+
+.signup_form .input_form {
+    position: relative;
+    margin-top: 10px;
+    max-width: 300px;
+    width: 100%;
+    height: 45px;
 }
 
 .input_form input {
@@ -221,11 +235,19 @@ footer {
     padding: 8px;
 }
 
-.input_form i.pw_hide {
+.signup_form .input_form i.pw_hide {
     right: 0;
     color: #888;
     font-size: 16px;
-    padding-right: 10px;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+.login_form .input_form i.pw_hide {
+    right: 0;
+    color: #888;
+    font-size: 16px;
+    padding-right: 20px;
     cursor: pointer;
 }
 
@@ -315,13 +337,20 @@ footer {
 
 .form_container2 button {
     background: #f86a1d;
-    margin-top: 20px;
+    margin-top: 30px;
+    max-width: 250px;
+    height: 45px;
     width: 100%;
     padding: 12px 0;
     border-radius: 10px;
     border: none;
     font-size: 16px;
     height: 45px;
+}
+
+.signup_button {
+    display: flex;
+    justify-content: center;
 }
 
 .signin_label {
