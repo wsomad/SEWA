@@ -14,7 +14,7 @@
 <body>
     <header class="header">
         <nav class="nav">
-            <img src="https://drive.google.com/uc?export=view&id=18npiizAlNUhQntPiwwuecc2WhbGA3JTv" href="admin-front.html" class="nav_logo" alt="">
+            <img src="https://drive.google.com/uc?export=view&id=1opBBDKcI2HrT1jL4Ag2bWfjyxhBuCMzP" href="admin-front.html" class="nav_logo" alt="">
             <ul class="nav_items">
                 <li class="nav_item">
                     <a href="\source\header_pages\about_page\about-sewa.html" class="nav_link">About</a>
@@ -64,6 +64,7 @@
             <div class="signup_form">
             	<form method="post" action="registration">
                     <h2>Sign up</h2>
+                    <h2>Sign up</h2>
                     <div class="name_container">
 	                    <div class="input_form">
 	                        <input type="text" name="firstname" placeholder="First Name" required>
@@ -84,9 +85,11 @@
 	                        <i class="fa fa-phone phone"></i>
 	                    </div>
 	                </div>
-                    <div class="input_form">
-                        <input type="text" name="username" placeholder="Create Username" required>
-                        <i class="fa fa-user username"></i>
+                    <div class="username">
+                        <div class="input_form">
+                            <input type="text" name="username" placeholder="Create Username" required>
+                            <i class="fa fa-user username"></i>
+                        </div>
                     </div>
                     <div class="username_password">
 	                    <div class="input_form">
@@ -100,6 +103,9 @@
 	                        <i class="fa fa-eye-slash pw_hide"></i>
 	                    </div>
 	                </div>
+                    <div class="signup_button">
+                        <button class="button">Sign up</button>
+                    </div>
                 </form>
             </div>
         </div>
