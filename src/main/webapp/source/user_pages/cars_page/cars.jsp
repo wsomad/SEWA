@@ -198,6 +198,7 @@
                 <div class="booking_container">
                     <div class="booking_details">
                         <div class="car_image">
+                        	<!-- -------------------------- -->
                             <img src="https://drive.google.com/uc?export=view&id=1cs19Dr4j-sI_380xEyuakdWcKdUj5cY8" alt="">
                         </div>
                     </div>

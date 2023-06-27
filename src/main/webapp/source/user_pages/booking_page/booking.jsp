@@ -1,7 +1,7 @@
 <%@page import = "system.model.*" %>
 <%
 Vehicle vehicle = (Vehicle) request.getSession().getAttribute("vehicleInForm");
-System.out.println("booking-jsp : " + vehicle.getV_brand());
+User user = (User) request.getSession().getAttribute("userobj");
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -336,5 +336,24 @@ System.out.println("booking-jsp : " + vehicle.getV_brand());
     	pickupDate.addEventListener("input", calculateRentalCharge);
     	dropDate.addEventListener("input", calculateRentalCharge);
     </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            
+            $('#drop_date').change(function() {
+                var dropDate = $(this).val();
+                
+                $.ajax({
+                    url: 'CheckDropDateServlet',
+                    type: 'POST',
+                    data: { dropDate: dropDate, userID: <%=user.getUserid()%>, vehicleID: <%=vehicle.getVehicleid()%>},
+                    success: function(response) {
+                        $('#message').text(response);
+                    }
+                });
+            });
+        });
+    </script>
+    <div id="message"></div>
 </body>
 </html>
