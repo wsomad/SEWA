@@ -180,7 +180,8 @@
             <div class="form_title">
                 <p>Rent as Peer</p>
             </div>
-            <form method="post" action="p2p-registerController">
+            <form method="post" action="p2p-registerController" enctype="multipart/form-data">
+             
                 <div class="form_row">
                     <div class="form_box">
                         <span class="form_indicator"><h4>Brand <span class="form_mark">*</span></h4></span>
@@ -195,6 +196,7 @@
                         </div>
                     </div>
                 </div>
+            
                 <div class="form_row">
                     <div class="form_box">
                         <span class="form_indicator"><h4>Type <span class="form_mark">*</span></h4></span>
@@ -312,11 +314,12 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="form_row">
                     <div class="form_box">
                         <span class="form_indicator"><h4>Upload Vehicle Image <span class="form_mark">*</span></h4></span>
                         <div class="upload_container">
-                            <input class="file_upload" type="file" id="file" accept="image/*" required>
+                            <input class="file_upload" type="file" id="file" accept="image/*" name="car_img" required>
                         </div>
                     </div>
                 </div>
