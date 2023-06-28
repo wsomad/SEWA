@@ -145,3 +145,16 @@ function toggleNotifi(){
 	}
 }
 
+//slider
+const slider = document.querySelector('.slider');
+  const boxes = document.querySelectorAll('.box');
+
+  let counter = 0;
+
+  function slide() {
+    counter++;
+    slider.style.transform = `translateX(${-counter * 100}%)`;
+    if (counter >= boxes.length) {
+      counter = 0;
+    }
+  }
