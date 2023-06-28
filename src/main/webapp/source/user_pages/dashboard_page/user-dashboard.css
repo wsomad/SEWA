@@ -995,13 +995,12 @@ i.wallet_show {
 .review_box .inner {
     transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
     width: 400%;
-    line-height: 0;
     height: 300px;
 }
 
 .review_box .slide {
     width: 25%;
-    float:left;
+    float: left;
     height: 300px;
     height: 100%;
     background: transparent;
@@ -1037,26 +1036,28 @@ i.wallet_show {
 }
 
 .slide-content {
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.slide_item p {
-    padding: 20px;
-    color: #252525;
-    height: 100px;
+    height: 220px;
 }
 
 .slide_item {
-    height: 100px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    margin-top: 20px;
 }
 
-.slide_item h5 {
+.slide_name h5 {
     float: right;
-    padding-right: 40px;
-    margin-bottom: 0;
+    margin: 20px;
+    font-size: 16px;
+}
+
+.slide_name span {
+    margin-left: 20px;
+    color: #888;
+    font-size: 12px;
 }
 
 #slide1:checked ~ #controls label:nth-child(2),
