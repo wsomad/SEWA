@@ -131,12 +131,17 @@ search.onkeyup = e=>{
     }
 }
 
-//button add
-document.getElementById("button").addEventListener("click", function() {
-    document.querySelector(".popup").style.display = "flex";
-  });
-  
-  document.querySelector(".close").addEventListener("click", function() {
-    document.querySelector(".popup").style.display = "none";
-  });
-  
+//notification
+
+function toggleNotifi(){
+	if (down) {
+		box.style.height  = '0px';
+		box.style.opacity = 0;
+		down = false;
+	}else {
+		box.style.height  = '510px';
+		box.style.opacity = 1;
+		down = true;
+	}
+}
+
