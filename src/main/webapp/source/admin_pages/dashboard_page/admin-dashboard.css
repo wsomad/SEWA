@@ -475,15 +475,13 @@ body {
 .right_top{
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 .icon {
     display: flex;
 	cursor: pointer;
-    align-items: center;
-    justify-content: center;
-	margin-right: 50px;
+    line-height: 10px;
+	margin-right: 10px;
 
 }
 .icon span {
@@ -491,7 +489,9 @@ body {
 	padding: 5px;
 	border-radius: 50%;
 	color: #fff;
-	margin-left: 10px;
+    vertical-align:top;
+	margin-left: -11px;
+    margin-bottom: 13px;
 }
 .icon ion-icon {
 	display:inline-block;
