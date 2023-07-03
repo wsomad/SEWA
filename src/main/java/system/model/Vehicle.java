@@ -1,27 +1,30 @@
 package system.model;
 
-import java.text.DecimalFormat;
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
 public class Vehicle {
-	private int vehicleid;
-	private boolean availability;
-	private String registration_num;
-	private String chasis_num;
-	private String engine_num;
-	private String v_brand;
-	private String v_model;
-	private String v_type;
-	private String v_color;
-	private int yr_manufacture;
-	private String roadtax_exp_date;
-	private String insurance_name;
-	private String insurance_exp_date;
-	private String insurance_type;
-	private String description;
-	private double rental_pr_hr;
-	private String img_path;
+	private int vehicleid;//
+	private boolean availability;//
+	private String registration_num;//
+	private String chasis_num;//
+	private String engine_num;//
+	private String v_brand;//
+	private String v_model;//
+	private String v_type;//
+	private String v_color;//
+	private int yr_manufacture;//
+	private String roadtax_exp_date;//
+	private String insurance_name;//
+	private String insurance_exp_date;//
+	private String insurance_type;//
+	private String description;//
+	private double rental_pr_hr;//
+	private int img_path;//
+	private String gasType;
+	private int seatNum;
+	private String transmission;
+	private String location;
 	
 	public Vehicle() {
 		vehicleid = 0;
@@ -40,11 +43,15 @@ public class Vehicle {
 		insurance_type = "default";
 		description = "default";
 		rental_pr_hr = 0.0;
-		img_path = "default";
+		img_path = 0;
+		setGasType("default");
+		setSeatNum(0);
+		setTransmission("default");
+		setLocation("default");
 	}
 	
 	public Vehicle(int id, boolean avail, String reg_num, String chas_num, String eng_num, String brand, String model, String type, String color, int yr_manu,
-			String roadtax_exp_date, String insur_name, String insurance_exp_date, String insur_type, String desc, double rental_pr_hr, String img_path) {
+			String roadtax_exp_date, String insur_name, String insurance_exp_date, String insur_type, String desc, double rental_pr_hr, int img_path, String gas, int seat, String transmission, String location) {
 		setVehicleid(id);
 		setAvailability(avail);
 		setRegistration_num(reg_num);
@@ -62,6 +69,10 @@ public class Vehicle {
 		setDescription(desc);
 		this.setRental_pr_hr(rental_pr_hr);
 		this.setImg_path(img_path);
+		setGasType(gas);
+		setSeatNum(seat);
+		setTransmission(transmission);
+		setLocation(location);
 	}
 
 	public int getVehicleid() {
@@ -153,6 +164,10 @@ public class Vehicle {
 		}
 		return date;
 	}
+	
+	public String getStringRoadtax_exp_date() {
+		return roadtax_exp_date;
+	}
 
 	public void setRoadtax_exp_date(String roadtax_exp_date) {
 		this.roadtax_exp_date = roadtax_exp_date;
@@ -174,6 +189,10 @@ public class Vehicle {
 			System.out.println("Error parsing the custom date: " + e.getMessage());
 		}
 		return date;
+	}
+	
+	public String getStringInsurance_exp_date() {
+		return insurance_exp_date;
 	}
 	
 	public void setInsurance_exp_date(String insurance_exp_date) {
@@ -204,12 +223,44 @@ public class Vehicle {
 		this.rental_pr_hr = rental_pr_hr;
 	}
 
-	public String getImg_path() {
+	public int getImg_path() {
 		return img_path;
 	}
 
-	public void setImg_path(String img_path) {
-		this.img_path = img_path;
+	public void setImg_path(int i) {
+		this.img_path = i;
+	}
+	
+	public String getGasType() {
+		return gasType;
+	}
+
+	public void setGasType(String gasType) {
+		this.gasType = gasType;
+	}
+
+	public int getSeatNum() {
+		return seatNum;
+	}
+
+	public void setSeatNum(int seatNum) {
+		this.seatNum = seatNum;
+	}
+
+	public String getTransmission() {
+		return transmission;
+	}
+
+	public void setTransmission(String transmission) {
+		this.transmission = transmission;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
 	}
 	
 	public String toString() {
@@ -233,7 +284,7 @@ public class Vehicle {
 	            ", img_path='" + img_path + '\'' +
 	            '}';
 	}
-	
+
 	//Random Instantiation
 	//Date purpose
 	SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");

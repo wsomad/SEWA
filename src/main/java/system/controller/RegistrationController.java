@@ -32,9 +32,6 @@ public class RegistrationController extends HttpServlet {
 		user.setUser_uname(request.getParameter("username"));
 		user.setUser_pass(request.getParameter("password"));
 		
-        //Data Testing
-		System.out.println(user.toString());
-		
 		try {
 			int rowCount = userdao.registerUser(user);
 			dispatcher = request.getRequestDispatcher("user-front.jsp");
