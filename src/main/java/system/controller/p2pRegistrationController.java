@@ -38,8 +38,8 @@ public class p2pRegistrationController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher dispatcher = null;
 		VehicleDAO vehicledao = new VehicleDAO();
-		//HttpSession session = request.getSession();
-		//User user = (User) session.getAttribute("userobj");
+		HttpSession session = request.getSession();
+		User user = (User) session.getAttribute("userobj");
 		Vehicle vehicle = new Vehicle();
 		Map<String, String> formFields = new HashMap<>();
 		int imgIndex = vehicledao.getNewVehicleID();
@@ -66,6 +66,9 @@ public class p2pRegistrationController extends HttpServlet {
         	e.printStackTrace();;
         }
         
+        System.out.println("Testing Purpose : ");
+        System.out.println(formFields.get("insuranceType"));
+        
         vehicle.setV_brand(formFields.get("brand"));
         vehicle.setV_model(formFields.get("model"));
         vehicle.setV_type(formFields.get("type"));
@@ -88,7 +91,7 @@ public class p2pRegistrationController extends HttpServlet {
         
         System.out.print(vehicle.toString());
         
-        /*try {
+        try {
         	int rowCount = vehicledao.registerCar(vehicle, user.getUserid());
         	dispatcher = request.getRequestDispatcher("user-dashboard.jsp");
         	if(rowCount > 0) {
@@ -99,7 +102,7 @@ public class p2pRegistrationController extends HttpServlet {
 			dispatcher.forward(request, response);
         }catch (Exception e) {
         	e.printStackTrace();
-        }*/
+        }
 	}
 
 }

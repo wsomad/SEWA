@@ -204,10 +204,10 @@ public class Vehicle {
 	}
 
 	public void setInsurance_type(String insurance_type) {
-		if(insurance_type.equalsIgnoreCase("1")) {
-			insurance_type = "1st Party";
+		if(insurance_type.equals("1")) {
+			this.insurance_type = "1st Party";
 		}else {
-			insurance_type = "3rd Party";
+			this.insurance_type = "3rd Party";
 		}
 	}
 
@@ -268,27 +268,19 @@ public class Vehicle {
 	}
 
 	public void setLocation(String location) {
-		switch (location) {
-			case "1":
-				location = "Johor";
-				break;
-			case "2":
-				location = "Klang Valley";
-				break;
-			case "3":
-				location = "Melaka";
-				break;
-			case "4":
-				location = "Perak";
-				break;
-			case "5":
-				location = "Pulau Pinang";
-				break;
-			case "6":
-				location = "Terengganu";
-				break;
-			default : break;
-		}
+		
+		if(location.equals("1"))
+			this.location = "Johor";
+		else if(location.equals("2"))
+			this.location = "Klang Valley";
+		else if(location.equals("3"))
+			this.location = "Melaka";
+		else if(location.equals("4"))
+			this.location = "Perak";
+		else if(location.equals("5"))
+			this.location = "Pulau Pinang";
+		else 
+			this.location = "Terengganu";
 	}
 	
 	public String toString() {
@@ -306,10 +298,12 @@ public class Vehicle {
 	            ", \nroadtax_exp_date='" + roadtax_exp_date + '\'' +
 	            ", \ninsurance_name='" + insurance_name + '\'' +
 	            ", \ninsurance_exp_date='" + insurance_exp_date + '\'' +
-	            ", \ninsurance_type='" + insurance_type + '\'' +
+	            ", \n[] insurance_type='" + insurance_type + '\'' +
 	            ", \ndescription='" + description + '\'' +
 	            ", \nrental_pr_hr=" + rental_pr_hr +
 	            ", \nimg_path='" + img_path + '\'' +
+	            ", \n[] transmission='" + transmission + '\'' +
+	            ", \n[] location='" + location + '\'' +
 	            '}';
 	}
 
