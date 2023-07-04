@@ -204,7 +204,7 @@ public class Vehicle {
 	}
 
 	public void setInsurance_type(String insurance_type) {
-		if(insurance_type.equals("1")) {
+		if(insurance_type.equalsIgnoreCase("1")) {
 			insurance_type = "1st Party";
 		}else {
 			insurance_type = "3rd Party";
@@ -257,9 +257,9 @@ public class Vehicle {
 
 	public void setTransmission(String transmission) {
 		if (transmission.equals("1")) {
-			transmission = "Automatic";
+			this.transmission = "Automatic";
 		}else {
-			transmission = "Manual";
+			this.transmission = "Manual";
 		}
 	}
 
@@ -293,23 +293,23 @@ public class Vehicle {
 	
 	public String toString() {
 	    return "Vehicle{" +
-	            "vehicleid=" + vehicleid +
-	            ", availability=" + availability +
-	            ", registration_num='" + registration_num + '\'' +
-	            ", chasis_num='" + chasis_num + '\'' +
-	            ", engine_num='" + engine_num + '\'' +
-	            ", v_brand='" + v_brand + '\'' +
-	            ", v_model='" + v_model + '\'' +
-	            ", v_type='" + v_type + '\'' +
-	            ", v_color='" + v_color + '\'' +
-	            ", yr_manufacture=" + yr_manufacture +
-	            ", roadtax_exp_date='" + roadtax_exp_date + '\'' +
-	            ", insurance_name='" + insurance_name + '\'' +
-	            ", insurance_exp_date='" + insurance_exp_date + '\'' +
-	            ", insurance_type='" + insurance_type + '\'' +
-	            ", description='" + description + '\'' +
-	            ", rental_pr_hr=" + rental_pr_hr +
-	            ", img_path='" + img_path + '\'' +
+	            "\nvehicleid=" + vehicleid +
+	            ", \navailability=" + availability +
+	            ", \nregistration_num='" + registration_num + '\'' +
+	            ", \nchasis_num='" + chasis_num + '\'' +
+	            ", \nengine_num='" + engine_num + '\'' +
+	            ", \nv_brand='" + v_brand + '\'' +
+	            ", \nv_model='" + v_model + '\'' +
+	            ", \nv_type='" + v_type + '\'' +
+	            ", \nv_color='" + v_color + '\'' +
+	            ", \nyr_manufacture=" + yr_manufacture +
+	            ", \nroadtax_exp_date='" + roadtax_exp_date + '\'' +
+	            ", \ninsurance_name='" + insurance_name + '\'' +
+	            ", \ninsurance_exp_date='" + insurance_exp_date + '\'' +
+	            ", \ninsurance_type='" + insurance_type + '\'' +
+	            ", \ndescription='" + description + '\'' +
+	            ", \nrental_pr_hr=" + rental_pr_hr +
+	            ", \nimg_path='" + img_path + '\'' +
 	            '}';
 	}
 

@@ -25,7 +25,8 @@ import system.dao.VehicleDAO;
 /**
  * Servlet implementation class p2pRegistrationController
  */
-@WebServlet("/source/user_pages/front_page/p2p-registerController")
+@WebServlet("/source/user_pages/p2p_page/p2p-registerController")
+//@WebServlet("/source/user_pages/front_page/p2p-registerController")
 public class p2pRegistrationController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -37,8 +38,8 @@ public class p2pRegistrationController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher dispatcher = null;
 		VehicleDAO vehicledao = new VehicleDAO();
-		HttpSession session = request.getSession();
-		User user = (User) session.getAttribute("userobj");
+		//HttpSession session = request.getSession();
+		//User user = (User) session.getAttribute("userobj");
 		Vehicle vehicle = new Vehicle();
 		Map<String, String> formFields = new HashMap<>();
 		int imgIndex = vehicledao.getNewVehicleID();
@@ -55,7 +56,7 @@ public class p2pRegistrationController extends HttpServlet {
                     formFields.put(fieldName, fieldValue);
                 } else {
                     // Handle uploaded files
-                	item.write(new File("D:\\software\\eclipse\\2nd-Yr-Project\\PROJECT\\src\\main\\webapp\\source\\user_pages\\cars_page\\" + imgIndex));
+                	item.write(new File("D:\\software\\eclipse\\2nd-Yr-Project\\PROJECT\\src\\main\\webapp\\source\\user_pages\\cars_page\\" + imgIndex + ".jpg"));
                     // ...
                 }
 			}
@@ -85,7 +86,9 @@ public class p2pRegistrationController extends HttpServlet {
         //vehicle.setV_color(formFields.get("color"));
         //vehicle.setDescription(formFields.get("description"));
         
-        try {
+        System.out.print(vehicle.toString());
+        
+        /*try {
         	int rowCount = vehicledao.registerCar(vehicle, user.getUserid());
         	dispatcher = request.getRequestDispatcher("user-dashboard.jsp");
         	if(rowCount > 0) {
@@ -96,25 +99,7 @@ public class p2pRegistrationController extends HttpServlet {
 			dispatcher.forward(request, response);
         }catch (Exception e) {
         	e.printStackTrace();
-        }
-        
-        
-        System.out.println("Brand" + formFields.get("brand"));
-        System.out.println("Model: " + formFields.get("model"));
-        System.out.println("Type: " + formFields.get("type"));
-        System.out.println("Year Manufactured: " + formFields.get("yearManufactured"));
-        System.out.println("Gas Type: " + formFields.get("gasType"));
-        System.out.println("Number of Seater: " + formFields.get("numberOfSeater"));
-        System.out.println("Transmission: " + formFields.get("transmission"));
-        System.out.println("Registration Number: " + formFields.get("registrationNumber"));
-        System.out.println("Roadtax Expiry Date: " + formFields.get("roadtaxExpiryDate"));
-        System.out.println("Engine Number: " + formFields.get("engineNumber"));
-        System.out.println("Chasis Number: " + formFields.get("chasisNumber"));
-        System.out.println("Insurance Type: " + formFields.get("insuranceType"));
-        System.out.println("Insurance Name: " + formFields.get("insuranceName"));
-        System.out.println("Insurance Expiry Date: " + formFields.get("insuranceExpiryDate"));
-        System.out.println("Location: " + formFields.get("location"));
-        System.out.println("Rental Charge: " + formFields.get("rentalCharge"));
+        }*/
 	}
 
 }
