@@ -204,7 +204,11 @@ public class Vehicle {
 	}
 
 	public void setInsurance_type(String insurance_type) {
-		this.insurance_type = insurance_type;
+		if(insurance_type.equals("1")) {
+			insurance_type = "1st Party";
+		}else {
+			insurance_type = "3rd Party";
+		}
 	}
 
 	public String getDescription() {
@@ -252,7 +256,11 @@ public class Vehicle {
 	}
 
 	public void setTransmission(String transmission) {
-		this.transmission = transmission;
+		if (transmission.equals("1")) {
+			transmission = "Automatic";
+		}else {
+			transmission = "Manual";
+		}
 	}
 
 	public String getLocation() {
@@ -260,7 +268,27 @@ public class Vehicle {
 	}
 
 	public void setLocation(String location) {
-		this.location = location;
+		switch (location) {
+			case "1":
+				location = "Johor";
+				break;
+			case "2":
+				location = "Klang Valley";
+				break;
+			case "3":
+				location = "Melaka";
+				break;
+			case "4":
+				location = "Perak";
+				break;
+			case "5":
+				location = "Pulau Pinang";
+				break;
+			case "6":
+				location = "Terengganu";
+				break;
+			default : break;
+		}
 	}
 	
 	public String toString() {

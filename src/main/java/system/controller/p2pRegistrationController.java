@@ -35,11 +35,13 @@ public class p2pRegistrationController extends HttpServlet {
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher dispatcher = null;
 		VehicleDAO vehicledao = new VehicleDAO();
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("userobj");
 		Vehicle vehicle = new Vehicle();
 		Map<String, String> formFields = new HashMap<>();
+		int imgIndex = vehicledao.getNewVehicleID();
         
         try {
         	ServletFileUpload sf = new ServletFileUpload(new DiskFileItemFactory());
@@ -53,7 +55,7 @@ public class p2pRegistrationController extends HttpServlet {
                     formFields.put(fieldName, fieldValue);
                 } else {
                     // Handle uploaded files
-                	item.write(new File("D:\\software\\eclipse\\2nd-Yr-Project\\PROJECT\\src\\main\\webapp\\source\\user_pages\\cars_page\\" + item.getName()));
+                	item.write(new File("D:\\software\\eclipse\\2nd-Yr-Project\\PROJECT\\src\\main\\webapp\\source\\user_pages\\cars_page\\" + imgIndex));
                     // ...
                 }
 			}
@@ -79,14 +81,19 @@ public class p2pRegistrationController extends HttpServlet {
         vehicle.setInsurance_exp_date(formFields.get("insuranceExpiryDate"));
         vehicle.setLocation(formFields.get("location"));
         vehicle.setRental_pr_hr(Double.parseDouble(formFields.get("rentalCharge")));
-        vehicle.setImg_path(vehicledao.getNewVehicleID());
+        vehicle.setImg_path(imgIndex);
         //vehicle.setV_color(formFields.get("color"));
         //vehicle.setDescription(formFields.get("description"));
         
         try {
         	int rowCount = vehicledao.registerCar(vehicle, user.getUserid());
-        	dispatcher = request.getRequestDispatcher(getServletInfo())
-        	
+        	dispatcher = request.getRequestDispatcher("user-dashboard.jsp");
+        	if(rowCount > 0) {
+				request.setAttribute("status", "success");
+			}else {
+				request.setAttribute("status", "failed");
+			}
+			dispatcher.forward(request, response);
         }catch (Exception e) {
         	e.printStackTrace();
         }
