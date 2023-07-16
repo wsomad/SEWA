@@ -175,7 +175,9 @@
             <div class="get_started">
                 <div class="book_car">
                     <p>Find your perfect car</p>
-                    <button>Find & Book Your Car</button>
+                    <form method="get" action="/source/user_pages/cars_page/testPic.jsp">
+	                    <button>Find & Book Your Car</button>
+	                </form>
                 </div>
                 <div class="rent_car">
                     <p>Be one of our peer</p>

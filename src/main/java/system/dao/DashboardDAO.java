@@ -12,7 +12,7 @@ public class DashboardDAO {
 	public List<Vehicle> getDashboardContent (User user){
 		List<Vehicle> vehicleList = new ArrayList<>();
 		//include 'where availability=1'
-		String userBasedQuery = ""; 
+		//String userBasedQuery = ""; 
 		String staticBasedQuery = 
 				"select *\r\n"
 				+ "from Vehicle\r\n"
@@ -45,7 +45,7 @@ public class DashboardDAO {
 				vehicle.setInsurance_type(rs.getString("insurance_type"));
 				vehicle.setDescription(rs.getString("description"));
 				vehicle.setRental_pr_hr(rs.getDouble("rental_pr_hr"));
-				vehicle.setImg_path(rs.getInt("img_path"));
+
 				
 				//Test
 				System.out.println("Test DashboardDAO : " + vehicle.getVehicleid());

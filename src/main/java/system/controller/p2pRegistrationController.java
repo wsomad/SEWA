@@ -25,8 +25,8 @@ import system.dao.VehicleDAO;
 /**
  * Servlet implementation class p2pRegistrationController
  */
-@WebServlet("/source/user_pages/p2p_page/p2p-registerController")
-//@WebServlet("/source/user_pages/front_page/p2p-registerController")
+//@WebServlet("/source/user_pages/p2p_page/p2p-registerController")
+@WebServlet("/source/user_pages/front_page/p2p-registerController")
 public class p2pRegistrationController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -56,7 +56,7 @@ public class p2pRegistrationController extends HttpServlet {
                     formFields.put(fieldName, fieldValue);
                 } else {
                     // Handle uploaded files
-                	item.write(new File("D:\\software\\eclipse\\2nd-Yr-Project\\PROJECT\\src\\main\\webapp\\source\\user_pages\\cars_page\\" + imgIndex + ".jpg"));
+                	item.write(new File("D:\\software\\eclipse\\2nd-Yr-Project\\PROJECT\\src\\main\\webapp\\source\\user_pages\\carPic\\" + imgIndex + ".jpg"));
                     // ...
                 }
 			}
@@ -93,7 +93,7 @@ public class p2pRegistrationController extends HttpServlet {
         
         try {
         	int rowCount = vehicledao.registerCar(vehicle, user.getUserid());
-        	dispatcher = request.getRequestDispatcher("user-dashboard.jsp");
+        	dispatcher = request.getRequestDispatcher("/source/user_pages/dashboard_page/user-dashboard.jsp");
         	if(rowCount > 0) {
 				request.setAttribute("status", "success");
 			}else {

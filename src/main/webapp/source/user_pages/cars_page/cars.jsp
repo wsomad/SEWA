@@ -188,6 +188,8 @@
 			
 			    // Display each recommendation as a clickable panel
 			    for (Vehicle vehicle : vehicleList) {
+			    	String imgPath = "../carPic/" + vehicle.getVehicleid() + ".jpg";
+			    	System.out.println(imgPath);
 			        if (counter % 3 == 0) { System.out.println("row open");
 			            // Create a new booking_row after every third iteration
 			%>
@@ -199,7 +201,8 @@
                     <div class="booking_details">
                         <div class="car_image">
                         	<!-- -------------------------- -->
-                            <img src="https://drive.google.com/uc?export=view&id=1cs19Dr4j-sI_380xEyuakdWcKdUj5cY8" alt="">
+                            <!--<img src="https://drive.google.com/uc?export=view&id=1cs19Dr4j-sI_380xEyuakdWcKdUj5cY8" alt="">-->
+                            <img src=<%=imgPath%>>
                         </div>
                     </div>
                     <div class="car_name">
