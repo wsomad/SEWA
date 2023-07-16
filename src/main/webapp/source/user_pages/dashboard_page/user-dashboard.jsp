@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -188,9 +189,13 @@
                 <div class="record_activity">
                     <p>Track your activity</p>
                     <form method="get" action="ActivityController">
-                    	<button>Record & Activity</button>
+                    	<button>Record Activity</button>
                     </form>
                 </div>
+                <form method="get" action="ActivityController">
+                	<button>RECORD Activity</button>
+                </form>
+               
             </div>
             <div class="booking_car">
                 <div class="booking_word">
@@ -332,6 +337,44 @@
             </div>
         </div>
     </footer>
-    <script src="user-dashboard.js"></script>
+    <script>
+	    const formOpenButton = document.querySelector(".wallet_show"),
+	    formOpenButton2 = document.querySelector("#open_topup"),
+	    home = document.querySelector(".home"),
+	    walletMenu = document.getElementById("walletMenu"),
+	    subMenu = document.getElementById("subMenu"),
+	    formCloseButton = document.querySelector(".form_close");
+	    notiMenu = document.getElementById("notificationMenu");
+	    notiItem = document.querySelector(".notification_item");
+	    down = false;
+	    serviceLink = document.getElementById('service-link');
+	    serviceDropdown = document.getElementById('service-dropdown');
+	
+	    formOpenButton.addEventListener("click", () => home.classList.add("show"));
+	    formOpenButton2.addEventListener("click", () => home.classList.add("show"));
+	    formCloseButton.addEventListener("click", () => home.classList.remove("show"));
+	
+	    function toggleMenu() {
+	        subMenu.classList.toggle("open-menu");
+	    }
+	
+	    function toggleNotification() {
+	        if(down) {
+	            notiMenu.style.height = '0px';
+	            notiMenu.style.opacity = 0;
+	            down = false;
+	        }
+	        else {
+	            notiMenu.style.height = 'auto';
+	            notiMenu.style.opacity = 1;
+	            down = true;
+	        }
+	    }
+	
+	    serviceLink.addEventListener('click', (e) => {
+	        e.preventDefault();
+	        serviceDropdown.classList.toggle('active');
+	    });
+    </script>
 </body>
 </html>

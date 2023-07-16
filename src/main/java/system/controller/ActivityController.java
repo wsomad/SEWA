@@ -1,5 +1,6 @@
 package system.controller;
 
+import javax.servlet.RequestDispatcher;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,22 +20,26 @@ import system.dao.ActivityDAO;
 public class ActivityController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ActivityDAO activitydao = new ActivityDAO();
+	RequestDispatcher dispatcher = null;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("ACTIVITY CONTROLLER");
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("userobj");
 		
 		try {	
 			Stack<Activity> activities = activitydao.getActivities(user.getUserid());
 			System.out.println(activities.toString());
+			dispatcher = request.getRequestDispatcher("/source/user_pages/record_page/record.jsp");
+			dispatcher.forward(request, response);
+			session.setAttribute("activities", activities);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
 	}
 
 }
