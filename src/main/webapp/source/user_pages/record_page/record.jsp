@@ -1,4 +1,4 @@
-<%@page import="system.model.Activity, java.util.Stack" %>
+<%@page import="system.model.Activity, java.util.Stack, java.time.LocalDate, java.time.LocalDateTime, java.time.temporal.ChronoUnit" %>
 <%
 Stack<Activity> activities = (Stack<Activity>) request.getSession().getAttribute("activities");
 
@@ -177,64 +177,195 @@ Stack<Activity> activities = (Stack<Activity>) request.getSession().getAttribute
         <div class="activity">
             <p>Record & Activities</p>
             <div class="activity_container">
+            
+<!-- ===================================================================================================================== -->
+            <!-- If Statement (within this week) -->
+            <%if () %>
                 <div class="date_bar">
                     <p>Last Month</p>
                     <div class="horizontal_line"></div>
                 </div>
-                <div class="booking_container">
-                    <div class="car_image">
-                        <img src="https://drive.google.com/uc?export=view&id=1cs19Dr4j-sI_380xEyuakdWcKdUj5cY8" alt="">
-                    </div>
-                    <div class="booked_car">
-                        <div class="car_info">
-                            <div class="info_details">
-                                <div class="details">
-                                    <h4>Brand</h4>
-                                    <p>Mercedes</p>
-                                </div>
-                                <div class="details">
-                                    <h4>Start Date</h4>
-                                    <p>20/2/2022</p>
-                                </div>
-                            </div>
-                            <div class="info_details">
-                                <div class="details">
-                                    <h4>Model</h4>
-                                    <p>Passat</p>
-                                </div>
-                                <div class="details">
-                                    <h4>Return Date</h4>
-                                    <p>23/2/2022</p>
-                                </div> 
-                            </div>
-                            <div class="info_details">
-                                <div class="details">
-                                    <h4>Reg. Number</h4>
-                                    <p>ALK8704</p>
-                                </div>
-                                <div class="details">
-                                    <h4>Pickup Place</h4>
-                                    <p>Pulau Pinang</p>
-                                </div>
-                            </div>
-                            <div class="info_details">
-                                <div class="details">
-                                    <h4>Rental Fee</h4>
-                                    <p>RM 400.00</p>
-                                </div>
-                                <div class="details">
-                                    <h4>Drop Place</h4>
-                                    <p>Kedah</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="activity_button">
-                            <button>Reschedule</button>
-                            <button>Cancel</button>
-                        </div>
-                    </div>
-                    
+                <!-- While Statement () -->
+	                <div class="booking_container">
+	                    <div class="car_image">
+	                        <img src="https://drive.google.com/uc?export=view&id=1cs19Dr4j-sI_380xEyuakdWcKdUj5cY8" alt="">
+	                    </div>
+	                    <div class="booked_car">
+	                        <div class="car_info">
+	                            <div class="info_details">
+	                                <div class="details">
+	                                    <h4>Brand</h4>
+	                                    <p>Mercedes</p>
+	                                </div>
+	                                <div class="details">
+	                                    <h4>Start Date</h4>
+	                                    <p>20/2/2022</p>
+	                                </div>
+	                            </div>
+	                            <div class="info_details">
+	                                <div class="details">
+	                                    <h4>Model</h4>
+	                                    <p>Passat</p>
+	                                </div>
+	                                <div class="details">
+	                                    <h4>Return Date</h4>
+	                                    <p>23/2/2022</p>
+	                                </div> 
+	                            </div>
+	                            <div class="info_details">
+	                                <div class="details">
+	                                    <h4>Reg. Number</h4>
+	                                    <p>ALK8704</p>
+	                                </div>
+	                                <div class="details">
+	                                    <h4>Pickup Place</h4>
+	                                    <p>Pulau Pinang</p>
+	                                </div>
+	                            </div>
+	                            <div class="info_details">
+	                                <div class="details">
+	                                    <h4>Rental Fee</h4>
+	                                    <p>RM 400.00</p>
+	                                </div>
+	                                <div class="details">
+	                                    <h4>Drop Place</h4>
+	                                    <p>Kedah</p>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="activity_button">
+	                            <button>Reschedule</button>
+	                            <button>Cancel</button>
+	                        </div>
+	                    </div>
+	                </div>
+                <!-- close while statement -->
+            <!-- close if statement -->
+<!-- ===================================================================================================================== -->
+            <!-- If Statement (within this month) -->
+                <div class="date_bar">
+                    <p>Last Month</p>
+                    <div class="horizontal_line"></div>
                 </div>
+                <!-- While Statement () -->
+	                <div class="booking_container">
+	                    <div class="car_image">
+	                        <img src="https://drive.google.com/uc?export=view&id=1cs19Dr4j-sI_380xEyuakdWcKdUj5cY8" alt="">
+	                    </div>
+	                    <div class="booked_car">
+	                        <div class="car_info">
+	                            <div class="info_details">
+	                                <div class="details">
+	                                    <h4>Brand</h4>
+	                                    <p>Mercedes</p>
+	                                </div>
+	                                <div class="details">
+	                                    <h4>Start Date</h4>
+	                                    <p>20/2/2022</p>
+	                                </div>
+	                            </div>
+	                            <div class="info_details">
+	                                <div class="details">
+	                                    <h4>Model</h4>
+	                                    <p>Passat</p>
+	                                </div>
+	                                <div class="details">
+	                                    <h4>Return Date</h4>
+	                                    <p>23/2/2022</p>
+	                                </div> 
+	                            </div>
+	                            <div class="info_details">
+	                                <div class="details">
+	                                    <h4>Reg. Number</h4>
+	                                    <p>ALK8704</p>
+	                                </div>
+	                                <div class="details">
+	                                    <h4>Pickup Place</h4>
+	                                    <p>Pulau Pinang</p>
+	                                </div>
+	                            </div>
+	                            <div class="info_details">
+	                                <div class="details">
+	                                    <h4>Rental Fee</h4>
+	                                    <p>RM 400.00</p>
+	                                </div>
+	                                <div class="details">
+	                                    <h4>Drop Place</h4>
+	                                    <p>Kedah</p>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="activity_button">
+	                            <button>Reschedule</button>
+	                            <button>Cancel</button>
+	                        </div>
+	                    </div>
+	                </div>
+                <!-- close while statement -->
+            <!-- close if statement -->
+<!-- ===================================================================================================================== -->
+            <!-- If Statement (within last month and bfore) -->
+                <div class="date_bar">
+                    <p>Last Month</p>
+                    <div class="horizontal_line"></div>
+                </div>
+                <!-- While Statement () -->
+	                <div class="booking_container">
+	                    <div class="car_image">
+	                        <img src="https://drive.google.com/uc?export=view&id=1cs19Dr4j-sI_380xEyuakdWcKdUj5cY8" alt="">
+	                    </div>
+	                    <div class="booked_car">
+	                        <div class="car_info">
+	                            <div class="info_details">
+	                                <div class="details">
+	                                    <h4>Brand</h4>
+	                                    <p>Mercedes</p>
+	                                </div>
+	                                <div class="details">
+	                                    <h4>Start Date</h4>
+	                                    <p>20/2/2022</p>
+	                                </div>
+	                            </div>
+	                            <div class="info_details">
+	                                <div class="details">
+	                                    <h4>Model</h4>
+	                                    <p>Passat</p>
+	                                </div>
+	                                <div class="details">
+	                                    <h4>Return Date</h4>
+	                                    <p>23/2/2022</p>
+	                                </div> 
+	                            </div>
+	                            <div class="info_details">
+	                                <div class="details">
+	                                    <h4>Reg. Number</h4>
+	                                    <p>ALK8704</p>
+	                                </div>
+	                                <div class="details">
+	                                    <h4>Pickup Place</h4>
+	                                    <p>Pulau Pinang</p>
+	                                </div>
+	                            </div>
+	                            <div class="info_details">
+	                                <div class="details">
+	                                    <h4>Rental Fee</h4>
+	                                    <p>RM 400.00</p>
+	                                </div>
+	                                <div class="details">
+	                                    <h4>Drop Place</h4>
+	                                    <p>Kedah</p>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="activity_button">
+	                            <button>Reschedule</button>
+	                            <button>Cancel</button>
+	                        </div>
+	                    </div>
+	                </div>
+                <!-- close while statement -->
+            <!-- close if statement -->
+<!-- ===================================================================================================================== -->
             </div>
         </div>
     </section>
