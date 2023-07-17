@@ -7,13 +7,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import system.model.*;
 import java.sql.Timestamp;
-import java.util.Stack;
+import java.util.List;
+import java.util.ArrayList;
 
 public class ActivityDAO {
 	
-	public Stack<Activity> getActivities (int userid)throws ClassNotFoundException{
-		Stack <Activity> activities = new Stack <>();
-		Stack <Activity> tempStack = new Stack <>();
+	public List<Activity> getActivities (int userid)throws ClassNotFoundException{
+		List <Activity> activities = new ArrayList <>();
 		Connection con = null;
 		
 		String sql = 
@@ -40,7 +40,6 @@ public class ActivityDAO {
 			Reservation reservation = new Reservation();
 			User user = new User();
 			Vehicle vehicle = new Vehicle();
-			Timestamp tempTimestamp = null;
 			
 			ResultSet rs = pst.executeQuery();
 			while(rs.next()) {
@@ -72,7 +71,7 @@ public class ActivityDAO {
 				
 				activity = new Activity(user, vehicle, reservation, status);
 				
-				activities.push(activity);
+				activities.add(activity);
 			}
 			System.out.println("Succesful");
 		}catch(Exception e) {
