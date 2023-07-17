@@ -30,14 +30,11 @@ public class ActivityController extends HttpServlet {
 		try {	
 			List<Activity> activities = activitydao.getActivities(user.getUserid());
 			session.setAttribute("listOfActivity", activities);
-
-			for (Activity activityList : activities) {
-				System.out.println("index-0 (bfore) : "+activityList.getReservation().getInsertionTimestamp());
-				activities.remove(0);
-			}
-			//System.out.println("index-0 (bfore) : "+activities.get(0).getReservation().getInsertionTimestamp());
-			//activities.remove(0);
-			//System.out.println("index-0 (after) : "+activities.get(0).getReservation().getInsertionTimestamp());
+			
+			System.out.println("vehicleid : ");
+			System.out.println(activities.get(0).getReservation().getReservation_vehicleid());
+			System.out.println(activities.get(1).getReservation().getReservation_vehicleid());
+			System.out.println("vehicleid--- ");
 			
 			dispatcher = request.getRequestDispatcher("/source/user_pages/record_page/record.jsp");
 			dispatcher.forward(request, response);

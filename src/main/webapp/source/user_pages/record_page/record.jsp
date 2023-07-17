@@ -1,6 +1,7 @@
 <%@page import="system.model.*, java.util.List, java.time.LocalDate, java.time.LocalDateTime, java.time.temporal.ChronoUnit" %>
 <%
 List<Activity> activities = (List<Activity>) session.getAttribute("listOfActivity");
+List<Activity> copyActivities = activities;
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -180,29 +181,30 @@ List<Activity> activities = (List<Activity>) session.getAttribute("listOfActivit
 <!-- ===================================================================================================================== -->
             <!--1. If Statement (within this week) -->
             <%
+            int indexTracker = 0;
             LocalDate currentDate = LocalDate.now();
             LocalDate range1StartDate = currentDate.minusDays(7);
             
             LocalDateTime timestamp = activities.get(0).getReservation().getInsertionTimestamp().toLocalDateTime();
             System.out.println(timestamp);
             
-            if (timestamp.toLocalDate().isAfter(range1StartDate)) {
+            if (timestamp.toLocalDate().isAfter(range1StartDate) && (!copyActivities.isEmpty())) {
             	System.out.println("Recent---");
             %>
                 <div class="date_bar">
-                    <p>Last Month</p>
+                    <p>Recent</p>
                     <div class="horizontal_line"></div>
                 </div>
                 <!--2. for statement (recent activities) -->
-                <%for (Activity activityList : activities) {
-                	timestamp = activityList.getReservation().getInsertionTimestamp().toLocalDateTime();
+                <%for (int i=0; i<activities.size(); i++) {
+                	timestamp = activities.get(i).getReservation().getInsertionTimestamp().toLocalDateTime();
                 	//3. if statement
                 	if(timestamp.toLocalDate().isAfter(range1StartDate)){
-                		System.out.println(activityList.getReservation().getInsertionTimestamp());
+                		System.out.println(activities.get(i).getReservation().getInsertionTimestamp());
                 %>
 		                <div class="booking_container">
 		                    <div class="car_image">
-		                    	<%String imgPath = "../carPic/" + activityList.getVehicle().getVehicleid(); %>
+		                    	<%String imgPath = "../carPic/" + activities.get(i).getVehicle().getVehicleid() + ".jpg"; %>
 		                        <img src= <%=imgPath%>>
 		                    </div>
 		                    <div class="booked_car">
@@ -210,189 +212,67 @@ List<Activity> activities = (List<Activity>) session.getAttribute("listOfActivit
 		                            <div class="info_details">
 		                                <div class="details">
 		                                    <h4>Brand</h4>
-		                                    <p><%=activityList.getVehicle().getV_brand()%></p>
+		                                    <p><%=activities.get(i).getVehicle().getV_brand()%></p>
 		                                </div>
 		                                <div class="details">
 		                                    <h4>Start Date</h4>
-		                                    <p><%=activityList.getReservation().getPickup_date()%></p>
+		                                    <p><%=activities.get(i).getReservation().getPickup_date()%></p>
 		                                </div>
 		                            </div>
 		                            <div class="info_details">
 		                                <div class="details">
 		                                    <h4>Model</h4>
-		                                    <p><%=activityList.getVehicle().getV_model()%></p>
+		                                    <p><%=activities.get(i).getVehicle().getV_model()%></p>
 		                                </div>
 		                                <div class="details">
 		                                    <h4>Return Date</h4>
-		                                    <p><%=activityList.getReservation().getDrop_date()%></p>
+		                                    <p><%=activities.get(i).getReservation().getDrop_date()%></p>
 		                                </div> 
 		                            </div>
 		                            <div class="info_details">
 		                                <div class="details">
 		                                    <h4>Reg. Number</h4>
-		                                    <p><%=activityList.getVehicle().getRegistration_num()%></p>
+		                                    <p><%=activities.get(i).getVehicle().getRegistration_num()%></p>
 		                                </div>
 		                                <div class="details">
 		                                    <h4>Pickup Place</h4>
-		                                    <p><%=activityList.getReservation().getPickup_location() %></p>
+		                                    <p><%=activities.get(i).getReservation().getPickup_location() %></p>
 		                                </div>
 		                            </div>
 		                            <div class="info_details">
 		                                <div class="details">
 		                                    <h4>Rental Fee</h4>
-		                                    <p>RM <%=activityList.getReservation().getRent_to_pay() %></p>
+		                                    <p>RM <%=activities.get(i).getReservation().getRent_to_pay() %></p>
 		                                </div>
 		                                <div class="details">
 		                                    <h4>Drop Place</h4>
-		                                    <p><%=activityList.getReservation().getDrop_location()%></p>
+		                                    <p><%=activities.get(i).getReservation().getDrop_location()%></p>
 		                                </div>
 		                            </div>
 		                        </div>
 		                        <div class="activity_button">
-		                        	<%if(activityList.getUserStatus().equals("Lessor")){%>
-			                        	<form method="get" action="">
+		                        	<%if(activities.get(i).getUserStatus().equals("Lessor")){%>
+			                        	
 			                            	<button>Reschedule</button>
-			                            </form>
-			                        	<form method="get" action="">
+			                            
+			                        	
 		                            		<button>Cancel</button>
-		                            	</form>
+		                            	
 		                           	<%}//else{ %>
 		                            <%//} %>
 		                        </div>
 		                    </div>
 		                </div>
-	            <%	activities.remove(0);
+	            <%	copyActivities.remove(0);
+	            	if(!copyActivities.isEmpty())
+	            		indexTracker++;
 	            	}else{break;}
                 	//3. if statement (close)
 	            } %>
                 <!--2. for statement -->
             <%} %>
             <!--1. close if statement -->
-<!-- ===================================================================================================================== -->
-            <!-- If Statement (within this month) -->
-                <div class="date_bar">
-                    <p>Last Month</p>
-                    <div class="horizontal_line"></div>
-                </div>
-                <!-- While Statement () -->
-	                <div class="booking_container">
-	                    <div class="car_image">
-	                        <img src="https://drive.google.com/uc?export=view&id=1cs19Dr4j-sI_380xEyuakdWcKdUj5cY8" alt="">
-	                    </div>
-	                    <div class="booked_car">
-	                        <div class="car_info">
-	                            <div class="info_details">
-	                                <div class="details">
-	                                    <h4>Brand</h4>
-	                                    <p>Mercedes</p>
-	                                </div>
-	                                <div class="details">
-	                                    <h4>Start Date</h4>
-	                                    <p>20/2/2022</p>
-	                                </div>
-	                            </div>
-	                            <div class="info_details">
-	                                <div class="details">
-	                                    <h4>Model</h4>
-	                                    <p>Passat</p>
-	                                </div>
-	                                <div class="details">
-	                                    <h4>Return Date</h4>
-	                                    <p>23/2/2022</p>
-	                                </div> 
-	                            </div>
-	                            <div class="info_details">
-	                                <div class="details">
-	                                    <h4>Reg. Number</h4>
-	                                    <p>ALK8704</p>
-	                                </div>
-	                                <div class="details">
-	                                    <h4>Pickup Place</h4>
-	                                    <p>Pulau Pinang</p>
-	                                </div>
-	                            </div>
-	                            <div class="info_details">
-	                                <div class="details">
-	                                    <h4>Rental Fee</h4>
-	                                    <p>RM 400.00</p>
-	                                </div>
-	                                <div class="details">
-	                                    <h4>Drop Place</h4>
-	                                    <p>Kedah</p>
-	                                </div>
-	                            </div>
-	                        </div>
-	                        <div class="activity_button">
-	                            <button>Reschedule</button>
-	                            <button>Cancel</button>
-	                        </div>
-	                    </div>
-	                </div>
-                <!-- close while statement -->
-            <!-- close if statement -->
-<!-- ===================================================================================================================== -->
-            <!-- If Statement (within last month and bfore) -->
-                <div class="date_bar">
-                    <p>Last Month</p>
-                    <div class="horizontal_line"></div>
-                </div>
-                <!-- While Statement () -->
-	                <div class="booking_container">
-	                    <div class="car_image">
-	                        <img src="https://drive.google.com/uc?export=view&id=1cs19Dr4j-sI_380xEyuakdWcKdUj5cY8" alt="">
-	                    </div>
-	                    <div class="booked_car">
-	                        <div class="car_info">
-	                            <div class="info_details">
-	                                <div class="details">
-	                                    <h4>Brand</h4>
-	                                    <p>Mercedes</p>
-	                                </div>
-	                                <div class="details">
-	                                    <h4>Start Date</h4>
-	                                    <p>20/2/2022</p>
-	                                </div>
-	                            </div>
-	                            <div class="info_details">
-	                                <div class="details">
-	                                    <h4>Model</h4>
-	                                    <p>Passat</p>
-	                                </div>
-	                                <div class="details">
-	                                    <h4>Return Date</h4>
-	                                    <p>23/2/2022</p>
-	                                </div> 
-	                            </div>
-	                            <div class="info_details">
-	                                <div class="details">
-	                                    <h4>Reg. Number</h4>
-	                                    <p>ALK8704</p>
-	                                </div>
-	                                <div class="details">
-	                                    <h4>Pickup Place</h4>
-	                                    <p>Pulau Pinang</p>
-	                                </div>
-	                            </div>
-	                            <div class="info_details">
-	                                <div class="details">
-	                                    <h4>Rental Fee</h4>
-	                                    <p>RM 400.00</p>
-	                                </div>
-	                                <div class="details">
-	                                    <h4>Drop Place</h4>
-	                                    <p>Kedah</p>
-	                                </div>
-	                            </div>
-	                        </div>
-	                        <div class="activity_button">
-	                            <button>Reschedule</button>
-	                            <button>Cancel</button>
-	                        </div>
-	                    </div>
-	                </div>
-                <!-- close while statement -->
-            <!-- close if statement -->
-<!-- ===================================================================================================================== -->
+
             </div>
         </div>
     </section>
