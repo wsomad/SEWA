@@ -77,7 +77,7 @@ public class ConfirmBookingController extends HttpServlet {
 		RequestDispatcher dispatcher = null;
 		
 		reservation.setReservation_userid(user.getUserid());
-		reservation.setReservation_vehcileid(vehicle.getVehicleid());
+		reservation.setReservation_vehicleid(vehicle.getVehicleid());
 		System.out.println("from servlet--------------\n" + reservation.toString());
 		
 		try {

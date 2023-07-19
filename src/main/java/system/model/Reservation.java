@@ -60,7 +60,7 @@ public class Reservation {
 	public int getReservation_vehicleid() {
 		return reservation_vehicleid;
 	}
-	public void setReservation_vehcileid(int reservation_vehcileid) {
+	public void setReservation_vehicleid(int reservation_vehcileid) {
 		this.reservation_vehicleid = reservation_vehcileid;
 	}
 	public String getPickup_location() {

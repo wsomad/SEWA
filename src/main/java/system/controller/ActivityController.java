@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.Stack;
+import java.util.List;
 
 import system.model.*;
 import system.dao.ActivityDAO;
@@ -28,11 +28,21 @@ public class ActivityController extends HttpServlet {
 		User user = (User) session.getAttribute("userobj");
 		
 		try {	
-			Stack<Activity> activities = activitydao.getActivities(user.getUserid());
-			System.out.println(activities.toString());
+			List<Activity> activities = activitydao.getActivities(user.getUserid());
+			session.setAttribute("listOfActivity", activities);
+			
+			System.out.println("vehicleid : ");
+			System.out.println(activities.get(0).getVehicle().getV_brand());
+			System.out.println(activities.get(1).getVehicle().getV_brand());
+			if(!activities.isEmpty()) {
+				System.out.println(activities.get(2).getVehicle().getV_brand());
+			}else {
+				System.out.println("emptied");
+			}
+			System.out.println("vehicleid--- ");
+			
 			dispatcher = request.getRequestDispatcher("/source/user_pages/record_page/record.jsp");
 			dispatcher.forward(request, response);
-			session.setAttribute("activities", activities);
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
