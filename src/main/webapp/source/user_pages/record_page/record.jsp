@@ -1,9 +1,8 @@
-<%@page import="system.model.Activity, java.util.Stack, java.time.LocalDate, java.time.LocalDateTime, java.time.temporal.ChronoUnit" %>
+<%@page import="system.model.*, java.text.SimpleDateFormat, java.util.List, java.time.LocalDate, java.util.Date, java.time.LocalDateTime, java.time.temporal.ChronoUnit" %>
 <%
-Stack<Activity> activities = (Stack<Activity>) request.getSession().getAttribute("activities");
-
+List<Activity> activities = (List<Activity>) session.getAttribute("listOfActivity");
 %>
-<!-- hhh -->
+<!-- hh -->
 <!DOCTYPE html>
 <html lang="en">
 <style>
@@ -180,193 +179,166 @@ Stack<Activity> activities = (Stack<Activity>) request.getSession().getAttribute
             <div class="activity_container">
             
 <!-- ===================================================================================================================== -->
-            <!-- If Statement (within this week) -->
-          <%--if () --%> 
-                <div class="date_bar">
-                    <p>Last Month</p>
+            <!--1. If Statement (within this week) -->
+            <%
+            int indexTracker = 0;
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            LocalDate currentDate = LocalDate.now();
+            Date current = new Date();
+            LocalDate range1StartDate = currentDate.minusDays(7);
+            
+            if(current.after(activities.get(0).getReservation().getPickup_date()) && current.before(activities.get(0).getReservation().getDrop_date())){
+            %>
+            	<div class="date_bar">
+                    <p>In Used</p>
                     <div class="horizontal_line"></div>
                 </div>
-                <!-- While Statement () -->
-	                <div class="booking_container">
-	                    <div class="car_image">
-	                        <img src="https://drive.google.com/uc?export=view&id=1cs19Dr4j-sI_380xEyuakdWcKdUj5cY8" alt="">
-	                    </div>
-	                    <div class="booked_car">
-	                        <div class="car_info">
-	                            <div class="info_details">
-	                                <div class="details">
-	                                    <h4>Brand</h4>
-	                                    <p>Mercedes</p>
-	                                </div>
-	                                <div class="details">
-	                                    <h4>Start Date</h4>
-	                                    <p>20/2/2022</p>
-	                                </div>
-	                            </div>
-	                            <div class="info_details">
-	                                <div class="details">
-	                                    <h4>Model</h4>
-	                                    <p>Passat</p>
-	                                </div>
-	                                <div class="details">
-	                                    <h4>Return Date</h4>
-	                                    <p>23/2/2022</p>
-	                                </div> 
-	                            </div>
-	                            <div class="info_details">
-	                                <div class="details">
-	                                    <h4>Reg. Number</h4>
-	                                    <p>ALK8704</p>
-	                                </div>
-	                                <div class="details">
-	                                    <h4>Pickup Place</h4>
-	                                    <p>Pulau Pinang</p>
-	                                </div>
-	                            </div>
-	                            <div class="info_details">
-	                                <div class="details">
-	                                    <h4>Rental Fee</h4>
-	                                    <p>RM 400.00</p>
-	                                </div>
-	                                <div class="details">
-	                                    <h4>Drop Place</h4>
-	                                    <p>Kedah</p>
-	                                </div>
-	                            </div>
-	                        </div>
-	                        <div class="activity_button">
-	                            <button>Reschedule</button>
-	                            <button>Cancel</button>
-	                        </div>
-	                    </div>
-	                </div>
-                <!-- close while statement -->
-            <!-- close if statement -->
-<!-- ===================================================================================================================== -->
-            <!-- If Statement (within this month) -->
+	              <div class="booking_container">
+	                  <div class="car_image">
+	                  	<%String imgPath = "../carPic/" + activities.get(0).getReservation().getReservation_vehicleid() + ".jpg"; %>
+	                      <img src= <%=imgPath%>>
+	                  </div>
+	                  <div class="booked_car">
+	                      <div class="car_info">
+	                          <div class="info_details">
+	                              <div class="details">
+	                                  <h4>Brand</h4>
+	                                  <p><%=activities.get(0).getVehicle().getV_brand()%></p>
+	                              </div>
+	                              <div class="details">
+	                                  <h4>Start Date</h4>
+	                                  <p><%=activities.get(0).getReservation().getPickup_DateString()%></p>
+	                              </div>
+	                          </div>
+	                          <div class="info_details">
+	                              <div class="details">
+	                                  <h4>Model</h4>
+	                                  <p><%=activities.get(0).getVehicle().getV_model()%></p>
+	                              </div>
+	                              <div class="details">
+	                                  <h4>Return Date</h4>
+	                                  <p><%=activities.get(0).getReservation().getDrop_DateString()%></p>
+	                              </div> 
+	                          </div>
+	                          <div class="info_details">
+	                              <div class="details">
+	                                  <h4>Reg. Number</h4>
+	                                  <p><%=activities.get(0).getVehicle().getRegistration_num()%></p>
+	                              </div>
+	                              <div class="details">
+	                                  <h4>Pickup Place</h4>
+	                                  <p><%=activities.get(0).getReservation().getPickup_location() %></p>
+	                              </div>
+	                          </div>
+	                          <div class="info_details">
+	                              <div class="details">
+	                                  <h4>Rental Fee</h4>
+	                                  <p>RM <%=activities.get(0).getReservation().getRent_to_pay() %></p>
+	                              </div>
+	                              <div class="details">
+	                                  <h4>Drop Place</h4>
+	                                  <p><%=activities.get(0).getReservation().getDrop_location()%></p>
+	                              </div>
+	                          </div>
+	                      </div>
+	                  </div>
+	              </div>
+            <%
+            indexTracker++;
+            }
+            
+            LocalDateTime timestamp = activities.get(indexTracker).getReservation().getInsertionTimestamp().toLocalDateTime();
+            System.out.println(timestamp);
+            
+            if (timestamp.toLocalDate().isAfter(range1StartDate) ) {
+            	System.out.println("Recent---");
+            %>
                 <div class="date_bar">
-                    <p>Last Month</p>
+                    <p>Recent</p>
                     <div class="horizontal_line"></div>
                 </div>
-                <!-- While Statement () -->
-	                <div class="booking_container">
-	                    <div class="car_image">
-	                        <img src="https://drive.google.com/uc?export=view&id=1cs19Dr4j-sI_380xEyuakdWcKdUj5cY8" alt="">
-	                    </div>
-	                    <div class="booked_car">
-	                        <div class="car_info">
-	                            <div class="info_details">
-	                                <div class="details">
-	                                    <h4>Brand</h4>
-	                                    <p>Mercedes</p>
-	                                </div>
-	                                <div class="details">
-	                                    <h4>Start Date</h4>
-	                                    <p>20/2/2022</p>
-	                                </div>
-	                            </div>
-	                            <div class="info_details">
-	                                <div class="details">
-	                                    <h4>Model</h4>
-	                                    <p>Passat</p>
-	                                </div>
-	                                <div class="details">
-	                                    <h4>Return Date</h4>
-	                                    <p>23/2/2022</p>
-	                                </div> 
-	                            </div>
-	                            <div class="info_details">
-	                                <div class="details">
-	                                    <h4>Reg. Number</h4>
-	                                    <p>ALK8704</p>
-	                                </div>
-	                                <div class="details">
-	                                    <h4>Pickup Place</h4>
-	                                    <p>Pulau Pinang</p>
-	                                </div>
-	                            </div>
-	                            <div class="info_details">
-	                                <div class="details">
-	                                    <h4>Rental Fee</h4>
-	                                    <p>RM 400.00</p>
-	                                </div>
-	                                <div class="details">
-	                                    <h4>Drop Place</h4>
-	                                    <p>Kedah</p>
-	                                </div>
-	                            </div>
-	                        </div>
-	                        <div class="activity_button">
-	                            <button>Reschedule</button>
-	                            <button>Cancel</button>
-	                        </div>
-	                    </div>
-	                </div>
-                <!-- close while statement -->
-            <!-- close if statement -->
-<!-- ===================================================================================================================== -->
-            <!-- If Statement (within last month and bfore) -->
-                <div class="date_bar">
-                    <p>Last Month</p>
-                    <div class="horizontal_line"></div>
-                </div>
-                <!-- While Statement () -->
-	                <div class="booking_container">
-	                    <div class="car_image">
-	                        <img src="https://drive.google.com/uc?export=view&id=1cs19Dr4j-sI_380xEyuakdWcKdUj5cY8" alt="">
-	                    </div>
-	                    <div class="booked_car">
-	                        <div class="car_info">
-	                            <div class="info_details">
-	                                <div class="details">
-	                                    <h4>Brand</h4>
-	                                    <p>Mercedes</p>
-	                                </div>
-	                                <div class="details">
-	                                    <h4>Start Date</h4>
-	                                    <p>20/2/2022</p>
-	                                </div>
-	                            </div>
-	                            <div class="info_details">
-	                                <div class="details">
-	                                    <h4>Model</h4>
-	                                    <p>Passat</p>
-	                                </div>
-	                                <div class="details">
-	                                    <h4>Return Date</h4>
-	                                    <p>23/2/2022</p>
-	                                </div> 
-	                            </div>
-	                            <div class="info_details">
-	                                <div class="details">
-	                                    <h4>Reg. Number</h4>
-	                                    <p>ALK8704</p>
-	                                </div>
-	                                <div class="details">
-	                                    <h4>Pickup Place</h4>
-	                                    <p>Pulau Pinang</p>
-	                                </div>
-	                            </div>
-	                            <div class="info_details">
-	                                <div class="details">
-	                                    <h4>Rental Fee</h4>
-	                                    <p>RM 400.00</p>
-	                                </div>
-	                                <div class="details">
-	                                    <h4>Drop Place</h4>
-	                                    <p>Kedah</p>
-	                                </div>
-	                            </div>
-	                        </div>
-	                        <div class="activity_button">
-	                            <button>Reschedule</button>
-	                            <button>Cancel</button>
-	                        </div>
-	                    </div>
-	                </div>
-                <!-- close while statement -->
-            <!-- close if statement -->
-<!-- ===================================================================================================================== -->
+                <!--2. for statement (recent activities) -->
+                <%for (int i=indexTracker; i<activities.size(); i++) {
+                	timestamp = activities.get(i).getReservation().getInsertionTimestamp().toLocalDateTime();
+                	//3. if statement
+                	if(timestamp.toLocalDate().isAfter(range1StartDate)){
+                		System.out.println(activities.get(i).getReservation().getInsertionTimestamp());
+                %>
+		                <div class="booking_container">
+		                    <div class="car_image">
+		                    	<%String imgPath = "../carPic/" + activities.get(i).getReservation().getReservation_vehicleid() + ".jpg"; %>
+		                        <img src= <%=imgPath%>>
+		                    </div>
+		                    <div class="booked_car">
+		                        <div class="car_info">
+		                            <div class="info_details">
+		                                <div class="details">
+		                                    <h4>Brand</h4>
+		                                    <p><%=activities.get(i).getVehicle().getV_brand()%></p>
+		                                </div>
+		                                <div class="details">
+		                                    <h4>Start Date</h4>
+		                                    <p><%=activities.get(i).getReservation().getPickup_DateString()%></p>
+		                                </div>
+		                            </div>
+		                            <div class="info_details">
+		                                <div class="details">
+		                                    <h4>Model</h4>
+		                                    <p><%=activities.get(i).getVehicle().getV_model()%></p>
+		                                </div>
+		                                <div class="details">
+		                                    <h4>Return Date</h4>
+		                                    <p><%=activities.get(i).getReservation().getDrop_DateString()%></p>
+		                                </div> 
+		                            </div>
+		                            <div class="info_details">
+		                                <div class="details">
+		                                    <h4>Reg. Number</h4>
+		                                    <p><%=activities.get(i).getVehicle().getRegistration_num()%></p>
+		                                </div>
+		                                <div class="details">
+		                                    <h4>Pickup Place</h4>
+		                                    <p><%=activities.get(i).getReservation().getPickup_location() %></p>
+		                                </div>
+		                            </div>
+		                            <div class="info_details">
+		                                <div class="details">
+		                                    <h4>Rental Fee</h4>
+		                                    <p>RM <%=activities.get(i).getReservation().getRent_to_pay() %></p>
+		                                </div>
+		                                <div class="details">
+		                                    <h4>Drop Place</h4>
+		                                    <p><%=activities.get(i).getReservation().getDrop_location()%></p>
+		                                </div>
+		                            </div>
+		                        </div>
+		                        	<%if(activities.get(i).getUserStatus().equals("Tenant")){
+		                        		int vehicleid = activities.get(i).getReservation().getReservation_vehicleid();
+		                        		Reservation existReserve = activities.get(i).getReservation();
+		                        	%>
+				                        <div class="activity_button">
+					                        	<form method="post" action="BookingController"> 
+					                        		<input type="hidden" name="vehicleId" value="<%=vehicleid%>">
+					                            	<button>Reschedule</button>
+					                            </form>
+					                    </div>
+					                    <div class="activity_button">
+					                        	<form method="post" action="">
+				                            		<button>Cancel</button>
+				                            	</form>
+				                        </div>
+		                           	<%}//else{ %>
+		                            <%//} %>
+		                    </div>
+		                </div>
+	            <%	
+	            	}else{break;}
+                	//3. if statement (close)
+	            } %>
+                <!--2. for statement -->
+            <%} %>
+            <!--1. close if statement -->
+
             </div>
         </div>
     </section>
