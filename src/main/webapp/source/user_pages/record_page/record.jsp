@@ -1,7 +1,6 @@
-<%@page import="system.model.*, java.util.List, java.time.LocalDate, java.time.LocalDateTime, java.time.temporal.ChronoUnit" %>
+<%@page import="system.model.*, java.text.SimpleDateFormat, java.util.List, java.time.LocalDate, java.util.Date, java.time.LocalDateTime, java.time.temporal.ChronoUnit" %>
 <%
 List<Activity> activities = (List<Activity>) session.getAttribute("listOfActivity");
-List<Activity> copyActivities = activities;
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -182,13 +181,75 @@ List<Activity> copyActivities = activities;
             <!--1. If Statement (within this week) -->
             <%
             int indexTracker = 0;
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
             LocalDate currentDate = LocalDate.now();
+            Date current = new Date();
             LocalDate range1StartDate = currentDate.minusDays(7);
             
-            LocalDateTime timestamp = activities.get(0).getReservation().getInsertionTimestamp().toLocalDateTime();
+            if(current.after(activities.get(0).getReservation().getPickup_date()) && current.before(activities.get(0).getReservation().getDrop_date())){
+            %>
+            	<div class="date_bar">
+                    <p>In Used</p>
+                    <div class="horizontal_line"></div>
+                </div>
+	              <div class="booking_container">
+	                  <div class="car_image">
+	                  	<%String imgPath = "../carPic/" + activities.get(0).getReservation().getReservation_vehicleid() + ".jpg"; %>
+	                      <img src= <%=imgPath%>>
+	                  </div>
+	                  <div class="booked_car">
+	                      <div class="car_info">
+	                          <div class="info_details">
+	                              <div class="details">
+	                                  <h4>Brand</h4>
+	                                  <p><%=activities.get(0).getVehicle().getV_brand()%></p>
+	                              </div>
+	                              <div class="details">
+	                                  <h4>Start Date</h4>
+	                                  <p><%=activities.get(0).getReservation().getPickup_DateString()%></p>
+	                              </div>
+	                          </div>
+	                          <div class="info_details">
+	                              <div class="details">
+	                                  <h4>Model</h4>
+	                                  <p><%=activities.get(0).getVehicle().getV_model()%></p>
+	                              </div>
+	                              <div class="details">
+	                                  <h4>Return Date</h4>
+	                                  <p><%=activities.get(0).getReservation().getDrop_DateString()%></p>
+	                              </div> 
+	                          </div>
+	                          <div class="info_details">
+	                              <div class="details">
+	                                  <h4>Reg. Number</h4>
+	                                  <p><%=activities.get(0).getVehicle().getRegistration_num()%></p>
+	                              </div>
+	                              <div class="details">
+	                                  <h4>Pickup Place</h4>
+	                                  <p><%=activities.get(0).getReservation().getPickup_location() %></p>
+	                              </div>
+	                          </div>
+	                          <div class="info_details">
+	                              <div class="details">
+	                                  <h4>Rental Fee</h4>
+	                                  <p>RM <%=activities.get(0).getReservation().getRent_to_pay() %></p>
+	                              </div>
+	                              <div class="details">
+	                                  <h4>Drop Place</h4>
+	                                  <p><%=activities.get(0).getReservation().getDrop_location()%></p>
+	                              </div>
+	                          </div>
+	                      </div>
+	                  </div>
+	              </div>
+            <%
+            indexTracker++;
+            }
+            
+            LocalDateTime timestamp = activities.get(indexTracker).getReservation().getInsertionTimestamp().toLocalDateTime();
             System.out.println(timestamp);
             
-            if (timestamp.toLocalDate().isAfter(range1StartDate) && (!copyActivities.isEmpty())) {
+            if (timestamp.toLocalDate().isAfter(range1StartDate) ) {
             	System.out.println("Recent---");
             %>
                 <div class="date_bar">
@@ -196,7 +257,7 @@ List<Activity> copyActivities = activities;
                     <div class="horizontal_line"></div>
                 </div>
                 <!--2. for statement (recent activities) -->
-                <%for (int i=0; i<activities.size(); i++) {
+                <%for (int i=indexTracker; i<activities.size(); i++) {
                 	timestamp = activities.get(i).getReservation().getInsertionTimestamp().toLocalDateTime();
                 	//3. if statement
                 	if(timestamp.toLocalDate().isAfter(range1StartDate)){
@@ -204,7 +265,7 @@ List<Activity> copyActivities = activities;
                 %>
 		                <div class="booking_container">
 		                    <div class="car_image">
-		                    	<%String imgPath = "../carPic/" + activities.get(i).getVehicle().getVehicleid() + ".jpg"; %>
+		                    	<%String imgPath = "../carPic/" + activities.get(i).getReservation().getReservation_vehicleid() + ".jpg"; %>
 		                        <img src= <%=imgPath%>>
 		                    </div>
 		                    <div class="booked_car">
@@ -216,7 +277,7 @@ List<Activity> copyActivities = activities;
 		                                </div>
 		                                <div class="details">
 		                                    <h4>Start Date</h4>
-		                                    <p><%=activities.get(i).getReservation().getPickup_date()%></p>
+		                                    <p><%=activities.get(i).getReservation().getPickup_DateString()%></p>
 		                                </div>
 		                            </div>
 		                            <div class="info_details">
@@ -226,7 +287,7 @@ List<Activity> copyActivities = activities;
 		                                </div>
 		                                <div class="details">
 		                                    <h4>Return Date</h4>
-		                                    <p><%=activities.get(i).getReservation().getDrop_date()%></p>
+		                                    <p><%=activities.get(i).getReservation().getDrop_DateString()%></p>
 		                                </div> 
 		                            </div>
 		                            <div class="info_details">
@@ -250,22 +311,22 @@ List<Activity> copyActivities = activities;
 		                                </div>
 		                            </div>
 		                        </div>
-		                        <div class="activity_button">
-		                        	<%if(activities.get(i).getUserStatus().equals("Lessor")){%>
-			                        	
-			                            	<button>Reschedule</button>
-			                            
-			                        	
-		                            		<button>Cancel</button>
-		                            	
+		                        	<%if(activities.get(i).getUserStatus().equals("Tenant")){%>
+				                        <div class="activity_button">
+					                        	<form method="get" action="">
+					                            	<button>Reschedule</button>
+					                            </form>
+					                    </div>
+					                    <div class="activity_button">
+					                        	<form method="post" action="">
+				                            		<button>Cancel</button>
+				                            	</form>
+				                        </div>
 		                           	<%}//else{ %>
 		                            <%//} %>
-		                        </div>
 		                    </div>
 		                </div>
-	            <%	copyActivities.remove(0);
-	            	if(!copyActivities.isEmpty())
-	            		indexTracker++;
+	            <%	
 	            	}else{break;}
                 	//3. if statement (close)
 	            } %>

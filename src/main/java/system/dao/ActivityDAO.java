@@ -61,19 +61,38 @@ public class ActivityDAO {
 				user.setUser_uname(rs.getString("user_uname"));
 				user.setUser_phone(rs.getString("user_phone"));
 				
-				vehicle.setAvailability(rs.getBoolean("availability"));
-				vehicle.setRegistration_num(rs.getNString("registration_num"));
-				vehicle.setV_brand(rs.getString("v_brand"));
-				vehicle.setV_model(rs.getString("v_model"));
-				vehicle.setRental_pr_hr(rs.getDouble("rental_pr_hr"));
+				boolean avail =  rs.getBoolean("availability");
+				String reg_num = rs.getNString("registration_num");
+				String brand = rs.getString("v_brand");
+				String model = rs.getString("v_model");
+				Double rental = rs.getDouble("rental_pr_hr");
+				vehicle = new Vehicle(0, avail, reg_num, "none", "none", brand, model, "none", "none", 0,
+						"none", "none", "none", "none", "none", rental, 0, "none", 0, "none", "none");
 				
 				String status = (userid==user_id) ? "Tenant" : "Lessor";
 				
 				activity = new Activity(user, vehicle, reservation, status);
 				
 				activities.add(activity);
+				//System.out.println(user.getUserid());
+				System.out.println("check : " + activity.getVehicle().getV_brand());
+				System.out.println("check : " + activity.getReservation().getRent_to_pay());
 			}
 			System.out.println("Succesful");
+			System.out.println(activities.get(0).getVehicle().getV_brand());
+			System.out.println(activities.get(1).getVehicle().getV_brand());
+			if(!activities.isEmpty()) {
+				System.out.println(activities.get(2).getVehicle().getV_brand());
+			}else {
+				System.out.println("emptied");
+			}
+			System.out.println(activities.get(0).getReservation().getRent_to_pay());
+			System.out.println(activities.get(1).getReservation().getRent_to_pay());
+			if(!activities.isEmpty()) {
+				System.out.println(activities.get(2).getReservation().getRent_to_pay());
+			}else {
+				System.out.println("emptied");
+			}
 		}catch(Exception e) {
 			System.out.println("Unsuccesful");
 			e.printStackTrace();

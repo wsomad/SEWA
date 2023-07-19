@@ -32,8 +32,13 @@ public class ActivityController extends HttpServlet {
 			session.setAttribute("listOfActivity", activities);
 			
 			System.out.println("vehicleid : ");
-			System.out.println(activities.get(0).getReservation().getReservation_vehicleid());
-			System.out.println(activities.get(1).getReservation().getReservation_vehicleid());
+			System.out.println(activities.get(0).getVehicle().getV_brand());
+			System.out.println(activities.get(1).getVehicle().getV_brand());
+			if(!activities.isEmpty()) {
+				System.out.println(activities.get(2).getVehicle().getV_brand());
+			}else {
+				System.out.println("emptied");
+			}
 			System.out.println("vehicleid--- ");
 			
 			dispatcher = request.getRequestDispatcher("/source/user_pages/record_page/record.jsp");
