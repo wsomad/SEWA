@@ -180,7 +180,7 @@ Stack<Activity> activities = (Stack<Activity>) request.getSession().getAttribute
             
 <!-- ===================================================================================================================== -->
             <!-- If Statement (within this week) -->
-            <%if () %>
+          <%--if () --%> 
                 <div class="date_bar">
                     <p>Last Month</p>
                     <div class="horizontal_line"></div>

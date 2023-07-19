@@ -55,7 +55,7 @@ public class p2pRegistrationController extends HttpServlet {
                     String fieldValue = item.getString();
                     formFields.put(fieldName, fieldValue);
                 } else {
-                    String uniquePth = "D:\\software\\eclipse\\2nd-Yr-Project\\PROJECT";
+                    String uniquePth = "C:\\Users\\Intel i5\\Documents\\GitHub\\PROJECT";
                 	item.write(new File(uniquePth+"\\src\\main\\webapp\\source\\user_pages\\carPic\\" + imgIndex + ".jpg"));
                     // ...
                 }
