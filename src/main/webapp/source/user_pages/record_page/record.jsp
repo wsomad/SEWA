@@ -2,7 +2,7 @@
 <%
 List<Activity> activities = (List<Activity>) session.getAttribute("listOfActivity");
 %>
-<!-- hh -->
+<!-- hhh -->
 <!DOCTYPE html>
 <html lang="en">
 <style>
