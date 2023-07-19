@@ -3,6 +3,7 @@
 Stack<Activity> activities = (Stack<Activity>) request.getSession().getAttribute("activities");
 
 %>
+<!-- hh -->
 <!DOCTYPE html>
 <html lang="en">
 <style>

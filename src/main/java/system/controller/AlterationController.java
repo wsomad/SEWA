@@ -1,6 +1,9 @@
 package system.controller;
 
 import java.io.IOException;
+import java.sql.Timestamp;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import system.controller.ConfirmBookingController;
+import system.model.Reservation;
+import system.dao.ReservationDAO;
 
 @WebServlet("/source/user_pages/front_page/AlterationController")
 public class AlterationController extends HttpServlet {
@@ -19,6 +24,13 @@ public class AlterationController extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher dispatcher = null;
+		HttpSession session = request.getSession();
+		Reservation reservation = (Reservation) session.getAttribute("existing_reservation");
+		int userid = reservation.getReservation_userid();
+		int vehicleid = reservation.getReservation_vehicleid();
+		Timestamp timestamp = reservation.getInsertionTimestamp();
+		
 		String pickupLoc = request.getParameter("pickup_location");
 		String dropLoc = request.getParameter("drop_location");
 		String pickupDate = request.getParameter("pickup_date");
@@ -27,15 +39,27 @@ public class AlterationController extends HttpServlet {
 		double rentalChrge = Double.parseDouble(request.getParameter("rental_charge").substring(3));
 		String specialReq = request.getParameter("special_request");
 		
-		System.out.println(pickupDate);
-		System.out.println(dropDate);
-		
 		ConfirmBookingController externalControl = new ConfirmBookingController();
 		pickupDate = externalControl.dateFormatting(pickupDate);
 		dropDate = externalControl.dateFormatting(dropDate);
 		
-		System.out.println(pickupDate);
-		System.out.println(dropDate);
+		reservation = new Reservation(userid, vehicleid, pickupLoc, dropLoc, pickupDate, dropDate, passengers, specialReq, rentalChrge, timestamp);
+		
+		ReservationDAO reservationdao = new ReservationDAO();
+		try {
+			int rowCount = reservationdao.alterReservation(reservation);
+			dispatcher = request.getRequestDispatcher("/source/user_pages/dashboard_page/user-dashboard.jsp");
+			if(rowCount > 0) {
+				request.setAttribute("status", "success");
+				session.removeAttribute("existing_reservation");
+			}else {
+				request.setAttribute("status", "failed");
+			}
+			dispatcher.forward(request, response);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
