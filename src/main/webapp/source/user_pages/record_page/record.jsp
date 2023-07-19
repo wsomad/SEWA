@@ -311,9 +311,13 @@ List<Activity> activities = (List<Activity>) session.getAttribute("listOfActivit
 		                                </div>
 		                            </div>
 		                        </div>
-		                        	<%if(activities.get(i).getUserStatus().equals("Tenant")){%>
+		                        	<%if(activities.get(i).getUserStatus().equals("Tenant")){
+		                        		int vehicleid = activities.get(i).getReservation().getReservation_vehicleid();
+		                        		Reservation existReserve = activities.get(i).getReservation();
+		                        	%>
 				                        <div class="activity_button">
-					                        	<form method="get" action="">
+					                        	<form method="post" action="BookingController"> 
+					                        		<input type="hidden" name="vehicleId" value="<%=vehicleid%>">
 					                            	<button>Reschedule</button>
 					                            </form>
 					                    </div>

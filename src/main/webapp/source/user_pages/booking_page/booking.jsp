@@ -2,6 +2,15 @@
 <%
 Vehicle vehicle = (Vehicle) request.getSession().getAttribute("vehicleInForm");
 User user = (User) request.getSession().getAttribute("userobj");
+Reservation reservation = (Reservation) request.getSession().getAttribute("existing_reservation");
+String servlet_url, method;
+if(reservation != null){
+	servlet_url = "AlterationController";
+	method = "post";
+}else{
+	servlet_url = "ConfirmBookingController";
+	method = "get";
+}
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -219,30 +228,50 @@ User user = (User) request.getSession().getAttribute("userobj");
             <div class="book_details">
                 <p>Start Booking</p>
                 <div class="personal_details">
-                    <form method="get" action="ConfirmBookingController">
+                    <form method="<%=method %>" action="<%=servlet_url%>">
 	                    <div class="form_row">
 	                        <div class="form_box">
 	                            <span class="form_indicator"><h4>Pickup Location <span class="form_mark">*</span></h4></span>
-	                            <div class="input_form">
-		                        	<input type="text" placeholder="Pickup Location" name="pickup_location" required>
-	                            </div>
+	                            <%if(reservation != null) {%>
+	                            	<div class="input_form">
+			                        	<input type="text" placeholder="Pickup Location" value="<%=reservation.getPickup_location() %>" name="pickup_location" required>
+		                            </div>
+	                            <%}else{ %>
+		                            <div class="input_form">
+			                        	<input type="text" placeholder="Pickup Location" name="pickup_location" required>
+		                            </div>
+	                            <%} %>
 	                        </div>
 	                        <div class="form_box">
 	                            <span class="form_indicator"><h4>Drop Location <span class="form_mark">*</span></h4></span>
-	                            <div class="input_form">
-		                        	<input type="text" placeholder="Drop Location" name="drop_location" required>
-	                            </div>
+	                            <%if(reservation != null) {%>
+	                            	<div class="input_form">
+			                        	<input type="text" placeholder="Drop Location" value="<%=reservation.getDrop_location() %>" name="drop_location" required>
+		                            </div>
+	                            <%}else{ %>
+		                            <div class="input_form">
+			                        	<input type="text" placeholder="Drop Location" name="drop_location" required>
+		                            </div>
+		                        <%} %>
 	                        </div>
 	                    </div>
 	                    <div class="form_row">
 	                        <div class="form_box">
-	                            <span class="form_indicator"><h4>Pickup Date <span class="form_mark">*</span></h4></span>
+	                        	<%if(reservation != null) {%>
+	                            	<span class="form_indicator"><h4>Pickup Date (Original : <%=reservation.getPickup_DateString() %>)<span class="form_mark">*</span></h4></span>
+	                        	<%}else{ %>
+	                        		<span class="form_indicator"><h4>Pickup Date <span class="form_mark">*</span></h4></span>
+	                            <%} %>
 	                            <div class="input_form">
-		                        	<input type="date"  placeholder="Pickup Date" name="pickup_date" id="pickup_date" required>
+		                        	<input type="date" placeholder="Pickup Date" name="pickup_date" id="pickup_date" required>
 	                            </div>
 	                        </div>
 	                        <div class="form_box">
-	                            <span class="form_indicator"><h4>Drop Date <span class="form_mark">*</span></h4></span>
+	                        	<%if(reservation != null) {%>
+	                            	<span class="form_indicator"><h4>Drop Date (Original : <%=reservation.getDrop_DateString() %>)<span class="form_mark">*</span></h4></span>
+	                            <%}else{ %>
+	                        		<span class="form_indicator"><h4>Drop Date <span class="form_mark">*</span></h4></span>
+	                            <%} %>
 	                            <div class="input_form">
 		                        	<input type="date" placeholder="Drop Date" name="drop_date" id="drop_date" required>
 	                            </div>
@@ -251,9 +280,15 @@ User user = (User) request.getSession().getAttribute("userobj");
 	                    <div class="form_row">
 	                        <div class="form_box">
 	                            <span class="form_indicator"><h4>Number of Passenger <span class="form_mark">*</span></h4></span>
-	                            <div class="input_form">
-		                        	<input type="text" placeholder="No. of Passenger" name="passengers_num" required>
-	                            </div>
+	                            <%if(reservation != null) {%>
+	                            	<div class="input_form">
+			                        	<input type="text" placeholder="No. of Passenger" value="<%=reservation.getPassengers_num() %>" name="passengers_num" required>
+		                            </div>
+	                            <%}else{ %>
+		                            <div class="input_form">
+			                        	<input type="text" placeholder="No. of Passenger" name="passengers_num" required>
+		                            </div>
+	                            <%} %>
 	                        </div>
 	                        <div class="form_box">
 	                            <span class="form_indicator"><h4>Rental Charge </h4></span>
@@ -265,9 +300,15 @@ User user = (User) request.getSession().getAttribute("userobj");
 	                    <div class="form_row">
 	                        <div class="form_box">
 	                            <span class="form_indicator"><h4>Special Request</h4></span>
-	                            <div class="input_form">
-	                                <textarea class="special_request" name="special_request" placeholder="Special Request"></textarea>
-	                            </div>
+	                            <%if(reservation != null) {%>
+	                            	<div class="input_form">
+		                                <textarea class="special_request" name="special_request" placeholder="Special Request" value="reservation.getSpecial_req()"></textarea>
+		                            </div>
+	                            <%}else{ %>
+		                            <div class="input_form">
+		                                <textarea class="special_request" name="special_request" placeholder="Special Request"></textarea>
+		                            </div>
+	                            <%} %>
 	                        </div>
 	                    </div>
 	                    <div class="form_row">
