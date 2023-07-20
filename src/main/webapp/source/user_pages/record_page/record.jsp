@@ -323,7 +323,8 @@ List<Activity> activities = (List<Activity>) session.getAttribute("listOfActivit
 					                            </form>
 					                    </div>
 					                    <div class="activity_button">
-					                        	<form method="post" action="">
+					                        	<form method="post" action="CancellationController">
+					                        		<input type="hidden" name="vehicleid" value="<%=vehicleid%>">
 				                            		<button>Cancel</button>
 				                            	</form>
 				                        </div>

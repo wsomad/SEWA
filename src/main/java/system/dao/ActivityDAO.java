@@ -78,21 +78,7 @@ public class ActivityDAO {
 				System.out.println("check : " + activity.getVehicle().getV_brand());
 				System.out.println("check : " + activity.getReservation().getRent_to_pay());
 			}
-			System.out.println("Succesful");
-			System.out.println(activities.get(0).getVehicle().getV_brand());
-			System.out.println(activities.get(1).getVehicle().getV_brand());
-			if(!activities.isEmpty()) {
-				System.out.println(activities.get(2).getVehicle().getV_brand());
-			}else {
-				System.out.println("emptied");
-			}
-			System.out.println(activities.get(0).getReservation().getRent_to_pay());
-			System.out.println(activities.get(1).getReservation().getRent_to_pay());
-			if(!activities.isEmpty()) {
-				System.out.println(activities.get(2).getReservation().getRent_to_pay());
-			}else {
-				System.out.println("emptied");
-			}
+			
 		}catch(Exception e) {
 			System.out.println("Unsuccesful");
 			e.printStackTrace();
