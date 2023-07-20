@@ -38,7 +38,6 @@ public class ActivityDAO {
 			
 			Activity activity = new Activity ();
 			Reservation reservation = new Reservation();
-			User user = new User();
 			Vehicle vehicle = new Vehicle();
 			
 			ResultSet rs = pst.executeQuery();
@@ -54,8 +53,10 @@ public class ActivityDAO {
 				String special_req = rs.getString("special_req");
 				double rent_to_pay = rs.getDouble("rent_to_pay");
 				Timestamp insertion_timestamp = rs.getTimestamp("insertion_timestamp");
-				reservation = new Reservation (user_id, vehicle_id, pickup_location, drop_location, pickup_date, drop_date, passenger_num, special_req, rent_to_pay, insertion_timestamp);
+				Boolean eye = rs.getBoolean("eye");
+				reservation = new Reservation (user_id, vehicle_id, pickup_location, drop_location, pickup_date, drop_date, passenger_num, special_req, rent_to_pay, insertion_timestamp, eye);
 				
+				User user = new User();
 				user.setUser_first_name(rs.getString("user_first_name"));
 				user.setUser_last_name(rs.getString("user_last_name"));
 				user.setUser_uname(rs.getString("user_uname"));

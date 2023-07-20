@@ -1,6 +1,17 @@
+<%@page import="system.model.*, java.util.List"%>
 <!DOCTYPE html>
 <html lang="en">
-
+<%
+List<Activity> activities = (List<Activity>) session.getAttribute("listOfActivity");
+int count = 0;
+for (Activity activity : activities){
+	System.out.println(activity.getVehicle().getV_brand() + " - " + activity.getUserStatus());
+	if (activity.getReservation().isEye()){
+		count++;
+	}
+}
+System.out.println(count);
+%>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,7 +45,7 @@
                     <li><a href="#">
                             <div class="notification_badge">
                                 <i class="fa fa-bell notification_bell" onclick="toggleNotification()"></i>
-                                <span class="notification_number">2</span>
+                                <span class="notification_number"><%=count %></span>
                             </div>
                         </a>
                     </li>

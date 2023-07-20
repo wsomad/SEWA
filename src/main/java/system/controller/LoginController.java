@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import java.util.List;
 import java.util.Stack;
 
 import system.model.*;
@@ -41,6 +43,7 @@ public class LoginController extends HttpServlet {
 				HttpSession session = request.getSession();
 				session.setAttribute("userobj", user);
 				dispatcher = request.getRequestDispatcher("/source/user_pages/dashboard_page/user-dashboard.jsp");
+				handleRequest (request, response, user);
 				
 			}else {
 				request.setAttribute("status", "failed");
@@ -51,6 +54,22 @@ public class LoginController extends HttpServlet {
 			dispatcher.forward(request, response);
 			
 		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private ActivityDAO activitydao = new ActivityDAO();
+	
+	protected void handleRequest (HttpServletRequest request, HttpServletResponse response, User user) throws ServletException, IOException {
+		System.out.println("ACTIVITY CONTROLLER");
+		HttpSession session = request.getSession();
+		user = (User) session.getAttribute("userobj");
+		
+		try {	
+			List<Activity> activities = activitydao.getActivities(user.getUserid());
+			session.setAttribute("listOfActivity", activities);
+			
+		}catch(Exception e) {
 			e.printStackTrace();
 		}
 	}

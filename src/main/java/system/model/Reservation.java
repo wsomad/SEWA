@@ -17,9 +17,10 @@ public class Reservation {
 	private double rent_to_pay;
 	private int day_count;
 	private Timestamp insertionTimestamp;
+	private boolean eye;
 	
 	//Normal Constructor
-	public Reservation(int userId, int vehicleId,String pickupLoc, String dropLoc, String pickupDate, String dropDate, int passengersNum, String specialReq, double rentToPay, Timestamp t) {
+	public Reservation(int userId, int vehicleId,String pickupLoc, String dropLoc, String pickupDate, String dropDate, int passengersNum, String specialReq, double rentToPay, Timestamp t, boolean eye) {
         this.reservation_userid = userId;
         this.reservation_vehicleid = vehicleId;
         pickup_location = pickupLoc;
@@ -30,6 +31,7 @@ public class Reservation {
         this.special_req = specialReq;
         this.rent_to_pay = rentToPay;
         insertionTimestamp = t;
+        this.setEye(eye);
         countDays();
     }
 	
@@ -145,6 +147,14 @@ public class Reservation {
 
 	public void setInsertionTimestamp(Timestamp insertionTimestamp) {
 		this.insertionTimestamp = insertionTimestamp;
+	}
+
+	public boolean isEye() {
+		return eye;
+	}
+
+	public void setEye(boolean eye) {
+		this.eye = eye;
 	}
 
 	public String toString() {

@@ -9,6 +9,7 @@ public class Activity {
 	private Reservation reservation;
 	private String userStatus; //'Tenant'(user rent the car) 'Lessor'(user provide the car)
 	private String activityStatus; //'toPickup' 'pickupDay' 'toDrop' 'dropDay' 'vacant'(no activities)
+	private boolean eye;
 	
 	public Activity() {
 		user = new User();
