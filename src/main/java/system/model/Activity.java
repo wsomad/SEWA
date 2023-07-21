@@ -38,7 +38,7 @@ public class Activity {
 			activityStatus = "pickupDay";
 		}else if ((currentDate.before(drop_date) && currentDate.after(pickup_date))) {
 			activityStatus = "toDrop";
-		}else if (currentDate.equals(drop_date)) {
+		}else if (currentDate.after(drop_date)) {
 			activityStatus = "dropDay";
 		}else {activityStatus = "vacant";}
 	}

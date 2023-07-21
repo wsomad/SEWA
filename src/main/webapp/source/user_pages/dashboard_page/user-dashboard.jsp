@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%
+User user = (User) session.getAttribute("userobj");
 List<Activity> activities = (List<Activity>) session.getAttribute("listOfActivity");
 int count = 0;
 for (Activity activity : activities){
@@ -18,6 +19,7 @@ for (Activity activity : activities){
 	}else{
 		System.out.println("you have rent a car (" + activity.getVehicle().getV_model() + ")");
 		System.out.println("You have paid RM" + activity.getReservation().getRent_to_pay() + " as rental fee");
+		count = count + 2;
 		if(activity.getActivityStatus().equals("dropDay")){
 			System.out.println("You should drop the car by today");
 			count++;
@@ -72,54 +74,68 @@ System.out.println(count);
                 <div class="notification_word">
                     <h2>Notification</h2>
                 </div>
-                <div class="notification_item">
-                    <a href="">
-                        <div class="notification_row">
-                            <h4>Accept Vehicle</h4>
-                            <p>New Update on Booking: <span>Passat [ALK8704]</span></p>
-                        </div>
-                    </a>
-                </div>
-                <div class="notification_item">
-                    <a href="">
-                        <div class="notification_row">
-                            <h4>Return Vehicle</h4>
-                            <p>New Update on Booking: <span>Passat [ALK8704]</span></p>
-                        </div>
-                    </a>
-                </div>
-                <div class="notification_item">
-                    <a href="">
-                        <div class="notification_row">
-                            <h4>Refund Request</h4>
-                            <p>New Update on Booking: <span>Myvi [PKL2019]</span></p>
-                        </div>
-                    </a>
-                </div>
-                <div class="notification_item">
-                    <a href="">
-                        <div class="notification_row">
-                            <h4>Accept Vehicle</h4>
-                            <p>New Update on Booking: <span>Passat [ALK8704]</span></p>
-                        </div>
-                    </a>
-                </div>
-                <div class="notification_item">
-                    <a href="">
-                        <div class="notification_row">
-                            <h4>Return Vehicle</h4>
-                            <p>New Update on Booking: <span>Arteon [BGU2264]</span></p>
-                        </div>
-                    </a>
-                </div>
-                <div class="notification_item">
-                    <a href="">
-                        <div class="notification_row">
-                            <h4>Refund Request</h4>
-                            <p>New Update on Booking: <span>Myvi [PKL2019]</span></p>
-                        </div>
-                    </a>
-                </div>
+                <%for(Activity activity : activities){ %>
+                
+                	<%if(activity.getUserStatus().equals("Lessor")){%>
+		                <div class="notification_item">
+		                    <a href="">
+		                        <div class="notification_row">
+		                            <h4>Your Car Have Been Booked</h4>
+		                            <p>New Update on Booking: <span><%= activity.getVehicle().getV_model()%> [<%=activity.getVehicle().getRegistration_num() %>]</span></p>
+		                        </div>
+		                    </a>
+		                </div>
+		                <div class="notification_item">
+		                    <a href="">
+		                        <div class="notification_row">
+		                            <h4>You Have Been Paid</h4>
+		                            <p>New Transaction: <span>RM<%=activity.getReservation().getRent_to_pay()%></span></p>
+		                        </div>
+		                    </a>
+		                </div>
+		                <%count = count + 2; %>
+		                <%if(activity.getActivityStatus().equals("dropDay")){ %>
+		                	<div class="notification_item">
+			                    <a href="">
+			                        <div class="notification_row">
+			                            <h4>Drop Vehicle</h4>
+			                            <p><span><%= activity.getVehicle().getV_model()%> [<%=activity.getVehicle().getRegistration_num() %>] drop by today</span></p>
+			                        </div>
+			                    </a>
+			                </div>
+		                	<%count++; %>
+		                <%} %>
+		            <%}else{ %>
+		            	<div class="notification_item">
+		                    <a href="">
+		                        <div class="notification_row">
+		                            <h4>You Have Booked a Car</h4>
+		                            <p>New Update on Booking: <span><%= activity.getVehicle().getV_model()%> [<%=activity.getVehicle().getRegistration_num() %>]</span></p>
+		                        </div>
+		                    </a>
+		                </div>
+		                <div class="notification_item">
+		                    <a href="">
+		                        <div class="notification_row">
+		                            <h4>You made a payment</h4>
+		                            <p>New Transaction: <span>RM<%=activity.getReservation().getRent_to_pay()%></span></p>
+		                        </div>
+		                    </a>
+		                </div>
+		                <%count = count + 2; %>
+		                <%if(activity.getActivityStatus().equals("dropDay")){ %>
+		                	<div class="notification_item">
+			                    <a href="">
+			                        <div class="notification_row">
+			                            <h4>Drop Vehicle</h4>
+			                            <p><span><%= activity.getVehicle().getV_model()%> [<%=activity.getVehicle().getRegistration_num() %>] drop by today</span></p>
+			                        </div>
+			                    </a>
+			                </div>
+		                	<%count++; %>
+		                <%} %>
+		            <%} %>
+	            <%} %>
             </div>
 
             <!-- sub menu -->
@@ -156,11 +172,13 @@ System.out.println(count);
                     <h2>Wallet Topup <span>(min. RM10)</span></h2>
                 </div>
                 <div class="input_form">
-                    <input type="email" placeholder="Enter Amount" required>
-                    <i class="fa fa-plus topup_wallet"></i>
+                	<form method="post" action="ReloadWalletController">
+	                    <input type="text" placeholder="Enter Amount" name="reloadAmount" required>
+	                    <button><i class="fa fa-plus topup_wallet"></i></button>
+                    </form>
                 </div>
                 <div class="current_balance">
-                    <p>Current Balance | RM 50.00</p>
+                    <p>Current Balance | RM <%=user.getUser_wallet() %>></p>
                 </div>
                 <div class="amount_container">
                     <div class="select_amount">

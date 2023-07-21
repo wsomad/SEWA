@@ -76,4 +76,43 @@ public class UserDAO {
 		}
 		return user;
 	}
+	
+	public User reloadWallet(double amount, User user) {
+		int rowCount = 0;
+		Connection con = null;
+		String fetch_sql = "select user_wallet from User where userid=?;";
+		String update_sql = "update User set user_wallet=? where userid=?;";
+		double initialAmnt = 0;
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			con = DriverManager.getConnection("jdbc:mysql://bxx0oim5clt3tz9xxlzj-mysql.services.clever-cloud.com:3306/bxx0oim5clt3tz9xxlzj?serverTimezone=Asia/Kuala_Lumpur", "uwaq62nkjirwnjub", "mRrDGZdA1u7UPAXYI5Rm");
+			PreparedStatement pst = con.prepareStatement(fetch_sql);
+			pst.setInt(1, user.getUserid());
+			
+			ResultSet rs = pst.executeQuery();
+			if(rs.next()) {
+				initialAmnt = rs.getDouble("user_wallet");
+			}
+			System.out.println(initialAmnt);
+			
+			pst = con.prepareStatement(update_sql);
+			initialAmnt = initialAmnt + amount;
+			pst.setDouble(1, initialAmnt);
+			pst.setInt(2, user.getUserid());
+			rowCount = pst.executeUpdate();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				con.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		user.setUser_wallet(initialAmnt);
+		return user;
+	}
 }
