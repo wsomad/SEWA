@@ -197,14 +197,14 @@ if(vehicle != null){
                 <div class="form_row">
                     <div class="form_box">
                         <span class="form_indicator"><h4>Brand <span class="form_mark">*</span></h4></span>
-                        <%if(flag){ %>
-                        <div class="input_form">
-                            <input type="text" placeholder="Brand" value="<%=vehicle.getV_brand() %>" name="brand" required>
-                        </div>
+                        <%if(flag){ System.out.println("before : " + vehicle.getV_brand());%>
+	                        <div class="input_form">
+	                            <input type="text" placeholder="Brand" value="<%=vehicle.getV_brand() %>" name="brand" required>
+	                        </div>
                         <%}else{ %>
-                        <div class="input_form">
-                            <input type="text" placeholder="Brand" name="brand" required>
-                        </div>
+	                        <div class="input_form">
+	                            <input type="text" placeholder="Brand" name="brand" required>
+	                        </div>
                         <%} %>
                         
                     </div>
