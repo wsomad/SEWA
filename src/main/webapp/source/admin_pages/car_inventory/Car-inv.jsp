@@ -1,22 +1,18 @@
 <%@page import="system.model.*, java.util.List"%>
 <%
-List<Activity> orderhistories = (List<Activity>) session.getAttribute("listOfOrderHistory");
-for (Activity orderhistory : orderhistories){
-	System.out.println(orderhistory.getReservation().getReservation_userid() + "---" + orderhistory.getReservation().getReservation_vehicleid());
-}
+List<Vehicle> vehicleList = (List<Vehicle>) session.getAttribute("ListOfVehicle");
 %>
-<style>
-	<%@include file="admin-dashboard.css"%>
-</style>
-
 <!DOCTYPE html>
 <html lang="en">
+<style>
+	<%@include file="Car-inv.css"%>
+</style>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Boxicons CSS -->
-    <link rel="stylesheet" href="admin-dashboard.css">
+    <link rel="stylesheet" href="Car-inv.css">
     <link rel="icon" type="images/png" href="https://drive.google.com/uc?export=view&id=1WnCOPug2C25vqv-_nxG6QvVp2VSMVnp1">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -24,7 +20,7 @@ for (Activity orderhistory : orderhistories){
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
 
-    <title>User-dashboard</title>
+    <title>Inventory</title>
     <title>sidebar</title>
 </head>
 <body>
@@ -38,13 +34,13 @@ for (Activity orderhistory : orderhistories){
                     </a>
                 </li>
                 <li>
-                    <a href="AdminCarInvController">
+                    <a href="a">
                         <span class="icon"><i class='bx bx-user'></i></span>
                         <span class="title">Admin dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="AdminCarInvController">
+                    <a href="a">
                         <span class="icon"><i class='bx bxs-car'></i></span>
                         <span class="title">Car Inventory</span>
                     </a>
@@ -154,129 +150,70 @@ for (Activity orderhistory : orderhistories){
             </div>
         </div>
         <!-- start code here -->
-        <!-- card box-->
-        <div class="cardBox">
-            <div class="card">
-                <div>
-                    <div class="numbers">200</div>
-                    <div class="cardName">Total users</div>
-                </div>
-                <div class="iconBx"><ion-icon name="people"></ion-icon></div>
-            </div>
-            <div class="card">
-                <div>
-                    <div class="numbers">200</div>
-                    <div class="cardName">Total Cars</div>
-                </div>
-                <div class="iconBx"><ion-icon name="car"></ion-icon></div>
-            </div>
-            <div class="card">
-                <div>
-                    <div class="numbers">200</div>
-                    <div class="cardName">Total Reservation</div>
-                </div>
-                <div class="iconBx"><ion-icon name="cart"></ion-icon></div>
-            </div>
-            <div class="card">
-                <div>
-                    <div class="numbers">200</div>
-                    <div class="cardName">Profit</div>
-                </div>
-                <div class="iconBx"><ion-icon name="trending-up"></ion-icon></div>
-            </div>
+<!-- Selection table -->  
+<section>
+    <br>
+    <br>
+</section>
 
-            <!-- table -->
-            <div class="details">
-                <div class="recentOrders">
-                    <div class="cardHeader">
-                        <h2>Order History</h2>
-                    </div>
-                    <section class="header">
-                    <div class="items-controller">
-                    <h5>Show</h5>
-                    <select name="" id="itemperpage">
-                    <option value="04">04</option>
-                    <option value="05">05</option>
-                    <option value="08"selected>08</option>
-                    <option value="10">10</option>
-                    <option value="15">15</option>
-                    </select>
-                    <h5>Per Page</h5>
-                    </div>
-                    </section>
-                    <section id="field">
-                    <table id="orders">
-                        <thead>
-                            <tr>
-                                <td>Name</td>
-                                <td>Vehicle ID</td>
-                                <td>Pickup Date</td>
-                                <td>Drop Date</td>
-                                <td>Rent to Pay</td>
-                                <td>Status</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        	<%for(Activity orderhistory : orderhistories){%>
-                        		<tr>
-	                                <td><%=orderhistory.getUser().getUser_first_name() %></td>
-	                                <td><%=orderhistory.getVehicle().getRegistration_num() %></td>
-	                                <td><%=orderhistory.getReservation().getPickup_DateString() %></td>
-	                                <td><%=orderhistory.getReservation().getDrop_DateString() %></td>
-	                                <td><%=orderhistory.getReservation().getRent_to_pay() %></td>
-	                                <td><span class="renting">Renting</span></td>
-	                            </tr>
-                        	<%}%>
-                        </tbody>
-                    </table>
-                    </section>
-                    <div class="bottom-field">
-                    	<ul class="pagination">
-                    		<li class="prev"><a href="#" id="prev">&#139;</a></li>
-                    		
-                    		<li class="next"><a href="#" id="next">&#155;</a></li>
-                    	</ul>
-                    </div>
-                </div>
+<!-- table -->        
+<div class="details">
+    <div class="inventory">
+        <div class="cardHeader" class="items-controller"  id="itemperpage" value="15">
+            <h2>Inventory</h2>
+        </div>
+        <section id="field">
+        <table id="orders">
+            <thead>
+                <tr>
+                    <td>Vehicle ID</td>
+                    <td>Registration Number</td>
+                    <td>Brand</td>
+                    <td>Model</td>
+                    <td>Type</td>
+                    <td>Colour</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <%for(Vehicle vehicle : vehicleList) {%>
+	                <tr>
+	                    <td><%=vehicle.getVehicleid() %></td>
+	                    <td><%=vehicle.getRegistration_num() %></td>
+	                    <td><%=vehicle.getV_brand() %></td>
+	                    <td><%=vehicle.getV_model() %></td>
+	                    <td><%=vehicle.getV_type() %></td>
+	                    <td><%=vehicle.getYr_manufacture() %></td>
+	                    <td>
+	                    	<form method="post" action="BookingController">
+	                    		<input type="hidden" name="vehicleId" value="<%=vehicle.getVehicleid()%>">
+	                    		<button><i class="fa fa-edit" style="font-size:18px"></i></button>
+	                        	<button><i class="fa fa-trash" style="font-size:18px"></i></button>
+	                      	</form>
+	                    </td>
+	                </tr>
+	            <%} %>
+            </tbody>
+        </table>
+        </section>
+        <div class="bottom-field">
+            <ul class="pagination">
+                <li class="prev"><a href="#" id="prev">&#139;</a></li>
+                
+                <li class="next"><a href="#" id="next">&#155;</a></li>
+            </ul>
+<!----Button--->
+                
+                    <a href="webapp/register.html" class="button" id="button">ADD</a>
+     
             </div>
-
-
         </div>
     </div>
-    
-        <script type="text/javascript" src="admin-dashboard.js"></script>
-        <script>
-	        const formOpenButton = document.querySelector("#form-open"),
-	        home = document.querySelector(".home2"),
-	        formContainer = document.querySelector(".form_container2"),
-	        formCloseButton = document.querySelector(".form_close"),
-	        loginButton = document.querySelector("#login"),
-	        pwShowHide = document.querySelectorAll(".pw_hide");
-	
-	        formOpenButton.addEventListener("click", () => home.classList.add("show"))
-	        formCloseButton.addEventListener("click", () => home.classList.remove("show"))
-	
-	        pwShowHide.forEach(icon => {
-	            icon.addEventListener("click", () => {
-	                let getPwInput = icon.parentElement.querySelector("input");
-	                if(getPwInput.type === "password") {
-	                    getPwInput.type = "text";
-	                    icon.classList.replace("fa-eye-slash", "fa-eye");
-	                }
-	                else {
-	                    getPwInput.type = "password";
-	                    icon.classList.replace("fa-eye", "fa-eye-slash");
-	                }
-	            })
-	        })
-	
-	        loginButton.addEventListener("click", (e) => {
-	            e.preventDefault();
-	            formContainer.classList.remove("active");
-	        });
-        </script>
-        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 
+</div>
+
+        <script src="car-inv.js"></script>
+        <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 </body>
 </html>
-

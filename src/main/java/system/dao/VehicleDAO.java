@@ -8,6 +8,9 @@ import java.sql.SQLException;
 
 import system.model.Vehicle;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class VehicleDAO {
 	public int registerCar (Vehicle vehicle, int userid) throws ClassNotFoundException {
 		String sql = 
@@ -83,5 +86,48 @@ public class VehicleDAO {
 			}
 		}
 		return newID + 1;
+	}
+	
+	/**
+	 * @return
+	 */
+	public List<Vehicle> getVehiclesList(){
+		List<Vehicle> vehicleList = new ArrayList <>();
+		Connection con = null;
+		String sql = 
+				"select * from Vehicle";
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			con = DriverManager.getConnection("jdbc:mysql://bxx0oim5clt3tz9xxlzj-mysql.services.clever-cloud.com:3306/bxx0oim5clt3tz9xxlzj?serverTimezone=Asia/Kuala_Lumpur", "uwaq62nkjirwnjub", "mRrDGZdA1u7UPAXYI5Rm");
+			PreparedStatement pst = con.prepareStatement(sql);
+			
+			ResultSet rs = pst.executeQuery();
+			while(rs.next()) {
+				Vehicle vehicle = new Vehicle();
+				vehicle.setVehicleid(rs.getInt("vehicleid"));
+				vehicle.setRegistration_num(rs.getString("registration_num"));
+				vehicle.setV_brand(rs.getString("v_brand"));
+				vehicle.setV_model(rs.getString("v_model"));
+				vehicle.setV_type(rs.getString("v_type"));
+				vehicle.setYr_manufacture(rs.getInt("yr_manufacture"));
+				
+				vehicleList.add(vehicle);
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				con.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		for(Vehicle vehicle : vehicleList) {
+			System.out.println(vehicle.getVehicleid());
+		}
+		return vehicleList;
 	}
 }

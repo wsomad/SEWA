@@ -23,7 +23,7 @@ import system.model.Reservation;
 //@WebServlet("/source/user_pages/dashboard_page/BookingController")
 //run from login
 @WebServlet("/source/user_pages/front_page/BookingController")
-//@WebServlet("/BookingController")
+//@WebServlet(name = "MyServlet", urlPatterns = {"/source/user_pages/front_page/BookingController", "/source/admin_pages/front_page/BookingController"})
 public class BookingController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
