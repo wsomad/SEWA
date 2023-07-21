@@ -1,6 +1,7 @@
 package system.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -12,8 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import system.dao.ReservationDAO;
-import system.model.Activity;
-import system.model.Reservation;
+import system.model.*;
 
 /**
  * Servlet implementation class CancellationController
@@ -30,37 +30,49 @@ public class CancellationController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("cancel controller");
 		RequestDispatcher dispatcher = null;
-		int vehicleid = Integer.parseInt(request.getParameter("vehicleId"));
-		
 		HttpSession session = request.getSession();
+		ReservationDAO reservationdao = new ReservationDAO();
+		int rowCount = 0;
+		
+		User user = (User) session.getAttribute("userobj");
+		int userid = user.getUserid();
+		int vehicleid = Integer.parseInt(request.getParameter("vehicleid"));
+		
+		System.out.println("userid to cancel : " + userid);
+		System.out.println("vehicleid to cancel : " + vehicleid);
+		
 		List<Activity> activities = (List<Activity>) session.getAttribute("listOfActivity");
+		List<Activity> temp = new ArrayList <>();
 		Reservation reservation = null;
 		
 		if(activities!=null) {
 			for(Activity activity : activities) {
-				if(activity.getReservation().getReservation_vehicleid() == vehicleid){
-					reservation = activity.getReservation();
-					session.setAttribute("existing_reservation", reservation);
-					break;
+				if((activity.getReservation().getReservation_vehicleid()==vehicleid) && (activity.getReservation().getReservation_userid()==userid)){
+					try {
+						rowCount = reservationdao.deleteReservation(userid, vehicleid);
+					} catch (ClassNotFoundException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					continue;
+				}else {
+					temp.add(activity);
 				}
+			}
+			activities = new ArrayList<>();
+			for(Activity activity : temp) {
+				activities.add(activity);
 			}
 		}
 		
-		ReservationDAO reservationdao = new ReservationDAO();
-		try {
-			int rowCount = reservationdao.deleteReservation(reservation);
-			dispatcher = request.getRequestDispatcher("/source/user_pages/dashboard_page/user-dashboard.jsp");
-			if(rowCount > 0) {
-				request.setAttribute("status", "success");
-				session.removeAttribute("existing_reservation");
-			}else {
-				request.setAttribute("status", "failed");
-			}
-			dispatcher.forward(request, response);
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		dispatcher = request.getRequestDispatcher("/source/user_pages/dashboard_page/user-dashboard.jsp");
+		if(rowCount > 0) {
+			request.setAttribute("status", "success");
+			session.removeAttribute("existing_reservation");
+		}else {
+			request.setAttribute("status", "failed");
 		}
+		dispatcher.forward(request, response);
 		
 	}
 

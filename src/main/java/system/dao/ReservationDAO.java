@@ -132,7 +132,7 @@ public class ReservationDAO {
 		return rowCount;
 	}
 	
-	public int deleteReservation (Reservation reservation) throws ClassNotFoundException{
+	public int deleteReservation (int userid, int vehicleid) throws ClassNotFoundException{
 		String insert_sql = "delete from Tenant_Vehicle where userid = ? and vehicleid = ?;";
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		int rowCount = 0;
@@ -141,8 +141,8 @@ public class ReservationDAO {
 		try {
 			con = DriverManager.getConnection("jdbc:mysql://bxx0oim5clt3tz9xxlzj-mysql.services.clever-cloud.com:3306/bxx0oim5clt3tz9xxlzj?serverTimezone=Asia/Kuala_Lumpur", "uwaq62nkjirwnjub", "mRrDGZdA1u7UPAXYI5Rm");
 			PreparedStatement pst = con.prepareStatement(insert_sql);
-			pst.setInt(1, reservation.getReservation_userid());
-			pst.setInt(2, reservation.getReservation_vehicleid());
+			pst.setInt(1, userid);
+			pst.setInt(2, vehicleid);
 			
 			rowCount = pst.executeUpdate();
 		}catch(SQLException e) {

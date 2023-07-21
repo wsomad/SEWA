@@ -314,14 +314,16 @@ List<Activity> activities = (List<Activity>) session.getAttribute("listOfActivit
 		                        </div>
 		                        	<%if(activities.get(i).getUserStatus().equals("Tenant")){
 		                        		int vehicleid = activities.get(i).getReservation().getReservation_vehicleid();
+		                        		System.out.println("isitnull ? : " + vehicleid);
 		                        		Reservation existReserve = activities.get(i).getReservation();
-		                        	%>
+		                        	%>	<!-- 
 				                        <div class="activity_button">
 					                        	<form method="post" action="BookingController"> 
 					                        		<input type="hidden" name="vehicleId" value="<%=vehicleid%>">
 					                            	<button>Reschedule</button>
 					                            </form>
 					                    </div>
+					                     -->
 					                    <div class="activity_button">
 					                        	<form method="post" action="CancellationController">
 					                        		<input type="hidden" name="vehicleid" value="<%=vehicleid%>">
