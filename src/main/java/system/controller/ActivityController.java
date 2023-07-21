@@ -31,15 +31,6 @@ public class ActivityController extends HttpServlet {
 			List<Activity> activities = activitydao.getActivities(user.getUserid());
 			session.setAttribute("listOfActivity", activities);
 			
-			System.out.println("vehicleid : ");
-			System.out.println(activities.get(0).getVehicle().getV_brand());
-			System.out.println(activities.get(1).getVehicle().getV_brand());
-			if(!activities.isEmpty()) {
-				System.out.println(activities.get(2).getVehicle().getV_brand());
-			}else {
-				System.out.println("emptied");
-			}
-			System.out.println("vehicleid--- ");
 			
 			dispatcher = request.getRequestDispatcher("/source/user_pages/record_page/record.jsp");
 			dispatcher.forward(request, response);

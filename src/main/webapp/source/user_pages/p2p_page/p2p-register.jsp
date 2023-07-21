@@ -1,3 +1,15 @@
+<%@page import = "system.model.*" %>
+<%
+Vehicle vehicle = (Vehicle) request.getSession().getAttribute("vehicleAtt");
+boolean flag = false;
+String servlet_url= "";
+if(vehicle != null){
+	servlet_url = "AdminAlterationController";
+	flag = true;
+}else{
+	servlet_url = "p2p-registerController";
+}
+%>
 <!DOCTYPE html>
 <html lang="en">
 <style>
@@ -180,49 +192,86 @@
             <div class="form_title">
                 <p>Rent as Peer</p>
             </div>
-            <form method="post" action="p2p-registerController" enctype="multipart/form-data">
+            <form method="post" action="<%=servlet_url%>" enctype="multipart/form-data">
              
                 <div class="form_row">
                     <div class="form_box">
                         <span class="form_indicator"><h4>Brand <span class="form_mark">*</span></h4></span>
+                        <%if(flag){ %>
+                        <div class="input_form">
+                            <input type="text" placeholder="Brand" value="<%=vehicle.getV_brand() %>" name="brand" required>
+                        </div>
+                        <%}else{ %>
                         <div class="input_form">
                             <input type="text" placeholder="Brand" name="brand" required>
                         </div>
+                        <%} %>
+                        
                     </div>
                     <div class="form_box">
                         <span class="form_indicator"><h4>Model <span class="form_mark">*</span></h4></span>
+                        <%if(flag){ %>
+                        <div class="input_form">
+                            <input type="text" placeholder="Model" value="<%=vehicle.getV_model() %>" name="model" required>
+                        </div>
+                        <%}else{ %>
                         <div class="input_form">
                             <input type="text" placeholder="Model" name="model" required>
                         </div>
+                        <%} %>
                     </div>
                 </div>
             
                 <div class="form_row">
                     <div class="form_box">
                         <span class="form_indicator"><h4>Type <span class="form_mark">*</span></h4></span>
+                        <% if(flag){%>
+                        <div class="input_form">
+                            <input type="text" placeholder="Type" value="<%=vehicle.getV_type() %>" name="type" required>
+                        </div>
+                        <%}else{ %>
                         <div class="input_form">
                             <input type="text" placeholder="Type" name="type" required>
                         </div>
+                        <%} %>
                     </div>
                     <div class="form_box">
                         <span class="form_indicator"><h4>Year Manufactured  <span class="form_mark">*</span></h4></span>
+                        <% if(flag){%>
+                        <div class="input_form">
+                            <input type="text" placeholder="Year Manufactured" value="<%=vehicle.getYr_manufacture() %>" name="yearManufactured" required>
+                        </div>
+                        <%} else{%>
                         <div class="input_form">
                             <input type="text" placeholder="Year Manufactured" name="yearManufactured" required>
                         </div>
+                        <%} %>
                     </div>
                 </div>
                 <div class="form_row">
                     <div class="form_box">
                         <span class="form_indicator"><h4>Type of Gas <span class="form_mark">*</span></h4></span>
+                        <% if(flag){%>
+                        <div class="input_form">
+                            <input type="text" placeholder="Type of Gas" value="<%=vehicle.getGasType() %>" name="gasType" required>
+                        </div>
+                        <%}else{ %>
                         <div class="input_form">
                             <input type="text" placeholder="Type of Gas" name="gasType" required>
                         </div>
+                        <%} %>
                     </div>
                     <div class="form_box">
                         <span class="form_indicator"><h4>Number of Seater  <span class="form_mark">*</span></h4></span>
+                         <% if(flag){%>
+                         <div class="input_form">
+                            <input type="text" placeholder="No. of Seater" value="<%=vehicle.getSeatNum() %>" name="numberOfSeater" required>
+                        </div>
+                         <%}else{ %>
                         <div class="input_form">
                             <input type="text" placeholder="No. of Seater" name="numberOfSeater" required>
                         </div>
+                        <%} %>
                     </div>
                 </div>
                 <div class="form_row">
@@ -238,32 +287,56 @@
                     </div>
                     <div class="form_box">
                         <span class="form_indicator"><h4>Registration Number <span class="form_mark">*</span></h4></span>
+                        <% if(flag){%>
+                        <div class="input_form">
+                            <input type="text" placeholder="Registration Number" value="<%=vehicle.getRegistration_num() %>" name="registrationNumber" required>
+                        </div>
+                        <%}else{ %>
                         <div class="input_form">
                             <input type="text" placeholder="Registration Number" name="registrationNumber" required>
                         </div>
+                        <%} %>
                     </div>
                 </div>
                 <div class="form_row">
                     <div class="form_box">
                         <span class="form_indicator"><h4>Roadtax Expiry Date <span class="form_mark">*</span></h4></span>
+                        <%if(flag){ %>
+                        <div class="input_form">
+                            <input type="text" placeholder="Roadtax Expiry Date" value="<%=vehicle.getStringRoadtax_exp_date() %>" name="roadtaxExpiryDate" required>
+                        </div>
+                        <%}else{ %>
                         <div class="input_form">
                             <input type="text" placeholder="Roadtax Expiry Date" name="roadtaxExpiryDate" required>
                         </div>
+                        <%} %>
                     </div>
                     <div class="form_box">
                         <span class="form_indicator"><h4>Engine Number <span class="form_mark">*</span></h4></span>
+                        <%if(flag){ %>
+                        <div class="input_form">
+                            <input type="text" placeholder="Engine Number" value="<%=vehicle.getEngine_num() %>" name="engineNumber" required>
+                        </div>
+                        <%}else{ %>
                         <div class="input_form">
                             <input type="text" placeholder="Engine Number" name="engineNumber" required>
                         </div>
+                        <%} %>
                     </div>
                     
                 </div>
                 <div class="form_row">
                     <div class="form_box">
                         <span class="form_indicator"><h4>Chasis Number <span class="form_mark">*</span></h4></span>
+                        <%if(flag){ %>
+                        <div class="input_form">
+                            <input type="text" placeholder="Chasis Number" value="<%=vehicle.getChasis_num() %>" name="chasisNumber" required>
+                        </div>
+                        <%}else{ %>
                         <div class="input_form">
                             <input type="text" placeholder="Chasis Number" name="chasisNumber" required>
                         </div>
+                        <%} %>
                     </div>
                     <div class="form_box">
                         <span class="form_indicator"><h4>Insurance Type<span class="form_mark">*</span></h4></span>
@@ -279,15 +352,27 @@
                 <div class="form_row">
                     <div class="form_box">
                         <span class="form_indicator"><h4>Insurance Name <span class="form_mark">*</span></h4></span>
+                        <%if(flag) {%>
+                        <div class="input_form">
+                            <input type="text" placeholder="Insurance Name" value="<%=vehicle.getInsurance_name() %>" name="insuranceName" required>
+                        </div>
+                        <%}else{ %>
                         <div class="input_form">
                             <input type="text" placeholder="Insurance Name" name="insuranceName" required>
                         </div>
+                        <%} %>
                     </div>
                     <div class="form_box">
                         <span class="form_indicator"><h4>Insurance Expiry Date <span class="form_mark">*</span></h4></span>
+                        <%if(flag) {%>
+                        <div class="input_form">
+                            <input type="text" placeholder="Insurance Expiry Date" value="<%=vehicle.getStringInsurance_exp_date() %>" name="insuranceExpiryDate" required>
+                        </div>
+                        <%}else{ %>
                         <div class="input_form">
                             <input type="text" placeholder="Insurance Expiry Date" name="insuranceExpiryDate" required>
                         </div>
+                        <%} %>
                     </div>
                 </div>
                 <div class="form_row">
@@ -309,12 +394,19 @@
                 <div class="form_row">
                     <div class="form_box">
                         <span class="form_indicator"><h4>Set Rental Charge <span class="form_mark">*</span></h4></span>
+                        <%if(flag){ %>
+                        <div class="input_form">
+                            <input type="text" placeholder="Set Rental Charge RM/hour" value="<%=vehicle.getRental_pr_hr() %>" name="rentalCharge" required>
+                        </div>
+                        <%}else{ %>
                         <div class="input_form">
                             <input type="text" placeholder="Set Rental Charge RM/hour" name="rentalCharge" required>
                         </div>
+                        <%} %>
                     </div>
                 </div>
                 
+               	<%if(!flag) {%>
                 <div class="form_row">
                     <div class="form_box">
                         <span class="form_indicator"><h4>Upload Vehicle Image <span class="form_mark">*</span></h4></span>
@@ -323,6 +415,8 @@
                         </div>
                     </div>
                 </div>
+                <%} %>
+                
                 <div class="register_button">
                     <button class="submit_button">Register</button>
                     <button class="cancel_button">Cancel</button>

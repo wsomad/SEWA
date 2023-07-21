@@ -186,7 +186,7 @@ List<Vehicle> vehicleList = (List<Vehicle>) session.getAttribute("ListOfVehicle"
 	                    <td><%=vehicle.getV_type() %></td>
 	                    <td><%=vehicle.getYr_manufacture() %></td>
 	                    <td>
-	                    	<form method="post" action="BookingController">
+	                    	<form method="get" action="AdminAlterationController">
 	                    		<input type="hidden" name="vehicleId" value="<%=vehicle.getVehicleid()%>">
 	                    		<button><i class="fa fa-edit" style="font-size:18px"></i></button>
 	                        	<button><i class="fa fa-trash" style="font-size:18px"></i></button>
