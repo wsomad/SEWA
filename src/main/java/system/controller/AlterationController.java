@@ -43,7 +43,7 @@ public class AlterationController extends HttpServlet {
 		pickupDate = externalControl.dateFormatting(pickupDate);
 		dropDate = externalControl.dateFormatting(dropDate);
 		
-		reservation = new Reservation(userid, vehicleid, pickupLoc, dropLoc, pickupDate, dropDate, passengers, specialReq, rentalChrge, timestamp);
+		reservation = new Reservation(userid, vehicleid, pickupLoc, dropLoc, pickupDate, dropDate, passengers, specialReq, rentalChrge, timestamp, false);
 		
 		ReservationDAO reservationdao = new ReservationDAO();
 		try {

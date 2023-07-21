@@ -32,22 +32,23 @@ public class UserDAO {
 			rowCount = pst.executeUpdate();
 		}catch (SQLException e) {
 			e.printStackTrace();
-		}/*finally {
+		}finally {
 			try {
 				con.close();
 			}catch(SQLException e) {
 				e.printStackTrace();
 			}
-		}*/
+		}
 		return rowCount;
 	}
 	
 	//User Login Purpose
 	public User loginValidation(String email, String password) {
+		Connection con = null;
 		User user = new User();
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://bxx0oim5clt3tz9xxlzj-mysql.services.clever-cloud.com:3306/bxx0oim5clt3tz9xxlzj?serverTimezone=Asia/Kuala_Lumpur", "uwaq62nkjirwnjub", "mRrDGZdA1u7UPAXYI5Rm");
+			con = DriverManager.getConnection("jdbc:mysql://bxx0oim5clt3tz9xxlzj-mysql.services.clever-cloud.com:3306/bxx0oim5clt3tz9xxlzj?serverTimezone=Asia/Kuala_Lumpur", "uwaq62nkjirwnjub", "mRrDGZdA1u7UPAXYI5Rm");
 			PreparedStatement pst = con.prepareStatement("select * from User where user_email=? and user_pass=?");
 			pst.setString(1, email);
 			pst.setString(2, password);
@@ -66,6 +67,12 @@ public class UserDAO {
 			}
 		}catch (Exception e) {
 			e.printStackTrace();
+		}finally {
+			try {
+				con.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		return user;
 	}

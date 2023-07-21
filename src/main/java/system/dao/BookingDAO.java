@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import system.model.Vehicle;
 import system.controller.ConfirmBookingController;
@@ -45,6 +46,12 @@ public class BookingDAO {
 			
 		}catch(Exception e) {
 			e.printStackTrace();
+		}finally {
+			try {
+				con.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		return vehicle;
 	}
@@ -78,6 +85,12 @@ public class BookingDAO {
 			
 		}catch(Exception e) {
 			e.printStackTrace();
+		}finally {
+			try {
+				con.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		System.out.println(otherPickupDate);
 		return otherPickupDate;

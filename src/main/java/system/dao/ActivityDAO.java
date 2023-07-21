@@ -44,6 +44,7 @@ public class ActivityDAO {
 			while(rs.next()) {
 				int user_id = rs.getInt("userid");
 				int vehicle_id = rs.getInt("vehicleid");
+				String oppositeUserName = oppositeUser( userid);
 				
 				String pickup_date = rs.getString("pickup_date");
 				String drop_date = rs.getString("drop_date");
@@ -72,7 +73,7 @@ public class ActivityDAO {
 				
 				String status = (userid==user_id) ? "Tenant" : "Lessor";
 				
-				activity = new Activity(user, vehicle, reservation, status);
+				activity = new Activity(user, vehicle, reservation, status, oppositeUserName);
 				
 				activities.add(activity);
 				//System.out.println(user.getUserid());
@@ -83,7 +84,45 @@ public class ActivityDAO {
 		}catch(Exception e) {
 			System.out.println("Unsuccesful");
 			e.printStackTrace();
+		}finally {
+			try {
+				con.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		return activities;
+	}
+	
+	public String oppositeUser(int id) {
+		Connection con = null;
+		System.out.println("user id : " + id);
+		String sql = "select user_first_name, user_last_name from User where userid=?;";
+		String firstname = "";
+		String lastname = "";
+				
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			con = DriverManager.getConnection("jdbc:mysql://bxx0oim5clt3tz9xxlzj-mysql.services.clever-cloud.com:3306/bxx0oim5clt3tz9xxlzj?serverTimezone=Asia/Kuala_Lumpur", "uwaq62nkjirwnjub", "mRrDGZdA1u7UPAXYI5Rm");
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setInt(1, id);
+			
+			ResultSet rs = pst.executeQuery();
+			while(rs.next()) {
+				firstname = rs.getString("user_first_name");
+				lastname = rs.getString("user_last_name");
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				con.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return firstname + " " + lastname;
 	}
 }

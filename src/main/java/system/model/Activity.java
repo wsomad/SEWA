@@ -9,7 +9,7 @@ public class Activity {
 	private Reservation reservation;
 	private String userStatus; //'Tenant'(user rent the car) 'Lessor'(user provide the car)
 	private String activityStatus; //'toPickup' 'pickupDay' 'toDrop' 'dropDay' 'vacant'(no activities)
-	private boolean eye;
+	private String oppoUserName;
 	
 	public Activity() {
 		user = new User();
@@ -18,11 +18,12 @@ public class Activity {
 		userStatus = "default";
 	}
 	
-	public Activity(User u, Vehicle v, Reservation r, String status) {
+	public Activity(User u, Vehicle v, Reservation r, String status, String username) {
 		setUser(u);
 		setVehicle(v);
 		setReservation(r);
 		setUserStatus(status);
+		oppoUserName = username;
 		activityStatus();
 	}
 	
@@ -74,6 +75,22 @@ public class Activity {
 		this.userStatus = status;
 	}
 	
+	public String getActivityStatus() {
+		return activityStatus;
+	}
+
+	public void setActivityStatus(String status) {
+		this.activityStatus = status;
+	}
+	
+	public String getOppoUserName() {
+		return oppoUserName;
+	}
+
+	public void setOppoUserName(String oppoUserName) {
+		this.oppoUserName = oppoUserName;
+	}
+
 	public String toString() {
 		return
 				"\n[USER]\n" + 

@@ -5,9 +5,23 @@
 List<Activity> activities = (List<Activity>) session.getAttribute("listOfActivity");
 int count = 0;
 for (Activity activity : activities){
-	System.out.println(activity.getVehicle().getV_brand() + " - " + activity.getUserStatus());
-	if (activity.getReservation().isEye()){
-		count++;
+	
+	if(activity.getUserStatus().equals("Lessor")){
+		System.out.println(activity.getOppoUserName() + " have rent your car! --- " + activity.getActivityStatus());
+		System.out.println(activity.getOppoUserName() + " have paid you RM" + activity.getReservation().getRent_to_pay());
+		count = count + 2;
+		if(activity.getActivityStatus().equals("dropDay")){
+			System.out.println(activity.getOppoUserName() + " should drop your car by today");
+			count++;
+		}
+		
+	}else{
+		System.out.println("you have rent a car (" + activity.getVehicle().getV_model() + ")");
+		System.out.println("You have paid RM" + activity.getReservation().getRent_to_pay() + " as rental fee");
+		if(activity.getActivityStatus().equals("dropDay")){
+			System.out.println("You should drop the car by today");
+			count++;
+		}
 	}
 }
 System.out.println(count);

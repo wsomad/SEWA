@@ -45,6 +45,12 @@ public class VehicleDAO {
 			rowCount = pst.executeUpdate();
 		}catch (Exception e) {
 			e.printStackTrace();
+		}finally {
+			try {
+				con.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
 		}
 		return rowCount;
 		
