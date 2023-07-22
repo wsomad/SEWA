@@ -95,12 +95,12 @@ public class ConfirmBookingController extends HttpServlet {
 			
 			dispatcher = request.getRequestDispatcher("/source/user_pages/dashboard_page/user-dashboard.jsp");
 			if(rowCount_booking > 0 && rowCount_payment > 0 && rowCount_vehicle > 0) {
-				request.setAttribute("status", "success");
+				request.setAttribute("confirmBookingStatus", "success");
 				HttpSession session = request.getSession();
 				session.setAttribute("userobj", user);
 				session.setAttribute("vehicleobj", vehicle);
 			}else {
-				request.setAttribute("status", "failed");
+				request.setAttribute("confirmBookingStatus", "failed");
 			}
 			dispatcher.forward(request, response);
 		}catch(ClassNotFoundException e) {

@@ -41,7 +41,7 @@ List<Activity> activities = (List<Activity>) session.getAttribute("listOfActivit
                     <li><a href="#">
                             <div class="notification_badge">
                                 <i class="fa fa-bell notification_bell" onclick="toggleNotification()"></i>
-                                <span class="notification_number">2</span>
+                                <span class="notification_number"></span>
                             </div>
                         </a>
                     </li>
@@ -49,60 +49,6 @@ List<Activity> activities = (List<Activity>) session.getAttribute("listOfActivit
                 </div>
             </ul>
 
-            <!-- notification bell -->
-            <div class="notification_menu" id="notificationMenu">
-                <div class="notification_word">
-                    <h2>Notification</h2>
-                </div>
-                <div class="notification_item">
-                    <a href="">
-                        <div class="notification_row">
-                            <h4>Accept Vehicle</h4>
-                            <p>New Update on Booking: <span>Passat [ALK8704]</span></p>
-                        </div>
-                    </a>
-                </div>
-                <div class="notification_item">
-                    <a href="">
-                        <div class="notification_row">
-                            <h4>Return Vehicle</h4>
-                            <p>New Update on Booking: <span>Passat [ALK8704]</span></p>
-                        </div>
-                    </a>
-                </div>
-                <div class="notification_item">
-                    <a href="">
-                        <div class="notification_row">
-                            <h4>Refund Request</h4>
-                            <p>New Update on Booking: <span>Myvi [PKL2019]</span></p>
-                        </div>
-                    </a>
-                </div>
-                <div class="notification_item">
-                    <a href="">
-                        <div class="notification_row">
-                            <h4>Accept Vehicle</h4>
-                            <p>New Update on Booking: <span>Passat [ALK8704]</span></p>
-                        </div>
-                    </a>
-                </div>
-                <div class="notification_item">
-                    <a href="">
-                        <div class="notification_row">
-                            <h4>Return Vehicle</h4>
-                            <p>New Update on Booking: <span>Arteon [BGU2264]</span></p>
-                        </div>
-                    </a>
-                </div>
-                <div class="notification_item">
-                    <a href="">
-                        <div class="notification_row">
-                            <h4>Refund Request</h4>
-                            <p>New Update on Booking: <span>Myvi [PKL2019]</span></p>
-                        </div>
-                    </a>
-                </div>
-            </div>
 
             <!-- sub menu -->
             <div class="sub-menu-wrap" id="subMenu">

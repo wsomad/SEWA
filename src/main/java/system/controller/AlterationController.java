@@ -50,10 +50,10 @@ public class AlterationController extends HttpServlet {
 			int rowCount = reservationdao.alterReservation(reservation);
 			dispatcher = request.getRequestDispatcher("/source/user_pages/dashboard_page/user-dashboard.jsp");
 			if(rowCount > 0) {
-				request.setAttribute("status", "success");
+				request.setAttribute("RescheduleStatus", "success");
 				session.removeAttribute("existing_reservation");
 			}else {
-				request.setAttribute("status", "failed");
+				request.setAttribute("RescheduleStatus", "failed");
 			}
 			dispatcher.forward(request, response);
 		} catch (ClassNotFoundException e) {

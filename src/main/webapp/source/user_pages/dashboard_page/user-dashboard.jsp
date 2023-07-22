@@ -419,5 +419,30 @@ System.out.println(count);
 	        serviceDropdown.classList.toggle('active');
 	    });
     </script>
+    <input type="hidden" id="confirmBookingStatus" value="<%=request.getAttribute("confirmBookingStatus")%>">
+    <input type="hidden" id="RescheduleStatus" value="<%=request.getAttribute("RescheduleStatus")%>">
+    <input type="hidden" id="CancellationStatus" value="<%=request.getAttribute("CancellationStatus")%>">
+    <input type="hidden" id="P2PRegStatus" value="<%=request.getAttribute("P2PRegStatus")%>">
 </body>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<link rel="stylesheet" href="alert/dist/sweetalert.css">
+	
+<script type="text/javascript">
+	var status = document.getElementById("confirmBookingStatus").value;
+	if(status == "success"){
+		swal("Well Done", "Succesfully Reserved", "success");
+	}
+	var status = document.getElementById("RescheduleStatus").value;
+	if(status == "success"){
+		swal("Well Done", "Succesfully Rescheduled", "success");
+	}
+	var status = document.getElementById("CancellationStatus").value;
+	if(status == "success"){
+		swal("Well Done", "Succesfully Cancelled", "success");
+	}
+	var status = document.getElementById("P2PRegStatus").value;
+	if(status == "success"){
+		swal("Well Done", "Car Succesfully Registered", "success");
+	}
+</script>
 </html>

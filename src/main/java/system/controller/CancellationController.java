@@ -67,10 +67,10 @@ public class CancellationController extends HttpServlet {
 		
 		dispatcher = request.getRequestDispatcher("/source/user_pages/dashboard_page/user-dashboard.jsp");
 		if(rowCount > 0) {
-			request.setAttribute("status", "success");
+			request.setAttribute("CancellationStatus", "success");
 			session.removeAttribute("existing_reservation");
 		}else {
-			request.setAttribute("status", "failed");
+			request.setAttribute("CancellationStatus", "failed");
 		}
 		dispatcher.forward(request, response);
 		
