@@ -32,12 +32,6 @@ public class UserDAO {
 			rowCount = pst.executeUpdate();
 		}catch (SQLException e) {
 			e.printStackTrace();
-		}finally {
-			try {
-				con.close();
-			}catch(SQLException e) {
-				e.printStackTrace();
-			}
 		}
 		return rowCount;
 	}

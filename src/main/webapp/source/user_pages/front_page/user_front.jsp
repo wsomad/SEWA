@@ -129,5 +129,20 @@
             </div>
         </div>
     </footer>
+    <input type="hidden" id="status" value="<%=request.getAttribute("status")%>">
+    <input type="hidden" id="RegistrationStatus" value="<%=request.getAttribute("RegistrationStatus")%>">
 </body>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<link rel="stylesheet" href="alert/dist/sweetalert.css">
+	
+<script type="text/javascript">
+	var status = document.getElementById("status").value;
+	if(status == "failed"){
+		swal("Sorry", "Wrong Username or Password", "failed");
+	}
+	var status = document.getElementById("RegistrationStatus").value;
+	if(status == "success"){
+		swal("Congratulation", "Succesfully Registered", "success");
+	}
+</script>
 </html>

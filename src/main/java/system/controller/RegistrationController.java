@@ -34,15 +34,18 @@ public class RegistrationController extends HttpServlet {
 		
 		try {
 			int rowCount = userdao.registerUser(user);
-			dispatcher = request.getRequestDispatcher("user-front.jsp");
+			
+			//dispatcher = request.getRequestDispatcher("/user_front.jsp");
 			if(rowCount > 0) {
-				request.setAttribute("status", "success");
+				request.setAttribute("RegistrationStatus", "success");
 			}else {
-				request.setAttribute("status", "failed");
+				request.setAttribute("RegistrationStatus", "failed");
 			}
-			dispatcher.forward(request, response);
+			
 		}catch(ClassNotFoundException e) {
 			e.printStackTrace();
 		}
+		dispatcher = request.getRequestDispatcher("/source/user_pages/front_page/user_front.jsp");
+		dispatcher.forward(request, response);
 	}
 }
