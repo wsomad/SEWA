@@ -93,8 +93,14 @@ public class ConfirmBookingController extends HttpServlet {
 			vehicle.setAvailability(false);
 			int rowCount_vehicle = reservationdao.makeVehicleUnavailable(vehicle);
 			
+			//Check sufficient wallet amount
+			boolean sufficientFlag = false;
+			if(user.getUser_wallet() >= reservation.getRent_to_pay()) {
+				sufficientFlag = true;
+			}
+			
 			dispatcher = request.getRequestDispatcher("/source/user_pages/dashboard_page/user-dashboard.jsp");
-			if(rowCount_booking > 0 && rowCount_payment > 0 && rowCount_vehicle > 0) {
+			if((rowCount_booking > 0) && (rowCount_payment > 0) && (rowCount_vehicle > 0) && (sufficientFlag)) {
 				request.setAttribute("confirmBookingStatus", "success");
 				HttpSession session = request.getSession();
 				session.setAttribute("userobj", user);

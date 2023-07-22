@@ -152,7 +152,7 @@ System.out.println(count);
                         <i class='bx bx-cog'></i>
                         <p>Setting</p>
                     </a>
-                    <a href="a" class="sub-menu-link">
+                    <a href="LogoutController" class="sub-menu-link">
                         <i class='bx bx-log-out' ></i>
                         <p>Sign out</p>
                     </a>
@@ -431,6 +431,8 @@ System.out.println(count);
 	var status = document.getElementById("confirmBookingStatus").value;
 	if(status == "success"){
 		swal("Well Done", "Succesfully Reserved", "success");
+	}else if (status == "failed"){
+		swal("Nope", "Insufficient Amount", "failed");
 	}
 	var status = document.getElementById("RescheduleStatus").value;
 	if(status == "success"){

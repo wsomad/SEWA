@@ -46,13 +46,13 @@ List<Vehicle> vehicleList = (List<Vehicle>) session.getAttribute("ListOfVehicle"
                     </a>
                 </li>
                 <li>
-                    <a href="a">
+                    <a href="../profit_insight/profit-insight.html">
                         <span class="icon"><i class='bx bx-line-chart'></i></span>
                         <span class="title">Profit Insight</span>
                     </a>
                 </li>
                 <li>
-                    <a href="a">
+                    <a href="../Registered_car_insight/register_insight.html">
                         <span class="icon"><i class='bx bxs-bar-chart-alt-2' ></i></span>
                         <span class="title">Car Insight</span>
                     </a>
@@ -212,8 +212,16 @@ List<Vehicle> vehicleList = (List<Vehicle>) session.getAttribute("ListOfVehicle"
     </div>
 
 </div>
-
+<input type="hidden" id="AdminAlterationStatus" value="<%=request.getAttribute("AdminAlterationStatus")%>">
         <script src="car-inv.js"></script>
         <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 </body>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<link rel="stylesheet" href="alert/dist/sweetalert.css">
+<script type="text/javascript">
+	var status = document.getElementById("AdminAlterationStatus").value;
+	if(status == "success"){
+		swal("Well Done", "Succesfully Altered", "success");
+	}
+</script>
 </html>
