@@ -235,9 +235,6 @@ System.out.println(count);
                     	<button>Record Activity</button>
                     </form>
                 </div>
-                <form method="get" action="ActivityController">
-                	<button>RECORD Activity</button>
-                </form>
                
             </div>
             <div class="booking_car">

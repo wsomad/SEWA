@@ -40,7 +40,7 @@ public class AdminAlterationController extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		Vehicle vehicle = (Vehicle) request.getSession().getAttribute("vehicleAtt");
-		
+		/*
 		vehicle.setV_brand(request.getParameter("brand"));
 		vehicle.setV_model(request.getParameter("model"));
 		vehicle.setV_type(request.getParameter("type"));
@@ -57,17 +57,17 @@ public class AdminAlterationController extends HttpServlet {
 		vehicle.setInsurance_exp_date(request.getParameter("insuranceExpiryDate"));
 		vehicle.setLocation(request.getParameter("location"));
 		vehicle.setRental_pr_hr(Double.parseDouble(request.getParameter("rentalCharge")));
-		
+		*/
 		Connection con = null;
 		String sql = 
 				"update Vehicle \r\n"
-				+ "set registration_num = ?,\r\n"
-				+ "chasis_num = ?,\r\n"
+				+ "set registration_num = \"ABC123\",\r\n"
+				/*+ "chasis_num = ?,\r\n"
 				+ "engine_num = ?,\r\n"
-				+ "v_brand = ?,\r\n"
-				+ "v_model = ?,\r\n"
-				+ "v_type = ?,\r\n"
-				+ "yr_manufacture = 2020,\r\n"
+				*/+ "v_brand = \"Toyota\",\r\n"
+				+ "v_model = \"Camry\",\r\n"
+				+ "v_type = \"Sedan\"\r\n"
+				/*+ "yr_manufacture = 2020,\r\n"
 				+ "roadtax_exp_date = ?,\r\n"
 				+ "insurance_name = ?,\r\n"
 				+ "insurance_exp_date = ?,\r\n"
@@ -77,7 +77,7 @@ public class AdminAlterationController extends HttpServlet {
 				+ "seat = 4,\r\n"
 				+ "transmission = ?,\r\n"
 				+ "location = ?\r\n"
-				+ "where vehicleid = 12;";
+				*/+ "where vehicleid = 12;";
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -85,7 +85,7 @@ public class AdminAlterationController extends HttpServlet {
 			try {
 				con = DriverManager.getConnection("jdbc:mysql://bxx0oim5clt3tz9xxlzj-mysql.services.clever-cloud.com:3306/bxx0oim5clt3tz9xxlzj?serverTimezone=Asia/Kuala_Lumpur", "uwaq62nkjirwnjub", "mRrDGZdA1u7UPAXYI5Rm");
 				PreparedStatement pst = con.prepareStatement(sql);
-				
+				/*
 				pst.setString(1, vehicle.getRegistration_num());
 				pst.setString(2, vehicle.getChasis_num());
 				pst.setString(3, vehicle.getEngine_num());
@@ -104,6 +104,7 @@ public class AdminAlterationController extends HttpServlet {
 				pst.setString(16, vehicle.getLocation());
 				pst.setInt(17, vehicle.getVehicleid());
 				rowCount = pst.executeUpdate();
+				*/
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -116,9 +117,14 @@ public class AdminAlterationController extends HttpServlet {
 		List<Vehicle> vehicleList = (List<Vehicle>) session.getAttribute("ListOfVehicle");
 		for(Vehicle vehicleobj: vehicleList) {
 			if (vehicleobj.getVehicleid() == 12) {
-				vehicleobj=vehicle;
+				//vehicleobj=vehicle;
+				vehicleobj.setRegistration_num("ABC123");
+				vehicleobj.setV_brand("Toyoyta");
+				vehicleobj.setV_model("Camry");
+				vehicleobj.setV_type("Sedan");
 			}
 		}
+		session.setAttribute("AdminAlterationStatus", "success");
 		session.setAttribute("ListOfVehicle", vehicleList);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/source/admin_pages/car_inventory/Car-inv.jsp");
 		dispatcher.forward(request, response);

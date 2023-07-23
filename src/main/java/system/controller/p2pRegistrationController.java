@@ -55,7 +55,7 @@ public class p2pRegistrationController extends HttpServlet {
                     String fieldValue = item.getString();
                     formFields.put(fieldName, fieldValue);
                 } else {
-                    String uniquePth = "C:\\Users\\Intel i5\\Documents\\GitHub\\PROJECT";
+                    String uniquePth = "D:\\software\\eclipse\\2nd-Yr-Project\\PROJECT";
                 	item.write(new File(uniquePth+"\\src\\main\\webapp\\source\\user_pages\\carPic\\" + imgIndex + ".jpg"));
                     // ...
                 }
@@ -93,16 +93,18 @@ public class p2pRegistrationController extends HttpServlet {
         
         try {
         	int rowCount = vehicledao.registerCar(vehicle, user.getUserid());
-        	dispatcher = request.getRequestDispatcher("/source/user_pages/dashboard_page/user-dashboard.jsp");
         	if(rowCount > 0) {
-				request.setAttribute("status", "success");
+				request.setAttribute("P2PRegStatus", "success");
 			}else {
-				request.setAttribute("status", "failed");
+				request.setAttribute("P2PRegStatus", "failed");
 			}
-			dispatcher.forward(request, response);
+			
         }catch (Exception e) {
         	e.printStackTrace();
         }
+
+    	dispatcher = request.getRequestDispatcher("/source/user_pages/dashboard_page/user-dashboard.jsp");
+        dispatcher.forward(request, response);
 	}
 
 }
